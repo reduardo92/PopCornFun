@@ -27,7 +27,6 @@ const Styled = styled.div`
 
   .content {
     position: relative;
-    color: var(--white-clr);
   }
 
   .title {
@@ -41,6 +40,7 @@ const Styled = styled.div`
   }
 
   .subtitle {
+    color: var(--white-clr);
     font-size: 1.4rem;
   }
 
