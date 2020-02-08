@@ -12,7 +12,6 @@ const Styled = styled.div`
   text-align: center;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.6);
-  color: var(--white-clr);
 
   .video--bg {
     position: absolute;
@@ -28,6 +27,7 @@ const Styled = styled.div`
 
   .content {
     position: relative;
+    color: var(--white-clr);
   }
 
   .title {
