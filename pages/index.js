@@ -3,13 +3,14 @@ import VideoHero from '../components/ui/VideoHero';
 import Contact from '../components/contact';
 import axios from 'axios';
 import { BASE_URL, API_KEY } from '../components/context/types';
-import PopularSection from '../components/ui/PopularSection';
+// import PopularSection from '../components/ui/PopularSection';
 
 const IndexPage = ({ movieNowPlay, tvOnAir }) => {
+  console.log(movieNowPlay, tvOnAir);
   return (
     <Layout>
       <VideoHero />
-      <PopularSection
+      {/* <PopularSection
         data={movieNowPlay}
         typeFor='movie'
         title={
@@ -31,7 +32,7 @@ const IndexPage = ({ movieNowPlay, tvOnAir }) => {
         }
         subtitle='Most watched tv'
         toLink='/tv'
-      />
+      /> */}
       <Contact />
     </Layout>
   );
