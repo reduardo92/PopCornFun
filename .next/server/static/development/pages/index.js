@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -306,6 +306,24 @@ const Contact = () => {
 
 /***/ }),
 
+/***/ "./components/context/types.js":
+/*!*************************************!*\
+  !*** ./components/context/types.js ***!
+  \*************************************/
+/*! exports provided: API_KEY, BASE_URL, IMG_URL */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
+const API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
+const BASE_URL = 'https://api.themoviedb.org/3/';
+const IMG_URL = 'https://image.tmdb.org/t/p/w500/';
+
+/***/ }),
+
 /***/ "./components/layout.js":
 /*!******************************!*\
   !*** ./components/layout.js ***!
@@ -335,6 +353,317 @@ const Layout = ({
 
 /***/ }),
 
+/***/ "./components/ui/ButtonSimple.jsx":
+/*!****************************************!*\
+  !*** ./components/ui/ButtonSimple.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\ButtonSimple.jsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
+  displayName: "ButtonSimple__Styled",
+  componentId: "sc-10ce1eo-0"
+})(["display:inline-block;font-family:var(--fn-monterrat);font-weight:var(--fw-bold);font-size:0.9rem;text-align:center;color:", ";text-transform:uppercase;position:relative;transition:var(--ease--in--out--02s);cursor:pointer;svg{font-size:1.5rem;}&:hover,&:focus{transform:scale(0.95);color:var(--primary-clr) !important;}"], props => props.invert ? 'var(--second-clr)' : 'var(--white-clr)');
+
+const ButtonSimple = ({
+  toLink,
+  title = 'view more',
+  hoverclr,
+  invert
+}) => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: toLink,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 31
+  },
+  __self: undefined
+}, __jsx(Styled, {
+  hoverclr: hoverclr,
+  invert: invert,
+  className: "button--simple",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 32
+  },
+  __self: undefined
+}, title, " ", __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_3__["MdChevronRight"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 33
+  },
+  __self: undefined
+})));
+
+/* harmony default export */ __webpack_exports__["default"] = (ButtonSimple);
+
+/***/ }),
+
+/***/ "./components/ui/CardTitle.jsx":
+/*!*************************************!*\
+  !*** ./components/ui/CardTitle.jsx ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\CardTitle.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "CardTitle__Styled",
+  componentId: "sc-1sk6yp9-0"
+})(["grid-column:", ";text-align:center;width:100%;position:relative;padding:1em 0;&::before{content:'';position:absolute;top:0;left:0;right:0;width:100px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.6);}.title{text-transform:capitalize;font-weight:bold;}.subtitle{color:var(--grey-clr);}.button--simple{display:block;border-top:1px solid rgba(255,255,255,0.6);padding-top:1em;}@media screen and (min-width:1000px){max-width:300px;margin-right:auto;text-align:left;&::before{margin:0;}.button--simple{text-align:left;}}"], ({
+  gridColum
+}) => gridColum);
+
+const CardTitle = ({
+  title,
+  subtitle,
+  children,
+  gridColum
+}) => __jsx(Styled, {
+  className: "card--title",
+  gridColum: gridColum,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 52
+  },
+  __self: undefined
+}, __jsx("h2", {
+  className: "title",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 53
+  },
+  __self: undefined
+}, title), __jsx("p", {
+  className: "subtitle",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 54
+  },
+  __self: undefined
+}, subtitle), children);
+
+/* harmony default export */ __webpack_exports__["default"] = (CardTitle);
+
+/***/ }),
+
+/***/ "./components/ui/Cards/CardOne.jsx":
+/*!*****************************************!*\
+  !*** ./components/ui/Cards/CardOne.jsx ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/types */ "./components/context/types.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Cards\\CardOne.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.figure.withConfig({
+  displayName: "CardOne__Styled",
+  componentId: "e0m3r6-0"
+})(["width:160px;.card--poster{position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:grid;justify-items:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(64,4,4,0.7);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}}.card--body{&__info{color:var(--grey-clr);}&__title{font-weight:bold;}}@media screen and (min-width:768px){}"]);
+
+const CardOne = ({
+  data,
+  typeFor
+}) => __jsx(Styled, {
+  className: "card--one",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 54
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "card--poster",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 55
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: `/${typeFor}/[id]`,
+  as: `/${typeFor}/${data.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 56
+  },
+  __self: undefined
+}, __jsx("img", {
+  className: "poster__img",
+  src: `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"]}${data.poster_path}`,
+  alt: data.title || data.name,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 57
+  },
+  __self: undefined
+}))), __jsx("div", {
+  className: "card--body",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 64
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "card--body__info",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 65
+  },
+  __self: undefined
+}, data.release_date || data.first_air_date), __jsx("div", {
+  className: "card--body__title",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 68
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: `/${typeFor}/[id]`,
+  as: `/${typeFor}/${data.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 69
+  },
+  __self: undefined
+}, data.title || data.name))));
+
+/* harmony default export */ __webpack_exports__["default"] = (CardOne);
+
+/***/ }),
+
+/***/ "./components/ui/PopularSection.jsx":
+/*!******************************************!*\
+  !*** ./components/ui/PopularSection.jsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cards/CardOne */ "./components/ui/Cards/CardOne.jsx");
+/* harmony import */ var _CardTitle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CardTitle */ "./components/ui/CardTitle.jsx");
+/* harmony import */ var _ButtonSimple__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ButtonSimple */ "./components/ui/ButtonSimple.jsx");
+/* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./button */ "./components/ui/button.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\PopularSection.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
+  displayName: "PopularSection__Styled",
+  componentId: "aqfo1s-0"
+})(["background:var(--bg-gradient);padding:4em 1em;position:relative;.content--container{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;justify-items:center;}.btn--container{position:relative;display:flex;justify-content:center;}.card--title{grid-column:1 / 3;justify-self:center;margin-bottom:3em;}.title{text-transform:capitalize;font-weight:bold;}.subtitle{color:var(--grey-clr);}@media screen and (min-width:768px){.content--container{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:auto;justify-items:center;}.card--title{grid-column:1 / 5;}}@media screen and (min-width:1000px){&::before{position:absolute;content:'';bottom:40px;left:0;right:0;width:100%;margin:0 auto;border-bottom:1px dashed rgba(255,255,255,0.6);z-index:1;}.content--container{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}.card--title{grid-column:1 / 3;}}"]);
+
+const PopularSection = ({
+  data,
+  typeFor,
+  title,
+  subtitle,
+  toLink,
+  btnTitle
+}) => __jsx(Styled, {
+  className: "popular--section",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 83
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "max-width content--container",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 84
+  },
+  __self: undefined
+}, __jsx(_CardTitle__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  title: title,
+  subtitle: subtitle,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 85
+  },
+  __self: undefined
+}, __jsx(_ButtonSimple__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  toLink: toLink,
+  title: btnTitle,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 86
+  },
+  __self: undefined
+})), data.map((item, i) => i <= 11 && __jsx(_Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  key: item.id,
+  data: item,
+  typeFor: typeFor,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 90
+  },
+  __self: undefined
+}))), __jsx("div", {
+  className: "btn--container",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 93
+  },
+  __self: undefined
+}, __jsx(_button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  toLink: toLink,
+  title: "view more",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 94
+  },
+  __self: undefined
+})));
+
+/* harmony default export */ __webpack_exports__["default"] = (PopularSection);
+
+/***/ }),
+
 /***/ "./components/ui/VideoHero.jsx":
 /*!*************************************!*\
   !*** ./components/ui/VideoHero.jsx ***!
@@ -357,47 +686,47 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "VideoHero__Styled",
   componentId: "sc-8il28s-0"
-})(["position:relative;min-height:75vh;margin-top:8em;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:rgba(0,0,0,0.6);color:var(--white-clr);.video--bg{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;height:100%;object-fit:cover;transform:translate(-50%,-50%);z-index:-1;}.content{position:relative;}.title{text-transform:uppercase;font-size:2.5rem;font-weight:bold;margin:0;span{display:block;}}.subtitle{font-size:1.4rem;}.title--img{position:absolute;width:100px;}.btn--group{display:grid;grid-template-columns:1fr 1fr;grid-gap:0.5em;gap:0.5em;max-width:70%;margin:0 auto;}"]);
+})(["position:relative;min-height:75vh;margin-top:8em;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:rgba(0,0,0,0.5);.video--bg{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;height:100%;object-fit:cover;transform:translate(-50%,-50%);z-index:-1;background-color:black;}.content{position:relative;padding:0 0.5em;}.title{text-transform:uppercase;font-size:1.8rem;font-weight:bold;margin:0;margin-bottom:0.5em;span{display:block;}}.subtitle{color:var(--white-clr);font-size:1rem;}.title--img{position:absolute;width:100px;}.btn--group{display:grid;grid-template-columns:1fr 1fr;grid-gap:0.5em;align-items:center;}@media screen and (min-width:1000px){.title{font-size:2.5rem;}.subtitle{font-size:1.4rem;}.btn--group{grid-gap:1em;max-width:375px;margin:0 auto;}}"]);
 
 const VideoHero = () => __jsx(Styled, {
   className: "hero--video",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 63
+    lineNumber: 80
   },
   __self: undefined
 }, __jsx("div", {
   className: "content",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 64
+    lineNumber: 81
   },
   __self: undefined
 }, __jsx("h1", {
   className: "title",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 65
+    lineNumber: 82
   },
   __self: undefined
 }, "ENTERTAINMENT ", __jsx("span", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 66
+    lineNumber: 83
   },
   __self: undefined
 }, "YOU CAN SNACK ON")), __jsx("p", {
   className: "subtitle",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 68
+    lineNumber: 85
   },
   __self: undefined
 }, "Discover your next popcorn fun to enjoy your night"), __jsx("div", {
   className: "btn--group",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 71
+    lineNumber: 88
   },
   __self: undefined
 }, __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -405,15 +734,15 @@ const VideoHero = () => __jsx(Styled, {
   toLink: "/movie",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 72
+    lineNumber: 89
   },
   __self: undefined
 }), __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  title: "tv shows",
+  title: "tv",
   toLink: "/tv",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 73
+    lineNumber: 90
   },
   __self: undefined
 }))), __jsx("video", {
@@ -423,7 +752,7 @@ const VideoHero = () => __jsx(Styled, {
   className: "video--bg",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 77
+    lineNumber: 94
   },
   __self: undefined
 }, __jsx("source", {
@@ -431,7 +760,7 @@ const VideoHero = () => __jsx(Styled, {
   type: "video/mp4",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 78
+    lineNumber: 95
   },
   __self: undefined
 })));
@@ -534,7 +863,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "titleBanner__Styled",
   componentId: "hnubib-0"
-})(["position:relative;max-width:fit-content;margin:0 auto;.title,.subtitle{position:relative;width:100%;display:block;font-family:var(--fn-monterrat);font-weight:var(--fw-bold);text-transform:uppercase;}.title{color:var(--primary-clr);width:fit-content;margin:0 auto;font-size:1.1rem;padding:", ";&::after,&::before{content:'';position:absolute;height:30px;width:30px;top:43%;transform:translateY(-50%);background-size:cover;}&::before{background-image:url(leftTitle.png);left:0;}&::after{background-image:url(rightTitle.png);right:0;}}.subtitle{color:", ";font-size:1.8rem;}"], props => props.padd ? props.padd : ' 0 35px', props => props.invert ? 'var(--white-clr)' : 'var(--second-clr)');
+})(["position:relative;max-width:fit-content;margin:0 auto;.title,.subtitle{position:relative;width:100%;display:block;font-family:var(--fn-monterrat);font-weight:var(--fw-bold);text-transform:uppercase;}.title{color:var(--primary-clr);width:fit-content;margin:0 auto;font-size:1.1rem;padding:", ";&::after,&::before{content:'';position:absolute;height:30px;width:30px;top:43%;transform:translateY(-50%);background-size:cover;}}.subtitle{color:", ";font-size:1.8rem;}"], props => props.padd ? props.padd : ' 0 35px', props => props.invert ? 'var(--white-clr)' : 'var(--second-clr)');
 
 const TitleBanner = ({
   subtitle,
@@ -2255,39 +2584,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var _components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ui/VideoHero */ "./components/ui/VideoHero.jsx");
 /* harmony import */ var _components_contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/contact */ "./components/contact.jsx");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/context/types */ "./components/context/types.js");
+/* harmony import */ var _components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ui/PopularSection */ "./components/ui/PopularSection.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
- // import Carousell from '../components/ui/carousel/carousel';
 
 
 
-const IndexPage = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 7
-  },
-  __self: undefined
-}, __jsx(_components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}), __jsx(_components_contact__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9
-  },
-  __self: undefined
-}));
+
+
+
+const IndexPage = ({
+  movieNowPlay,
+  tvOnAir
+}) => {
+  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, __jsx(_components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    data: movieNowPlay,
+    typeFor: "movie",
+    title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "in theaters ", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: undefined
+    }), " now to enjoy"),
+    subtitle: "Most watched movies",
+    toLink: "/movie",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    data: tvOnAir,
+    typeFor: "tv",
+    title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Popular TV ", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: undefined
+    }), "Series Right Now"),
+    subtitle: "Most watched tv",
+    toLink: "/tv",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }), __jsx(_components_contact__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }));
+};
+
+IndexPage.getInitialProps = async ctx => {
+  const movie = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_5__["BASE_URL"]}movie/now_playing?${_components_context_types__WEBPACK_IMPORTED_MODULE_5__["API_KEY"]}`);
+  const tv = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_5__["BASE_URL"]}tv/on_the_air?${_components_context_types__WEBPACK_IMPORTED_MODULE_5__["API_KEY"]}`);
+  return {
+    movieNowPlay: movie.data.results,
+    tvOnAir: tv.data.results
+  };
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (IndexPage);
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2296,6 +2679,17 @@ const IndexPage = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["d
 
 module.exports = __webpack_require__(/*! C:\Users\Eduardo Rivas\Desktop\react_Study\popcornFun\pages\index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
@@ -2384,6 +2778,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-icons/md":
+/*!*********************************!*\
+  !*** external "react-icons/md" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/md");
 
 /***/ }),
 

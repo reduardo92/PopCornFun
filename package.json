@@ -14,7 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.10.56",
+    "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "dotenv": "^8.2.0",
     "next": "^9.2.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",

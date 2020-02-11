@@ -2,9 +2,9 @@ import { useState, useEffect, useRef, useReducer } from 'react';
 import MovieContext from './MovieContext';
 import useMovieReducer from './useMovieReducer';
 
+const log = console.log;
+
 const movieInitalState = {
-  apiKey: process.env.apiKey,
-  baseUrl: 'https://api.themoviedb.org/3/',
   current_page: 1,
   total_pages: 0,
   query: 'movie',
@@ -15,8 +15,6 @@ const movieInitalState = {
 const StateProvider = ({ children }) => {
   const [windowSize, setWindowSize] = useState(0);
   const [toggle, setToggle] = useState(false);
-  const [navScroll, setNavScroll] = useState(false);
-  const [navheight, setNavHeight] = useState(null);
   const navRef = useRef();
   const [state, dispatch] = useReducer(useMovieReducer, movieInitalState);
 
@@ -36,17 +34,6 @@ const StateProvider = ({ children }) => {
     setWindowSize(window.innerWidth);
   }, []);
 
-  useEffect(() => {
-    setNavHeight(navRef.current.scrollHeight);
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > navheight) {
-        setNavScroll(true);
-      } else {
-        setNavScroll(false);
-      }
-    });
-  }, [navheight]);
-
   return (
     <MovieContext.Provider
       value={{
@@ -54,8 +41,8 @@ const StateProvider = ({ children }) => {
         setCarosuel,
         toggle,
         setToggle,
-        navScroll,
-        navRef
+        navRef,
+        ...state
       }}
     >
       {children}

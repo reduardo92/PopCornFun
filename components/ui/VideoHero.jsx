@@ -11,7 +11,7 @@ const Styled = styled.div`
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
 
   .video--bg {
     position: absolute;
@@ -23,17 +23,20 @@ const Styled = styled.div`
     object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1;
+    background-color: black;
   }
 
   .content {
     position: relative;
+    padding: 0 0.5em;
   }
 
   .title {
     text-transform: uppercase;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
     margin: 0;
+    margin-bottom: 0.5em;
     span {
       display: block;
     }
@@ -41,7 +44,7 @@ const Styled = styled.div`
 
   .subtitle {
     color: var(--white-clr);
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
   .title--img {
@@ -53,9 +56,23 @@ const Styled = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0.5em;
-    gap: 0.5em;
-    max-width: 70%;
-    margin: 0 auto;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.4rem;
+    }
+
+    .btn--group {
+      grid-gap: 1em;
+      max-width: 375px;
+      margin: 0 auto;
+    }
   }
 `;
 
@@ -70,7 +87,7 @@ const VideoHero = () => (
       </p>
       <div className='btn--group'>
         <Button title='movies' toLink='/movie' />
-        <Button title='tv shows' toLink='/tv' />
+        <Button title='tv' toLink='/tv' />
       </div>
       {/* <img className='title--img' src='/popcorn.png' alt='film strip' /> */}
     </div>

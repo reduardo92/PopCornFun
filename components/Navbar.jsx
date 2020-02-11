@@ -19,8 +19,8 @@ const Styled = styled.header`
     margin: 0 auto;
   }
 
-  .navbar-collapse {
-    margin-left: 13em;
+  .navbar-toggler {
+    background-color: var(--white-clr);
   }
 
   .navbar-nav .nav-link,
@@ -47,7 +47,10 @@ const Styled = styled.header`
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1000px) {
+    .navbar-collapse {
+      margin-left: 13em;
+    }
   }
 `;
 

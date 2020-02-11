@@ -32,7 +32,7 @@ const Styled = styled.div`
       background-size: cover;
     }
 
-    &::before {
+    /* &::before {
       background-image: url(leftTitle.png);
       left: 0;
     }
@@ -40,7 +40,7 @@ const Styled = styled.div`
     &::after {
       background-image: url(rightTitle.png);
       right: 0;
-    }
+    } */
   }
 
   .subtitle {

@@ -4,7 +4,7 @@
   --second-clr: #212122;
   --accent-clr: #e7e6e5;
   --white-clr: #fff;
-  --grey-clr: #8d8885;
+  --grey-clr: #efefef;
   --hover--clr: #5d5e5e;
 
   /* Gradient  */
@@ -291,8 +291,9 @@ html {
   color: var(--white-clr);
 }
 
-p {
-  color: var(--second-clr);
+p,
+a {
+  color: var(--white-clr);
 }
 
 #__next {
