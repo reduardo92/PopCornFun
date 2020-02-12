@@ -601,8 +601,8 @@ const StateProvider = ({
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     setWindowSize(window.innerWidth);
   }, []);
-  log("api_key=69a209b5d508b36379577751e571ebe9");
-  log(_types__WEBPACK_IMPORTED_MODULE_3__["API_KEY"]);
+  log('env', "api_key=69a209b5d508b36379577751e571ebe9");
+  log('type', _types__WEBPACK_IMPORTED_MODULE_3__["API_KEY"]);
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
     value: _objectSpread({
       windowSize,

@@ -35,8 +35,8 @@ const StateProvider = ({ children }) => {
     setWindowSize(window.innerWidth);
   }, []);
 
-  log(process.env.API_KEY);
-  log(API_KEY);
+  log('env', process.env.API_KEY);
+  log('type', API_KEY);
 
   return (
     <MovieContext.Provider

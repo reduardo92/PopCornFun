@@ -91,8 +91,8 @@ var StateProvider = function StateProvider(_ref) {
   Object(react__WEBPACK_IMPORTED_MODULE_7__["useEffect"])(function () {
     setWindowSize(window.innerWidth);
   }, []);
-  log("api_key=69a209b5d508b36379577751e571ebe9");
-  log(_types__WEBPACK_IMPORTED_MODULE_10__["API_KEY"]);
+  log('env', "api_key=69a209b5d508b36379577751e571ebe9");
+  log('type', _types__WEBPACK_IMPORTED_MODULE_10__["API_KEY"]);
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_8__["default"].Provider, {
     value: _objectSpread({
       windowSize: windowSize,
@@ -111,25 +111,7 @@ var StateProvider = function StateProvider(_ref) {
 
 /* harmony default export */ __webpack_exports__["default"] = (StateProvider);
 
-/***/ }),
-
-/***/ "./components/context/types.js":
-/*!*************************************!*\
-  !*** ./components/context/types.js ***!
-  \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
-var API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
-var BASE_URL = 'https://api.themoviedb.org/3/';
-var IMG_URL = 'https://image.tmdb.org/t/p/w500/';
-
 /***/ })
 
 })
-//# sourceMappingURL=_app.js.8980c24b6fb42925d28e.hot-update.js.map
+//# sourceMappingURL=_app.js.40cd0eb929a8f10f7562.hot-update.js.map

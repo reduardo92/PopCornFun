@@ -559,8 +559,8 @@ var StateProvider = function StateProvider(_ref) {
   Object(react__WEBPACK_IMPORTED_MODULE_7__["useEffect"])(function () {
     setWindowSize(window.innerWidth);
   }, []);
-  log("api_key=69a209b5d508b36379577751e571ebe9");
-  log(_types__WEBPACK_IMPORTED_MODULE_10__["API_KEY"]);
+  log('env', "api_key=69a209b5d508b36379577751e571ebe9");
+  log('type', _types__WEBPACK_IMPORTED_MODULE_10__["API_KEY"]);
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_8__["default"].Provider, {
     value: _objectSpread({
       windowSize: windowSize,
