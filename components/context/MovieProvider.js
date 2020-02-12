@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useReducer } from 'react';
 import MovieContext from './MovieContext';
 import useMovieReducer from './useMovieReducer';
+import { API_KEY } from './types';
 
 const log = console.log;
 
@@ -33,6 +34,9 @@ const StateProvider = ({ children }) => {
   useEffect(() => {
     setWindowSize(window.innerWidth);
   }, []);
+
+  log(process.env.API_KEY);
+  log(API_KEY);
 
   return (
     <MovieContext.Provider
