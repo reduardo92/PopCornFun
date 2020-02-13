@@ -85,9 +85,13 @@ const PopularSection = ({
       <CardTitle title={title} subtitle={subtitle}>
         <ButtonSimple toLink={toLink} title={btnTitle} />
       </CardTitle>
-      {data.map(
-        (item, i) =>
-          i <= 11 && <CardOne key={item.id} data={item} typeFor={typeFor} />
+      {!data ? (
+        <div>Sorry Something went wrong</div>
+      ) : (
+        data.map(
+          (item, i) =>
+            i <= 11 && <CardOne key={item.id} data={item} typeFor={typeFor} />
+        )
       )}
     </div>
     <div className='btn--container'>
