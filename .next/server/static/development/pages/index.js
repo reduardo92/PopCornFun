@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -946,9 +946,9 @@ const Carousell = ({
 
 /***/ }),
 
-/***/ "./components/ui/sectionCarousel/sectionCarousel.jsx":
+/***/ "./components/ui/sectionCarousel/SectionCarousel.jsx":
 /*!***********************************************************!*\
-  !*** ./components/ui/sectionCarousel/sectionCarousel.jsx ***!
+  !*** ./components/ui/sectionCarousel/SectionCarousel.jsx ***!
   \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -963,7 +963,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CardTitle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardTitle */ "./components/ui/CardTitle.jsx");
 /* harmony import */ var _ButtonSimple__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ButtonSimple */ "./components/ui/ButtonSimple.jsx");
 /* harmony import */ var _carousel_carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../carousel/carousel */ "./components/ui/carousel/carousel.jsx");
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\sectionCarousel\\sectionCarousel.jsx";
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\sectionCarousel\\SectionCarousel.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -972,8 +972,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
-  displayName: "sectionCarousel__Styled",
-  componentId: "x98pav-0"
+  displayName: "SectionCarousel__Styled",
+  componentId: "sc-1rtx4p8-0"
 })(["padding:2em 0 0;"]);
 
 const SectionCarousel = ({
@@ -984,7 +984,7 @@ const SectionCarousel = ({
   btnTitle
 }) => {
   return __jsx(Styled, {
-    className: "section--carousel--media",
+    className: "section--carousel--media max-width",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
@@ -2825,7 +2825,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/contact */ "./components/contact.jsx");
 /* harmony import */ var _components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ui/PopularSection */ "./components/ui/PopularSection.jsx");
 /* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/utility/movieDB */ "./components/utility/movieDB.js");
-/* harmony import */ var _components_ui_sectionCarousel_sectionCarousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ui/sectionCarousel/sectionCarousel */ "./components/ui/sectionCarousel/sectionCarousel.jsx");
+/* harmony import */ var _components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ui/sectionCarousel/SectionCarousel */ "./components/ui/sectionCarousel/SectionCarousel.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2842,18 +2842,16 @@ const IndexPage = ({
   movieAction,
   tvAnima
 }) => {
-  console.log('movie movieAction', movieAction);
-  console.log('tv anima', tvAnima);
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 10
     },
     __self: undefined
   }, __jsx(_components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     },
     __self: undefined
   }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2862,7 +2860,7 @@ const IndexPage = ({
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "in theaters ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 17
       },
       __self: undefined
     }), " now to enjoy"),
@@ -2870,17 +2868,17 @@ const IndexPage = ({
     toLink: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 12
     },
     __self: undefined
-  }), __jsx(_components_ui_sectionCarousel_sectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     data: movieAction,
     typeFor: "movie",
     title: "popular action movies",
     toLink: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 23
     },
     __self: undefined
   }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2889,7 +2887,7 @@ const IndexPage = ({
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Popular TV ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 34
       },
       __self: undefined
     }), "Series Right Now"),
@@ -2897,23 +2895,23 @@ const IndexPage = ({
     toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 29
     },
     __self: undefined
-  }), __jsx(_components_ui_sectionCarousel_sectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     data: tvAnima,
     typeFor: "tv",
     title: "animation to Enjoy",
     toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 41
     },
     __self: undefined
   }), __jsx(_components_contact__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 47
     },
     __self: undefined
   }));
@@ -2944,7 +2942,7 @@ IndexPage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

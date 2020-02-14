@@ -11,7 +11,7 @@ const Styled = styled.section`
 
 const SectionCarousel = ({ data, typeFor, title, toLink, btnTitle }) => {
   return (
-    <Styled className='section--carousel--media'>
+    <Styled className='section--carousel--media max-width'>
       <CardTitle title={title} invert>
         <ButtonSimple toLink={toLink} title={btnTitle} />
       </CardTitle>
