@@ -3,11 +3,9 @@ import VideoHero from '../components/ui/VideoHero';
 import Contact from '../components/contact';
 import PopularSection from '../components/ui/PopularSection';
 import movieDB from '../components/utility/movieDB';
-import SectionCarousel from '../components/ui/sectionCarousel/sectionCarousel';
+import SectionCarousel from '../components/ui/SectionCarousel/SectionCarousel';
 
 const IndexPage = ({ movieNowPlay, tvOnAir, movieAction, tvAnima }) => {
-  console.log('movie movieAction', movieAction);
-  console.log('tv anima', tvAnima);
   return (
     <Layout>
       <VideoHero />
