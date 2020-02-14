@@ -38,11 +38,13 @@ const Styled = styled.figure`
 
   .card--body {
     &__info {
-      color: var(--grey-clr);
+      color: ${({ invert }) =>
+        invert ? 'var(--second-clr)' : 'var(--grey-clr)'};
     }
 
-    &__title {
+    &__title a {
       font-weight: bold;
+      color: ${({ invert }) => invert && 'var(--second-clr)'};
     }
   }
 
@@ -50,8 +52,8 @@ const Styled = styled.figure`
   }
 `;
 
-const CardOne = ({ data, typeFor }) => (
-  <Styled className='card--one'>
+const CardOne = ({ data, typeFor, invert }) => (
+  <Styled className='card--one' invert={invert}>
     <div className='card--poster'>
       <Link href={`/${typeFor}/[id]`} as={`/${typeFor}/${data.id}`}>
         <img

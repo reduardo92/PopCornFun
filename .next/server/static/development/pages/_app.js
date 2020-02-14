@@ -545,7 +545,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _MovieContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MovieContext */ "./components/context/MovieContext.js");
 /* harmony import */ var _useMovieReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useMovieReducer */ "./components/context/useMovieReducer.js");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./types */ "./components/context/types.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\context\\MovieProvider.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -555,7 +554,6 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -586,12 +584,12 @@ const StateProvider = ({
     1: dispatch
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(_useMovieReducer__WEBPACK_IMPORTED_MODULE_2__["default"], movieInitalState);
 
-  const setCarosuel = (tablet = 3, laptop = 4, laptopLg = 5) => {
+  const setCarosuel = (phone = 2, tablet = 4, laptop = 5, laptopLg = 7) => {
     if (windowSize < 768) {
-      return 1;
-    } else if (windowSize <= 768 || windowSize < 1280) {
+      return phone;
+    } else if (windowSize <= 768) {
       return tablet;
-    } else if (windowSize <= 1280 || windowSize < 2000) {
+    } else if (windowSize <= 1024 || windowSize < 2000) {
       return laptop;
     } else if (windowSize >= 2000) {
       return laptopLg;
@@ -601,8 +599,6 @@ const StateProvider = ({
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     setWindowSize(window.innerWidth);
   }, []);
-  log('env', "api_key=69a209b5d508b36379577751e571ebe9");
-  log('type', _types__WEBPACK_IMPORTED_MODULE_3__["API_KEY"]);
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
     value: _objectSpread({
       windowSize,
@@ -613,31 +609,13 @@ const StateProvider = ({
     }, state),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 38
     },
     __self: undefined
   }, children);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (StateProvider);
-
-/***/ }),
-
-/***/ "./components/context/types.js":
-/*!*************************************!*\
-  !*** ./components/context/types.js ***!
-  \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
-const API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
-const BASE_URL = 'https://api.themoviedb.org/3/';
-const IMG_URL = 'https://image.tmdb.org/t/p/w500/';
 
 /***/ }),
 

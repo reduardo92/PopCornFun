@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -306,11 +306,28 @@ const Contact = () => {
 
 /***/ }),
 
+/***/ "./components/context/MovieContext.js":
+/*!********************************************!*\
+  !*** ./components/context/MovieContext.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const MovieContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+/* harmony default export */ __webpack_exports__["default"] = (MovieContext);
+
+/***/ }),
+
 /***/ "./components/context/types.js":
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -318,9 +335,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
+/* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
+
 const API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
 const BASE_URL = 'https://api.themoviedb.org/3/';
-const IMG_URL = 'https://image.tmdb.org/t/p/w500/';
+const IMG_URL = 'https://image.tmdb.org/t/p/w500/'; // Movie DB
+
+function getMovie(id, param) {
+  const movie = {
+    details: `/movie/${id}`,
+    accStates: `/movie/${id}/account_states`,
+    alterTitles: `/movie/${id}/alternative_titles`,
+    changes: `/movie/${id}/changes`,
+    credits: `/movie/${id}/credits`,
+    externalId: `/movie/${id}/external_ids`,
+    images: `/movie/${id}/images`,
+    Keywords: `/movie/${id}/keywords`,
+    ReleaseDate: `/movie/${id}/release_dates`,
+    videos: `/movie/${id}/videos`,
+    translations: `/movie/${id}/translations`,
+    recommend: `/movie/${id}/recommendations`,
+    similar: `/movie/${id}/similar`,
+    reviews: `/movie/${id}/reviews`,
+    list: `/movie/${id}/lists`,
+    rate: `/movie/${id}/rating`,
+    rating: `/movie/${id}/rating`,
+    latest: `/movie/latest`,
+    now_playing: `/movie/now_playing`,
+    popular: `/movie/popular`,
+    top_rated: `/movie/top_rated`,
+    upcoming: `/movie/upcoming`
+  };
+  const tv = {
+    details: `/tv/${id}`
+  };
+  return movie[param];
+}
 
 /***/ }),
 
@@ -379,7 +430,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
   displayName: "ButtonSimple__Styled",
   componentId: "sc-10ce1eo-0"
-})(["display:inline-block;font-family:var(--fn-monterrat);font-weight:var(--fw-bold);font-size:0.9rem;text-align:center;color:", ";text-transform:uppercase;position:relative;transition:var(--ease--in--out--02s);cursor:pointer;svg{font-size:1.5rem;}&:hover,&:focus{transform:scale(0.95);color:var(--primary-clr) !important;}"], props => props.invert ? 'var(--second-clr)' : 'var(--white-clr)');
+})(["font-family:var(--fn-monterrat);font-weight:var(--fw-bold);font-size:0.9rem;text-align:center;color:", ";text-transform:uppercase;position:relative;transition:var(--ease--in--out--02s);cursor:pointer;display:flex;align-items:center;svg{font-size:1.5rem;}&:hover,&:focus{color:var(--primary-clr) !important;svg{margin-left:4px;}}"], props => props.invert ? 'var(--second-clr)' : 'var(--white-clr)');
 
 const ButtonSimple = ({
   toLink,
@@ -390,7 +441,7 @@ const ButtonSimple = ({
   href: toLink,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 31
+    lineNumber: 38
   },
   __self: undefined
 }, __jsx(Styled, {
@@ -399,13 +450,13 @@ const ButtonSimple = ({
   className: "button--simple",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 32
+    lineNumber: 39
   },
   __self: undefined
 }, title, " ", __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_3__["MdChevronRight"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 33
+    lineNumber: 40
   },
   __self: undefined
 })));
@@ -434,35 +485,43 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "CardTitle__Styled",
   componentId: "sc-1sk6yp9-0"
-})(["grid-column:", ";text-align:center;width:100%;position:relative;padding:1em 0;&::before{content:'';position:absolute;top:0;left:0;right:0;width:100px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.6);}.title{text-transform:capitalize;font-weight:bold;}.subtitle{color:var(--grey-clr);}.button--simple{display:block;border-top:1px solid rgba(255,255,255,0.6);padding-top:1em;}@media screen and (min-width:1000px){max-width:300px;margin-right:auto;text-align:left;&::before{margin:0;}.button--simple{text-align:left;}}"], ({
+})(["grid-column:", ";text-align:center;width:100%;position:relative;padding:1em 0;color:", ";&::before{content:'';position:absolute;top:0;left:0;right:0;width:100px;margin:0 auto;border-top:1px solid ", ";}.title{text-transform:capitalize;font-weight:bold;}.subtitle{color:var(--grey-clr);}.button--simple{display:block;border-top:1px solid ", ";padding-top:1em;}@media screen and (min-width:1000px){max-width:300px;margin-right:auto;text-align:left;&::before{margin:0;}.button--simple{text-align:left;}}"], ({
   gridColum
-}) => gridColum);
+}) => gridColum, ({
+  invert
+}) => invert && 'black', ({
+  invert
+}) => invert ? 'black' : ' rgba(255, 255, 255, 0.6)', ({
+  invert
+}) => invert ? 'black' : ' rgba(255, 255, 255, 0.6)');
 
 const CardTitle = ({
   title,
   subtitle,
   children,
-  gridColum
+  gridColum,
+  invert
 }) => __jsx(Styled, {
   className: "card--title",
   gridColum: gridColum,
+  invert: invert,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 52
+    lineNumber: 55
   },
   __self: undefined
 }, __jsx("h2", {
   className: "title",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 53
+    lineNumber: 56
   },
   __self: undefined
 }, title), __jsx("p", {
   className: "subtitle",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 54
+    lineNumber: 57
   },
   __self: undefined
 }, subtitle), children);
@@ -496,23 +555,29 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.figure.withConfig({
   displayName: "CardOne__Styled",
   componentId: "e0m3r6-0"
-})(["width:160px;.card--poster{position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:grid;justify-items:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(64,4,4,0.7);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}}.card--body{&__info{color:var(--grey-clr);}&__title{font-weight:bold;}}@media screen and (min-width:768px){}"]);
+})(["width:160px;.card--poster{position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:grid;justify-items:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(64,4,4,0.7);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}}.card--body{&__info{color:", ";}&__title a{font-weight:bold;color:", ";}}@media screen and (min-width:768px){}"], ({
+  invert
+}) => invert ? 'var(--second-clr)' : 'var(--grey-clr)', ({
+  invert
+}) => invert && 'var(--second-clr)');
 
 const CardOne = ({
   data,
-  typeFor
+  typeFor,
+  invert
 }) => __jsx(Styled, {
   className: "card--one",
+  invert: invert,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 54
+    lineNumber: 56
   },
   __self: undefined
 }, __jsx("div", {
   className: "card--poster",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 55
+    lineNumber: 57
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -520,7 +585,7 @@ const CardOne = ({
   as: `/${typeFor}/${data.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 56
+    lineNumber: 58
   },
   __self: undefined
 }, __jsx("img", {
@@ -529,28 +594,28 @@ const CardOne = ({
   alt: data.title || data.name,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 57
+    lineNumber: 59
   },
   __self: undefined
 }))), __jsx("div", {
   className: "card--body",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 64
+    lineNumber: 66
   },
   __self: undefined
 }, __jsx("div", {
   className: "card--body__info",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 65
+    lineNumber: 67
   },
   __self: undefined
 }, data.release_date || data.first_air_date), __jsx("div", {
   className: "card--body__title",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 68
+    lineNumber: 70
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -558,7 +623,7 @@ const CardOne = ({
   as: `/${typeFor}/${data.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 69
+    lineNumber: 71
   },
   __self: undefined
 }, data.title || data.name))));
@@ -640,20 +705,20 @@ const PopularSection = ({
     lineNumber: 89
   },
   __self: undefined
-}, "Sorry Something went wrong") : data.map((item, i) => i <= 11 && __jsx(_Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}, "Sorry Something went wrong") : data.map((item, i) => __jsx(_Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__["default"], {
   key: item.id,
   data: item,
   typeFor: typeFor,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 93
+    lineNumber: 92
   },
   __self: undefined
 }))), __jsx("div", {
   className: "btn--container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 97
+    lineNumber: 96
   },
   __self: undefined
 }, __jsx(_button__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -661,7 +726,7 @@ const PopularSection = ({
   title: "view more",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 98
+    lineNumber: 97
   },
   __self: undefined
 })));
@@ -829,6 +894,141 @@ const Button = ({
 
 /***/ }),
 
+/***/ "./components/ui/carousel/carousel.jsx":
+/*!*********************************************!*\
+  !*** ./components/ui/carousel/carousel.jsx ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @brainhubeu/react-carousel */ "@brainhubeu/react-carousel");
+/* harmony import */ var _brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/MovieContext */ "./components/context/MovieContext.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\carousel\\carousel.jsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default()(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1___default.a).withConfig({
+  displayName: "carousel__Styled",
+  componentId: "zxhpn4-0"
+})(["width:100%;height:fit-content;padding:1em 1em 0;overflow:hidden;ul{display:flex;li{height:fit-content;min-height:100%;}}@media screen and (min-width:760px){ul li{width:160px !important;min-width:160px !important;margin:0 5px;}}"]);
+
+const Carousell = ({
+  children
+}) => {
+  const {
+    setCarosuel
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  return __jsx(Styled, {
+    className: "carousel",
+    slidesPerPage: setCarosuel(),
+    infinite: true,
+    autoPlay: 6000,
+    animationSpeed: 3000,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }, children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Carousell);
+
+/***/ }),
+
+/***/ "./components/ui/sectionCarousel/sectionCarousel.jsx":
+/*!***********************************************************!*\
+  !*** ./components/ui/sectionCarousel/sectionCarousel.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Cards/CardOne */ "./components/ui/Cards/CardOne.jsx");
+/* harmony import */ var _CardTitle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardTitle */ "./components/ui/CardTitle.jsx");
+/* harmony import */ var _ButtonSimple__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ButtonSimple */ "./components/ui/ButtonSimple.jsx");
+/* harmony import */ var _carousel_carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../carousel/carousel */ "./components/ui/carousel/carousel.jsx");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\sectionCarousel\\sectionCarousel.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
+  displayName: "sectionCarousel__Styled",
+  componentId: "x98pav-0"
+})(["padding:2em 0 0;"]);
+
+const SectionCarousel = ({
+  data,
+  typeFor,
+  title,
+  toLink,
+  btnTitle
+}) => {
+  return __jsx(Styled, {
+    className: "section--carousel--media",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx(_CardTitle__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: title,
+    invert: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx(_ButtonSimple__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    toLink: toLink,
+    title: btnTitle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  })), __jsx(_carousel_carousel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, data.map(item => __jsx(_Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    key: item.id,
+    data: item,
+    typeFor: typeFor,
+    invert: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SectionCarousel);
+
+/***/ }),
+
 /***/ "./components/ui/tabs.js":
 /*!*******************************!*\
   !*** ./components/ui/tabs.js ***!
@@ -902,6 +1102,39 @@ const TitleBanner = ({
 }, subtitle));
 
 /* harmony default export */ __webpack_exports__["default"] = (TitleBanner);
+
+/***/ }),
+
+/***/ "./components/utility/movieDB.js":
+/*!***************************************!*\
+  !*** ./components/utility/movieDB.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/types */ "./components/context/types.js");
+
+
+
+const movieDB = async (url, query = '', method = 'get') => {
+  try {
+    const {
+      data
+    } = await axios__WEBPACK_IMPORTED_MODULE_0___default.a[method](`${_context_types__WEBPACK_IMPORTED_MODULE_1__["BASE_URL"]}${url}?${_context_types__WEBPACK_IMPORTED_MODULE_1__["API_KEY"]}&language=en-US${query == '' ? '' : `&${query}`}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+    return {
+      error: 'sorry something went wrong'
+    };
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (movieDB);
 
 /***/ }),
 
@@ -2588,12 +2821,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/context/types */ "./components/context/types.js");
-/* harmony import */ var _components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ui/VideoHero */ "./components/ui/VideoHero.jsx");
-/* harmony import */ var _components_contact__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/contact */ "./components/contact.jsx");
-/* harmony import */ var _components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ui/PopularSection */ "./components/ui/PopularSection.jsx");
+/* harmony import */ var _components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ui/VideoHero */ "./components/ui/VideoHero.jsx");
+/* harmony import */ var _components_contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/contact */ "./components/contact.jsx");
+/* harmony import */ var _components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ui/PopularSection */ "./components/ui/PopularSection.jsx");
+/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/utility/movieDB */ "./components/utility/movieDB.js");
+/* harmony import */ var _components_ui_sectionCarousel_sectionCarousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ui/sectionCarousel/sectionCarousel */ "./components/ui/sectionCarousel/sectionCarousel.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2606,27 +2838,31 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const IndexPage = ({
   movieNowPlay,
-  tvOnAir
+  tvOnAir,
+  movieAction,
+  tvAnima
 }) => {
+  console.log('movie movieAction', movieAction);
+  console.log('tv anima', tvAnima);
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: undefined
-  }, __jsx(_components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 13
     },
     __self: undefined
-  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: movieNowPlay,
     typeFor: "movie",
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "in theaters ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 19
       },
       __self: undefined
     }), " now to enjoy"),
@@ -2634,16 +2870,26 @@ const IndexPage = ({
     toLink: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 14
     },
     __self: undefined
-  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx(_components_ui_sectionCarousel_sectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    data: movieAction,
+    typeFor: "movie",
+    title: "popular action movies",
+    toLink: "/movie",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: tvOnAir,
     typeFor: "tv",
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Popular TV ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 36
       },
       __self: undefined
     }), "Series Right Now"),
@@ -2651,13 +2897,23 @@ const IndexPage = ({
     toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 31
     },
     __self: undefined
-  }), __jsx(_components_contact__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), __jsx(_components_ui_sectionCarousel_sectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    data: tvAnima,
+    typeFor: "tv",
+    title: "animation to Enjoy",
+    toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 43
+    },
+    __self: undefined
+  }), __jsx(_components_contact__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
     },
     __self: undefined
   }));
@@ -2665,11 +2921,15 @@ const IndexPage = ({
 
 IndexPage.getInitialProps = async () => {
   try {
-    const tv = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_3__["BASE_URL"]}tv/on_the_air?${_components_context_types__WEBPACK_IMPORTED_MODULE_3__["API_KEY"]}`);
-    const movie = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_3__["BASE_URL"]}movie/now_playing?${_components_context_types__WEBPACK_IMPORTED_MODULE_3__["API_KEY"]}`);
+    const tv = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('tv/on_the_air');
+    const movie = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('movie/now_playing');
+    const movieAction = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('discover/movie', 'with_genres=28&sort_by=vote_count.desc');
+    const tvAnima = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('discover/tv', 'with_genres=16');
     return {
-      movieNowPlay: movie.data.results,
-      tvOnAir: tv.data.results
+      movieNowPlay: movie.results.slice(0, 12),
+      tvOnAir: tv.results.slice(0, 12),
+      movieAction: movieAction.results.slice(0, 10),
+      tvAnima: tvAnima.results.slice(0, 10)
     };
   } catch (error) {
     console.log(error);
@@ -2684,7 +2944,7 @@ IndexPage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2693,6 +2953,17 @@ IndexPage.getInitialProps = async () => {
 
 module.exports = __webpack_require__(/*! C:\Users\Eduardo Rivas\Desktop\react_Study\popcornFun\pages\index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "@brainhubeu/react-carousel":
+/*!*********************************************!*\
+  !*** external "@brainhubeu/react-carousel" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@brainhubeu/react-carousel");
 
 /***/ }),
 

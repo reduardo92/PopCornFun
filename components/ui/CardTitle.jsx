@@ -7,6 +7,7 @@ const Styled = styled.div`
   width: 100%;
   position: relative;
   padding: 1em 0;
+  color: ${({ invert }) => invert && 'black'};
 
   &::before {
     content: '';
@@ -16,7 +17,8 @@ const Styled = styled.div`
     right: 0;
     width: 100px;
     margin: 0 auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-top: 1px solid
+      ${({ invert }) => (invert ? 'black' : ' rgba(255, 255, 255, 0.6)')};
   }
 
   .title {
@@ -29,7 +31,8 @@ const Styled = styled.div`
 
   .button--simple {
     display: block;
-    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-top: 1px solid
+      ${({ invert }) => (invert ? 'black' : ' rgba(255, 255, 255, 0.6)')};
     padding-top: 1em;
   }
 
@@ -48,8 +51,8 @@ const Styled = styled.div`
   }
 `;
 
-const CardTitle = ({ title, subtitle, children, gridColum }) => (
-  <Styled className='card--title' gridColum={gridColum}>
+const CardTitle = ({ title, subtitle, children, gridColum, invert }) => (
+  <Styled className='card--title' gridColum={gridColum} invert={invert}>
     <h2 className='title'>{title}</h2>
     <p className='subtitle'>{subtitle}</p>
     {children}

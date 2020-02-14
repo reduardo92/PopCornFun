@@ -1,11 +1,13 @@
 import Layout from '../components/layout';
-import axios from 'axios';
-import { BASE_URL, API_KEY } from '../components/context/types';
 import VideoHero from '../components/ui/VideoHero';
 import Contact from '../components/contact';
 import PopularSection from '../components/ui/PopularSection';
+import movieDB from '../components/utility/movieDB';
+import SectionCarousel from '../components/ui/sectionCarousel/sectionCarousel';
 
-const IndexPage = ({ movieNowPlay, tvOnAir }) => {
+const IndexPage = ({ movieNowPlay, tvOnAir, movieAction, tvAnima }) => {
+  console.log('movie movieAction', movieAction);
+  console.log('tv anima', tvAnima);
   return (
     <Layout>
       <VideoHero />
@@ -20,6 +22,12 @@ const IndexPage = ({ movieNowPlay, tvOnAir }) => {
         subtitle='Most watched movies'
         toLink='/movie'
       />
+      <SectionCarousel
+        data={movieAction}
+        typeFor='movie'
+        title='popular action movies'
+        toLink='/movie'
+      />
       <PopularSection
         data={tvOnAir}
         typeFor='tv'
@@ -32,6 +40,12 @@ const IndexPage = ({ movieNowPlay, tvOnAir }) => {
         subtitle='Most watched tv'
         toLink='/tv'
       />
+      <SectionCarousel
+        data={tvAnima}
+        typeFor='tv'
+        title='animation to Enjoy'
+        toLink='/tv'
+      />
       <Contact />
     </Layout>
   );
@@ -39,11 +53,19 @@ const IndexPage = ({ movieNowPlay, tvOnAir }) => {
 
 IndexPage.getInitialProps = async () => {
   try {
-    const tv = await axios.get(`${BASE_URL}tv/on_the_air?${API_KEY}`);
-    const movie = await axios.get(`${BASE_URL}movie/now_playing?${API_KEY}`);
+    const tv = await movieDB('tv/on_the_air');
+    const movie = await movieDB('movie/now_playing');
+    const movieAction = await movieDB(
+      'discover/movie',
+      'with_genres=28&sort_by=vote_count.desc'
+    );
+    const tvAnima = await movieDB('discover/tv', 'with_genres=16');
+
     return {
-      movieNowPlay: movie.data.results,
-      tvOnAir: tv.data.results
+      movieNowPlay: movie.results.slice(0, 12),
+      tvOnAir: tv.results.slice(0, 12),
+      movieAction: movieAction.results.slice(0, 10),
+      tvAnima: tvAnima.results.slice(0, 10)
     };
   } catch (error) {
     console.log(error);

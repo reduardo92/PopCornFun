@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useReducer } from 'react';
 import MovieContext from './MovieContext';
 import useMovieReducer from './useMovieReducer';
-import { API_KEY } from './types';
 
 const log = console.log;
 
@@ -19,12 +18,12 @@ const StateProvider = ({ children }) => {
   const navRef = useRef();
   const [state, dispatch] = useReducer(useMovieReducer, movieInitalState);
 
-  const setCarosuel = (tablet = 3, laptop = 4, laptopLg = 5) => {
+  const setCarosuel = (phone = 2, tablet = 4, laptop = 5, laptopLg = 7) => {
     if (windowSize < 768) {
-      return 1;
-    } else if (windowSize <= 768 || windowSize < 1280) {
+      return phone;
+    } else if (windowSize <= 768) {
       return tablet;
-    } else if (windowSize <= 1280 || windowSize < 2000) {
+    } else if (windowSize <= 1024 || windowSize < 2000) {
       return laptop;
     } else if (windowSize >= 2000) {
       return laptopLg;
@@ -34,9 +33,6 @@ const StateProvider = ({ children }) => {
   useEffect(() => {
     setWindowSize(window.innerWidth);
   }, []);
-
-  log('env', process.env.API_KEY);
-  log('type', API_KEY);
 
   return (
     <MovieContext.Provider
