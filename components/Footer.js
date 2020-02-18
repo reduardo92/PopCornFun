@@ -91,16 +91,11 @@ const Footer = () => (
           <img src='/popcorn_logo.png' alt='popcorn logo' />
           PopCorn Fun
         </a>
-        <p className='info'>203 Fake St, chicago, Ill</p>
-        <p className='info'>(33) 333-3333</p>
-      </div>
-      <div className='hours'>
-        <p>Open 24/7</p>
       </div>
       <Socials />
     </div>
     <div className='copyRight'>
-      <p>© Fit On 2020</p>
+      <p>© PopCorn Fun 2020</p>
     </div>
   </Styled>
 );

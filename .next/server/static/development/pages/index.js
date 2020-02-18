@@ -657,7 +657,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(react_circular_progressbar__WEBPACK_IMPORTED_MODULE_2__["CircularProgressbar"]).withConfig({
   displayName: "CirclePercentage__Styled",
   componentId: "sc-1ov29ur-0"
-})(["width:55px;.CircularProgressbar-path{stroke:", ";stroke:", ";}.CircularProgressbar-trail{stroke:var(--white-clr);}.CircularProgressbar-text{fill:var(--white-clr);font-weight:bold;font-size:1.6rem;}.CircularProgressbar-background{fill:#383838;}"], ({
+})(["width:55px;.CircularProgressbar-path{stroke:", ";stroke:", ";}.CircularProgressbar-trail{stroke:var(--white-clr);}.CircularProgressbar-text{fill:var(--white-clr);font-weight:bold;font-size:1.6rem;}.CircularProgressbar-background{fill:#383838;}@media screen and (min-width:1200px){width:60px;}"], ({
   value
 }) => value >= 60 ? '#09b560' : value < 60 || value > 40 ? '#D2D531' : '', ({
   value
@@ -673,7 +673,7 @@ const CirclePercentage = ({
   background: true,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 25
+    lineNumber: 29
   },
   __self: undefined
 });
@@ -698,8 +698,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../button */ "./components/ui/button.js");
 /* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/types */ "./components/context/types.js");
 /* harmony import */ var _CirclePercentage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../CirclePercentage */ "./components/ui/CirclePercentage.jsx");
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Modal */ "react-bootstrap/Modal");
 /* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\FeturedSection\\FeturedSection.jsx";
@@ -714,7 +714,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "FeturedSection__Styled",
   componentId: "sc-1un1zrn-0"
-})(["position:relative;min-height:85vh;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url(", ") no-repeat center;background-size:cover;object-fit:cover;width:100%;display:flex;align-items:center;justify-content:center;.max-width{padding:0 1em;display:grid;}.fetured--content{width:100%;max-width:480px;display:grid;grid-gap:1em;text-align:left;justify-items:left;}.heading{display:flex;width:100%;align-items:flex-end;}.title{margin-bottom:0;margin-right:0.5em;}@media screen and (min-width:768px){min-height:50vh;}"], ({
+})(["position:relative;min-height:85vh;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url(", ") no-repeat center;background-size:cover;object-fit:cover;width:100%;display:flex;align-items:center;justify-content:center;.max-width{padding:0 1em;display:grid;}.fetured--content{width:100%;max-width:480px;display:grid;grid-gap:1em;text-align:left;justify-items:left;}.button{border-radius:5px;}.fetured--action{margin-top:1em;display:flex;justify-content:flex-start;align-items:center;button{background:transparent;border:none;color:var(--white-clr);font-weight:bold;transition:var(--ease--in--out--02s);}svg{margin-left:5px;font-size:2rem;color:var(--primary-clr);transition:var(--ease--in--out--02s);}&:hover button,&:focus button{opacity:0.8;}&:hover svg,&:focus svg{opacity:0.8;margin-left:15px;}}.heading{display:flex;width:100%;align-items:center;}.title{margin-bottom:0;margin-right:0.5em;}@media screen and (min-width:768px){min-height:50vh;.max-width{grid-template-columns:1fr 1fr;justify-items:center;align-items:center;width:100%;}.title{font-size:2.5rem;}.fetured--action{flex-direction:column;svg{font-size:8rem;order:-1;margin:0;}&:hover svg,&:focus svg{margin-left:0;margin-bottom:10px;transform:scale(0.98);}}}@media screen and (min-width:1200px){min-height:80vh;.fetured--action{button{font-size:1.1rem;}svg{font-size:10rem;}}}"], ({
   bgImg
 }) => `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL_OR"]}${bgImg}`);
 
@@ -731,56 +731,56 @@ const FeturedSection = ({
     bgImg: data.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 130
     },
     __self: undefined
   }, __jsx("div", {
     className: "max-width",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 131
     },
     __self: undefined
   }, __jsx("div", {
     className: "fetured--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 132
     },
     __self: undefined
   }, __jsx("div", {
     className: "heading",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 133
     },
     __self: undefined
   }, __jsx("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 134
     },
     __self: undefined
   }, data.title || data.name), __jsx(_CirclePercentage__WEBPACK_IMPORTED_MODULE_4__["default"], {
     value: data.vote_average * 10,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 135
     },
     __self: undefined
   })), __jsx("p", {
     className: "subtitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 137
     },
     __self: undefined
   }, data.overview), __jsx("div", {
     className: "btn--group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 138
     },
     __self: undefined
   }, __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -789,14 +789,14 @@ const FeturedSection = ({
     bgclr: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 139
     },
     __self: undefined
   }))), __jsx("div", {
     className: "fetured--action",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 142
     },
     __self: undefined
   }, __jsx("button", {
@@ -805,13 +805,13 @@ const FeturedSection = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 143
     },
     __self: undefined
-  }, "play Trailer"), __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__["FaPlayCircle"], {
+  }, "play Trailer"), __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdPlayCircleOutline"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 150
     },
     __self: undefined
   }))), __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -821,14 +821,14 @@ const FeturedSection = ({
     onHide: () => setToggle(false),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 154
     },
     __self: undefined
   }, __jsx("div", {
     className: "embed-responsive embed-responsive-16by9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 155
     },
     __self: undefined
   }, __jsx("iframe", {
@@ -837,7 +837,7 @@ const FeturedSection = ({
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 156
     },
     __self: undefined
   }))));
@@ -3086,13 +3086,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ui/PopularSection */ "./components/ui/PopularSection.jsx");
 /* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/utility/movieDB */ "./components/utility/movieDB.js");
 /* harmony import */ var _components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ui/sectionCarousel/SectionCarousel */ "./components/ui/sectionCarousel/SectionCarousel.jsx");
-/* harmony import */ var _components_utility_randomNum__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/utility/randomNum */ "./components/utility/randomNum.js");
-/* harmony import */ var _components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/ui/FeturedSection/FeturedSection */ "./components/ui/FeturedSection/FeturedSection.jsx");
-/* harmony import */ var _components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/utility/getFeturedMedia */ "./components/utility/getFeturedMedia.js");
+/* harmony import */ var _components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ui/FeturedSection/FeturedSection */ "./components/ui/FeturedSection/FeturedSection.jsx");
+/* harmony import */ var _components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/utility/getFeturedMedia */ "./components/utility/getFeturedMedia.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -3110,17 +3108,16 @@ const IndexPage = ({
   feturedMovie,
   feturedTv
 }) => {
-  console.log(feturedMovie, feturedTv);
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx(_components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 20
     },
     __self: undefined
   }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -3129,7 +3126,7 @@ const IndexPage = ({
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "in theaters ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 26
       },
       __self: undefined
     }), " now to enjoy"),
@@ -3137,7 +3134,7 @@ const IndexPage = ({
     toLink: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 21
     },
     __self: undefined
   }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -3147,15 +3144,15 @@ const IndexPage = ({
     toLink: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 32
     },
     __self: undefined
-  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
     data: feturedMovie,
     typeFor: "movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 38
     },
     __self: undefined
   }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -3164,7 +3161,7 @@ const IndexPage = ({
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Popular TV ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 44
       },
       __self: undefined
     }), "Series Right Now"),
@@ -3172,7 +3169,7 @@ const IndexPage = ({
     toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 39
     },
     __self: undefined
   }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -3182,21 +3179,21 @@ const IndexPage = ({
     toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 51
     },
     __self: undefined
-  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
     data: feturedTv,
     typeFor: "tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 57
     },
     __self: undefined
   }), __jsx(_components_contact__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 58
     },
     __self: undefined
   }));
@@ -3208,8 +3205,8 @@ IndexPage.getInitialProps = async () => {
     const movie = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('movie/now_playing');
     const movieAction = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('discover/movie', 'with_genres=28&sort_by=vote_count.desc');
     const tvAnima = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('discover/tv', 'with_genres=16');
-    const feturedMovie = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_9__["default"])('movie');
-    const feturedTv = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_9__["default"])('tv');
+    const feturedMovie = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_8__["default"])('movie');
+    const feturedTv = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_8__["default"])('tv');
     return {
       movieNowPlay: movie.results.slice(0, 12),
       tvOnAir: tv.results.slice(0, 12),
@@ -3372,17 +3369,6 @@ module.exports = require("react-bootstrap/Modal");
 /***/ (function(module, exports) {
 
 module.exports = require("react-circular-progressbar");
-
-/***/ }),
-
-/***/ "react-icons/fa":
-/*!*********************************!*\
-  !*** external "react-icons/fa" ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-icons/fa");
 
 /***/ }),
 

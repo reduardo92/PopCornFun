@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Button from '../button';
 import { IMG_URL_OR } from '../../context/types';
 import CirclePercentage from '../CirclePercentage';
-import { FaPlayCircle } from 'react-icons/fa';
+import { MdPlayCircleOutline } from 'react-icons/md';
 import Modal from 'react-bootstrap/Modal';
 
 const Styled = styled.section`
@@ -32,10 +32,47 @@ const Styled = styled.section`
     justify-items: left;
   }
 
+  .button {
+    border-radius: 5px;
+  }
+
+  .fetured--action {
+    margin-top: 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    button {
+      background: transparent;
+      border: none;
+      color: var(--white-clr);
+      font-weight: bold;
+      transition: var(--ease--in--out--02s);
+    }
+
+    svg {
+      margin-left: 5px;
+      font-size: 2rem;
+      color: var(--primary-clr);
+      transition: var(--ease--in--out--02s);
+    }
+
+    &:hover button,
+    &:focus button {
+      opacity: 0.8;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      opacity: 0.8;
+      margin-left: 15px;
+    }
+  }
+
   .heading {
     display: flex;
     width: 100%;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .title {
@@ -45,6 +82,45 @@ const Styled = styled.section`
 
   @media screen and (min-width: 768px) {
     min-height: 50vh;
+
+    .max-width {
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .fetured--action {
+      flex-direction: column;
+      svg {
+        font-size: 8rem;
+        order: -1;
+        margin: 0;
+      }
+
+      &:hover svg,
+      &:focus svg {
+        margin-left: 0;
+        margin-bottom: 10px;
+        transform: scale(0.98);
+      }
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    min-height: 80vh;
+
+    .fetured--action {
+      button {
+        font-size: 1.1rem;
+      }
+      svg {
+        font-size: 10rem;
+      }
+    }
   }
 `;
 
@@ -71,7 +147,7 @@ const FeturedSection = ({ data, typeFor }) => {
           >
             play Trailer
           </button>
-          <FaPlayCircle />
+          <MdPlayCircleOutline />
         </div>
       </div>
 

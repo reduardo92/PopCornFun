@@ -19,6 +19,10 @@ const Styled = styled(CircularProgressbar)`
   .CircularProgressbar-background {
     fill: #383838;
   }
+
+  @media screen and (min-width: 1200px) {
+    width: 60px;
+  }
 `;
 
 const CirclePercentage = ({ value }) => (

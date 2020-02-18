@@ -115,7 +115,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.footer.withConfig({
   displayName: "Footer__Styled",
   componentId: "sc-15mmmq6-0"
-})(["margin-top:auto;display:grid;position:relative;text-align:center;background-image:url('/ticketBg.jpg');background-size:cover;background-repeat:no-repeat;object-fit:cover;background-position:center;z-index:1;&::before{content:'';position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,0.75);z-index:-1;}p{color:var(--white-clr);}.content{display:grid;grid-gap:1em;gap:1em;padding:2em 0;max-width:1400px;margin:0 auto;}.addresse{display:grid;grid-gap:0.5em;gap:0.5em;justify-content:center;}.logo{width:150px;margin:0 auto 1em;}.hours{display:grid;grid-gap:0.3em;gap:0.3em;justify-content:center;align-items:center;}.social{margin:0 auto;}.copyRight{padding:1em 0;align-self:end;}@media screen and (min-width:1024px){.content{grid-template-columns:repeat(3,1fr);padding:3em 0;}.social{order:-1;width:250px;.social--link{font-size:1.7rem;}}}"]);
+})(["margin-top:auto;display:grid;position:relative;text-align:center;background-image:url('/ticketBg.jpg');background-size:cover;background-repeat:no-repeat;object-fit:cover;background-position:center;z-index:1;&::before{content:'';position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,0.75);z-index:-1;}p{color:var(--white-clr);}.content{display:grid;grid-gap:1em;gap:1em;padding:2em 0;max-width:1400px;margin:0 auto;}.addresse{display:grid;grid-gap:0.5em;gap:0.5em;justify-content:center;}.logo{width:80px;margin:0 auto 1em;}.hours{display:grid;grid-gap:0.3em;gap:0.3em;justify-content:center;align-items:center;}.social{margin:0 auto;}.copyRight{padding:1em 0;align-self:end;}@media screen and (min-width:1024px){.content{grid-template-columns:repeat(3,1fr);padding:3em 0;}.social{order:-1;width:250px;.social--link{font-size:1.7rem;}}}"]);
 
 const Footer = () => __jsx(Styled, {
   __source: {
@@ -152,22 +152,14 @@ const Footer = () => __jsx(Styled, {
     lineNumber: 91
   },
   __self: undefined
-}), "PopCorn Fun"), __jsx("p", {
-  className: "info",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 94
-  },
-  __self: undefined
-}, "203 Fake St, chicago, Ill"), __jsx("p", {
-  className: "info",
+}), "PopCorn Fun")), __jsx(_ui_socials__WEBPACK_IMPORTED_MODULE_2__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 95
   },
   __self: undefined
-}, "(33) 333-3333")), __jsx("div", {
-  className: "hours",
+})), __jsx("div", {
+  className: "copyRight",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 97
@@ -179,26 +171,7 @@ const Footer = () => __jsx(Styled, {
     lineNumber: 98
   },
   __self: undefined
-}, "Open 24/7")), __jsx(_ui_socials__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 100
-  },
-  __self: undefined
-})), __jsx("div", {
-  className: "copyRight",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 102
-  },
-  __self: undefined
-}, __jsx("p", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 103
-  },
-  __self: undefined
-}, "\xA9 Fit On 2020")));
+}, "\xA9 PopCorn Fun 2020")));
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
 
