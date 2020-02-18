@@ -8,6 +8,7 @@ const Styled = styled(Carousel)`
   height: fit-content;
   padding: 1em 1em 0;
   overflow: hidden;
+  max-width: 1160px;
 
   ul {
     display: flex;
@@ -25,6 +26,10 @@ const Styled = styled(Carousel)`
       margin: 0 5px;
     }
   }
+
+  @media screen and (min-width: 1000px) {
+    margin-left: auto;
+  }
 `;
 
 const Carousell = ({ children }) => {
@@ -32,7 +37,7 @@ const Carousell = ({ children }) => {
 
   return (
     <Styled
-      className='carousel'
+      className='carousel '
       slidesPerPage={setCarosuel()}
       infinite
       autoPlay={6000}

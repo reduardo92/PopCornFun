@@ -5,6 +5,8 @@ const Styled = styled.div`
   grid-column: ${({ gridColum }) => gridColum};
   text-align: center;
   width: 100%;
+  max-width: 350px;
+  margin: auto;
   position: relative;
   padding: 1em 0;
   color: ${({ invert }) => invert && 'black'};
@@ -37,7 +39,6 @@ const Styled = styled.div`
   }
 
   @media screen and (min-width: 1000px) {
-    max-width: 300px;
     margin-right: auto;
     text-align: left;
 

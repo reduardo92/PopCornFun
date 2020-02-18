@@ -4,8 +4,17 @@ import Contact from '../components/contact';
 import PopularSection from '../components/ui/PopularSection';
 import movieDB from '../components/utility/movieDB';
 import SectionCarousel from '../components/ui/sectionCarousel/SectionCarousel';
+import FeturedSection from '../components/ui/FeturedSection/FeturedSection';
+import getFeturedMedia from '../components/utility/getFeturedMedia';
 
-const IndexPage = ({ movieNowPlay, tvOnAir, movieAction, tvAnima }) => {
+const IndexPage = ({
+  movieNowPlay,
+  tvOnAir,
+  movieAction,
+  tvAnima,
+  feturedMovie,
+  feturedTv
+}) => {
   return (
     <Layout>
       <VideoHero />
@@ -26,6 +35,7 @@ const IndexPage = ({ movieNowPlay, tvOnAir, movieAction, tvAnima }) => {
         title='popular action movies'
         toLink='/movie'
       />
+      <FeturedSection data={feturedMovie} typeFor='movie' />
       <PopularSection
         data={tvOnAir}
         typeFor='tv'
@@ -44,6 +54,7 @@ const IndexPage = ({ movieNowPlay, tvOnAir, movieAction, tvAnima }) => {
         title='animation to Enjoy'
         toLink='/tv'
       />
+      <FeturedSection data={feturedTv} typeFor='tv' />
       <Contact />
     </Layout>
   );
@@ -58,12 +69,16 @@ IndexPage.getInitialProps = async () => {
       'with_genres=28&sort_by=vote_count.desc'
     );
     const tvAnima = await movieDB('discover/tv', 'with_genres=16');
+    const feturedMovie = await getFeturedMedia('movie');
+    const feturedTv = await getFeturedMedia('tv');
 
     return {
       movieNowPlay: movie.results.slice(0, 12),
       tvOnAir: tv.results.slice(0, 12),
       movieAction: movieAction.results.slice(0, 10),
-      tvAnima: tvAnima.results.slice(0, 10)
+      tvAnima: tvAnima.results.slice(0, 10),
+      feturedMovie,
+      feturedTv
     };
   } catch (error) {
     console.log(error);

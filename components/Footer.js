@@ -45,7 +45,7 @@ const Styled = styled.footer`
   }
 
   .logo {
-    width: 150px;
+    width: 80px;
     margin: 0 auto 1em;
   }
 

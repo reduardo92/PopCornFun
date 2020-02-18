@@ -327,7 +327,7 @@ const MovieContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, getMovie */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -335,12 +335,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL_OR", function() { return IMG_URL_OR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
 const API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
 const BASE_URL = 'https://api.themoviedb.org/3/';
-const IMG_URL = 'https://image.tmdb.org/t/p/w500/'; // Movie DB
+const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const IMG_URL_OR = 'https://image.tmdb.org/t/p/original'; // Movie DB
 
 function getMovie(id, param) {
   const movie = {
@@ -485,7 +487,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "CardTitle__Styled",
   componentId: "sc-1sk6yp9-0"
-})(["grid-column:", ";text-align:center;width:100%;position:relative;padding:1em 0;color:", ";&::before{content:'';position:absolute;top:0;left:0;right:0;width:100px;margin:0 auto;border-top:1px solid ", ";}.title{text-transform:capitalize;font-weight:bold;}.subtitle{color:var(--grey-clr);}.button--simple{display:block;border-top:1px solid ", ";padding-top:1em;}@media screen and (min-width:1000px){max-width:300px;margin-right:auto;text-align:left;&::before{margin:0;}.button--simple{text-align:left;}}"], ({
+})(["grid-column:", ";text-align:center;width:100%;max-width:350px;margin:auto;position:relative;padding:1em 0;color:", ";&::before{content:'';position:absolute;top:0;left:0;right:0;width:100px;margin:0 auto;border-top:1px solid ", ";}.title{text-transform:capitalize;font-weight:bold;}.subtitle{color:var(--grey-clr);}.button--simple{display:block;border-top:1px solid ", ";padding-top:1em;}@media screen and (min-width:1000px){margin-right:auto;text-align:left;&::before{margin:0;}.button--simple{text-align:left;}}"], ({
   gridColum
 }) => gridColum, ({
   invert
@@ -507,21 +509,21 @@ const CardTitle = ({
   invert: invert,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 55
+    lineNumber: 56
   },
   __self: undefined
 }, __jsx("h2", {
   className: "title",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 56
+    lineNumber: 57
   },
   __self: undefined
 }, title), __jsx("p", {
   className: "subtitle",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 57
+    lineNumber: 58
   },
   __self: undefined
 }, subtitle), children);
@@ -629,6 +631,219 @@ const CardOne = ({
 }, data.title || data.name))));
 
 /* harmony default export */ __webpack_exports__["default"] = (CardOne);
+
+/***/ }),
+
+/***/ "./components/ui/CirclePercentage.jsx":
+/*!********************************************!*\
+  !*** ./components/ui/CirclePercentage.jsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_circular_progressbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-circular-progressbar */ "react-circular-progressbar");
+/* harmony import */ var react_circular_progressbar__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_circular_progressbar__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\CirclePercentage.jsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(react_circular_progressbar__WEBPACK_IMPORTED_MODULE_2__["CircularProgressbar"]).withConfig({
+  displayName: "CirclePercentage__Styled",
+  componentId: "sc-1ov29ur-0"
+})(["width:55px;.CircularProgressbar-path{stroke:", ";stroke:", ";}.CircularProgressbar-trail{stroke:var(--white-clr);}.CircularProgressbar-text{fill:var(--white-clr);font-weight:bold;font-size:1.6rem;}.CircularProgressbar-background{fill:#383838;}"], ({
+  value
+}) => value >= 60 ? '#09b560' : value < 60 || value > 40 ? '#D2D531' : '', ({
+  value
+}) => value < 40 && 'red');
+
+const CirclePercentage = ({
+  value
+}) => __jsx(Styled, {
+  value: value,
+  text: `${value}%`,
+  minValue: 1,
+  maxValue: 100,
+  background: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 25
+  },
+  __self: undefined
+});
+
+/* harmony default export */ __webpack_exports__["default"] = (CirclePercentage);
+
+/***/ }),
+
+/***/ "./components/ui/FeturedSection/FeturedSection.jsx":
+/*!*********************************************************!*\
+  !*** ./components/ui/FeturedSection/FeturedSection.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../button */ "./components/ui/button.js");
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/types */ "./components/context/types.js");
+/* harmony import */ var _CirclePercentage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../CirclePercentage */ "./components/ui/CirclePercentage.jsx");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Modal */ "react-bootstrap/Modal");
+/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\FeturedSection\\FeturedSection.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
+  displayName: "FeturedSection__Styled",
+  componentId: "sc-1un1zrn-0"
+})(["position:relative;min-height:85vh;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url(", ") no-repeat center;background-size:cover;object-fit:cover;width:100%;display:flex;align-items:center;justify-content:center;.max-width{padding:0 1em;display:grid;}.fetured--content{width:100%;max-width:480px;display:grid;grid-gap:1em;text-align:left;justify-items:left;}.heading{display:flex;width:100%;align-items:flex-end;}.title{margin-bottom:0;margin-right:0.5em;}@media screen and (min-width:768px){min-height:50vh;}"], ({
+  bgImg
+}) => `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL_OR"]}${bgImg}`);
+
+const FeturedSection = ({
+  data,
+  typeFor
+}) => {
+  const {
+    0: toggle,
+    1: setToggle
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  return __jsx(Styled, {
+    className: "fetured",
+    bgImg: data.backdrop_path,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "max-width",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "fetured--content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "heading",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    className: "title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
+  }, data.title || data.name), __jsx(_CirclePercentage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    value: data.vote_average * 10,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  })), __jsx("p", {
+    className: "subtitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: undefined
+  }, data.overview), __jsx("div", {
+    className: "btn--group",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: undefined
+  }, __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    toLink: `/${typeFor}/${data.id}`,
+    title: "view more",
+    bgclr: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: undefined
+  }))), __jsx("div", {
+    className: "fetured--action",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }, __jsx("button", {
+    onClick: () => {
+      setToggle(true);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: undefined
+  }, "play Trailer"), __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__["FaPlayCircle"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: undefined
+  }))), __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    centered: true,
+    size: "lg",
+    show: toggle,
+    onHide: () => setToggle(false),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "embed-responsive embed-responsive-16by9",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: undefined
+  }, __jsx("iframe", {
+    className: "embed-responsive-item",
+    src: `https://www.youtube.com/embed/${data.videos.key}`,
+    allowFullScreen: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: undefined
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FeturedSection);
 
 /***/ }),
 
@@ -757,7 +972,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "VideoHero__Styled",
   componentId: "sc-8il28s-0"
-})(["position:relative;min-height:75vh;margin-top:8em;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:rgba(0,0,0,0.5);.video--bg{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;height:100%;object-fit:cover;transform:translate(-50%,-50%);z-index:-1;background-color:black;}.content{position:relative;padding:0 0.5em;}.title{text-transform:uppercase;font-size:1.8rem;font-weight:bold;margin:0;margin-bottom:0.5em;span{display:block;}}.subtitle{color:var(--white-clr);font-size:1rem;}.title--img{position:absolute;width:100px;}.btn--group{display:grid;grid-template-columns:1fr 1fr;grid-gap:0.5em;align-items:center;}@media screen and (min-width:1000px){.title{font-size:2.5rem;}.subtitle{font-size:1.4rem;}.btn--group{grid-gap:1em;max-width:375px;margin:0 auto;}}"]);
+})(["position:relative;min-height:75vh;margin-top:6.5em;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:rgba(0,0,0,0.5);.video--bg{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;height:100%;object-fit:cover;transform:translate(-50%,-50%);z-index:-1;background-color:black;}.content{position:relative;padding:0 0.5em;}.title{text-transform:uppercase;font-size:1.8rem;font-weight:bold;margin:0;margin-bottom:0.5em;span{display:block;}}.subtitle{color:var(--white-clr);font-size:1rem;}.title--img{position:absolute;width:100px;}.btn--group{display:grid;grid-template-columns:1fr 1fr;grid-gap:0.5em;align-items:center;}@media screen and (min-width:1000px){.title{font-size:2.5rem;}.subtitle{font-size:1.4rem;}.btn--group{grid-gap:1em;max-width:375px;margin:0 auto;}}"]);
 
 const VideoHero = () => __jsx(Styled, {
   className: "hero--video",
@@ -863,7 +1078,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
   displayName: "button__Styled",
   componentId: "smtp0v-0"
-})(["display:inline-block;font-family:var(--fn-monterrat);font-weight:var(--fw-bold);font-size:0.9rem;text-align:center;background-color:", ";color:", ";text-transform:uppercase;padding:1em 3.2em;border-radius:40px;border:2px solid var(--primary-clr);position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&:hover,&:focus{transform:scale(0.95);background-color:", ";border-color:var(--primary-clr);color:", ";cursor:pointer;}"], props => props.bgclr ? 'var(--primary-clr)' : 'transparent', props => props.invert ? 'var(--second-clr)' : 'var(--white-clr)', props => props.bgclr ? 'transparent' : 'var(--primary-clr)', props => props.hoverclr ? 'var(--white-clr)' : 'var(--second-clr)');
+})(["display:inline-block;font-family:var(--fn-monterrat);font-weight:var(--fw-bold);font-size:0.95rem;text-align:center;background-color:", ";color:", ";text-transform:uppercase;padding:1em 3.2em;border-radius:40px;border:2px solid var(--primary-clr);position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&:hover,&:focus{transform:scale(0.95);background-color:", ";border-color:var(--primary-clr);color:", ";cursor:pointer;}"], props => props.bgclr ? 'var(--primary-clr)' : 'transparent', props => props.invert ? 'var(--second-clr)' : 'var(--white-clr)', props => props.bgclr ? 'transparent' : 'var(--primary-clr)', props => props.hoverclr ? 'var(--white-clr)' : 'var(--second-clr)');
 
 const Button = ({
   toLink,
@@ -920,7 +1135,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default()(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1___default.a).withConfig({
   displayName: "carousel__Styled",
   componentId: "zxhpn4-0"
-})(["width:100%;height:fit-content;padding:1em 1em 0;overflow:hidden;ul{display:flex;li{height:fit-content;min-height:100%;}}@media screen and (min-width:760px){ul li{width:160px !important;min-width:160px !important;margin:0 5px;}}"]);
+})(["width:100%;height:fit-content;padding:1em 1em 0;overflow:hidden;max-width:1160px;ul{display:flex;li{height:fit-content;min-height:100%;}}@media screen and (min-width:760px){ul li{width:160px !important;min-width:160px !important;margin:0 5px;}}@media screen and (min-width:1000px){margin-left:auto;}"]);
 
 const Carousell = ({
   children
@@ -929,14 +1144,14 @@ const Carousell = ({
     setCarosuel
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_3__["default"]);
   return __jsx(Styled, {
-    className: "carousel",
+    className: "carousel ",
     slidesPerPage: setCarosuel(),
     infinite: true,
     autoPlay: 6000,
     animationSpeed: 3000,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 39
     },
     __self: undefined
   }, children);
@@ -974,7 +1189,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "SectionCarousel__Styled",
   componentId: "sc-1rtx4p8-0"
-})(["padding:2em 0 0;"]);
+})(["padding:2em 0.5em 0;@media screen and (min-width:1000px){display:flex;.card--title{flex:0 0 20%;max-width:20%;margin-right:1em;align-self:center;margin-top:6%;}}"]);
 
 const SectionCarousel = ({
   data,
@@ -987,7 +1202,7 @@ const SectionCarousel = ({
     className: "section--carousel--media max-width",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 26
     },
     __self: undefined
   }, __jsx(_CardTitle__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -995,7 +1210,7 @@ const SectionCarousel = ({
     invert: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 27
     },
     __self: undefined
   }, __jsx(_ButtonSimple__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1003,13 +1218,13 @@ const SectionCarousel = ({
     title: btnTitle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 28
     },
     __self: undefined
   })), __jsx(_carousel_carousel__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 30
     },
     __self: undefined
   }, data.map(item => __jsx(_Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1019,7 +1234,7 @@ const SectionCarousel = ({
     invert: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 32
     },
     __self: undefined
   }))));
@@ -1105,6 +1320,38 @@ const TitleBanner = ({
 
 /***/ }),
 
+/***/ "./components/utility/getFeturedMedia.js":
+/*!***********************************************!*\
+  !*** ./components/utility/getFeturedMedia.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./movieDB */ "./components/utility/movieDB.js");
+/* harmony import */ var _randomNum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./randomNum */ "./components/utility/randomNum.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (async (typeFor, time = 'week') => {
+  const {
+    results
+  } = await Object(_movieDB__WEBPACK_IMPORTED_MODULE_0__["default"])(`trending/${typeFor}/${time}`);
+  const item = results[Object(_randomNum__WEBPACK_IMPORTED_MODULE_1__["default"])(results.length)];
+  const getvideos = await Object(_movieDB__WEBPACK_IMPORTED_MODULE_0__["default"])(`${typeFor}/${item.id}/videos`);
+  return _objectSpread({}, item, {
+    videos: getvideos.results[0]
+  });
+});
+
+/***/ }),
+
 /***/ "./components/utility/movieDB.js":
 /*!***************************************!*\
   !*** ./components/utility/movieDB.js ***!
@@ -1135,6 +1382,19 @@ const movieDB = async (url, query = '', method = 'get') => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (movieDB);
+
+/***/ }),
+
+/***/ "./components/utility/randomNum.js":
+/*!*****************************************!*\
+  !*** ./components/utility/randomNum.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (num => Math.floor(Math.random() * Math.floor(num)));
 
 /***/ }),
 
@@ -2826,9 +3086,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ui/PopularSection */ "./components/ui/PopularSection.jsx");
 /* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/utility/movieDB */ "./components/utility/movieDB.js");
 /* harmony import */ var _components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ui/sectionCarousel/SectionCarousel */ "./components/ui/sectionCarousel/SectionCarousel.jsx");
+/* harmony import */ var _components_utility_randomNum__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/utility/randomNum */ "./components/utility/randomNum.js");
+/* harmony import */ var _components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/ui/FeturedSection/FeturedSection */ "./components/ui/FeturedSection/FeturedSection.jsx");
+/* harmony import */ var _components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/utility/getFeturedMedia */ "./components/utility/getFeturedMedia.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
 
 
 
@@ -2840,18 +3106,21 @@ const IndexPage = ({
   movieNowPlay,
   tvOnAir,
   movieAction,
-  tvAnima
+  tvAnima,
+  feturedMovie,
+  feturedTv
 }) => {
+  console.log(feturedMovie, feturedTv);
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 21
     },
     __self: undefined
   }, __jsx(_components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 22
     },
     __self: undefined
   }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2860,7 +3129,7 @@ const IndexPage = ({
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "in theaters ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 28
       },
       __self: undefined
     }), " now to enjoy"),
@@ -2868,7 +3137,7 @@ const IndexPage = ({
     toLink: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 23
     },
     __self: undefined
   }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -2878,7 +3147,15 @@ const IndexPage = ({
     toLink: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 34
+    },
+    __self: undefined
+  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    data: feturedMovie,
+    typeFor: "movie",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
     },
     __self: undefined
   }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2887,7 +3164,7 @@ const IndexPage = ({
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Popular TV ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 46
       },
       __self: undefined
     }), "Series Right Now"),
@@ -2895,7 +3172,7 @@ const IndexPage = ({
     toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 41
     },
     __self: undefined
   }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -2905,13 +3182,21 @@ const IndexPage = ({
     toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 53
+    },
+    __self: undefined
+  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    data: feturedTv,
+    typeFor: "tv",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
     },
     __self: undefined
   }), __jsx(_components_contact__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 60
     },
     __self: undefined
   }));
@@ -2923,11 +3208,15 @@ IndexPage.getInitialProps = async () => {
     const movie = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('movie/now_playing');
     const movieAction = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('discover/movie', 'with_genres=28&sort_by=vote_count.desc');
     const tvAnima = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('discover/tv', 'with_genres=16');
+    const feturedMovie = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_9__["default"])('movie');
+    const feturedTv = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_9__["default"])('tv');
     return {
       movieNowPlay: movie.results.slice(0, 12),
       tvOnAir: tv.results.slice(0, 12),
       movieAction: movieAction.results.slice(0, 10),
-      tvAnima: tvAnima.results.slice(0, 10)
+      tvAnima: tvAnima.results.slice(0, 10),
+      feturedMovie,
+      feturedTv
     };
   } catch (error) {
     console.log(error);
@@ -3061,6 +3350,39 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-bootstrap/Modal":
+/*!****************************************!*\
+  !*** external "react-bootstrap/Modal" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Modal");
+
+/***/ }),
+
+/***/ "react-circular-progressbar":
+/*!*********************************************!*\
+  !*** external "react-circular-progressbar" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-circular-progressbar");
+
+/***/ }),
+
+/***/ "react-icons/fa":
+/*!*********************************!*\
+  !*** external "react-icons/fa" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/fa");
 
 /***/ }),
 

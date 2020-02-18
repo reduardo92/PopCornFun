@@ -317,6 +317,10 @@ header {
   margin: 0 auto;
 }
 
+.title {
+  font-weight: bold;
+}
+
 /* Card container global style */
 .card--container {
   margin-top: 4em;

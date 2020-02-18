@@ -339,7 +339,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.header.withConfig({
   displayName: "Navbar__Styled",
   componentId: "z1ydwt-0"
-})(["position:fixed;top:0;right:0;left:0;z-index:1030;background-image:var(--bg-gradient);.navbar{max-width:1500px;margin:0 auto;}.navbar-toggler{background-color:var(--white-clr);}.navbar-nav .nav-link,.navbar-brand{color:var(--white-clr);font-weight:bold;&:hover,&:focus{color:var(--primary-clr);}}.selected{color:var(--primary-clr) !important;}.navbar-brand{width:45px;img{display:inline-block;margin-right:0.5em;}}@media screen and (min-width:1000px){.navbar-collapse{margin-left:13em;}}"]);
+})(["position:fixed;top:0;right:0;left:0;z-index:1030;background-image:var(--bg-gradient);.navbar{max-width:1500px;margin:0 auto;}.navbar-toggler{background-color:var(--white-clr);}.navbar-nav .nav-link,.navbar-brand{color:var(--white-clr);font-weight:bold;&:hover,&:focus{color:var(--primary-clr);}}.selected{color:var(--primary-clr) !important;}.navbar-brand{width:30px;font-size:1rem;display:flex;align-items:center;img{display:inline-block;margin-right:0.5em;}}@media screen and (min-width:1000px){.navbar-collapse{margin-left:13em;}.navbar-brand{width:40px;}}"]);
 
 const NavCustom = () => {
   const {
@@ -352,7 +352,7 @@ const NavCustom = () => {
     navScroll: navScroll,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 67
     },
     __self: undefined
   }, __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -360,21 +360,21 @@ const NavCustom = () => {
     expand: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 68
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 69
     },
     __self: undefined
   }, __jsx("a", {
     className: "navbar-brand",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx("img", {
@@ -382,35 +382,35 @@ const NavCustom = () => {
     alt: "popcorn logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 71
     },
     __self: undefined
   }), "PopCorn Fun")), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Toggle, {
     "aria-controls": "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 75
     },
     __self: undefined
   }), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Collapse, {
     id: "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 76
     },
     __self: undefined
   }, __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
     className: "mr-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 77
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/discover",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 78
     },
     __self: undefined
   }, __jsx("a", {
@@ -418,14 +418,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 79
     },
     __self: undefined
   }, "Discover")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 83
     },
     __self: undefined
   }, __jsx("a", {
@@ -433,14 +433,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 84
     },
     __self: undefined
   }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 88
     },
     __self: undefined
   }, __jsx("a", {
@@ -448,14 +448,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 89
     },
     __self: undefined
   }, "Tv Shows")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/person",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 93
     },
     __self: undefined
   }, __jsx("a", {
@@ -463,20 +463,20 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 94
     },
     __self: undefined
   }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 99
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 100
     },
     __self: undefined
   }, __jsx("a", {
@@ -484,14 +484,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 101
     },
     __self: undefined
   }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/signup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 105
     },
     __self: undefined
   }, __jsx("a", {
@@ -499,13 +499,13 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 106
     },
     __self: undefined
   }, "Sign Up"))))), __jsx(_ui_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 113
     },
     __self: undefined
   }));
@@ -2554,6 +2554,17 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
+/***/ "./node_modules/react-circular-progressbar/dist/styles.css":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-circular-progressbar/dist/styles.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./pages/_app.js":
 /*!***********************!*\
   !*** ./pages/_app.js ***!
@@ -2570,15 +2581,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.jsx");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../global.css */ "./global.css");
-/* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_global_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-circular-progressbar/dist/styles.css */ "./node_modules/react-circular-progressbar/dist/styles.css");
+/* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../global.css */ "./global.css");
+/* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_global_css__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -2593,13 +2607,13 @@ const MyApp = ({
 }) => __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 10
+    lineNumber: 11
   },
   __self: undefined
 }, __jsx("title", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11
+    lineNumber: 12
   },
   __self: undefined
 }, "PopCorn Fun"), __jsx("link", {
@@ -2607,7 +2621,7 @@ const MyApp = ({
   rel: "stylesheet",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 12
+    lineNumber: 13
   },
   __self: undefined
 }), __jsx("link", {
@@ -2617,7 +2631,7 @@ const MyApp = ({
   crossOrigin: "anonymous",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16
+    lineNumber: 17
   },
   __self: undefined
 }), __jsx("meta", {
@@ -2626,31 +2640,31 @@ const MyApp = ({
   key: "viewport",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 22
+    lineNumber: 23
   },
   __self: undefined
 })), __jsx(_components_context_MovieProvider__WEBPACK_IMPORTED_MODULE_1__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 28
+    lineNumber: 29
   },
   __self: undefined
 }, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 29
+    lineNumber: 30
   },
   __self: undefined
 }), __jsx(Component, _extends({}, pageProps, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 30
+    lineNumber: 31
   },
   __self: undefined
 })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 31
+    lineNumber: 32
   },
   __self: undefined
 })));

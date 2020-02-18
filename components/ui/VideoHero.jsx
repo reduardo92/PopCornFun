@@ -5,7 +5,7 @@ import Button from './button';
 const Styled = styled.div`
   position: relative;
   min-height: 75vh;
-  margin-top: 8em;
+  margin-top: 6.5em;
   display: flex;
   align-items: center;
   justify-content: center;

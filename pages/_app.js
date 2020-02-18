@@ -2,6 +2,7 @@ import MovieProvider from '../components/context/MovieProvider';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import NavCustom from '../components/Navbar';
+import 'react-circular-progressbar/dist/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../global.css';
 

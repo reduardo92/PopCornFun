@@ -39,8 +39,10 @@ const Styled = styled.header`
   }
 
   .navbar-brand {
-    width: 45px;
-
+    width: 30px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
     img {
       display: inline-block;
       margin-right: 0.5em;
@@ -50,6 +52,10 @@ const Styled = styled.header`
   @media screen and (min-width: 1000px) {
     .navbar-collapse {
       margin-left: 13em;
+    }
+
+    .navbar-brand {
+      width: 40px;
     }
   }
 `;

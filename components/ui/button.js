@@ -5,7 +5,7 @@ const Styled = styled.a`
   display: inline-block;
   font-family: var(--fn-monterrat);
   font-weight: var(--fw-bold);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-align: center;
   background-color: ${props =>
     props.bgclr ? 'var(--primary-clr)' : 'transparent'};
