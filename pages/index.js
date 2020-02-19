@@ -55,7 +55,6 @@ const IndexPage = ({
         toLink='/tv'
       />
       <FeturedSection data={feturedTv} typeFor='tv' />
-      <Contact />
     </Layout>
   );
 };

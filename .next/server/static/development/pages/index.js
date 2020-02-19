@@ -702,8 +702,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Modal */ "react-bootstrap/Modal");
 /* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _TagGroup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../TagGroup */ "./components/ui/TagGroup.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\FeturedSection\\FeturedSection.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -714,7 +716,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "FeturedSection__Styled",
   componentId: "sc-1un1zrn-0"
-})(["position:relative;min-height:85vh;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url(", ") no-repeat center;background-size:cover;object-fit:cover;width:100%;display:flex;align-items:center;justify-content:center;.max-width{padding:0 1em;display:grid;}.fetured--content{width:100%;max-width:480px;display:grid;grid-gap:1em;text-align:left;justify-items:left;}.button{border-radius:5px;}.fetured--action{margin-top:1em;display:flex;justify-content:flex-start;align-items:center;button{background:transparent;border:none;color:var(--white-clr);font-weight:bold;transition:var(--ease--in--out--02s);}svg{margin-left:5px;font-size:2rem;color:var(--primary-clr);transition:var(--ease--in--out--02s);}&:hover button,&:focus button{opacity:0.8;}&:hover svg,&:focus svg{opacity:0.8;margin-left:15px;}}.heading{display:flex;width:100%;align-items:center;}.title{margin-bottom:0;margin-right:0.5em;}@media screen and (min-width:768px){min-height:50vh;.max-width{grid-template-columns:1fr 1fr;justify-items:center;align-items:center;width:100%;}.title{font-size:2.5rem;}.fetured--action{flex-direction:column;svg{font-size:8rem;order:-1;margin:0;}&:hover svg,&:focus svg{margin-left:0;margin-bottom:10px;transform:scale(0.98);}}}@media screen and (min-width:1200px){min-height:80vh;.fetured--action{button{font-size:1.1rem;}svg{font-size:10rem;}}}"], ({
+})(["position:relative;min-height:85vh;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url(", ") no-repeat center;background-size:cover;object-fit:cover;width:100%;display:flex;align-items:center;justify-content:center;.max-width{padding:0 1em;display:grid;grid-gap:2.2em;}.fetured--content{width:100%;max-width:540px;display:grid;grid-gap:1em;text-align:left;justify-items:left;}.btn--group{width:100%;display:grid;justify-items:start;grid-gap:1.5em;align-items:center;}.tags--group{display:flex;justify-content:space-between;width:200px;.tag{border:2px solid var(--white-clr);box-sizing:border-box;background:rgba(0,0,0,0.2);color:#000;border-radius:50%;width:35px;height:35px;padding:6px;color:var(--white-clr);transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--second-clr);background-color:var(--white-clr);}}}.fetured--action{margin-left:8px;button{position:relative;display:flex;justify-content:flex-start;align-items:center;background:transparent;border:none;outline:none;color:var(--white-clr);font-weight:bold;transition:var(--ease--in--out--02s);&::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;width:100%;transition:var(--ease--in--out--02s);background-color:var(--primary-clr);transform:scale(0);transform-origin:left;}svg{margin-left:5px;font-size:2rem;color:var(--primary-clr);transition:var(--ease--in--out--02s);}}&:hover button,&:focus button{opacity:0.8;}&:hover button::before,&:focus button::before{transform:scale(1);}&:hover svg,&:focus svg{opacity:0.8;margin-left:15px;}}.heading{display:flex;width:100%;align-items:center;}.title{margin-bottom:0;margin-right:0.5em;}@media screen and (min-width:768px){min-height:60vh;.max-width{grid-template-columns:1fr 1fr;justify-items:center;align-items:center;width:100%;}.heading svg{width:75px;flex:0 0 75px;}.title{font-size:2.5rem;}.fetured--action{button{flex-direction:column;padding-bottom:10px;font-size:1.2rem;&::before{width:110px;margin:0 auto;height:2px;transform-origin:bottom;}svg{font-size:12rem;order:-1;margin:0;}}&:hover svg,&:focus svg{margin-left:0;margin-bottom:10px;transform:scale(0.98);}}}@media screen and (min-width:1200px){min-height:600px;background-position:unset;.fetured--action{button{font-size:1.1rem;}}.btn--group{grid-template-columns:auto 1fr;}}"], ({
   bgImg
 }) => `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL_OR"]}${bgImg}`);
 
@@ -731,56 +733,56 @@ const FeturedSection = ({
     bgImg: data.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 201
     },
     __self: undefined
   }, __jsx("div", {
     className: "max-width",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 202
     },
     __self: undefined
   }, __jsx("div", {
     className: "fetured--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132
+      lineNumber: 203
     },
     __self: undefined
   }, __jsx("div", {
     className: "heading",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 204
     },
     __self: undefined
   }, __jsx("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 205
     },
     __self: undefined
   }, data.title || data.name), __jsx(_CirclePercentage__WEBPACK_IMPORTED_MODULE_4__["default"], {
     value: data.vote_average * 10,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 206
     },
     __self: undefined
   })), __jsx("p", {
     className: "subtitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 208
     },
     __self: undefined
-  }, data.overview), __jsx("div", {
+  }, data.overview.length > 545 ? `${data.overview.slice(0, 545)}...` : data.overview), __jsx("div", {
     className: "btn--group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 213
     },
     __self: undefined
   }, __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -789,14 +791,20 @@ const FeturedSection = ({
     bgclr: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 214
+    },
+    __self: undefined
+  }), __jsx(_TagGroup__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 215
     },
     __self: undefined
   }))), __jsx("div", {
     className: "fetured--action",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 218
     },
     __self: undefined
   }, __jsx("button", {
@@ -805,30 +813,30 @@ const FeturedSection = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 219
     },
     __self: undefined
-  }, "play Trailer"), __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdPlayCircleOutline"], {
+  }, "play Trailer", __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdPlayCircleOutline"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 225
     },
     __self: undefined
-  }))), __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  })))), __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6___default.a, {
     centered: true,
     size: "lg",
     show: toggle,
     onHide: () => setToggle(false),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154
+      lineNumber: 230
     },
     __self: undefined
   }, __jsx("div", {
     className: "embed-responsive embed-responsive-16by9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 231
     },
     __self: undefined
   }, __jsx("iframe", {
@@ -837,7 +845,7 @@ const FeturedSection = ({
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 232
     },
     __self: undefined
   }))));
@@ -947,6 +955,130 @@ const PopularSection = ({
 })));
 
 /* harmony default export */ __webpack_exports__["default"] = (PopularSection);
+
+/***/ }),
+
+/***/ "./components/ui/TagGroup.jsx":
+/*!************************************!*\
+  !*** ./components/ui/TagGroup.jsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/io */ "react-icons/io");
+/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_icons_io__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\TagGroup.jsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "TagGroup__Styled",
+  componentId: "sc-179tds3-0"
+})(["display:flex;justify-content:space-between;width:200px;.tag{border:2px solid var(--white-clr);box-sizing:border-box;background:rgba(0,0,0,0.2);color:#000;border-radius:50%;width:35px;height:35px;padding:6px;color:var(--white-clr);transition:var(--ease--in--out--02s);cursor:pointer;&:hover,&:focus{color:var(--second-clr);background-color:var(--white-clr);}}"]);
+
+const TagGroup = () => __jsx(Styled, {
+  className: "tag--group",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 33
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: "/login",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 34
+  },
+  __self: undefined
+}, __jsx("a", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 35
+  },
+  __self: undefined
+}, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_3__["MdFormatListBulleted"], {
+  className: "tag",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 36
+  },
+  __self: undefined
+}))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: "/login",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 39
+  },
+  __self: undefined
+}, __jsx("a", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 40
+  },
+  __self: undefined
+}, __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_4__["IoMdHeart"], {
+  className: "tag",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 41
+  },
+  __self: undefined
+}))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: "/login",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 44
+  },
+  __self: undefined
+}, __jsx("a", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 45
+  },
+  __self: undefined
+}, __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_4__["IoMdBookmark"], {
+  className: "tag",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 46
+  },
+  __self: undefined
+}))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: "/login",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 49
+  },
+  __self: undefined
+}, __jsx("a", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 50
+  },
+  __self: undefined
+}, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_3__["MdStar"], {
+  className: "tag",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 51
+  },
+  __self: undefined
+}))));
+
+/* harmony default export */ __webpack_exports__["default"] = (TagGroup);
 
 /***/ }),
 
@@ -3190,12 +3322,6 @@ const IndexPage = ({
       lineNumber: 57
     },
     __self: undefined
-  }), __jsx(_components_contact__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
   }));
 };
 
@@ -3369,6 +3495,17 @@ module.exports = require("react-bootstrap/Modal");
 /***/ (function(module, exports) {
 
 module.exports = require("react-circular-progressbar");
+
+/***/ }),
+
+/***/ "react-icons/io":
+/*!*********************************!*\
+  !*** external "react-icons/io" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/io");
 
 /***/ }),
 
