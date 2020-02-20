@@ -380,7 +380,7 @@ const NavCustom = () => {
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/discover",
+    href: "/",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 78
@@ -394,8 +394,8 @@ const NavCustom = () => {
       lineNumber: 79
     },
     __self: undefined
-  }, "Discover")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/movie",
+  }, "Home")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/discover",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 83
@@ -409,8 +409,8 @@ const NavCustom = () => {
       lineNumber: 84
     },
     __self: undefined
-  }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/tv",
+  }, "Discover")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/movie",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 88
@@ -424,8 +424,8 @@ const NavCustom = () => {
       lineNumber: 89
     },
     __self: undefined
-  }, "Tv Shows")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/person",
+  }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/tv",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 93
@@ -439,17 +439,11 @@ const NavCustom = () => {
       lineNumber: 94
     },
     __self: undefined
-  }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, "Tv Shows")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/person",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
-    },
-    __self: undefined
-  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/login",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 98
     },
     __self: undefined
   }, __jsx("a", {
@@ -457,11 +451,17 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 99
     },
     __self: undefined
-  }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/signup",
+  }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: undefined
+  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/login",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 105
@@ -475,10 +475,25 @@ const NavCustom = () => {
       lineNumber: 106
     },
     __self: undefined
+  }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/signup",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "nav-link",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111
+    },
+    __self: undefined
   }, "Sign Up"))))), __jsx(_ui_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 118
     },
     __self: undefined
   }));

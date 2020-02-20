@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Button from '../button';
 import { IMG_URL_OR } from '../../context/types';
 import CirclePercentage from '../CirclePercentage';
-import { MdPlayCircleOutline } from 'react-icons/md';
 import Modal from 'react-bootstrap/Modal';
 import TagGroup from '../TagGroup';
+import PlayButton from '../PlayButton';
 
 const Styled = styled.section`
   position: relative;
@@ -42,88 +42,19 @@ const Styled = styled.section`
     align-items: center;
   }
 
-  .tags--group {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    .tag {
-      border: 2px solid var(--white-clr);
-      box-sizing: border-box;
-      background: rgba(0, 0, 0, 0.2);
-      color: #000;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      padding: 6px;
-      color: var(--white-clr);
-      transition: var(--ease--in--out--02s);
-
-      &:hover,
-      &:focus {
-        color: var(--second-clr);
-        background-color: var(--white-clr);
-      }
-    }
-  }
-
   .fetured--action {
     margin-left: 8px;
-
-    button {
-      position: relative;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--white-clr);
-      font-weight: bold;
-      transition: var(--ease--in--out--02s);
-
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        width: 100%;
-        transition: var(--ease--in--out--02s);
-        background-color: var(--primary-clr);
-        transform: scale(0);
-        transform-origin: left;
-      }
-
-      svg {
-        margin-left: 5px;
-        font-size: 2rem;
-        color: var(--primary-clr);
-        transition: var(--ease--in--out--02s);
-      }
-    }
-
-    &:hover button,
-    &:focus button {
-      opacity: 0.8;
-    }
-
-    &:hover button::before,
-    &:focus button::before {
-      transform: scale(1);
-    }
-
-    &:hover svg,
-    &:focus svg {
-      opacity: 0.8;
-      margin-left: 15px;
-    }
   }
 
   .heading {
     display: flex;
     width: 100%;
     align-items: center;
+
+    svg {
+      width: 55px;
+      flex: 0 0 55px;
+    }
   }
 
   .title {
@@ -149,45 +80,11 @@ const Styled = styled.section`
     .title {
       font-size: 2.5rem;
     }
-
-    .fetured--action {
-      button {
-        flex-direction: column;
-        padding-bottom: 10px;
-        font-size: 1.2rem;
-
-        &::before {
-          width: 110px;
-          margin: 0 auto;
-          height: 2px;
-          transform-origin: bottom;
-        }
-
-        svg {
-          font-size: 12rem;
-          order: -1;
-          margin: 0;
-        }
-      }
-
-      &:hover svg,
-      &:focus svg {
-        margin-left: 0;
-        margin-bottom: 10px;
-        transform: scale(0.98);
-      }
-    }
   }
 
   @media screen and (min-width: 1200px) {
     min-height: 600px;
-    background-position: unset;
-
-    .fetured--action {
-      button {
-        font-size: 1.1rem;
-      }
-    }
+    background-position: center 40%;
 
     .btn--group {
       grid-template-columns: auto 1fr;
@@ -216,14 +113,7 @@ const FeturedSection = ({ data, typeFor }) => {
           </div>
         </div>
         <div className='fetured--action'>
-          <button
-            onClick={() => {
-              setToggle(true);
-            }}
-          >
-            play Trailer
-            <MdPlayCircleOutline />
-          </button>
+          <PlayButton onclick={() => setToggle(true)} />
         </div>
       </div>
 
@@ -231,7 +121,8 @@ const FeturedSection = ({ data, typeFor }) => {
         <div className='embed-responsive embed-responsive-16by9'>
           <iframe
             className='embed-responsive-item'
-            src={`https://www.youtube.com/embed/${data.videos.key}`}
+            src={`https://www.youtube.com/embed/${data.videos.key &&
+              data.videos.key}`}
             allowFullScreen
           />
         </div>

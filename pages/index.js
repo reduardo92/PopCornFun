@@ -1,6 +1,5 @@
 import Layout from '../components/layout';
 import VideoHero from '../components/ui/VideoHero';
-import Contact from '../components/contact';
 import PopularSection from '../components/ui/PopularSection';
 import movieDB from '../components/utility/movieDB';
 import SectionCarousel from '../components/ui/sectionCarousel/SectionCarousel';
@@ -13,7 +12,8 @@ const IndexPage = ({
   movieAction,
   tvAnima,
   feturedMovie,
-  feturedTv
+  feturedTv,
+  people
 }) => {
   return (
     <Layout>
@@ -30,10 +30,11 @@ const IndexPage = ({
         toLink='/movie'
       />
       <SectionCarousel
-        data={movieAction}
-        typeFor='movie'
-        title='popular action movies'
-        toLink='/movie'
+        data={people}
+        typeFor='person'
+        title='Popular persons in film'
+        toLink='/person'
+        order='true'
       />
       <FeturedSection data={feturedMovie} typeFor='movie' />
       <PopularSection
@@ -49,12 +50,19 @@ const IndexPage = ({
         toLink='/tv'
       />
       <SectionCarousel
+        data={movieAction}
+        typeFor='movie'
+        title='popular action movies'
+        toLink='/movie'
+        order={'true'}
+      />
+      <FeturedSection data={feturedTv} typeFor='tv' />
+      <SectionCarousel
         data={tvAnima}
         typeFor='tv'
         title='animation to Enjoy'
         toLink='/tv'
       />
-      <FeturedSection data={feturedTv} typeFor='tv' />
     </Layout>
   );
 };
@@ -70,6 +78,7 @@ IndexPage.getInitialProps = async () => {
     const tvAnima = await movieDB('discover/tv', 'with_genres=16');
     const feturedMovie = await getFeturedMedia('movie');
     const feturedTv = await getFeturedMedia('tv');
+    const people = await movieDB('person/popular');
 
     return {
       movieNowPlay: movie.results.slice(0, 12),
@@ -77,7 +86,8 @@ IndexPage.getInitialProps = async () => {
       movieAction: movieAction.results.slice(0, 10),
       tvAnima: tvAnima.results.slice(0, 10),
       feturedMovie,
-      feturedTv
+      feturedTv,
+      people: people.results.slice(0, 12)
     };
   } catch (error) {
     console.log(error);

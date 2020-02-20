@@ -9,31 +9,29 @@ const Styled = styled.section`
   padding: 2em 0.5em 0;
 
   @media screen and (min-width: 1000px) {
-    display: flex;
+    display: grid;
+    grid-template-columns: ${({ order }) => (order ? '80% auto' : 'auto 80%')};
+    grid-gap: 1em;
 
     .card--title {
-      flex: 0 0 20%;
-      max-width: 20%;
-      margin-right: 1em;
+      order: ${({ order }) => (order ? 1 : 0)};
       align-self: center;
-      margin-top: 6%;
+      margin-top: 5em;
     }
   }
 `;
 
-const SectionCarousel = ({ data, typeFor, title, toLink, btnTitle }) => {
-  return (
-    <Styled className='section--carousel--media max-width'>
-      <CardTitle title={title} invert>
-        <ButtonSimple toLink={toLink} title={btnTitle} />
-      </CardTitle>
-      <Carousell>
-        {data.map(item => (
-          <CardOne key={item.id} data={item} typeFor={typeFor} invert />
-        ))}
-      </Carousell>
-    </Styled>
-  );
-};
+const SectionCarousel = ({ data, typeFor, title, toLink, btnTitle, order }) => (
+  <Styled className='section--carousel--media max-width' order={order}>
+    <CardTitle title={title} invert>
+      <ButtonSimple toLink={toLink} title={btnTitle} />
+    </CardTitle>
+    <Carousell>
+      {data.map(item => (
+        <CardOne key={item.id} data={item} typeFor={typeFor} invert />
+      ))}
+    </Carousell>
+  </Styled>
+);
 
 export default SectionCarousel;

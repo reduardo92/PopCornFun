@@ -75,6 +75,11 @@ const NavCustom = () => {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mr-auto'>
+            <Link href='/'>
+              <a className='nav-link' role='button'>
+                Home
+              </a>
+            </Link>
             <Link href='/discover'>
               <a className='nav-link' role='button'>
                 Discover

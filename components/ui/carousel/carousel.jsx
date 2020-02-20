@@ -30,6 +30,16 @@ const Styled = styled(Carousel)`
   @media screen and (min-width: 1000px) {
     margin-left: auto;
   }
+
+  @media screen and (min-width: 1280px) {
+    margin-left: auto;
+
+    ul li {
+      width: 180px !important;
+      min-width: 180px !important;
+      margin: 0 5px;
+    }
+  }
 `;
 
 const Carousell = ({ children }) => {

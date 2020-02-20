@@ -88,223 +88,10 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./components/contact.jsx":
-/*!********************************!*\
-  !*** ./components/contact.jsx ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
-/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _ui_titleBanner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ui/titleBanner */ "./components/ui/titleBanner.js");
-/* harmony import */ var _ui_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ui/tabs */ "./components/ui/tabs.js");
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\contact.jsx";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.section.withConfig({
-  displayName: "contact__Styled",
-  componentId: "sc-2i58ds-0"
-})(["text-align:center;padding:2em 1em 4em;.form{display:grid;grid-gap:2em;align-items:center;justify-content:center;padding-top:1.5em;max-width:1100px;margin:0 auto;}.input--link,.textarea{color:var(--second-clr);font-weight:var(--fw-bold);font-size:0.9rem;text-align:center;border:1px solid #777777;border-radius:25px;outline:none;&::placeholder{text-align:center;}}.input--link,.textarea{padding:1em;transition:var(--ease--in--out--02s);&:focus{outline-color:transparent;border-color:var(--primary-clr);}}.alert--msg{outline-color:#af0000;}.alert--title{color:#af0000;}.form--button{background-color:var(--primary-clr);justify-self:center;&:hover,&focus{background-color:transparent;border-color:var(--primary-clr);outline-color:var(--primary-clr);color:var(--second-clr);}}.msg{justify-self:center;color:var(--primary-clr);grid-column:1 / 3;font-weight:bold;font-size:1.5rem;}@media screen and (min-width:760px){.form{grid-template-columns:repeat(3,1fr);row-gap:2em;column-gap:1em;}.textarea,.form--button{grid-column:1 / 4;}}"]);
-
-const Contact = () => {
-  const {
-    0: status,
-    1: setSatus
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
-  const {
-    0: msg,
-    1: setMsg
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
-  const {
-    0: form,
-    1: setForm
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-  const {
-    name,
-    email,
-    phone,
-    subject,
-    message
-  } = form;
-
-  const handleChange = ({
-    target
-  }) => setForm(form => _objectSpread({}, form, {
-    [target.name]: target.value
-  }));
-
-  const clearMsg = () => setInterval(() => setMsg(null), 8000);
-
-  const handleSubmit = ev => {
-    ev.preventDefault();
-    setInterval(() => setStatus(), 8000);
-  };
-
-  return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 114
-    },
-    __self: undefined
-  }, __jsx(Styled, {
-    className: "contact section",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 115
-    },
-    __self: undefined
-  }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    bottom: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 116
-    },
-    __self: undefined
-  }, __jsx(_ui_titleBanner__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: "CONTACT US",
-    subtitle: "get in touch",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 117
-    },
-    __self: undefined
-  })), msg && __jsx("h3", {
-    className: "alert--title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 119
-    },
-    __self: undefined
-  }, msg), __jsx("form", {
-    className: "form",
-    onSubmit: handleSubmit,
-    action: "https://formspree.io/mnqjlvaz",
-    method: "POST",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 120
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "hidden",
-    name: "form-name",
-    value: "contact",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 126
-    },
-    __self: undefined
-  }), __jsx("input", {
-    onChange: handleChange,
-    value: name,
-    name: "name",
-    type: "text",
-    className: "input--link name",
-    placeholder: "FULL NAME",
-    required: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 127
-    },
-    __self: undefined
-  }), __jsx("input", {
-    onChange: handleChange,
-    value: email,
-    name: "email",
-    type: "email",
-    className: "input--link email--form",
-    placeholder: "EMAIL",
-    required: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 136
-    },
-    __self: undefined
-  }), __jsx("input", {
-    onChange: handleChange,
-    value: phone,
-    name: "phone",
-    type: "text",
-    className: "input--link phone",
-    placeholder: "PHONE NUMBER",
-    required: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 145
-    },
-    __self: undefined
-  }), __jsx("textarea", {
-    onChange: handleChange,
-    value: message,
-    className: "textarea",
-    name: "message",
-    cols: "30",
-    rows: "9",
-    placeholder: "MESSAGE / QUESTION",
-    required: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 154
-    },
-    __self: undefined
-  }), status === 'SUCCESS' ? __jsx("p", {
-    className: "msg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 165
-    },
-    __self: undefined
-  }, "Message Sent!") : __jsx(_ui_tabs__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: "form--button",
-    type: "submit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 167
-    },
-    __self: undefined
-  }, "send message"), status === 'ERROR' && __jsx("p", {
-    className: "msg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 172
-    },
-    __self: undefined
-  }, "Ooops! There was an error."))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Contact);
-
-/***/ }),
 
 /***/ "./components/context/MovieContext.js":
 /*!********************************************!*\
@@ -557,7 +344,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.figure.withConfig({
   displayName: "CardOne__Styled",
   componentId: "e0m3r6-0"
-})(["width:160px;.card--poster{position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:grid;justify-items:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(64,4,4,0.7);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}}.card--body{&__info{color:", ";}&__title a{font-weight:bold;color:", ";}}@media screen and (min-width:768px){}"], ({
+})(["width:160px;.card--poster{position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:grid;justify-items:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(64,4,4,0.7);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}}.card--body{&__info{color:", ";}&__title a{font-weight:bold;color:", ";transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:1280px){width:180px;}"], ({
   invert
 }) => invert ? 'var(--second-clr)' : 'var(--grey-clr)', ({
   invert
@@ -572,52 +359,52 @@ const CardOne = ({
   invert: invert,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 56
+    lineNumber: 63
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: `/${typeFor}/[id]`,
+  as: `/${typeFor}/${data.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 64
   },
   __self: undefined
 }, __jsx("div", {
   className: "card--poster",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 57
-  },
-  __self: undefined
-}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-  href: `/${typeFor}/[id]`,
-  as: `/${typeFor}/${data.id}`,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 58
+    lineNumber: 65
   },
   __self: undefined
 }, __jsx("img", {
   className: "poster__img",
-  src: `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"]}${data.poster_path}`,
+  src: `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"]}${data.poster_path || data.profile_path}`,
   alt: data.title || data.name,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 59
+    lineNumber: 66
   },
   __self: undefined
 }))), __jsx("div", {
   className: "card--body",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 66
+    lineNumber: 73
   },
   __self: undefined
 }, __jsx("div", {
   className: "card--body__info",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 67
+    lineNumber: 74
   },
   __self: undefined
-}, data.release_date || data.first_air_date), __jsx("div", {
+}, data.release_date || data.first_air_date || data.known_for_department), __jsx("div", {
   className: "card--body__title",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 70
+    lineNumber: 77
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -625,7 +412,7 @@ const CardOne = ({
   as: `/${typeFor}/${data.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 71
+    lineNumber: 78
   },
   __self: undefined
 }, data.title || data.name))));
@@ -698,11 +485,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../button */ "./components/ui/button.js");
 /* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/types */ "./components/context/types.js");
 /* harmony import */ var _CirclePercentage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../CirclePercentage */ "./components/ui/CirclePercentage.jsx");
-/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
-/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Modal */ "react-bootstrap/Modal");
-/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _TagGroup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../TagGroup */ "./components/ui/TagGroup.jsx");
+/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Modal */ "react-bootstrap/Modal");
+/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _TagGroup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../TagGroup */ "./components/ui/TagGroup.jsx");
+/* harmony import */ var _PlayButton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../PlayButton */ "./components/ui/PlayButton.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\FeturedSection\\FeturedSection.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -716,7 +502,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "FeturedSection__Styled",
   componentId: "sc-1un1zrn-0"
-})(["position:relative;min-height:85vh;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url(", ") no-repeat center;background-size:cover;object-fit:cover;width:100%;display:flex;align-items:center;justify-content:center;.max-width{padding:0 1em;display:grid;grid-gap:2.2em;}.fetured--content{width:100%;max-width:540px;display:grid;grid-gap:1em;text-align:left;justify-items:left;}.btn--group{width:100%;display:grid;justify-items:start;grid-gap:1.5em;align-items:center;}.tags--group{display:flex;justify-content:space-between;width:200px;.tag{border:2px solid var(--white-clr);box-sizing:border-box;background:rgba(0,0,0,0.2);color:#000;border-radius:50%;width:35px;height:35px;padding:6px;color:var(--white-clr);transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--second-clr);background-color:var(--white-clr);}}}.fetured--action{margin-left:8px;button{position:relative;display:flex;justify-content:flex-start;align-items:center;background:transparent;border:none;outline:none;color:var(--white-clr);font-weight:bold;transition:var(--ease--in--out--02s);&::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;width:100%;transition:var(--ease--in--out--02s);background-color:var(--primary-clr);transform:scale(0);transform-origin:left;}svg{margin-left:5px;font-size:2rem;color:var(--primary-clr);transition:var(--ease--in--out--02s);}}&:hover button,&:focus button{opacity:0.8;}&:hover button::before,&:focus button::before{transform:scale(1);}&:hover svg,&:focus svg{opacity:0.8;margin-left:15px;}}.heading{display:flex;width:100%;align-items:center;}.title{margin-bottom:0;margin-right:0.5em;}@media screen and (min-width:768px){min-height:60vh;.max-width{grid-template-columns:1fr 1fr;justify-items:center;align-items:center;width:100%;}.heading svg{width:75px;flex:0 0 75px;}.title{font-size:2.5rem;}.fetured--action{button{flex-direction:column;padding-bottom:10px;font-size:1.2rem;&::before{width:110px;margin:0 auto;height:2px;transform-origin:bottom;}svg{font-size:12rem;order:-1;margin:0;}}&:hover svg,&:focus svg{margin-left:0;margin-bottom:10px;transform:scale(0.98);}}}@media screen and (min-width:1200px){min-height:600px;background-position:unset;.fetured--action{button{font-size:1.1rem;}}.btn--group{grid-template-columns:auto 1fr;}}"], ({
+})(["position:relative;min-height:85vh;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url(", ") no-repeat center;background-size:cover;object-fit:cover;width:100%;display:flex;align-items:center;justify-content:center;.max-width{padding:0 1em;display:grid;grid-gap:2.2em;}.fetured--content{width:100%;max-width:540px;display:grid;grid-gap:1em;text-align:left;justify-items:left;}.btn--group{width:100%;display:grid;justify-items:start;grid-gap:1.5em;align-items:center;}.fetured--action{margin-left:8px;}.heading{display:flex;width:100%;align-items:center;svg{width:55px;flex:0 0 55px;}}.title{margin-bottom:0;margin-right:0.5em;}@media screen and (min-width:768px){min-height:60vh;.max-width{grid-template-columns:1fr 1fr;justify-items:center;align-items:center;width:100%;}.heading svg{width:75px;flex:0 0 75px;}.title{font-size:2.5rem;}}@media screen and (min-width:1200px){min-height:600px;background-position:center 40%;.btn--group{grid-template-columns:auto 1fr;}}"], ({
   bgImg
 }) => `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL_OR"]}${bgImg}`);
 
@@ -733,56 +519,56 @@ const FeturedSection = ({
     bgImg: data.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201
+      lineNumber: 98
     },
     __self: undefined
   }, __jsx("div", {
     className: "max-width",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 202
+      lineNumber: 99
     },
     __self: undefined
   }, __jsx("div", {
     className: "fetured--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 203
+      lineNumber: 100
     },
     __self: undefined
   }, __jsx("div", {
     className: "heading",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 204
+      lineNumber: 101
     },
     __self: undefined
   }, __jsx("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 102
     },
     __self: undefined
   }, data.title || data.name), __jsx(_CirclePercentage__WEBPACK_IMPORTED_MODULE_4__["default"], {
     value: data.vote_average * 10,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 103
     },
     __self: undefined
   })), __jsx("p", {
     className: "subtitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 105
     },
     __self: undefined
   }, data.overview.length > 545 ? `${data.overview.slice(0, 545)}...` : data.overview), __jsx("div", {
     className: "btn--group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 213
+      lineNumber: 110
     },
     __self: undefined
   }, __jsx(_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -791,67 +577,107 @@ const FeturedSection = ({
     bgclr: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 214
+      lineNumber: 111
     },
     __self: undefined
-  }), __jsx(_TagGroup__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_TagGroup__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215
+      lineNumber: 112
     },
     __self: undefined
   }))), __jsx("div", {
     className: "fetured--action",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218
+      lineNumber: 115
     },
     __self: undefined
-  }, __jsx("button", {
-    onClick: () => {
-      setToggle(true);
-    },
+  }, __jsx(_PlayButton__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onclick: () => setToggle(true),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219
+      lineNumber: 116
     },
     __self: undefined
-  }, "play Trailer", __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdPlayCircleOutline"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 225
-    },
-    __self: undefined
-  })))), __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }))), __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_5___default.a, {
     centered: true,
     size: "lg",
     show: toggle,
     onHide: () => setToggle(false),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 230
+      lineNumber: 120
     },
     __self: undefined
   }, __jsx("div", {
     className: "embed-responsive embed-responsive-16by9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231
+      lineNumber: 121
     },
     __self: undefined
   }, __jsx("iframe", {
     className: "embed-responsive-item",
-    src: `https://www.youtube.com/embed/${data.videos.key}`,
+    src: `https://www.youtube.com/embed/${data.videos.key && data.videos.key}`,
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 232
+      lineNumber: 122
     },
     __self: undefined
   }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FeturedSection);
+
+/***/ }),
+
+/***/ "./components/ui/PlayButton.jsx":
+/*!**************************************!*\
+  !*** ./components/ui/PlayButton.jsx ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\PlayButton.jsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
+  displayName: "PlayButton__Styled",
+  componentId: "wsi6ub-0"
+})(["position:relative;display:flex;justify-content:flex-start;align-items:center;background:transparent;border:none;outline:none;color:var(--white-clr);font-weight:bold;transition:var(--ease--in--out--02s);&::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;width:100%;transition:var(--ease--in--out--02s);background-color:var(--primary-clr);transform:scale(0);transform-origin:left;}svg{margin-left:5px;font-size:2rem;color:var(--primary-clr);transition:var(--ease--in--out--02s);}&:hover,&:focus{opacity:0.8;}&:hover::before,&:focus::before{transform:scale(1);}&:hover svg,&:focus svg{opacity:0.8;margin-left:15px;}@media screen and (min-width:768px){flex-direction:column;padding-bottom:10px;font-size:1.2rem;&::before{width:110px;margin:0 auto;transform-origin:bottom;}svg{font-size:12rem;order:-1;margin:0;}&:hover svg,&:focus svg{margin-left:0;margin-bottom:10px;transform:scale(0.98);}}"]);
+
+const PlayButton = ({
+  title = 'play trailer',
+  onclick
+}) => __jsx(Styled, {
+  onClick: onclick,
+  className: "play--button",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 80
+  },
+  __self: undefined
+}, title, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_2__["MdPlayCircleOutline"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 82
+  },
+  __self: undefined
+}));
+
+/* harmony default export */ __webpack_exports__["default"] = (PlayButton);
 
 /***/ }),
 
@@ -883,7 +709,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "PopularSection__Styled",
   componentId: "aqfo1s-0"
-})(["background:var(--bg-gradient);padding:4em 1em;position:relative;.content--container{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;justify-items:center;}.btn--container{position:relative;display:flex;justify-content:center;}.card--title{grid-column:1 / 3;justify-self:center;margin-bottom:3em;}.title{text-transform:capitalize;font-weight:bold;}.subtitle{color:var(--grey-clr);}@media screen and (min-width:768px){.content--container{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:auto;justify-items:center;}.card--title{grid-column:1 / 5;}}@media screen and (min-width:1000px){&::before{position:absolute;content:'';bottom:40px;left:0;right:0;width:100%;margin:0 auto;border-bottom:1px dashed rgba(255,255,255,0.6);z-index:1;}.content--container{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}.card--title{grid-column:1 / 3;}}"]);
+})(["background:var(--bg-gradient);padding:4em 1em;position:relative;.content--container{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;justify-items:center;}.btn--container{position:relative;display:flex;justify-content:center;margin-top:3em;}.card--title{grid-column:1 / 3;justify-self:center;margin-bottom:3em;}.title{text-transform:capitalize;font-weight:bold;}.subtitle{color:var(--grey-clr);}@media screen and (min-width:768px){.content--container{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:auto;justify-items:center;}.card--title{grid-column:1 / 5;}}@media screen and (min-width:1000px){&::before{position:absolute;content:'';bottom:40px;left:0;right:0;width:100%;margin:0 auto;border-bottom:1px dashed rgba(255,255,255,0.6);z-index:1;}.content--container{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}.card--title{grid-column:1 / 3;margin-top:4em;}}"]);
 
 const PopularSection = ({
   data,
@@ -896,14 +722,14 @@ const PopularSection = ({
   className: "popular--section",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 83
+    lineNumber: 85
   },
   __self: undefined
 }, __jsx("div", {
   className: "max-width content--container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 84
+    lineNumber: 86
   },
   __self: undefined
 }, __jsx(_CardTitle__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -911,7 +737,7 @@ const PopularSection = ({
   subtitle: subtitle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 85
+    lineNumber: 87
   },
   __self: undefined
 }, __jsx(_ButtonSimple__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -919,13 +745,13 @@ const PopularSection = ({
   title: btnTitle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 86
+    lineNumber: 88
   },
   __self: undefined
 })), !data ? __jsx("div", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 89
+    lineNumber: 91
   },
   __self: undefined
 }, "Sorry Something went wrong") : data.map((item, i) => __jsx(_Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -934,14 +760,14 @@ const PopularSection = ({
   typeFor: typeFor,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 92
+    lineNumber: 94
   },
   __self: undefined
 }))), __jsx("div", {
   className: "btn--container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 96
+    lineNumber: 98
   },
   __self: undefined
 }, __jsx(_button__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -949,7 +775,7 @@ const PopularSection = ({
   title: "view more",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 97
+    lineNumber: 99
   },
   __self: undefined
 })));
@@ -1267,7 +1093,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default()(_brainhubeu_react_carousel__WEBPACK_IMPORTED_MODULE_1___default.a).withConfig({
   displayName: "carousel__Styled",
   componentId: "zxhpn4-0"
-})(["width:100%;height:fit-content;padding:1em 1em 0;overflow:hidden;max-width:1160px;ul{display:flex;li{height:fit-content;min-height:100%;}}@media screen and (min-width:760px){ul li{width:160px !important;min-width:160px !important;margin:0 5px;}}@media screen and (min-width:1000px){margin-left:auto;}"]);
+})(["width:100%;height:fit-content;padding:1em 1em 0;overflow:hidden;max-width:1160px;ul{display:flex;li{height:fit-content;min-height:100%;}}@media screen and (min-width:760px){ul li{width:160px !important;min-width:160px !important;margin:0 5px;}}@media screen and (min-width:1000px){margin-left:auto;}@media screen and (min-width:1280px){margin-left:auto;ul li{width:180px !important;min-width:180px !important;margin:0 5px;}}"]);
 
 const Carousell = ({
   children
@@ -1283,7 +1109,7 @@ const Carousell = ({
     animationSpeed: 3000,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 49
     },
     __self: undefined
   }, children);
@@ -1321,134 +1147,62 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "SectionCarousel__Styled",
   componentId: "sc-1rtx4p8-0"
-})(["padding:2em 0.5em 0;@media screen and (min-width:1000px){display:flex;.card--title{flex:0 0 20%;max-width:20%;margin-right:1em;align-self:center;margin-top:6%;}}"]);
+})(["padding:2em 0.5em 0;@media screen and (min-width:1000px){display:grid;grid-template-columns:", ";grid-gap:1em;.card--title{order:", ";align-self:center;margin-top:5em;}}"], ({
+  order
+}) => order ? '80% auto' : 'auto 80%', ({
+  order
+}) => order ? 1 : 0);
 
 const SectionCarousel = ({
   data,
   typeFor,
   title,
   toLink,
-  btnTitle
-}) => {
-  return __jsx(Styled, {
-    className: "section--carousel--media max-width",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: undefined
-  }, __jsx(_CardTitle__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: title,
-    invert: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: undefined
-  }, __jsx(_ButtonSimple__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    toLink: toLink,
-    title: btnTitle,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
-  })), __jsx(_carousel_carousel__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }, data.map(item => __jsx(_Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    key: item.id,
-    data: item,
-    typeFor: typeFor,
-    invert: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }))));
-};
+  btnTitle,
+  order
+}) => __jsx(Styled, {
+  className: "section--carousel--media max-width",
+  order: order,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 25
+  },
+  __self: undefined
+}, __jsx(_CardTitle__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  title: title,
+  invert: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 26
+  },
+  __self: undefined
+}, __jsx(_ButtonSimple__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  toLink: toLink,
+  title: btnTitle,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 27
+  },
+  __self: undefined
+})), __jsx(_carousel_carousel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 29
+  },
+  __self: undefined
+}, data.map(item => __jsx(_Cards_CardOne__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  key: item.id,
+  data: item,
+  typeFor: typeFor,
+  invert: true,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 31
+  },
+  __self: undefined
+}))));
 
 /* harmony default export */ __webpack_exports__["default"] = (SectionCarousel);
-
-/***/ }),
-
-/***/ "./components/ui/tabs.js":
-/*!*******************************!*\
-  !*** ./components/ui/tabs.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
-
-const TabStyled = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.withConfig({
-  displayName: "tabs__TabStyled",
-  componentId: "sc-1d680v8-0"
-})(["color:", ";background-color:", ";padding:1em 3.2em;border-radius:40px;border:2px solid var(--primary-clr);text-transform:uppercase;font-weight:var(--fw-bold);transition:var(--ease--in--out--02s);border:3px solid ", ";outline-color:", ";transform:", ";cursor:pointer;&:hover,&focus{color:", ";transform:scale(0.95);background-color:transparent;border-color:var(--second-clr);outline-color:var(--second-clr);cursor:pointer;}"], props => props.active ? 'var(--second-clr)' : 'var(--white-clr)', props => props.active ? 'transparent' : 'var(--second-clr)', props => props.active ? 'var(--second-clr)' : 'transparent', props => props.active ? 'transparent' : 'var(--second-clr);', props => props.active ? 'scale(0.95)' : '', props => props.color ? 'var(--second-clr)' : 'var(--white-clr)');
-/* harmony default export */ __webpack_exports__["default"] = (TabStyled);
-
-/***/ }),
-
-/***/ "./components/ui/titleBanner.js":
-/*!**************************************!*\
-  !*** ./components/ui/titleBanner.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\titleBanner.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "titleBanner__Styled",
-  componentId: "hnubib-0"
-})(["position:relative;max-width:fit-content;margin:0 auto;.title,.subtitle{position:relative;width:100%;display:block;font-family:var(--fn-monterrat);font-weight:var(--fw-bold);text-transform:uppercase;}.title{color:var(--primary-clr);width:fit-content;margin:0 auto;font-size:1.1rem;padding:", ";&::after,&::before{content:'';position:absolute;height:30px;width:30px;top:43%;transform:translateY(-50%);background-size:cover;}}.subtitle{color:", ";font-size:1.8rem;}"], props => props.padd ? props.padd : ' 0 35px', props => props.invert ? 'var(--white-clr)' : 'var(--second-clr)');
-
-const TitleBanner = ({
-  subtitle,
-  title,
-  invert,
-  padd
-}) => __jsx(Styled, {
-  className: "title--banner",
-  invert: invert,
-  padd: padd,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 54
-  },
-  __self: undefined
-}, __jsx("h2", {
-  className: "title",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 55
-  },
-  __self: undefined
-}, title), __jsx("h3", {
-  className: "subtitle",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 56
-  },
-  __self: undefined
-}, subtitle));
-
-/* harmony default export */ __webpack_exports__["default"] = (TitleBanner);
 
 /***/ }),
 
@@ -3214,16 +2968,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var _components_ui_VideoHero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ui/VideoHero */ "./components/ui/VideoHero.jsx");
-/* harmony import */ var _components_contact__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/contact */ "./components/contact.jsx");
-/* harmony import */ var _components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ui/PopularSection */ "./components/ui/PopularSection.jsx");
-/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/utility/movieDB */ "./components/utility/movieDB.js");
-/* harmony import */ var _components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ui/sectionCarousel/SectionCarousel */ "./components/ui/sectionCarousel/SectionCarousel.jsx");
-/* harmony import */ var _components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ui/FeturedSection/FeturedSection */ "./components/ui/FeturedSection/FeturedSection.jsx");
-/* harmony import */ var _components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/utility/getFeturedMedia */ "./components/utility/getFeturedMedia.js");
+/* harmony import */ var _components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ui/PopularSection */ "./components/ui/PopularSection.jsx");
+/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/utility/movieDB */ "./components/utility/movieDB.js");
+/* harmony import */ var _components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ui/sectionCarousel/SectionCarousel */ "./components/ui/sectionCarousel/SectionCarousel.jsx");
+/* harmony import */ var _components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ui/FeturedSection/FeturedSection */ "./components/ui/FeturedSection/FeturedSection.jsx");
+/* harmony import */ var _components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/utility/getFeturedMedia */ "./components/utility/getFeturedMedia.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -3238,7 +2990,8 @@ const IndexPage = ({
   movieAction,
   tvAnima,
   feturedMovie,
-  feturedTv
+  feturedTv,
+  people
 }) => {
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
@@ -3252,7 +3005,7 @@ const IndexPage = ({
       lineNumber: 20
     },
     __self: undefined
-  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
     data: movieNowPlay,
     typeFor: "movie",
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "in theaters ", __jsx("br", {
@@ -3269,31 +3022,32 @@ const IndexPage = ({
       lineNumber: 21
     },
     __self: undefined
-  }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    data: movieAction,
-    typeFor: "movie",
-    title: "popular action movies",
-    toLink: "/movie",
+  }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    data: people,
+    typeFor: "person",
+    title: "Popular persons in film",
+    toLink: "/person",
+    order: "true",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: undefined
-  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
     data: feturedMovie,
     typeFor: "movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: undefined
-  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), __jsx(_components_ui_PopularSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
     data: tvOnAir,
     typeFor: "tv",
     title: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Popular TV ", __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 45
       },
       __self: undefined
     }), "Series Right Now"),
@@ -3301,25 +3055,36 @@ const IndexPage = ({
     toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: undefined
-  }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    data: movieAction,
+    typeFor: "movie",
+    title: "popular action movies",
+    toLink: "/movie",
+    order: 'true',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
+  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    data: feturedTv,
+    typeFor: "tv",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  }), __jsx(_components_ui_sectionCarousel_SectionCarousel__WEBPACK_IMPORTED_MODULE_5__["default"], {
     data: tvAnima,
     typeFor: "tv",
     title: "animation to Enjoy",
     toLink: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
-  }), __jsx(_components_ui_FeturedSection_FeturedSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    data: feturedTv,
-    typeFor: "tv",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 60
     },
     __self: undefined
   }));
@@ -3327,19 +3092,21 @@ const IndexPage = ({
 
 IndexPage.getInitialProps = async () => {
   try {
-    const tv = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('tv/on_the_air');
-    const movie = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('movie/now_playing');
-    const movieAction = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('discover/movie', 'with_genres=28&sort_by=vote_count.desc');
-    const tvAnima = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])('discover/tv', 'with_genres=16');
-    const feturedMovie = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_8__["default"])('movie');
-    const feturedTv = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_8__["default"])('tv');
+    const tv = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__["default"])('tv/on_the_air');
+    const movie = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__["default"])('movie/now_playing');
+    const movieAction = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__["default"])('discover/movie', 'with_genres=28&sort_by=vote_count.desc');
+    const tvAnima = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__["default"])('discover/tv', 'with_genres=16');
+    const feturedMovie = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_7__["default"])('movie');
+    const feturedTv = await Object(_components_utility_getFeturedMedia__WEBPACK_IMPORTED_MODULE_7__["default"])('tv');
+    const people = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__["default"])('person/popular');
     return {
       movieNowPlay: movie.results.slice(0, 12),
       tvOnAir: tv.results.slice(0, 12),
       movieAction: movieAction.results.slice(0, 10),
       tvAnima: tvAnima.results.slice(0, 10),
       feturedMovie,
-      feturedTv
+      feturedTv,
+      people: people.results.slice(0, 12)
     };
   } catch (error) {
     console.log(error);
@@ -3354,7 +3121,7 @@ IndexPage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -3528,17 +3295,6 @@ module.exports = require("react-icons/md");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
-
-/***/ }),
-
-/***/ "react-reveal/Fade":
-/*!************************************!*\
-  !*** external "react-reveal/Fade" ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-reveal/Fade");
 
 /***/ }),
 

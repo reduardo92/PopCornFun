@@ -45,27 +45,34 @@ const Styled = styled.figure`
     &__title a {
       font-weight: bold;
       color: ${({ invert }) => invert && 'var(--second-clr)'};
+      transition: var(--ease--in--out--02s);
+
+      &:hover,
+      &:focus {
+        color: var(--primary-clr);
+      }
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
+    width: 180px;
   }
 `;
 
 const CardOne = ({ data, typeFor, invert }) => (
   <Styled className='card--one' invert={invert}>
-    <div className='card--poster'>
-      <Link href={`/${typeFor}/[id]`} as={`/${typeFor}/${data.id}`}>
+    <Link href={`/${typeFor}/[id]`} as={`/${typeFor}/${data.id}`}>
+      <div className='card--poster'>
         <img
           className='poster__img'
-          src={`${IMG_URL}${data.poster_path}`}
+          src={`${IMG_URL}${data.poster_path || data.profile_path}`}
           alt={data.title || data.name}
         />
-      </Link>
-    </div>
+      </div>
+    </Link>
     <div className='card--body'>
       <div className='card--body__info'>
-        {data.release_date || data.first_air_date}
+        {data.release_date || data.first_air_date || data.known_for_department}
       </div>
       <div className='card--body__title'>
         <Link href={`/${typeFor}/[id]`} as={`/${typeFor}/${data.id}`}>

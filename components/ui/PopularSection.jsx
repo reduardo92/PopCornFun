@@ -21,6 +21,7 @@ const Styled = styled.section`
     position: relative;
     display: flex;
     justify-content: center;
+    margin-top: 3em;
   }
 
   .card--title {
@@ -68,6 +69,7 @@ const Styled = styled.section`
 
     .card--title {
       grid-column: 1 / 3;
+      margin-top: 4em;
     }
   }
 `;
