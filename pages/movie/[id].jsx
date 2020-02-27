@@ -262,9 +262,11 @@ const MovieProfile = ({ movie, typeFor }) => {
 
 MovieProfile.getInitialProps = async ctx => {
   console.log(ctx);
+
+  // ctx.asPath.slice(1)
   try {
     const movie = await movieDB(
-      ctx.asPath.slice(1),
+      'movie/546554',
       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'
     );
     console.log(ctx);
