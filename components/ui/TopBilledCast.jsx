@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import CastCard from './Cards/castCard';
 import Link from 'next/link';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import SimpleFlex from './SimpleFlex';
+import CastCard from './Cards/CastCard';
 
 const Styled = styled.section`
   padding: 1em 0.5em;
