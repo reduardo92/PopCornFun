@@ -1,3 +1,5 @@
+import { SET_MODAL_MEDIA, RESET_MODAL_MEDIA } from './types';
+
 const useMovieReducer = (state, action) => {
   switch (action.type) {
     case 'SET_DATA':
@@ -5,32 +7,17 @@ const useMovieReducer = (state, action) => {
         ...state,
         movieDBData: action.payload
       };
-    case 'SET_PAGE_DATA':
+    case SET_MODAL_MEDIA:
       return {
         ...state,
-        pageData: action.payload
+        isModal: { media: action.payload, toggle: true }
       };
-    case 'SET_PAGE_DATA_UNMOUNT':
+    case RESET_MODAL_MEDIA:
       return {
         ...state,
-        pageData: {}
+        isModal: { media: null, toggle: false }
       };
-    case 'SET_TOTAL_PAGES':
-      return {
-        ...state,
-        total_pages: action.totalPages,
-        query: action.newQuery
-      };
-    case 'SET_CURRENT_PAGE':
-      return {
-        ...state,
-        current_page: action.newCurrentPage
-      };
-    case 'SET_QUERY':
-      return {
-        ...state,
-        query: action.newQuery
-      };
+
     default:
       return state;
   }

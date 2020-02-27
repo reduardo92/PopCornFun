@@ -4,6 +4,8 @@ export const API_KEY = process.env.API_KEY;
 export const BASE_URL = 'https://api.themoviedb.org/3/';
 export const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 export const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
+export const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
+export const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA';
 // Movie DB
 
 export function getMovie(id, param) {

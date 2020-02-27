@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useReducer } from 'react';
 import MovieContext from './MovieContext';
 import useMovieReducer from './useMovieReducer';
+import { SET_MODAL_MEDIA } from './types';
 
 const log = console.log;
 
@@ -9,7 +10,8 @@ const movieInitalState = {
   total_pages: 0,
   query: 'movie',
   movieDBData: {},
-  pageData: {}
+  pageData: {},
+  isModal: { media: null, toggle: false }
 };
 
 const StateProvider = ({ children }) => {
@@ -34,6 +36,12 @@ const StateProvider = ({ children }) => {
     setWindowSize(window.innerWidth);
   }, []);
 
+  // Actions
+
+  const setData = data => dispatch({ type: SET_MODAL_MEDIA, payload: data });
+
+  const clearData = type => dispatch({ type });
+
   return (
     <MovieContext.Provider
       value={{
@@ -41,6 +49,8 @@ const StateProvider = ({ children }) => {
         setCarosuel,
         toggle,
         setToggle,
+        setData,
+        clearData,
         navRef,
         ...state
       }}

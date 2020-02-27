@@ -69,6 +69,10 @@ pre {
 a {
   background-color: transparent;
 }
+a:hover,
+a:focus {
+  text-decoration: none;
+}
 
 abbr[title] {
   border-bottom: none; /* 1 */
@@ -319,6 +323,20 @@ header {
 
 .title {
   font-weight: bold;
+}
+
+.subTitle {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.redHover {
+  color: var(--white-clr);
+  transition: var(--ease--in--out--02s);
+}
+.redHover:hover,
+.redHover:focus {
+  color: var(--primary-clr);
 }
 
 /* Card container global style */

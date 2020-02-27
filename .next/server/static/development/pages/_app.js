@@ -533,6 +533,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _MovieContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MovieContext */ "./components/context/MovieContext.js");
 /* harmony import */ var _useMovieReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useMovieReducer */ "./components/context/useMovieReducer.js");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./types */ "./components/context/types.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\context\\MovieProvider.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -546,13 +547,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 const log = console.log;
 const movieInitalState = {
   current_page: 1,
   total_pages: 0,
   query: 'movie',
   movieDBData: {},
-  pageData: {}
+  pageData: {},
+  isModal: {
+    media: null,
+    toggle: false
+  }
 };
 
 const StateProvider = ({
@@ -586,24 +592,94 @@ const StateProvider = ({
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     setWindowSize(window.innerWidth);
-  }, []);
+  }, []); // Actions
+
+  const setData = data => dispatch({
+    type: _types__WEBPACK_IMPORTED_MODULE_3__["SET_MODAL_MEDIA"],
+    payload: data
+  });
+
+  const clearData = type => dispatch({
+    type
+  });
+
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
     value: _objectSpread({
       windowSize,
       setCarosuel,
       toggle,
       setToggle,
+      setData,
+      clearData,
       navRef
     }, state),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 46
     },
     __self: undefined
   }, children);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (StateProvider);
+
+/***/ }),
+
+/***/ "./components/context/types.js":
+/*!*************************************!*\
+  !*** ./components/context/types.js ***!
+  \*************************************/
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, getMovie */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL_OR", function() { return IMG_URL_OR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MODAL_MEDIA", function() { return SET_MODAL_MEDIA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_MODAL_MEDIA", function() { return RESET_MODAL_MEDIA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
+/* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
+
+const API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
+const BASE_URL = 'https://api.themoviedb.org/3/';
+const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
+const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
+const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // Movie DB
+
+function getMovie(id, param) {
+  const movie = {
+    details: `/movie/${id}`,
+    accStates: `/movie/${id}/account_states`,
+    alterTitles: `/movie/${id}/alternative_titles`,
+    changes: `/movie/${id}/changes`,
+    credits: `/movie/${id}/credits`,
+    externalId: `/movie/${id}/external_ids`,
+    images: `/movie/${id}/images`,
+    Keywords: `/movie/${id}/keywords`,
+    ReleaseDate: `/movie/${id}/release_dates`,
+    videos: `/movie/${id}/videos`,
+    translations: `/movie/${id}/translations`,
+    recommend: `/movie/${id}/recommendations`,
+    similar: `/movie/${id}/similar`,
+    reviews: `/movie/${id}/reviews`,
+    list: `/movie/${id}/lists`,
+    rate: `/movie/${id}/rating`,
+    rating: `/movie/${id}/rating`,
+    latest: `/movie/latest`,
+    now_playing: `/movie/now_playing`,
+    popular: `/movie/popular`,
+    top_rated: `/movie/top_rated`,
+    upcoming: `/movie/upcoming`
+  };
+  const tv = {
+    details: `/tv/${id}`
+  };
+  return movie[param];
+}
 
 /***/ }),
 
@@ -616,11 +692,14 @@ const StateProvider = ({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./types */ "./components/context/types.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 const useMovieReducer = (state, action) => {
   switch (action.type) {
@@ -629,30 +708,20 @@ const useMovieReducer = (state, action) => {
         movieDBData: action.payload
       });
 
-    case 'SET_PAGE_DATA':
+    case _types__WEBPACK_IMPORTED_MODULE_0__["SET_MODAL_MEDIA"]:
       return _objectSpread({}, state, {
-        pageData: action.payload
+        isModal: {
+          media: action.payload,
+          toggle: true
+        }
       });
 
-    case 'SET_PAGE_DATA_UNMOUNT':
+    case _types__WEBPACK_IMPORTED_MODULE_0__["RESET_MODAL_MEDIA"]:
       return _objectSpread({}, state, {
-        pageData: {}
-      });
-
-    case 'SET_TOTAL_PAGES':
-      return _objectSpread({}, state, {
-        total_pages: action.totalPages,
-        query: action.newQuery
-      });
-
-    case 'SET_CURRENT_PAGE':
-      return _objectSpread({}, state, {
-        current_page: action.newCurrentPage
-      });
-
-    case 'SET_QUERY':
-      return _objectSpread({}, state, {
-        query: action.newQuery
+        isModal: {
+          media: null,
+          toggle: false
+        }
       });
 
     default:
@@ -846,6 +915,39 @@ const Socials = () => __jsx(Styled, {
 })));
 
 /* harmony default export */ __webpack_exports__["default"] = (Socials);
+
+/***/ }),
+
+/***/ "./components/utility/movieDB.js":
+/*!***************************************!*\
+  !*** ./components/utility/movieDB.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/types */ "./components/context/types.js");
+
+
+
+const movieDB = async (url, query = '', method = 'get') => {
+  try {
+    const {
+      data
+    } = await axios__WEBPACK_IMPORTED_MODULE_0___default.a[method](`${_context_types__WEBPACK_IMPORTED_MODULE_1__["BASE_URL"]}${url}?${_context_types__WEBPACK_IMPORTED_MODULE_1__["API_KEY"]}&language=en-US${query == '' ? '' : `&${query}`}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+    return {
+      error: 'sorry something went wrong'
+    };
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (movieDB);
 
 /***/ }),
 
@@ -2670,6 +2772,17 @@ const MyApp = ({
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 

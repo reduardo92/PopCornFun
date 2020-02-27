@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Button from '../button';
 import { IMG_URL_OR } from '../../context/types';
 import CirclePercentage from '../CirclePercentage';
-import Modal from 'react-bootstrap/Modal';
 import TagGroup from '../TagGroup';
 import PlayButton from '../PlayButton';
+import MovieContext from '../../context/MovieContext';
 
 const Styled = styled.section`
   position: relative;
@@ -15,6 +15,7 @@ const Styled = styled.section`
   background-size: cover;
   object-fit: cover;
   width: 100%;
+  padding: 2em 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,7 +94,8 @@ const Styled = styled.section`
 `;
 
 const FeturedSection = ({ data, typeFor }) => {
-  const [toggle, setToggle] = useState(false);
+  const { setData } = useContext(MovieContext);
+
   return (
     <Styled className='fetured' bgImg={data.backdrop_path}>
       <div className='max-width'>
@@ -113,20 +115,9 @@ const FeturedSection = ({ data, typeFor }) => {
           </div>
         </div>
         <div className='fetured--action'>
-          <PlayButton onclick={() => setToggle(true)} />
+          <PlayButton onclick={() => setData(data.videos.key)} />
         </div>
       </div>
-
-      <Modal centered size='lg' show={toggle} onHide={() => setToggle(false)}>
-        <div className='embed-responsive embed-responsive-16by9'>
-          <iframe
-            className='embed-responsive-item'
-            src={`https://www.youtube.com/embed/${data.videos.key &&
-              data.videos.key}`}
-            allowFullScreen
-          />
-        </div>
-      </Modal>
     </Styled>
   );
 };

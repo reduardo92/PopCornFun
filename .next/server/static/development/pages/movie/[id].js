@@ -88,16 +88,33 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/context/MovieContext.js":
+/*!********************************************!*\
+  !*** ./components/context/MovieContext.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const MovieContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+/* harmony default export */ __webpack_exports__["default"] = (MovieContext);
+
+/***/ }),
 
 /***/ "./components/context/types.js":
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, getMovie */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106,13 +123,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL_OR", function() { return IMG_URL_OR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MODAL_MEDIA", function() { return SET_MODAL_MEDIA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_MODAL_MEDIA", function() { return RESET_MODAL_MEDIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
 const API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-const IMG_URL_OR = 'https://image.tmdb.org/t/p/original'; // Movie DB
+const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
+const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
+const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // Movie DB
 
 function getMovie(id, param) {
   const movie = {
@@ -144,6 +165,363 @@ function getMovie(id, param) {
   };
   return movie[param];
 }
+
+/***/ }),
+
+/***/ "./components/layout.js":
+/*!******************************!*\
+  !*** ./components/layout.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context/MovieContext */ "./components/context/MovieContext.js");
+/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Modal */ "react-bootstrap/Modal");
+/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./context/types */ "./components/context/types.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\layout.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const Layout = ({
+  children
+}) => {
+  const {
+    clearData,
+    isModal
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  return __jsx("main", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, children, ' ', __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    centered: true,
+    size: "lg",
+    show: isModal.toggle,
+    onHide: () => clearData(_context_types__WEBPACK_IMPORTED_MODULE_3__["RESET_MODAL_MEDIA"]),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "embed-responsive embed-responsive-16by9",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, __jsx("iframe", {
+    className: "embed-responsive-item",
+    src: `https://www.youtube.com/embed/${isModal.media}`,
+    allowFullScreen: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+/***/ }),
+
+/***/ "./components/ui/Cards/CardReview.jsx":
+/*!********************************************!*\
+  !*** ./components/ui/Cards/CardReview.jsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Cards\\CardReview.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "CardReview__Styled",
+  componentId: "sc-1rwg80h-0"
+})(["background-color:#f2f2f4;border:1px solid #e3e3e3;box-shadow:0 2px 8px rgba(0,0,0,0.1);padding:1em;color:var(--second-clr);border-radius:5px;max-width:300px;display:grid;grid-gap:1em;.card--review__head{text-align:center;display:grid;grid-template-columns:auto 1fr;justify-items:center;align-items:center;}.avatar{width:75px;height:75px;border:5px solid var(--primary-clr);border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:bold;font-size:1.5rem;background-color:#f2f2f4;color:var(--second-clr);text-transform:uppercase;cursor:pointer;}.info{.author{font-weight:bold;color:var(--primary-clr);text-transform:capitalize;cursor:pointer;}.review--date{color:var(--second-clr);font-size:0.86rem;font-weight:bold;margin-bottom:0.5em;}.rating{font-size:0.9em;display:flex;align-items:center;align-content:center;justify-content:space-evenly;background-color:#000;border-color:#000;border-radius:10px;color:#fff;width:65px;margin:0 auto;svg{color:var(--primary-clr);}}}.description{word-break:break-all;margin-top:1em;}.full--review{color:var(--primary-clr);font-weight:bold;background-color:#fff;justify-self:center;align-self:center;padding:0.5em 0.8em;cursor:pointer;transition:var(--ease--in--out--02s);border-radius:5px;&:hover,&:focus{opacity:0.8;color:var(--second-clr);}}"]);
+
+const CardReview = ({
+  data
+}) => {
+  return __jsx(Styled, {
+    className: "card--review",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "card--review__head",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/movie/[id]/reviews",
+    as: `/movie/${data.id}/reviews`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 102
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "avatar",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103
+    },
+    __self: undefined
+  }, data.author.slice(0, 2))), __jsx("div", {
+    className: "info",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/movie/[id]/reviews",
+    as: `/movie/${data.id}/reviews`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "author",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107
+    },
+    __self: undefined
+  }, data.author)), __jsx("p", {
+    className: "review--date",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109
+    },
+    __self: undefined
+  }, "Nov 25, 2019"), __jsx("div", {
+    className: "rating",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110
+    },
+    __self: undefined
+  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_3__["FaStar"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111
+    },
+    __self: undefined
+  }), "9.0"))), __jsx("div", {
+    className: "description",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116
+    },
+    __self: undefined
+  }, `${data.content.slice(0, 250)}...`), data.content.length > 250 && __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/movie/[id]/reviews",
+    as: `/movie/${data.id}/reviews`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "full--review",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119
+    },
+    __self: undefined
+  }, "Read full review")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CardReview);
+
+/***/ }),
+
+/***/ "./components/ui/Cards/MediaCard.jsx":
+/*!*******************************************!*\
+  !*** ./components/ui/Cards/MediaCard.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Cards\\MediaCard.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "MediaCard__Styled",
+  componentId: "ljn6mv-0"
+})(["background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),url(", ") no-repeat center;background-size:cover;object-fit:'cover';width:100%;height:200px;position:relative;display:flex;justify-content:center;align-items:center;.play--button{background-color:transparent;border:none;}.media--play{color:var(--primary-clr);font-size:4rem;transition:var(--ease--in--out--02s);&:hover,&:focus{opacity:0.9;transform:scale(0.9);}}"], ({
+  bgImg
+}) => `http://img.youtube.com/vi/${bgImg}/0.jpg`);
+
+const MediaCard = ({
+  data,
+  typeFor = 'movie',
+  SetMedia
+}) => {
+  return __jsx(Styled, {
+    className: "medai--card",
+    bgImg: data.key || data.file_path,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
+  }, __jsx("button", {
+    className: "play--button",
+    onClick: () => SetMedia(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: undefined
+  }, typeFor === 'movie' ? __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaRegPlayCircle"], {
+    className: "media--play",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }) : __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaSearchPlus"], {
+    className: "media--scale",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }), ' '));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MediaCard);
+
+/***/ }),
+
+/***/ "./components/ui/Cards/castCard.jsx":
+/*!******************************************!*\
+  !*** ./components/ui/Cards/castCard.jsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/types */ "./components/context/types.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Cards\\castCard.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "castCard__Styled",
+  componentId: "sc-1sgtk2w-0"
+})([".card--poster{width:100%;height:230px;cursor:pointer;transition:var(--ease--in--out--02s);&:hover,&:focus{opacity:0.8;}img{height:100%;object-fit:cover;}}.name{font-weight:bold;font-size:1rem;margin:1em 0 0.4em;cursor:pointer;transition:var(--ease--in--out--02s);&:hover,&:focus{opacity:0.8;}}.character{font-size:12px;opacity:0.8;}"]);
+
+const CastCard = ({
+  data
+}) => __jsx(Styled, {
+  className: "cast--card",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 47
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: "/person/[id]",
+  as: `/person/${data.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 48
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "card--poster",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 49
+  },
+  __self: undefined
+}, __jsx("img", {
+  className: "cast--card__img",
+  src: `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"]}${data.profile_path}`,
+  alt: data.title || data.name,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 50
+  },
+  __self: undefined
+}))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: "/person/[id]",
+  as: `/person/${data.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 57
+  },
+  __self: undefined
+}, __jsx("h4", {
+  className: "name",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 58
+  },
+  __self: undefined
+}, data.name)), __jsx("div", {
+  className: "character",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 60
+  },
+  __self: undefined
+}, data.character));
+
+/* harmony default export */ __webpack_exports__["default"] = (CastCard);
 
 /***/ }),
 
@@ -192,6 +570,299 @@ const CirclePercentage = ({
 });
 
 /* harmony default export */ __webpack_exports__["default"] = (CirclePercentage);
+
+/***/ }),
+
+/***/ "./components/ui/MediaSection.jsx":
+/*!****************************************!*\
+  !*** ./components/ui/MediaSection.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _SimpleFlex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SimpleFlex */ "./components/ui/SimpleFlex.js");
+/* harmony import */ var _Cards_MediaCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Cards/MediaCard */ "./components/ui/Cards/MediaCard.jsx");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/MovieContext */ "./components/context/MovieContext.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\MediaSection.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
+  displayName: "MediaSection__Styled",
+  componentId: "ubdtc5-0"
+})([""]);
+
+const MediaSection = ({
+  data,
+  videos,
+  posters,
+  backdrops,
+  typeId,
+  typeFor
+}) => {
+  const {
+    0: tab,
+    1: setTab
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('videos');
+  const {
+    setData
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_5__["default"]);
+  return __jsx(Styled, {
+    className: "media--section",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    className: "subTitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: undefined
+  }, "Top Billed Cast"), __jsx("div", {
+    className: "tabs--container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, __jsx("button", {
+    className: "tab",
+    onClick: () => setTab('videos'),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, "videos"), __jsx("button", {
+    className: "tab",
+    onClick: () => setTab('posters'),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, "posters"), __jsx("button", {
+    className: "tab",
+    onClick: () => setTab('backdrops'),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }, "backdrops")), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, data.videos.results.map(item => __jsx(_Cards_MediaCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    key: item.id,
+    data: item,
+    typeFor: tab === 'videos' ? 'movie' : '',
+    SetMedia: () => setData(item.key),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/movie/[id]/media",
+    as: `/movie/${typeId}/media`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "title redHover",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }, "See All Media")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MediaSection);
+
+/***/ }),
+
+/***/ "./components/ui/PlayButton.jsx":
+/*!**************************************!*\
+  !*** ./components/ui/PlayButton.jsx ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\PlayButton.jsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
+  displayName: "PlayButton__Styled",
+  componentId: "wsi6ub-0"
+})(["position:relative;display:flex;justify-content:flex-start;align-items:center;background:transparent;border:none;outline:none;color:var(--white-clr);font-weight:bold;transition:var(--ease--in--out--02s);&::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;width:100%;transition:var(--ease--in--out--02s);background-color:var(--primary-clr);transform:scale(0);transform-origin:left;}svg{margin-left:5px;font-size:2rem;color:var(--primary-clr);transition:var(--ease--in--out--02s);}&:hover,&:focus{opacity:0.8;outline:none;}&:hover::before,&:focus::before{transform:scale(1);}&:hover svg,&:focus svg{opacity:0.8;margin-left:15px;}@media screen and (min-width:768px){flex-direction:column;padding-bottom:10px;font-size:1.2rem;&::before{width:110px;margin:0 auto;transform-origin:bottom;}svg{font-size:12rem;order:-1;margin:0;}&:hover svg,&:focus svg{margin-left:0;margin-bottom:10px;transform:scale(0.98);}}"]);
+
+const PlayButton = ({
+  title = 'play trailer',
+  onclick
+}) => __jsx(Styled, {
+  onClick: onclick,
+  className: "play--button",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 81
+  },
+  __self: undefined
+}, title, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_2__["MdPlayCircleOutline"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 83
+  },
+  __self: undefined
+}));
+
+/* harmony default export */ __webpack_exports__["default"] = (PlayButton);
+
+/***/ }),
+
+/***/ "./components/ui/ReviewSection.jsx":
+/*!*****************************************!*\
+  !*** ./components/ui/ReviewSection.jsx ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Cards_CardReview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cards/CardReview */ "./components/ui/Cards/CardReview.jsx");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _SimpleFlex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SimpleFlex */ "./components/ui/SimpleFlex.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\ReviewSection.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+ // import { FaArrowAltCircleRight } from 'react-icons/fa';
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
+  displayName: "ReviewSection__Styled",
+  componentId: "dlmh8n-0"
+})(["padding:2em 0.5em;display:grid;grid-gap:0.2em;.simple--flex{& > div{&:first-child{margin-left:0.1em;}}}.noReviews{padding:1em 0;}"]);
+
+const ReviewSection = ({
+  data,
+  movieId
+}) => {
+  return __jsx(Styled, {
+    className: "review--section",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    className: "subTitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, "Reviews"), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "simple--flex",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }, data.length > 0 ? data.map((item, i) => i < 3 && __jsx(_Cards_CardReview__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    key: item.id,
+    data: item,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  })) : __jsx("div", {
+    className: "noReviews",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, "No reviews available")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/movie/[id]/reviews",
+    as: `/movie/${movieId}/reviews`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "title redHover",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: undefined
+  }, "Read All Reviews")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReviewSection);
+
+/***/ }),
+
+/***/ "./components/ui/SimpleFlex.js":
+/*!*************************************!*\
+  !*** ./components/ui/SimpleFlex.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+const SimpleFlex = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "SimpleFlex",
+  componentId: "sc-9wbivm-0"
+})(["display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-points-x:repeat( ", " );scroll-snap-type:mandatory;margin:1em 0;& > div{flex-shrink:0;width:", ";margin:0 1em;&:first-child{margin-left:0;}}"], ({
+  setWidth
+}) => setWidth ? setWidth : '100%', ({
+  setWidth
+}) => setWidth ? setWidth : '100%');
+/* harmony default export */ __webpack_exports__["default"] = (SimpleFlex);
 
 /***/ }),
 
@@ -316,6 +987,120 @@ const TagGroup = () => __jsx(Styled, {
 }))));
 
 /* harmony default export */ __webpack_exports__["default"] = (TagGroup);
+
+/***/ }),
+
+/***/ "./components/ui/TopBilledCast.jsx":
+/*!*****************************************!*\
+  !*** ./components/ui/TopBilledCast.jsx ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Cards_castCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cards/castCard */ "./components/ui/Cards/castCard.jsx");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _SimpleFlex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SimpleFlex */ "./components/ui/SimpleFlex.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\TopBilledCast.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
+  displayName: "TopBilledCast__Styled",
+  componentId: "s5a97-0"
+})(["padding:1em 0.5em;.subTitle{margin-bottom:1.5em;}.view--more{display:flex;align-items:center;font-weight:bold;transition:var(--ease--in--out--02s);cursor:pointer;a{letter-spacing:0.8px;color:var(--white-clr);}svg{transition:var(--ease--in--out--02s);font-size:1rem;}&:hover,&:focus{opacity:0.8;margin-bottom:1em;}&:hover svg,&:focus svg{margin-left:0.2em;}}"]);
+
+const TopBilledCast = ({
+  data
+}) => {
+  return __jsx(Styled, {
+    className: "top--billed--cast",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    className: "subTitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }, "Top Billed Cast"), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: "simple--flex",
+    setWidth: "150px",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: undefined
+  }, data.map((item, i) => i < 6 && __jsx(_Cards_castCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    key: item.id,
+    data: item,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "view--more",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/movie/[id]/cast",
+    as: `/movie/${data.id}/cast`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: undefined
+  }, "View More ", __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_4__["FaArrowAltCircleRight"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }))))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/movie/[id]/cast",
+    as: `/movie/${data.id}/cast`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "title redHover",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  }, "Full Cast & Crew")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TopBilledCast);
 
 /***/ }),
 
@@ -2042,6 +2827,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ui_TagGroup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ui/TagGroup */ "./components/ui/TagGroup.jsx");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_ui_PlayButton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/ui/PlayButton */ "./components/ui/PlayButton.jsx");
+/* harmony import */ var _components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/ui/TopBilledCast */ "./components/ui/TopBilledCast.jsx");
+/* harmony import */ var _components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/ui/ReviewSection */ "./components/ui/ReviewSection.jsx");
+/* harmony import */ var _components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/ui/MediaSection */ "./components/ui/MediaSection.jsx");
+/* harmony import */ var _components_context_MovieContext__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/context/MovieContext */ "./components/context/MovieContext.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\movie\\[id].jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2058,19 +2849,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+
+
+
+
+
+
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "id__Styled",
   componentId: "zlmctg-0"
-})(["background-color:red;margin-top:123px;.profile--backdrop{background-image:url(", ");min-height:400px;background-size:cover;background-position:top;object-fit:cover;}.profile--header{padding:2em 0.5em;}.crew{margin:1em 0;display:grid;grid-template-columns:repeat(2,1fr);grid-gap:1em;}"], ({
+})(["background:var(--bg-gradient);margin-top:123px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;&__img{position:absolute;bottom:-20vw;left:20px;width:120px;}}.profile--header{position:relative;padding:2em 0.5em;max-width:750px;margin:0 auto;}.profile--header__content{display:grid;grid-gap:1.7em;grid-auto-columns:auto;.rating{svg{margin-right:calc(3vw + 0.5em);}}}.head{display:grid;grid-template-columns:auto 1fr;grid-gap:1em;padding:0 1em 0.5em;.title{align-self:center;font-size:calc(0.5em + 3vw);}}.profile--header__img{width:120px;margin-top:-8em;align-self:flex-end;}.year{opacity:0.6;font-weight:400;}.rating,.meta{display:flex;align-items:center;padding:0 0.5em;}.tag--group{border-left:1px solid #7b7b7b;padding-left:1.5em;}.meta{justify-content:space-between;font-size:0.85rem;&--tab{border-right:1px solid #7b7b7b;padding-right:1em;text-align:center;}&--tab:last-child{border:none;}}.crew{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:1em;font-weight:bold;}.play--button{width:fit-content;}@media screen and (min-width:768px){.profile--header{max-width:900px;padding:2em 1em;}.head .profile--header__img{width:160px;}.rating{grid-column:1 /2;}.meta{grid-column:2 /3;}.head,.overview,.crew{grid-column:1/ 3;}.play--button{flex-direction:row;font-size:1.1rem;&::before{width:auto;margin:auto;transform-origin:left;}svg{font-size:2rem;order:1;margin-left:5px;}&:hover svg,&:focus svg{margin-left:15px;margin-bottom:0;transform:scale(0.98);}}.CircularProgressbar{width:66px;}}"], ({
   bgImg
 }) => `${_components_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL_OR"]}${bgImg}`);
 
-const MovieProfile = ({
-  movie,
-  typeFor
-}) => {
-  console.log('profile', movie);
-  let countedNames = movie.credits.crew.reduce((acc, obj) => {
+const credits = arry => {
+  const arrData = arry.reduce((acc, obj) => {
     let key = obj.name;
 
     if (!acc[key]) {
@@ -2080,140 +2874,184 @@ const MovieProfile = ({
     acc[key].push(obj);
     return acc;
   }, []);
-  const crew = Object.entries(countedNames).map(([key, value]) => {
+  const joinData = Object.entries(arrData).map(([key, value]) => {
     let department = value.map(item => item.department);
-    let item = countedNames[key].map(item => _objectSpread({}, item, {
+    let item = arrData[key].map(item => _objectSpread({}, item, {
       department
     }));
     return item;
   }).sort((a, b) => b.length - a.length);
-  return __jsx(Styled, {
+  return joinData;
+};
+
+const MovieProfile = ({
+  movie,
+  typeFor
+}) => {
+  const {
+    setData
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_components_context_MovieContext__WEBPACK_IMPORTED_MODULE_11__["default"]);
+  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 199
+    },
+    __self: undefined
+  }, __jsx(Styled, {
     className: "profile",
     bgImg: movie.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 200
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--backdrop",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 201
     },
     __self: undefined
   }), __jsx("div", {
     className: "profile--header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 202
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "profile--header__content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 203
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "head",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 204
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--header__img",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 205
     },
     __self: undefined
   }, __jsx("img", {
-    src: "",
-    alt: "",
     className: "poster",
+    src: `${_components_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"]}${movie.poster_path || movie.profile_path}`,
+    alt: movie.title || movie.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 206
     },
     __self: undefined
-  })), __jsx("div", {
-    className: "profile--header__content",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
-  }, __jsx("h2", {
+  })), __jsx("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 212
     },
     __self: undefined
-  }, movie.title || movie.name), __jsx("div", {
+  }, movie.title || movie.name, ' ', __jsx("span", {
+    className: "year",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 214
+    },
+    __self: undefined
+  }, "(", movie.release_date.slice(0, 4), ")"))), __jsx("div", {
     className: "rating",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 217
     },
     __self: undefined
   }, __jsx(_components_ui_CirclePercentage__WEBPACK_IMPORTED_MODULE_4__["default"], {
     value: movie.vote_average * 10,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 218
     },
     __self: undefined
   }), __jsx(_components_ui_TagGroup__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 219
     },
     __self: undefined
   })), __jsx("div", {
     className: "meta",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 221
     },
     __self: undefined
   }, __jsx("span", {
     className: "release meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 222
     },
     __self: undefined
   }, "2017"), __jsx("span", {
     className: "runtime meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 223
     },
     __self: undefined
   }, "1h 02 mins"), __jsx("span", {
     className: "rating meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 224
     },
     __self: undefined
   }, "R"), __jsx("span", {
     className: "genre meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 225
     },
     __self: undefined
   }, "Action,Drama,Sci-fi")), __jsx("div", {
     className: "overview",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 227
     },
     __self: undefined
-  }, movie.overview), __jsx("div", {
+  }, __jsx("h3", {
+    className: "subTitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 228
+    },
+    __self: undefined
+  }, "OVERVIEW"), __jsx("p", {
+    className: "overview--para",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 229
+    },
+    __self: undefined
+  }, movie.overview)), __jsx("div", {
     className: "crew",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 231
     },
     __self: undefined
-  }, crew.map((c, i) => i < 6 && __jsx("div", {
+  }, credits(movie.credits.crew).map((c, i) => i < 6 && __jsx("div", {
     key: c[0].id,
     className: "crew--person",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 235
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -2221,24 +3059,58 @@ const MovieProfile = ({
     as: `/person/${c[0].id}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 236
     },
     __self: undefined
   }, c[0].name), __jsx("small", {
     className: "d-block mt-1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 239
     },
     __self: undefined
-  }, c[0].department.join(', '))))))));
+  }, c[0].department.join(', '))))), __jsx(_components_ui_PlayButton__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onclick: () => setData(movie.videos.results[1].key),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 246
+    },
+    __self: undefined
+  }))), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    data: movie.credits.cast,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 249
+    },
+    __self: undefined
+  }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    data: movie.reviews.results,
+    movieId: movie.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 250
+    },
+    __self: undefined
+  }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    data: movie,
+    videos: movie.videos.results,
+    posters: movie.images.posters,
+    backdrops: movie.images.backdrops,
+    typeId: movie.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 251
+    },
+    __self: undefined
+  })));
 };
 
-MovieProfile.getInitialProps = async ({
-  asPath
-}) => {
+MovieProfile.getInitialProps = async ctx => {
+  console.log(ctx);
+
   try {
-    const movie = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_2__["default"])(asPath.slice(1), 'append_to_response=account_states,external_ids,images,keywords,release_dates,videos,recommendations,reviews,credits');
+    const movie = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_2__["default"])(ctx.asPath.slice(1), 'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null');
+    console.log(ctx);
     return {
       movie
     };
@@ -2251,7 +3123,7 @@ MovieProfile.getInitialProps = async ({
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!************************************!*\
   !*** multi ./pages/movie/[id].jsx ***!
   \************************************/
@@ -2362,6 +3234,17 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ "react-bootstrap/Modal":
+/*!****************************************!*\
+  !*** external "react-bootstrap/Modal" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Modal");
+
+/***/ }),
+
 /***/ "react-circular-progressbar":
 /*!*********************************************!*\
   !*** external "react-circular-progressbar" ***!
@@ -2370,6 +3253,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-circular-progressbar");
+
+/***/ }),
+
+/***/ "react-icons/fa":
+/*!*********************************!*\
+  !*** external "react-icons/fa" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/fa");
 
 /***/ }),
 

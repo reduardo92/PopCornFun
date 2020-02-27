@@ -37,6 +37,7 @@ const Styled = styled.button`
   &:hover,
   &:focus {
     opacity: 0.8;
+    outline: none;
   }
 
   &:hover::before,
