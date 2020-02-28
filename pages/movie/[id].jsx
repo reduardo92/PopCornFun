@@ -264,11 +264,10 @@ MovieProfile.getInitialProps = async ctx => {
   console.log(ctx.query, 'ID');
   console.log(ctx);
 
-  const url = ctx.asPath.slice(1);
+  //   const url = ctx.asPath.slice(1);
   try {
-    if (!ctx.query.id) return;
     const movie = await movieDB(
-      url,
+      `movie/${ctx.query.id}`,
       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'
     );
     return {

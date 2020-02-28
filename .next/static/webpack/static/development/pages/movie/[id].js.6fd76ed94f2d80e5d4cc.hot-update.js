@@ -121,10 +121,12 @@ var MovieProfile = function MovieProfile(_ref4) {
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_10__["useContext"])(_components_context_MovieContext__WEBPACK_IMPORTED_MODULE_21__["default"]),
       setData = _useContext.setData;
 
+  var af = {};
+  console.log(typeof af);
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_22__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 199
+      lineNumber: 203
     },
     __self: this
   }, __jsx(Styled, {
@@ -132,42 +134,42 @@ var MovieProfile = function MovieProfile(_ref4) {
     bgImg: movie.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 200
+      lineNumber: 204
     },
     __self: this
   }, __jsx("div", {
     className: "profile--backdrop",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201
+      lineNumber: 205
     },
     __self: this
   }), __jsx("div", {
     className: "profile--header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 202
+      lineNumber: 206
     },
     __self: this
   }, __jsx("div", {
     className: "profile--header__content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 203
+      lineNumber: 207
     },
     __self: this
   }, __jsx("div", {
     className: "head",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 204
+      lineNumber: 208
     },
     __self: this
   }, __jsx("div", {
     className: "profile--header__img",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 209
     },
     __self: this
   }, __jsx("img", {
@@ -176,104 +178,104 @@ var MovieProfile = function MovieProfile(_ref4) {
     alt: movie.title || movie.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 210
     },
     __self: this
   })), __jsx("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 212
+      lineNumber: 216
     },
     __self: this
   }, movie.title || movie.name, ' ', __jsx("span", {
     className: "year",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 214
+      lineNumber: 218
     },
     __self: this
   }, "(", movie.release_date.slice(0, 4), ")"))), __jsx("div", {
     className: "rating",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217
+      lineNumber: 221
     },
     __self: this
   }, __jsx(_components_ui_CirclePercentage__WEBPACK_IMPORTED_MODULE_14__["default"], {
     value: movie.vote_average * 10,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218
+      lineNumber: 222
     },
     __self: this
   }), __jsx(_components_ui_TagGroup__WEBPACK_IMPORTED_MODULE_15__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219
+      lineNumber: 223
     },
     __self: this
   })), __jsx("div", {
     className: "meta",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 221
+      lineNumber: 225
     },
     __self: this
   }, __jsx("span", {
     className: "release meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 222
+      lineNumber: 226
     },
     __self: this
   }, "2017"), __jsx("span", {
     className: "runtime meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 223
+      lineNumber: 227
     },
     __self: this
   }, "1h 02 mins"), __jsx("span", {
     className: "rating meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 224
+      lineNumber: 228
     },
     __self: this
   }, "R"), __jsx("span", {
     className: "genre meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 225
+      lineNumber: 229
     },
     __self: this
   }, "Action,Drama,Sci-fi")), __jsx("div", {
     className: "overview",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 227
+      lineNumber: 231
     },
     __self: this
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 228
+      lineNumber: 232
     },
     __self: this
   }, "OVERVIEW"), __jsx("p", {
     className: "overview--para",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 229
+      lineNumber: 233
     },
     __self: this
   }, movie.overview)), __jsx("div", {
     className: "crew",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231
+      lineNumber: 235
     },
     __self: this
   }, credits(movie.credits.crew).map(function (c, i) {
@@ -282,7 +284,7 @@ var MovieProfile = function MovieProfile(_ref4) {
       className: "crew--person",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 235
+        lineNumber: 239
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -290,14 +292,14 @@ var MovieProfile = function MovieProfile(_ref4) {
       as: "/person/".concat(c[0].id),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 236
+        lineNumber: 240
       },
       __self: this
     }, c[0].name), __jsx("small", {
       className: "d-block mt-1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 239
+        lineNumber: 243
       },
       __self: this
     }, c[0].department.join(', ')));
@@ -307,14 +309,14 @@ var MovieProfile = function MovieProfile(_ref4) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 246
+      lineNumber: 250
     },
     __self: this
   }))), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_18__["default"], {
     data: movie.credits.cast,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 249
+      lineNumber: 253
     },
     __self: this
   }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_19__["default"], {
@@ -322,7 +324,7 @@ var MovieProfile = function MovieProfile(_ref4) {
     movieId: movie.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 250
+      lineNumber: 254
     },
     __self: this
   }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_20__["default"], {
@@ -333,50 +335,42 @@ var MovieProfile = function MovieProfile(_ref4) {
     typeId: movie.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 251
+      lineNumber: 255
     },
     __self: this
   })));
 };
 
 MovieProfile.getInitialProps = function _callee(ctx) {
-  var url, movie;
+  var movie;
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          console.log(ctx.query);
-          url = ctx.asPath.slice(1);
+          console.log(ctx.query, 'ID');
+          console.log(ctx); //   const url = ctx.asPath.slice(1);
+
           _context.prev = 2;
-
-          if (ctx.query.id) {
-            _context.next = 5;
-            break;
-          }
-
-          return _context.abrupt("return");
+          _context.next = 5;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_12__["default"])("movie/".concat(ctx.query.id), 'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'));
 
         case 5:
-          _context.next = 7;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_12__["default"])(url, 'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'));
-
-        case 7:
           movie = _context.sent;
           return _context.abrupt("return", {
             movie: movie
           });
 
-        case 11:
-          _context.prev = 11;
+        case 9:
+          _context.prev = 9;
           _context.t0 = _context["catch"](2);
           console.log(_context.t0);
 
-        case 14:
+        case 12:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[2, 11]]);
+  }, null, null, [[2, 9]]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MovieProfile);
@@ -384,4 +378,4 @@ MovieProfile.getInitialProps = function _callee(ctx) {
 /***/ })
 
 })
-//# sourceMappingURL=[id].js.9f76d8cb099aec0654a3.hot-update.js.map
+//# sourceMappingURL=[id].js.6fd76ed94f2d80e5d4cc.hot-update.js.map
