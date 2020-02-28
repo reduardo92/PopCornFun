@@ -35875,42 +35875,46 @@ var MovieProfile = function MovieProfile(_ref4) {
   })));
 };
 
-MovieProfile.getInitialProps = function _callee(ctx) {
-  var url, movie;
+MovieProfile.getInitialProps = function _callee(_ref5) {
+  var asPath, url, movie;
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          console.log(ctx);
-          url = ctx.asPath.slice(1);
-          _context.prev = 2;
-          _context.next = 5;
+          asPath = _ref5.asPath;
+          _context.next = 3;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(asPath.slice(1));
+
+        case 3:
+          url = _context.sent;
+          _context.prev = 4;
+          _context.next = 7;
           return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_12__["default"])(url, 'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'));
 
-        case 5:
+        case 7:
           movie = _context.sent;
           return _context.abrupt("return", {
             movie: movie
           });
 
-        case 9:
-          _context.prev = 9;
-          _context.t0 = _context["catch"](2);
+        case 11:
+          _context.prev = 11;
+          _context.t0 = _context["catch"](4);
           console.log(_context.t0);
 
-        case 12:
+        case 14:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[2, 9]]);
+  }, null, null, [[4, 11]]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MovieProfile);
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!***********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmovie%2F%5Bid%5D&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Cmovie%5C%5Bid%5D.jsx ***!
   \***********************************************************************************************************************************************************************************/
@@ -35933,5 +35937,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

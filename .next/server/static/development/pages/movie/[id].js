@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -3105,9 +3105,11 @@ const MovieProfile = ({
   })));
 };
 
-MovieProfile.getInitialProps = async ctx => {
-  console.log(ctx);
-  const url = ctx.asPath.slice(1);
+MovieProfile.getInitialProps = async ({
+  asPath
+}) => {
+  //   console.log(ctx);
+  const url = await asPath.slice(1);
 
   try {
     const movie = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_2__["default"])(url, 'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null');
@@ -3123,7 +3125,7 @@ MovieProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!************************************!*\
   !*** multi ./pages/movie/[id].jsx ***!
   \************************************/

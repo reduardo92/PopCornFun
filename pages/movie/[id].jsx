@@ -260,10 +260,10 @@ const MovieProfile = ({ movie, typeFor }) => {
   );
 };
 
-MovieProfile.getInitialProps = async ctx => {
-  console.log(ctx);
+MovieProfile.getInitialProps = async ({ asPath }) => {
+  //   console.log(ctx);
 
-  const url = ctx.asPath.slice(1);
+  const url = await asPath.slice(1);
   try {
     const movie = await movieDB(
       url,
