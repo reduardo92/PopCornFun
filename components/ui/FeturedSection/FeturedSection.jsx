@@ -110,7 +110,12 @@ const FeturedSection = ({ data, typeFor }) => {
               : data.overview}
           </p>
           <div className='btn--group'>
-            <Button toLink={`/${typeFor}/${data.id}`} title='view more' bgclr />
+            <Button
+              toLink={`/${typeFor}/[id]`}
+              asLink={`/${typeFor}/${data.id}`}
+              title='view more'
+              bgclr
+            />
             <TagGroup />
           </div>
         </div>

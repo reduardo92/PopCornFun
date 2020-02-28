@@ -30,8 +30,8 @@ const Styled = styled.a`
   }
 `;
 
-const Button = ({ toLink, title, hoverclr, bgclr, invert }) => (
-  <Link href={toLink}>
+const Button = ({ toLink, asLink, title, hoverclr, bgclr, invert }) => (
+  <Link href={toLink} as={asLink}>
     <Styled
       hoverclr={hoverclr}
       bgclr={bgclr}
