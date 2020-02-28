@@ -267,7 +267,7 @@ MovieProfile.getInitialProps = async ctx => {
   //   const url = ctx.asPath.slice(1);
   try {
     const movie = await movieDB(
-      `movie/${ctx.query.id}`,
+      `movie/${ctx.query.id || '454626'}`,
       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'
     );
     return {
