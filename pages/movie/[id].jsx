@@ -14,7 +14,7 @@ import Layout from '../../components/layout';
 
 const Styled = styled.section`
   background: var(--bg-gradient);
-  margin-top: 123px;
+  margin-top: 110px;
 
   .profile--backdrop {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -260,11 +260,13 @@ const MovieProfile = ({ movie, typeFor }) => {
   );
 };
 
-MovieProfile.getInitialProps = async ({ asPath }) => {
-  //   console.log(ctx);
+MovieProfile.getInitialProps = async ctx => {
+  console.log(ctx.query, 'ID');
+  console.log(ctx);
 
-  const url = await asPath.slice(1);
+  const url = ctx.asPath.slice(1);
   try {
+    if (!ctx.query.id) return;
     const movie = await movieDB(
       url,
       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'

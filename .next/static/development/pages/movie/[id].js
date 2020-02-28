@@ -35612,7 +35612,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_11__["default"].section.withConfig({
   displayName: "id__Styled",
   componentId: "zlmctg-0"
-})(["background:var(--bg-gradient);margin-top:123px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;&__img{position:absolute;bottom:-20vw;left:20px;width:120px;}}.profile--header{position:relative;padding:2em 0.5em;max-width:750px;margin:0 auto;}.profile--header__content{display:grid;grid-gap:1.7em;grid-auto-columns:auto;.rating{svg{margin-right:calc(3vw + 0.5em);}}}.head{display:grid;grid-template-columns:auto 1fr;grid-gap:1em;padding:0 1em 0.5em;.title{align-self:center;font-size:calc(0.5em + 3vw);}}.profile--header__img{width:120px;margin-top:-8em;align-self:flex-end;}.year{opacity:0.6;font-weight:400;}.rating,.meta{display:flex;align-items:center;padding:0 0.5em;}.tag--group{border-left:1px solid #7b7b7b;padding-left:1.5em;}.meta{justify-content:space-between;font-size:0.85rem;&--tab{border-right:1px solid #7b7b7b;padding-right:1em;text-align:center;}&--tab:last-child{border:none;}}.crew{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:1em;font-weight:bold;}.play--button{width:fit-content;}@media screen and (min-width:768px){.profile--header{max-width:900px;padding:2em 1em;}.head .profile--header__img{width:160px;}.rating{grid-column:1 /2;}.meta{grid-column:2 /3;}.head,.overview,.crew{grid-column:1/ 3;}.play--button{flex-direction:row;font-size:1.1rem;&::before{width:auto;margin:auto;transform-origin:left;}svg{font-size:2rem;order:1;margin-left:5px;}&:hover svg,&:focus svg{margin-left:15px;margin-bottom:0;transform:scale(0.98);}}.CircularProgressbar{width:66px;}}"], function (_ref) {
+})(["background:var(--bg-gradient);margin-top:110px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;&__img{position:absolute;bottom:-20vw;left:20px;width:120px;}}.profile--header{position:relative;padding:2em 0.5em;max-width:750px;margin:0 auto;}.profile--header__content{display:grid;grid-gap:1.7em;grid-auto-columns:auto;.rating{svg{margin-right:calc(3vw + 0.5em);}}}.head{display:grid;grid-template-columns:auto 1fr;grid-gap:1em;padding:0 1em 0.5em;.title{align-self:center;font-size:calc(0.5em + 3vw);}}.profile--header__img{width:120px;margin-top:-8em;align-self:flex-end;}.year{opacity:0.6;font-weight:400;}.rating,.meta{display:flex;align-items:center;padding:0 0.5em;}.tag--group{border-left:1px solid #7b7b7b;padding-left:1.5em;}.meta{justify-content:space-between;font-size:0.85rem;&--tab{border-right:1px solid #7b7b7b;padding-right:1em;text-align:center;}&--tab:last-child{border:none;}}.crew{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:1em;font-weight:bold;}.play--button{width:fit-content;}@media screen and (min-width:768px){.profile--header{max-width:900px;padding:2em 1em;}.head .profile--header__img{width:160px;}.rating{grid-column:1 /2;}.meta{grid-column:2 /3;}.head,.overview,.crew{grid-column:1/ 3;}.play--button{flex-direction:row;font-size:1.1rem;&::before{width:auto;margin:auto;transform-origin:left;}svg{font-size:2rem;order:1;margin-left:5px;}&:hover svg,&:focus svg{margin-left:15px;margin-bottom:0;transform:scale(0.98);}}.CircularProgressbar{width:66px;}}"], function (_ref) {
   var bgImg = _ref.bgImg;
   return "".concat(_components_context_types__WEBPACK_IMPORTED_MODULE_13__["IMG_URL_OR"]).concat(bgImg);
 });
@@ -35875,39 +35875,45 @@ var MovieProfile = function MovieProfile(_ref4) {
   })));
 };
 
-MovieProfile.getInitialProps = function _callee(_ref5) {
-  var asPath, url, movie;
+MovieProfile.getInitialProps = function _callee(ctx) {
+  var url, movie;
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          asPath = _ref5.asPath;
-          _context.next = 3;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(asPath.slice(1));
+          console.log(ctx.query, 'ID');
+          console.log(ctx);
+          url = ctx.asPath.slice(1);
+          _context.prev = 3;
 
-        case 3:
-          url = _context.sent;
-          _context.prev = 4;
-          _context.next = 7;
+          if (ctx.query.id) {
+            _context.next = 6;
+            break;
+          }
+
+          return _context.abrupt("return");
+
+        case 6:
+          _context.next = 8;
           return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_12__["default"])(url, 'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'));
 
-        case 7:
+        case 8:
           movie = _context.sent;
           return _context.abrupt("return", {
             movie: movie
           });
 
-        case 11:
-          _context.prev = 11;
-          _context.t0 = _context["catch"](4);
+        case 12:
+          _context.prev = 12;
+          _context.t0 = _context["catch"](3);
           console.log(_context.t0);
 
-        case 14:
+        case 15:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[4, 11]]);
+  }, null, null, [[3, 12]]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MovieProfile);

@@ -339,36 +339,44 @@ var MovieProfile = function MovieProfile(_ref4) {
   })));
 };
 
-MovieProfile.getInitialProps = function _callee(_ref5) {
-  var asPath, url, movie;
+MovieProfile.getInitialProps = function _callee(ctx) {
+  var url, movie;
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          asPath = _ref5.asPath;
-          //   console.log(ctx);
-          url = asPath.slice(1);
+          console.log(ctx.query);
+          url = ctx.asPath.slice(1);
           _context.prev = 2;
-          _context.next = 5;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_12__["default"])(url, 'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'));
+
+          if (!ctx.query.id) {
+            _context.next = 5;
+            break;
+          }
+
+          return _context.abrupt("return");
 
         case 5:
+          _context.next = 7;
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_12__["default"])(url, 'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'));
+
+        case 7:
           movie = _context.sent;
           return _context.abrupt("return", {
             movie: movie
           });
 
-        case 9:
-          _context.prev = 9;
+        case 11:
+          _context.prev = 11;
           _context.t0 = _context["catch"](2);
           console.log(_context.t0);
 
-        case 12:
+        case 14:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[2, 9]]);
+  }, null, null, [[2, 11]]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MovieProfile);
@@ -376,4 +384,4 @@ MovieProfile.getInitialProps = function _callee(_ref5) {
 /***/ })
 
 })
-//# sourceMappingURL=[id].js.4656a8720c13bc67e32c.hot-update.js.map
+//# sourceMappingURL=[id].js.29646f50873548085ad8.hot-update.js.map
