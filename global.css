@@ -145,6 +145,11 @@ select {
   text-transform: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 button,
 [type='button'],
 [type='reset'],

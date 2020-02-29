@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaRegPlayCircle, FaSearchPlus } from 'react-icons/fa';
+import { FaRegPlayCircle, FaSearch } from 'react-icons/fa';
+import { IMG_URL } from '../../context/types';
 
 const Styled = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url(${({ bgImg }) => `http://img.youtube.com/vi/${bgImg}/0.jpg`}) no-repeat
-      center;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.2)),
+    url(${({ bgImg, forMedia }) =>
+        forMedia === 'videos'
+          ? `http://img.youtube.com/vi/${bgImg}/0.jpg`
+          : `${IMG_URL}${bgImg}`})
+      no-repeat center;
   background-size: cover;
   object-fit: 'cover';
   width: 100%;
@@ -15,14 +19,15 @@ const Styled = styled.div`
   justify-content: center;
   align-items: center;
 
-  .play--button {
+  .media--button {
     background-color: transparent;
     border: none;
   }
 
-  .media--play {
-    color: var(--primary-clr);
-    font-size: 4rem;
+  .media--play,
+  .media--scale {
+    color: var(--accent-clr);
+    font-size: 2rem;
     transition: var(--ease--in--out--02s);
 
     &:hover,
@@ -31,16 +36,25 @@ const Styled = styled.div`
       transform: scale(0.9);
     }
   }
+
+  .media--scale {
+    font-size: 1rem;
+  }
 `;
 
-const MediaCard = ({ data, typeFor = 'movie', SetMedia }) => {
+const MediaCard = ({ data, typeFor = 'videos', SetMedia }) => {
+  console.log('type', typeFor);
   return (
-    <Styled className='medai--card' bgImg={data.key || data.file_path}>
-      <button className='play--button' onClick={() => SetMedia()}>
-        {typeFor === 'movie' ? (
+    <Styled
+      className={`media--card ${typeFor === 'videos' ? 'vid' : 'img'}`}
+      forMedia={typeFor}
+      bgImg={data.key || data.file_path}
+    >
+      <button className='media--button' onClick={() => SetMedia()}>
+        {typeFor === 'videos' ? (
           <FaRegPlayCircle className='media--play' />
         ) : (
-          <FaSearchPlus className='media--scale' />
+          <FaSearch className='media--scale' />
         )}{' '}
       </button>
     </Styled>

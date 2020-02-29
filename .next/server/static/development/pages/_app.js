@@ -557,7 +557,8 @@ const movieInitalState = {
   pageData: {},
   isModal: {
     media: null,
-    toggle: false
+    toggle: false,
+    for: null
   }
 };
 
@@ -599,10 +600,17 @@ const StateProvider = ({
     payload: data
   });
 
+  const setModal = (data, typeFor = 'videos') => dispatch({
+    type: _types__WEBPACK_IMPORTED_MODULE_3__["SET_MODAL_MEDIA"],
+    payload: data,
+    typeFor
+  });
+
   const clearData = type => dispatch({
     type
   });
 
+  console.log(state);
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
     value: _objectSpread({
       windowSize,
@@ -610,12 +618,13 @@ const StateProvider = ({
       toggle,
       setToggle,
       setData,
+      setModal,
       clearData,
       navRef
     }, state),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 50
     },
     __self: undefined
   }, children);
@@ -712,7 +721,8 @@ const useMovieReducer = (state, action) => {
       return _objectSpread({}, state, {
         isModal: {
           media: action.payload,
-          toggle: true
+          toggle: true,
+          for: action.typeFor
         }
       });
 
@@ -720,7 +730,8 @@ const useMovieReducer = (state, action) => {
       return _objectSpread({}, state, {
         isModal: {
           media: null,
-          toggle: false
+          toggle: false,
+          for: null
         }
       });
 

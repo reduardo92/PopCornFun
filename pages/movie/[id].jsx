@@ -119,7 +119,7 @@ const Styled = styled.section`
 
   @media screen and (min-width: 768px) {
     .profile--header {
-      max-width: 900px;
+      max-width: 1100px;
       padding: 2em 1em;
     }
 
@@ -194,6 +194,7 @@ const credits = arry => {
 
 const MovieProfile = ({ movie, typeFor }) => {
   const { setData } = useContext(MovieContext);
+  console.log(movie);
 
   return (
     <Layout>
@@ -249,7 +250,6 @@ const MovieProfile = ({ movie, typeFor }) => {
         <TopBilledCast data={movie.credits.cast} />
         <ReviewSection data={movie.reviews.results} movieId={movie.id} />
         <MediaSection
-          data={movie}
           videos={movie.videos.results}
           posters={movie.images.posters}
           backdrops={movie.images.backdrops}

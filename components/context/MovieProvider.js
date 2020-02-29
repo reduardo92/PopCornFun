@@ -11,7 +11,7 @@ const movieInitalState = {
   query: 'movie',
   movieDBData: {},
   pageData: {},
-  isModal: { media: null, toggle: false }
+  isModal: { media: null, toggle: false, for: null }
 };
 
 const StateProvider = ({ children }) => {
@@ -40,8 +40,12 @@ const StateProvider = ({ children }) => {
 
   const setData = data => dispatch({ type: SET_MODAL_MEDIA, payload: data });
 
+  const setModal = (data, typeFor = 'videos') =>
+    dispatch({ type: SET_MODAL_MEDIA, payload: data, typeFor });
+
   const clearData = type => dispatch({ type });
 
+  console.log(state);
   return (
     <MovieContext.Provider
       value={{
@@ -50,6 +54,7 @@ const StateProvider = ({ children }) => {
         toggle,
         setToggle,
         setData,
+        setModal,
         clearData,
         navRef,
         ...state

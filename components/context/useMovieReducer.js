@@ -10,12 +10,12 @@ const useMovieReducer = (state, action) => {
     case SET_MODAL_MEDIA:
       return {
         ...state,
-        isModal: { media: action.payload, toggle: true }
+        isModal: { media: action.payload, toggle: true, for: action.typeFor }
       };
     case RESET_MODAL_MEDIA:
       return {
         ...state,
-        isModal: { media: null, toggle: false }
+        isModal: { media: null, toggle: false, for: null }
       };
 
     default:
