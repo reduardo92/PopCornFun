@@ -94,7 +94,7 @@ const Styled = styled.section`
 `;
 
 const FeturedSection = ({ data, typeFor }) => {
-  const { setData } = useContext(MovieContext);
+  const { setModal } = useContext(MovieContext);
 
   return (
     <Styled className='fetured' bgImg={data.backdrop_path}>
@@ -120,7 +120,7 @@ const FeturedSection = ({ data, typeFor }) => {
           </div>
         </div>
         <div className='fetured--action'>
-          <PlayButton onclick={() => setData(data.videos.key)} />
+          <PlayButton onclick={() => setModal(data.videos.key)} />
         </div>
       </div>
     </Styled>

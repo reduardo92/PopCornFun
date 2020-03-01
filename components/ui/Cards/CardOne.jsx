@@ -14,8 +14,8 @@ const Styled = styled.figure`
     &::after {
       content: 'View More';
       transition: var(--ease--in--out--02s);
-      display: grid;
-      justify-items: center;
+      display: flex;
+      justify-content: center;
       align-items: center;
       position: absolute;
       font-size: 0.8rem;

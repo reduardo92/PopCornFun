@@ -43,7 +43,6 @@ const Styled = styled.div`
 `;
 
 const MediaCard = ({ data, typeFor = 'videos', SetMedia }) => {
-  console.log('type', typeFor);
   return (
     <Styled
       className={`media--card ${typeFor === 'videos' ? 'vid' : 'img'}`}

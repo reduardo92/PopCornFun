@@ -15,7 +15,9 @@ const Layout = ({ children }) => {
         show={isModal.toggle}
         onHide={() => clearData(RESET_MODAL_MEDIA)}
       >
-        {isModal.for === 'videos' ? (
+        {isModal.for !== 'videos' ? (
+          <img src={`${IMG_URL}${isModal.media}`} alt={isModal.media} />
+        ) : (
           <div className='embed-responsive embed-responsive-16by9'>
             <iframe
               className='embed-responsive-item'
@@ -23,8 +25,6 @@ const Layout = ({ children }) => {
               allowFullScreen
             />
           </div>
-        ) : (
-          <img src={`${IMG_URL}${isModal.media}`} alt={isModal.media} />
         )}
       </Modal>
     </main>

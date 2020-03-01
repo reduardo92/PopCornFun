@@ -40,6 +40,7 @@ const Styled = styled.section`
 
   .simple--flex {
     scroll-snap-points-x: repeat(200px);
+    margin-bottom: 1.2em;
 
     & > div {
       margin: 0 0.5em;
@@ -52,6 +53,10 @@ const Styled = styled.section`
     .img {
       width: 200px;
       margin: 0 0.3em;
+    }
+
+    & > div:first-child {
+      margin-left: 0;
     }
   }
 `;
@@ -95,7 +100,7 @@ const MediaSection = ({ videos, posters, backdrops, typeId, typeFor }) => {
           (item, i) =>
             i < 8 && (
               <MediaCard
-                key={item.id}
+                key={item.id || i}
                 data={item}
                 typeFor={tab === 'videos' ? 'movie' : ''}
                 SetMedia={() =>
