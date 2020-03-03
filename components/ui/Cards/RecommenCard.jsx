@@ -62,27 +62,13 @@ const Styled = styled.div`
   }
 
   .recommend--card__content {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-column-gap: 0.8em;
+    display: flex;
     align-items: baseline;
     margin-top: 0.5em;
     /* font-weight: bold; */
 
     &--name {
       font-weight: bold;
-    }
-
-    .rating {
-      justify-self: end;
-      display: flex;
-      align-items: center;
-
-      .star {
-        color: yellow;
-        margin-left: 0.1em;
-        font-size: 1.2rem;
-      }
     }
   }
 
@@ -118,7 +104,7 @@ const RecommenCard = ({ data, typeFor }) => {
             {data.title || data.name}
           </a>
         </Link>
-        <span className='rating'>
+        <span className='rating--star'>
           {data.vote_average}
           <GoStar className='star' />
         </span>

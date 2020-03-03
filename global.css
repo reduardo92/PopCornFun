@@ -371,6 +371,20 @@ header {
   justify-items: center;
 }
 
+/* Start Rating */
+.rating--star {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.rating--star .star {
+  color: yellow;
+  margin-left: 0.1em;
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 0.1rem rgb(41, 41, 41, 0.5));
+}
+
 @media screen and (min-width: 760px) and (max-width: 1200px) {
   .card--container > :last-child {
     grid-column: 1/3;

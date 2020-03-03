@@ -469,7 +469,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "RecommenCard__Styled",
   componentId: "sc-8rijlz-0"
-})([".recommend--card--poster{position:relative;width:160px;cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(188,49,49,0.85);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}&__release{position:absolute;bottom:0;left:0;right:0;color:var(--white-clr);background-color:var(--primary-clr);padding:0.5em 0;text-align:center;font-weight:bold;font-size:0.9rem;display:flex;align-items:center;justify-content:center;z-index:1;.calendar{margin-right:0.5em;font-size:1.2rem;}.date{margin-right:0.5em;}}}.recommend--card__content{display:grid;grid-template-columns:auto auto;grid-column-gap:0.8em;align-items:baseline;margin-top:0.5em;&--name{font-weight:bold;}.rating{justify-self:end;display:flex;align-items:center;.star{color:yellow;margin-left:0.1em;font-size:1.2rem;}}}@media screen and (min-width:1280px){.recommend--card--poster{width:180px;}}"]);
+})([".recommend--card--poster{position:relative;width:160px;cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(188,49,49,0.85);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}&__release{position:absolute;bottom:0;left:0;right:0;color:var(--white-clr);background-color:var(--primary-clr);padding:0.5em 0;text-align:center;font-weight:bold;font-size:0.9rem;display:flex;align-items:center;justify-content:center;z-index:1;.calendar{margin-right:0.5em;font-size:1.2rem;}.date{margin-right:0.5em;}}}.recommend--card__content{display:flex;align-items:baseline;margin-top:0.5em;&--name{font-weight:bold;}}@media screen and (min-width:1280px){.recommend--card--poster{width:180px;}}"]);
 
 var RecommenCard = function RecommenCard(_ref) {
   var data = _ref.data,
@@ -478,7 +478,7 @@ var RecommenCard = function RecommenCard(_ref) {
     className: "recommend--card",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 84
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -486,14 +486,14 @@ var RecommenCard = function RecommenCard(_ref) {
     as: "/".concat(typeFor, "/").concat(data.id),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 85
     },
     __self: this
   }, __jsx("div", {
     className: "recommend--card--poster",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 86
     },
     __self: this
   }, __jsx("img", {
@@ -502,35 +502,35 @@ var RecommenCard = function RecommenCard(_ref) {
     alt: data.title || data.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 87
     },
     __self: this
   }), __jsx("div", {
     className: "recommend--card--poster__release",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 92
     },
     __self: this
   }, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoCalendar"], {
     className: "calendar",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 93
     },
     __self: this
   }), __jsx("span", {
     className: "date",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 94
     },
     __self: this
   }, data.release_date || data.first_air_date)))), __jsx("div", {
     className: "recommend--card__content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 101
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -538,28 +538,28 @@ var RecommenCard = function RecommenCard(_ref) {
     as: "/".concat(typeFor, "/").concat(data.id),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 102
     },
     __self: this
   }, __jsx("a", {
     className: "recommend--card__content--name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 103
     },
     __self: this
   }, data.title || data.name)), __jsx("span", {
-    className: "rating",
+    className: "rating--star",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 107
     },
     __self: this
   }, data.vote_average, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoStar"], {
     className: "star",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 109
     },
     __self: this
   }))));
@@ -37196,7 +37196,7 @@ MovieProfile.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!***********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmovie%2F%5Bid%5D&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Cmovie%5C%5Bid%5D.jsx ***!
   \***********************************************************************************************************************************************************************************/
@@ -37219,5 +37219,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

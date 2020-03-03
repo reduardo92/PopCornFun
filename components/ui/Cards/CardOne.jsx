@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { IMG_URL } from '../../context/types';
+import { GoStar } from 'react-icons/go';
 
 const Styled = styled.figure`
   width: 160px;
@@ -40,6 +41,9 @@ const Styled = styled.figure`
     &__info {
       color: ${({ invert }) =>
         invert ? 'var(--second-clr)' : 'var(--grey-clr)'};
+      display: flex;
+      align-items: baseline;
+      margin-top: 0.5em;
     }
 
     &__title a {
@@ -72,7 +76,17 @@ const CardOne = ({ data, typeFor, invert }) => (
     </Link>
     <div className='card--body'>
       <div className='card--body__info'>
-        {data.release_date || data.first_air_date || data.known_for_department}
+        <span className='info--top'>
+          {data.release_date ||
+            data.first_air_date ||
+            data.known_for_department}
+        </span>
+        {(data.release_date || data.first_air_date) && (
+          <span className='rating--star'>
+            {data.vote_average}
+            <GoStar className='star' />
+          </span>
+        )}
       </div>
       <div className='card--body__title'>
         <Link href={`/${typeFor}/[id]`} as={`/${typeFor}/${data.id}`}>
