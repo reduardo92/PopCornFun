@@ -6,6 +6,7 @@ import ReviewSection from '../../components/ui/ReviewSection';
 import MediaSection from '../../components/ui/MediaSection';
 import Layout from '../../components/layout';
 import ProfileHeader from '../../components/ui/mediaProfile/ProfileHeader';
+import RecommenSection from '../../components/ui/RecommenSection';
 
 const Styled = styled.section`
   background: var(--bg-gradient);
@@ -53,15 +54,16 @@ const MovieProfile = ({ movie, typeFor }) => {
         <div className='profile--backdrop' />
         <div className='profile--header'>
           <ProfileHeader data={movie} />
+          <TopBilledCast data={movie.credits.cast} />
+          <ReviewSection data={movie.reviews.results} movieId={movie.id} />
+          <MediaSection
+            videos={movie.videos.results}
+            posters={movie.images.posters}
+            backdrops={movie.images.backdrops}
+            typeId={movie.id}
+          />
+          <RecommenSection data={movie.recommendations.results.slice(0, 10)} />
         </div>
-        <TopBilledCast data={movie.credits.cast} />
-        <ReviewSection data={movie.reviews.results} movieId={movie.id} />
-        <MediaSection
-          videos={movie.videos.results}
-          posters={movie.images.posters}
-          backdrops={movie.images.backdrops}
-          typeId={movie.id}
-        />
       </Styled>
     </Layout>
   );

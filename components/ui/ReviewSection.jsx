@@ -30,7 +30,7 @@ const ReviewSection = ({ data, movieId }) => {
       <SimpleFlex className='simple--flex'>
         {data.length > 0 ? (
           data.map(
-            (item, i) => i < 3 && <CardReview key={item.id} data={item} />
+            (item, i) => i < 4 && <CardReview key={item.id} data={item} />
           )
         ) : (
           <div className='noReviews'>No reviews available</div>

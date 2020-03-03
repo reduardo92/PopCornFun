@@ -20,7 +20,7 @@ const Styled = styled.figure`
       position: absolute;
       font-size: 0.8rem;
       font-weight: bold;
-      background-color: rgba(64, 4, 4, 0.7);
+      background-color: rgba(188, 49, 49, 0.85);
       height: 0;
       width: 100%;
       opacity: 0;

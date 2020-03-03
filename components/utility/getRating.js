@@ -9,10 +9,4 @@ export default data => {
   if (getdatace.length === 0) return 'N/A';
 
   return getdatace[0].certification;
-  //   const ff = getdata.find(({ certification }) =>
-  //     certification !== '' ? certification : 'n/a'
-  //   );
 };
-
-// .release_dates.find(({ certification }) => certification !== '')
-//         .certification

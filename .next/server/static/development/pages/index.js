@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -396,7 +396,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.figure.withConfig({
   displayName: "CardOne__Styled",
   componentId: "e0m3r6-0"
-})(["width:160px;.card--poster{position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(64,4,4,0.7);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}}.card--body{&__info{color:", ";}&__title a{font-weight:bold;color:", ";transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:1280px){width:180px;}"], ({
+})(["width:160px;.card--poster{position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(188,49,49,0.85);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}}.card--body{&__info{color:", ";}&__title a{font-weight:bold;color:", ";transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:1280px){width:180px;}"], ({
   invert
 }) => invert ? 'var(--second-clr)' : 'var(--grey-clr)', ({
   invert
@@ -505,6 +505,7 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(react_ci
 const CirclePercentage = ({
   value
 }) => __jsx(Styled, {
+  className: "circle--percentege",
   value: value,
   text: `${value}%`,
   minValue: 1,
@@ -3155,7 +3156,7 @@ IndexPage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

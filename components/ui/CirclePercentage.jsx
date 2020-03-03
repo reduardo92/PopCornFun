@@ -27,6 +27,7 @@ const Styled = styled(CircularProgressbar)`
 
 const CirclePercentage = ({ value }) => (
   <Styled
+    className='circle--percentege'
     value={value}
     text={`${value}%`}
     minValue={1}

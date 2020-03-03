@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -537,6 +537,135 @@ const MediaCard = ({
 
 /***/ }),
 
+/***/ "./components/ui/Cards/RecommenCard.jsx":
+/*!**********************************************!*\
+  !*** ./components/ui/Cards/RecommenCard.jsx ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/types */ "./components/context/types.js");
+/* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/go */ "react-icons/go");
+/* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_icons_go__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Cards\\RecommenCard.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "RecommenCard__Styled",
+  componentId: "sc-8rijlz-0"
+})([".recommend--card--poster{position:relative;width:160px;cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(188,49,49,0.85);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}&__release{position:absolute;bottom:0;left:0;right:0;color:var(--white-clr);background-color:var(--primary-clr);padding:0.5em 0;text-align:center;font-weight:bold;font-size:0.9rem;display:flex;align-items:center;justify-content:center;z-index:1;.calendar{margin-right:0.5em;font-size:1.2rem;}.date{margin-right:0.5em;}}}.recommend--card__content{display:grid;grid-template-columns:auto auto;grid-column-gap:0.8em;align-items:baseline;margin-top:0.5em;&--name{font-weight:bold;}.rating{justify-self:end;display:flex;align-items:center;.star{color:yellow;margin-left:0.1em;font-size:1.2rem;}}}@media screen and (min-width:1280px){.recommend--card--poster{width:180px;}}"]);
+
+const RecommenCard = ({
+  data,
+  typeFor
+}) => {
+  return __jsx(Styled, {
+    className: "recommend--card",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: `/${typeFor}/[id]`,
+    as: `/${typeFor}/${data.id}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "recommend--card--poster",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100
+    },
+    __self: undefined
+  }, __jsx("img", {
+    className: "recommend--card--poster__img",
+    src: `${_context_types__WEBPACK_IMPORTED_MODULE_2__["IMG_URL"]}${data.poster_path}`,
+    alt: data.title || data.name,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: undefined
+  }), __jsx("div", {
+    className: "recommend--card--poster__release",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106
+    },
+    __self: undefined
+  }, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoCalendar"], {
+    className: "calendar",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107
+    },
+    __self: undefined
+  }), __jsx("span", {
+    className: "date",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108
+    },
+    __self: undefined
+  }, data.release_date || data.first_air_date)))), __jsx("div", {
+    className: "recommend--card__content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: `/${typeFor}/[id]`,
+    as: `/${typeFor}/${data.id}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "recommend--card__content--name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117
+    },
+    __self: undefined
+  }, data.title || data.name)), __jsx("span", {
+    className: "rating",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 121
+    },
+    __self: undefined
+  }, data.vote_average, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoStar"], {
+    className: "star",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 123
+    },
+    __self: undefined
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (RecommenCard);
+
+/***/ }),
+
 /***/ "./components/ui/CirclePercentage.jsx":
 /*!********************************************!*\
   !*** ./components/ui/CirclePercentage.jsx ***!
@@ -569,6 +698,7 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(react_ci
 const CirclePercentage = ({
   value
 }) => __jsx(Styled, {
+  className: "circle--percentege",
   value: value,
   text: `${value}%`,
   minValue: 1,
@@ -775,6 +905,74 @@ const PlayButton = ({
 
 /***/ }),
 
+/***/ "./components/ui/RecommenSection.jsx":
+/*!*******************************************!*\
+  !*** ./components/ui/RecommenSection.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Cards_RecommenCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cards/RecommenCard */ "./components/ui/Cards/RecommenCard.jsx");
+/* harmony import */ var _SimpleFlex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SimpleFlex */ "./components/ui/SimpleFlex.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\RecommenSection.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
+  displayName: "RecommenSection__Styled",
+  componentId: "hey7bf-0"
+})(["padding:1em 0.5em;.subTitle{margin-bottom:1.5em;}@media screen and (min-width:1280px){.simple--flex{& > div{width:180px;}}}"]);
+
+const RecommenSection = ({
+  data,
+  typeFor = 'movie'
+}) => {
+  return __jsx(Styled, {
+    className: "recommendations--section",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    className: "subTitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, "Recommendations"), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "simple--flex",
+    setWidth: "160px",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  }, data.map(item => __jsx(_Cards_RecommenCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    key: item.id,
+    data: item,
+    typeFor: typeFor,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (RecommenSection);
+
+/***/ }),
+
 /***/ "./components/ui/ReviewSection.jsx":
 /*!*****************************************!*\
   !*** ./components/ui/ReviewSection.jsx ***!
@@ -830,7 +1028,7 @@ const ReviewSection = ({
       lineNumber: 30
     },
     __self: undefined
-  }, data.length > 0 ? data.map((item, i) => i < 3 && __jsx(_Cards_CardReview__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, data.length > 0 ? data.map((item, i) => i < 4 && __jsx(_Cards_CardReview__WEBPACK_IMPORTED_MODULE_2__["default"], {
     key: item.id,
     data: item,
     __source: {
@@ -1373,11 +1571,8 @@ __webpack_require__.r(__webpack_exports__);
     certification
   }) => certification !== '');
   if (getdatace.length === 0) return 'N/A';
-  return getdatace[0].certification; //   const ff = getdata.find(({ certification }) =>
-  //     certification !== '' ? certification : 'n/a'
-  //   );
-}); // .release_dates.find(({ certification }) => certification !== '')
-//         .certification
+  return getdatace[0].certification;
+});
 
 /***/ }),
 
@@ -3161,9 +3356,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ui/MediaSection */ "./components/ui/MediaSection.jsx");
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
 /* harmony import */ var _components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileHeader */ "./components/ui/mediaProfile/ProfileHeader.jsx");
+/* harmony import */ var _components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/ui/RecommenSection */ "./components/ui/RecommenSection.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\movie\\[id].jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -3187,7 +3384,7 @@ const MovieProfile = ({
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx(Styled, {
@@ -3195,31 +3392,31 @@ const MovieProfile = ({
     bgImg: movie.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--backdrop",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 54
     },
     __self: undefined
   }), __jsx("div", {
     className: "profile--header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 55
     },
     __self: undefined
   }, __jsx(_components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_8__["default"], {
     data: movie,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 56
     },
     __self: undefined
-  })), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: movie.credits.cast,
     __source: {
       fileName: _jsxFileName,
@@ -3244,7 +3441,14 @@ const MovieProfile = ({
       lineNumber: 59
     },
     __self: undefined
-  })));
+  }), __jsx(_components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    data: movie.recommendations.results.slice(0, 10),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  }))));
 };
 
 MovieProfile.getInitialProps = async ctx => {
@@ -3265,7 +3469,7 @@ MovieProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!************************************!*\
   !*** multi ./pages/movie/[id].jsx ***!
   \************************************/
@@ -3406,6 +3610,17 @@ module.exports = require("react-circular-progressbar");
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/fa");
+
+/***/ }),
+
+/***/ "react-icons/go":
+/*!*********************************!*\
+  !*** external "react-icons/go" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/go");
 
 /***/ }),
 
