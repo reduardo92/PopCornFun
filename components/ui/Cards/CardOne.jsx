@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { IMG_URL } from '../../context/types';
 import { GoStar } from 'react-icons/go';
+import setDateFormat from '../../utility/setDateFormat';
 
 const Styled = styled.figure`
   width: 160px;
@@ -44,6 +45,10 @@ const Styled = styled.figure`
       display: flex;
       align-items: baseline;
       margin-top: 0.5em;
+
+      .info--top {
+        font-size: 0.9rem;
+      }
     }
 
     &__title a {
@@ -77,9 +82,11 @@ const CardOne = ({ data, typeFor, invert }) => (
     <div className='card--body'>
       <div className='card--body__info'>
         <span className='info--top'>
-          {data.release_date ||
-            data.first_air_date ||
-            data.known_for_department}
+          {data.release_date
+            ? setDateFormat(data.release_date)
+            : data.first_air_date
+            ? setDateFormat(data.first_air_date)
+            : data.known_for_department}
         </span>
         {(data.release_date || data.first_air_date) && (
           <span className='rating--star'>

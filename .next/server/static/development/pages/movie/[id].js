@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -215,6 +215,7 @@ const Layout = ({
     },
     __self: undefined
   }, isModal.for !== 'videos' ? __jsx("img", {
+    className: "modal--img",
     src: `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"]}${isModal.media}`,
     alt: isModal.media,
     __source: {
@@ -226,7 +227,7 @@ const Layout = ({
     className: "embed-responsive embed-responsive-16by9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: undefined
   }, __jsx("iframe", {
@@ -235,7 +236,7 @@ const Layout = ({
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 26
     },
     __self: undefined
   }))));
@@ -1080,12 +1081,165 @@ __webpack_require__.r(__webpack_exports__);
 const SimpleFlex = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "SimpleFlex",
   componentId: "sc-9wbivm-0"
-})(["display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-points-x:repeat( ", " );scroll-snap-type:mandatory;padding:1em 0;::-webkit-scrollbar{height:10px;background-color:#f5f5f5;}::-webkit-scrollbar-thumb{background-color:#535353;}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#f5f5f5;}& > div{flex-shrink:0;width:", ";margin:0 1em;&:first-child{margin-left:0;}}"], ({
+})(["display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-points-x:repeat( ", " );scroll-snap-type:mandatory;padding:1em 0;& > div{flex-shrink:0;width:", ";margin:0 1em;&:first-child{margin-left:0;}}@media screen and (min-width:1000px){::-webkit-scrollbar{height:10px;background-color:#f5f5f5;}::-webkit-scrollbar-thumb{background-color:#535353;}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#f5f5f5;}}"], ({
   setWidth
 }) => setWidth ? setWidth : '100%', ({
   setWidth
 }) => setWidth ? setWidth : '100%');
 /* harmony default export */ __webpack_exports__["default"] = (SimpleFlex);
+
+/***/ }),
+
+/***/ "./components/ui/SocialLinks.jsx":
+/*!***************************************!*\
+  !*** ./components/ui/SocialLinks.jsx ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\SocialLinks.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "SocialLinks__Styled",
+  componentId: "sc-4eizea-0"
+})(["display:flex;align-items:center;justify-content:space-between;width:200px;font-size:1.6rem;"]);
+
+const SocialLinks = ({
+  data,
+  homepage
+}) => {
+  return __jsx(Styled, {
+    className: "social--links",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, __jsx("a", {
+    href: `https://www.facebook.com/${data.facebook_id}`,
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaFacebookF"], {
+    className: "social--link",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  })), __jsx("a", {
+    href: `https://twitter.com/${data.twitter_id}`,
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaTwitter"], {
+    className: "social--link",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  })), __jsx("a", {
+    href: `https://www.instagram.com/${data.instagram_id}`,
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaInstagram"], {
+    className: "social--link",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  })), __jsx("a", {
+    href: homepage,
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaExternalLinkSquareAlt"], {
+    className: "social--link",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SocialLinks);
+
+/***/ }),
+
+/***/ "./components/ui/Tab.js":
+/*!******************************!*\
+  !*** ./components/ui/Tab.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Tab.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
+  displayName: "Tab__Styled",
+  componentId: "sc-14z81p6-0"
+})(["background-color:#fff;border:1px solid #d7d7d7;color:#000;padding:4px 10px;border-radius:4px;transition:var(--ease--in--out--02s);cursor:pointer;font-size:0.9rem;&:hover,&focus{opacity:0.8;}"]);
+
+const Tab = ({
+  data,
+  typeFor,
+  addCls
+}) => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: `/genre/[id]/[name]/${typeFor}`,
+  as: `/genre/${data.id}/${data.name}/${typeFor}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 22
+  },
+  __self: undefined
+}, __jsx(Styled, {
+  className: `tab--link ${addCls}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 26
+  },
+  __self: undefined
+}, data.name));
+
+/* harmony default export */ __webpack_exports__["default"] = (Tab);
 
 /***/ }),
 
@@ -1555,6 +1709,425 @@ const ProfileHeader = ({
 
 /***/ }),
 
+/***/ "./components/ui/mediaProfile/ProfileStats/Facts.jsx":
+/*!***********************************************************!*\
+  !*** ./components/ui/mediaProfile/ProfileStats/Facts.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utility_timeConvert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utility/timeConvert */ "./components/utility/timeConvert.js");
+/* harmony import */ var _utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utility/numberWithCommas */ "./components/utility/numberWithCommas.js");
+/* harmony import */ var _utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utility/setDateFormat */ "./components/utility/setDateFormat.js");
+/* harmony import */ var react_icons_ti__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/ti */ "react-icons/ti");
+/* harmony import */ var react_icons_ti__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_ti__WEBPACK_IMPORTED_MODULE_5__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\ProfileStats\\Facts.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Facts__Styled",
+  componentId: "a62vcl-0"
+})([".stat{text-transform:capitalize;margin-bottom:0.7em;}.stat--title{font-size:0.9rem;font-weight:bold;margin-bottom:0.1em;}.world{font-size:1.5rem;}"]);
+
+const Facts = ({
+  data
+}) => {
+  const getReleaseType = {
+    1: 'Premiere',
+    2: 'Theatrical (limited)',
+    3: 'Theatrical',
+    4: 'Digital',
+    5: 'Physical',
+    6: 'Tv'
+  };
+  return __jsx(Styled, {
+    className: "profile--stats--facts",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    className: "title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, "Facts"), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
+  }, "Status"), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: undefined
+  }, data.status)), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, "Release Information"), __jsx("ul", {
+    className: "release--content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }, data.release_dates.results.filter(item => item.iso_3166_1 === 'US')[0].release_dates.map((item, i) => __jsx("li", {
+    key: i,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "release--date",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: undefined
+  }, __jsx(react_icons_ti__WEBPACK_IMPORTED_MODULE_5__["TiWorld"], {
+    className: "world",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  }), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__["default"])(item.release_date.slice(0, 10)))), __jsx("div", {
+    className: "certification",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, __jsx("span", {
+    className: "rate",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, item.certification), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: undefined
+  }, getReleaseType[item.type])))))), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  }, "Original Language"), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }, data.original_language)), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: undefined
+  }, "Runtime"), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: undefined
+  }, Object(_utility_timeConvert__WEBPACK_IMPORTED_MODULE_2__["default"])(data.runtime))), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }, "Budget"), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74
+    },
+    __self: undefined
+  }, data.revenue === 0 ? 'N/A' : `$${Object(_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__["default"])(data.revenue)}`)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Facts);
+
+/***/ }),
+
+/***/ "./components/ui/mediaProfile/ProfileStats/Genre.jsx":
+/*!***********************************************************!*\
+  !*** ./components/ui/mediaProfile/ProfileStats/Genre.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Tab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Tab */ "./components/ui/Tab.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\ProfileStats\\Genre.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Genre__Styled",
+  componentId: "sc-5zo2i4-0"
+})([""]);
+
+const Genre = ({
+  data
+}) => {
+  return __jsx(Styled, {
+    className: "profile--stats--genres",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    className: "title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, "Genres"), __jsx("div", {
+    className: "flex-w-container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, data.genres.map(item => __jsx(_Tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: item,
+    typeFor: data.typeFor,
+    key: item.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Genre);
+
+/***/ }),
+
+/***/ "./components/ui/mediaProfile/ProfileStats/Keyords.jsx":
+/*!*************************************************************!*\
+  !*** ./components/ui/mediaProfile/ProfileStats/Keyords.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Tab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Tab */ "./components/ui/Tab.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\ProfileStats\\Keyords.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Keyords__Styled",
+  componentId: "sc-2szu9-0"
+})([""]);
+
+const Keyords = ({
+  data
+}) => __jsx(Styled, {
+  className: "profile--stats--genres",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 8
+  },
+  __self: undefined
+}, __jsx("h3", {
+  className: "title",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 9
+  },
+  __self: undefined
+}, "Keywords"), __jsx("div", {
+  className: "flex-w-container",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 10
+  },
+  __self: undefined
+}, data.keywords.keywords.map(item => __jsx(_Tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  data: item,
+  typeFor: data.typeFor,
+  key: item.id,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 12
+  },
+  __self: undefined
+}))));
+
+/* harmony default export */ __webpack_exports__["default"] = (Keyords);
+
+/***/ }),
+
+/***/ "./components/ui/mediaProfile/ProfileStats/ProfileStats.jsx":
+/*!******************************************************************!*\
+  !*** ./components/ui/mediaProfile/ProfileStats/ProfileStats.jsx ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _SocialLinks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../SocialLinks */ "./components/ui/SocialLinks.jsx");
+/* harmony import */ var _Facts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Facts */ "./components/ui/mediaProfile/ProfileStats/Facts.jsx");
+/* harmony import */ var _Genre__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Genre */ "./components/ui/mediaProfile/ProfileStats/Genre.jsx");
+/* harmony import */ var _Keyords__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Keyords */ "./components/ui/mediaProfile/ProfileStats/Keyords.jsx");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\ProfileStats\\ProfileStats.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
+  displayName: "ProfileStats__Styled",
+  componentId: "sc-1wmtszh-0"
+})(["display:grid;grid-row-gap:1em;background-color:var(--accent-clr);padding:2em 1em;*{color:var(--second-clr);}.title{font-size:1.2rem;margin-bottom:1em;}"]);
+
+const ProfileStats = ({
+  data
+}) => {
+  return __jsx(Styled, {
+    className: "profile--stats",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, __jsx(_SocialLinks__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: data.external_ids,
+    homepage: data.homepage,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  }), __jsx(_Facts__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    data: data,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }), __jsx(_Genre__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    data: data,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }), __jsx(_Keyords__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    data: data,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ProfileStats);
+
+/***/ }),
+
 /***/ "./components/utility/getRating.js":
 /*!*****************************************!*\
   !*** ./components/utility/getRating.js ***!
@@ -1644,6 +2217,37 @@ const movieDB = async (url, query = '', method = 'get') => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (movieDB);
+
+/***/ }),
+
+/***/ "./components/utility/numberWithCommas.js":
+/*!************************************************!*\
+  !*** ./components/utility/numberWithCommas.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+
+/***/ }),
+
+/***/ "./components/utility/setDateFormat.js":
+/*!*********************************************!*\
+  !*** ./components/utility/setDateFormat.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (date => {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+  const splitDate = date.split('-');
+  const month = Math.floor(splitDate[1]) - 1;
+  return `${months[month]} ${splitDate[2]} ${splitDate[0]}`;
+});
 
 /***/ }),
 
@@ -3357,9 +3961,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
 /* harmony import */ var _components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileHeader */ "./components/ui/mediaProfile/ProfileHeader.jsx");
 /* harmony import */ var _components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/ui/RecommenSection */ "./components/ui/RecommenSection.jsx");
+/* harmony import */ var _components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileStats/ProfileStats */ "./components/ui/mediaProfile/ProfileStats/ProfileStats.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\movie\\[id].jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -3384,7 +3997,7 @@ const MovieProfile = ({
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx(Styled, {
@@ -3392,35 +4005,35 @@ const MovieProfile = ({
     bgImg: movie.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--backdrop",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 55
     },
     __self: undefined
   }), __jsx("div", {
     className: "profile--header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 56
     },
     __self: undefined
   }, __jsx(_components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_8__["default"], {
     data: movie,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 57
     },
     __self: undefined
   }), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: movie.credits.cast,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 58
     },
     __self: undefined
   }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -3428,7 +4041,7 @@ const MovieProfile = ({
     movieId: movie.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 59
     },
     __self: undefined
   }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -3438,17 +4051,24 @@ const MovieProfile = ({
     typeId: movie.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 60
     },
     __self: undefined
   }), __jsx(_components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
     data: movie.recommendations.results.slice(0, 10),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 66
     },
     __self: undefined
-  }))));
+  })), __jsx(_components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    data: movie,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  })));
 };
 
 MovieProfile.getInitialProps = async ctx => {
@@ -3458,7 +4078,9 @@ MovieProfile.getInitialProps = async ctx => {
   try {
     const movie = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_2__["default"])(`movie/${ctx.query.id || '454626'}`, 'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null');
     return {
-      movie
+      movie: _objectSpread({
+        typeFor: 'movie'
+      }, movie)
     };
   } catch (error) {
     console.log(error);
@@ -3469,7 +4091,7 @@ MovieProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!************************************!*\
   !*** multi ./pages/movie/[id].jsx ***!
   \************************************/
@@ -3643,6 +4265,17 @@ module.exports = require("react-icons/io");
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/md");
+
+/***/ }),
+
+/***/ "react-icons/ti":
+/*!*********************************!*\
+  !*** external "react-icons/ti" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/ti");
 
 /***/ }),
 

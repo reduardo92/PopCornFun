@@ -7,6 +7,7 @@ import MediaSection from '../../components/ui/MediaSection';
 import Layout from '../../components/layout';
 import ProfileHeader from '../../components/ui/mediaProfile/ProfileHeader';
 import RecommenSection from '../../components/ui/RecommenSection';
+import ProfileStats from '../../components/ui/mediaProfile/ProfileStats/ProfileStats';
 
 const Styled = styled.section`
   background: var(--bg-gradient);
@@ -64,6 +65,7 @@ const MovieProfile = ({ movie, typeFor }) => {
           />
           <RecommenSection data={movie.recommendations.results.slice(0, 10)} />
         </div>
+        <ProfileStats data={movie} />
       </Styled>
     </Layout>
   );
@@ -79,7 +81,7 @@ MovieProfile.getInitialProps = async ctx => {
       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'
     );
     return {
-      movie
+      movie: { typeFor: 'movie', ...movie }
     };
   } catch (error) {
     console.log(error);

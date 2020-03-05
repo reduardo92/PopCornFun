@@ -16,7 +16,11 @@ const Layout = ({ children }) => {
         onHide={() => clearData(RESET_MODAL_MEDIA)}
       >
         {isModal.for !== 'videos' ? (
-          <img src={`${IMG_URL}${isModal.media}`} alt={isModal.media} />
+          <img
+            className='modal--img'
+            src={`${IMG_URL}${isModal.media}`}
+            alt={isModal.media}
+          />
         ) : (
           <div className='embed-responsive embed-responsive-16by9'>
             <iframe

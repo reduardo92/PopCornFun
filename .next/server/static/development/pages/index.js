@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -215,6 +215,7 @@ const Layout = ({
     },
     __self: undefined
   }, isModal.for !== 'videos' ? __jsx("img", {
+    className: "modal--img",
     src: `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"]}${isModal.media}`,
     alt: isModal.media,
     __source: {
@@ -226,7 +227,7 @@ const Layout = ({
     className: "embed-responsive embed-responsive-16by9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: undefined
   }, __jsx("iframe", {
@@ -235,7 +236,7 @@ const Layout = ({
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 26
     },
     __self: undefined
   }))));
@@ -389,8 +390,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/types */ "./components/context/types.js");
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/go */ "react-icons/go");
 /* harmony import */ var react_icons_go__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_icons_go__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utility_setDateFormat__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utility/setDateFormat */ "./components/utility/setDateFormat.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Cards\\CardOne.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -399,7 +402,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.figure.withConfig({
   displayName: "CardOne__Styled",
   componentId: "e0m3r6-0"
-})(["width:160px;.card--poster{position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(188,49,49,0.85);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}}.card--body{&__info{color:", ";display:flex;align-items:baseline;margin-top:0.5em;}&__title a{font-weight:bold;color:", ";transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:1280px){width:180px;}"], ({
+})(["width:160px;.card--poster{position:relative;transition:var(--ease--in--out--02s);cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(188,49,49,0.85);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}}.card--body{&__info{color:", ";display:flex;align-items:baseline;margin-top:0.5em;.info--top{font-size:0.9rem;}}&__title a{font-weight:bold;color:", ";transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:1280px){width:180px;}"], ({
   invert
 }) => invert ? 'var(--second-clr)' : 'var(--grey-clr)', ({
   invert
@@ -414,7 +417,7 @@ const CardOne = ({
   invert: invert,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 67
+    lineNumber: 72
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -422,14 +425,14 @@ const CardOne = ({
   as: `/${typeFor}/${data.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 68
+    lineNumber: 73
   },
   __self: undefined
 }, __jsx("div", {
   className: "card--poster",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 69
+    lineNumber: 74
   },
   __self: undefined
 }, __jsx("img", {
@@ -438,49 +441,49 @@ const CardOne = ({
   alt: data.title || data.name,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 70
+    lineNumber: 75
   },
   __self: undefined
 }))), __jsx("div", {
   className: "card--body",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 77
+    lineNumber: 82
   },
   __self: undefined
 }, __jsx("div", {
   className: "card--body__info",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 78
+    lineNumber: 83
   },
   __self: undefined
 }, __jsx("span", {
   className: "info--top",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 79
+    lineNumber: 84
   },
   __self: undefined
-}, data.release_date || data.first_air_date || data.known_for_department), (data.release_date || data.first_air_date) && __jsx("span", {
+}, data.release_date ? Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_5__["default"])(data.release_date) : data.first_air_date ? Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_5__["default"])(data.first_air_date) : data.known_for_department), (data.release_date || data.first_air_date) && __jsx("span", {
   className: "rating--star",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 85
+    lineNumber: 92
   },
   __self: undefined
 }, data.vote_average, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_4__["GoStar"], {
   className: "star",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 87
+    lineNumber: 94
   },
   __self: undefined
 }))), __jsx("div", {
   className: "card--body__title",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 91
+    lineNumber: 98
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -488,7 +491,7 @@ const CardOne = ({
   as: `/${typeFor}/${data.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 92
+    lineNumber: 99
   },
   __self: undefined
 }, data.title || data.name))));
@@ -1340,6 +1343,24 @@ const movieDB = async (url, query = '', method = 'get') => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (num => Math.floor(Math.random() * Math.floor(num)));
+
+/***/ }),
+
+/***/ "./components/utility/setDateFormat.js":
+/*!*********************************************!*\
+  !*** ./components/utility/setDateFormat.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (date => {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+  const splitDate = date.split('-');
+  const month = Math.floor(splitDate[1]) - 1;
+  return `${months[month]} ${splitDate[2]} ${splitDate[0]}`;
+});
 
 /***/ }),
 
@@ -3180,7 +3201,7 @@ IndexPage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
