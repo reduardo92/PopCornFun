@@ -63,7 +63,7 @@ const MovieProfile = ({ movie, typeFor }) => {
             backdrops={movie.images.backdrops}
             typeId={movie.id}
           />
-          <RecommenSection data={movie.recommendations.results.slice(0, 10)} />
+          <RecommenSection data={movie} />
         </div>
         <ProfileStats data={movie} />
       </Styled>

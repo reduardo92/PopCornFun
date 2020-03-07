@@ -19,13 +19,14 @@ const Styled = styled.section`
   }
 `;
 
-const RecommenSection = ({ data, typeFor = 'movie' }) => {
+const RecommenSection = ({ data }) => {
+  console.log('rec', data.typeFor);
   return (
     <Styled className='recommendations--section'>
       <h3 className='subTitle'>Recommendations</h3>
       <SimpleFlex className='simple--flex' setWidth='160px'>
-        {data.map(item => (
-          <RecommenCard key={item.id} data={item} typeFor={typeFor} />
+        {data.recommendations.results.slice(0, 10).map(item => (
+          <RecommenCard key={item.id} data={item} typeFor={data.typeFor} />
         ))}
       </SimpleFlex>
     </Styled>

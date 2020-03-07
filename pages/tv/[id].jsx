@@ -55,15 +55,15 @@ const TvProfile = ({ tv }) => {
         <div className='profile--backdrop' />
         <div className='profile--header'>
           <ProfileHeader data={tv} />
-          {/* <TopBilledCast data={tv.credits.cast} /> */}
-          {/* <ReviewSection data={tv.reviews.results} movieId={tv.id} /> */}
-          {/* <MediaSection
+          <TopBilledCast data={tv.credits.cast} />
+          <ReviewSection data={tv.reviews.results} movieId={tv.id} />
+          <MediaSection
             videos={tv.videos.results}
             posters={tv.images.posters}
             backdrops={tv.images.backdrops}
             typeId={tv.id}
-          /> */}
-          {/* <RecommenSection data={tv.recommendations.results.slice(0, 10)} /> */}
+          />
+          <RecommenSection data={tv} />
         </div>
         {/* <ProfileStats data={tv} /> */}
       </Styled>

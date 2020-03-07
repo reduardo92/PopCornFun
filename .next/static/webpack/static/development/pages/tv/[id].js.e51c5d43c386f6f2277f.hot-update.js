@@ -108,6 +108,38 @@ var TvProfile = function TvProfile(_ref2) {
       lineNumber: 57
     },
     __self: this
+  }), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    data: tv.credits.cast,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: this
+  }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    data: tv.reviews.results,
+    movieId: tv.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    videos: tv.videos.results,
+    posters: tv.images.posters,
+    backdrops: tv.images.backdrops,
+    typeId: tv.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }), __jsx(_components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_17__["default"], {
+    data: tv.recommendations.results.slice(0, 10),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: this
   }))));
 };
 
@@ -149,4 +181,4 @@ TvProfile.getInitialProps = function _callee(ctx) {
 /***/ })
 
 })
-//# sourceMappingURL=[id].js.1891c134a6e104ecf190.hot-update.js.map
+//# sourceMappingURL=[id].js.e51c5d43c386f6f2277f.hot-update.js.map

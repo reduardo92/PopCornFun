@@ -846,21 +846,20 @@ var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.w
 })(["padding:1em 0.5em;.subTitle{margin-bottom:1.5em;}@media screen and (min-width:1280px){.simple--flex{& > div{width:180px;}}}"]);
 
 var RecommenSection = function RecommenSection(_ref) {
-  var data = _ref.data,
-      _ref$typeFor = _ref.typeFor,
-      typeFor = _ref$typeFor === void 0 ? 'movie' : _ref$typeFor;
+  var data = _ref.data;
+  console.log('rec', data.typeFor);
   return __jsx(Styled, {
     className: "recommendations--section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 25
     },
     __self: this
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 26
     },
     __self: this
   }, "Recommendations"), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -868,17 +867,17 @@ var RecommenSection = function RecommenSection(_ref) {
     setWidth: "160px",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 27
     },
     __self: this
-  }, data.map(function (item) {
+  }, data.recommendations.results.slice(0, 10).map(function (item) {
     return __jsx(_Cards_RecommenCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: item.id,
       data: item,
-      typeFor: typeFor,
+      typeFor: data.typeFor,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 29
       },
       __self: this
     });
@@ -39516,6 +39515,38 @@ var TvProfile = function TvProfile(_ref2) {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 57
+    },
+    __self: this
+  }), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    data: tv.credits.cast,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: this
+  }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    data: tv.reviews.results,
+    movieId: tv.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    videos: tv.videos.results,
+    posters: tv.images.posters,
+    backdrops: tv.images.backdrops,
+    typeId: tv.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }), __jsx(_components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_17__["default"], {
+    data: tv,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
     },
     __self: this
   }))));
