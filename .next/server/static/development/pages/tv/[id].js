@@ -1780,8 +1780,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utility/setDateFormat */ "./components/utility/setDateFormat.js");
 /* harmony import */ var react_icons_ti__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/ti */ "react-icons/ti");
 /* harmony import */ var react_icons_ti__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_ti__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../context/types */ "./components/context/types.js");
+/* harmony import */ var _utility_getRating__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../utility/getRating */ "./components/utility/getRating.js");
+/* harmony import */ var _ReleaseContent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ReleaseContent */ "./components/ui/mediaProfile/ProfileStats/ReleaseContent.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\ProfileStats\\Facts.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
 
 
 
@@ -1791,19 +1800,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "Facts__Styled",
   componentId: "a62vcl-0"
-})([".stat{text-transform:capitalize;margin-bottom:0.7em;}.stat--title{font-size:0.9rem;font-weight:bold;margin-bottom:0.1em;}.release--content{display:grid;grid-row-gap:1em;& >:first-child{margin-top:0.5em;}}.release--date,.certification{display:flex;align-items:center;justify-content:start;& >:first-child{margin-right:0.5em;}}.world{font-size:1.5rem;path{color:#535353;}}.rate{border-radius:2px;background-color:var(--primary-clr);color:#fff;padding:0.15em 0.5em;font-size:0.8rem;border-radius:5px;}"]);
+})([".stat{text-transform:capitalize;margin-bottom:0.7em;}.stat--title{font-size:0.9rem;font-weight:bold;margin-bottom:0.1em;}.release--content{display:grid;grid-row-gap:1em;& >:first-child{margin-top:0.5em;}}.release--date,.certification{display:flex;align-items:center;justify-content:start;& >:first-child{margin-right:0.5em;}}.world{font-size:1.5rem;path{color:#535353;}}.rate{border-radius:2px;background-color:var(--primary-clr);color:#fff;padding:0.15em 0.5em;font-size:0.8rem;border-radius:5px;}.network--logo{width:60px;}"]);
 
 const Facts = ({
   data
 }) => {
-  const getReleaseType = {
-    1: 'Premiere',
-    2: 'Theatrical (limited)',
-    3: 'Theatrical',
-    4: 'Digital',
-    5: 'Physical',
-    6: 'Tv'
-  };
   return __jsx(Styled, {
     className: "profile--stats--facts",
     __source: {
@@ -1853,129 +1854,136 @@ const Facts = ({
       lineNumber: 75
     },
     __self: undefined
-  }, "Release Information"), __jsx("ul", {
-    className: "release--content",
+  }, data.release_dates ? 'Release Information' : 'Networks'), __jsx(_ReleaseContent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    data: data,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 78
     },
     __self: undefined
-  }, data.release_dates.results.filter(item => item.iso_3166_1 === 'US')[0].release_dates.map((item, i) => __jsx("li", {
-    key: i,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "release--date",
+  })), data.typeFor === 'tv' && __jsx("div", {
+    className: "stat",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 81
     },
     __self: undefined
-  }, __jsx(react_icons_ti__WEBPACK_IMPORTED_MODULE_5__["TiWorld"], {
-    className: "world",
+  }, __jsx("p", {
+    className: "stat--title",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 82
     },
     __self: undefined
-  }), __jsx("span", {
+  }, "Type"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 83
     },
     __self: undefined
-  }, Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__["default"])(item.release_date.slice(0, 10)))), __jsx("div", {
-    className: "certification",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87
-    },
-    __self: undefined
-  }, __jsx("span", {
-    className: "rate",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88
-    },
-    __self: undefined
-  }, item.certification), __jsx("span", {
-    className: "stat--subtext",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89
-    },
-    __self: undefined
-  }, getReleaseType[item.type])))))), __jsx("div", {
+  }, data.type)), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 86
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 87
     },
     __self: undefined
   }, "Original Language"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 88
     },
     __self: undefined
   }, data.original_language)), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 90
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 91
     },
     __self: undefined
   }, "Runtime"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 92
     },
     __self: undefined
-  }, Object(_utility_timeConvert__WEBPACK_IMPORTED_MODULE_2__["default"])(data.runtime))), __jsx("div", {
+  }, Object(_utility_timeConvert__WEBPACK_IMPORTED_MODULE_2__["default"])(data.runtime || data.episode_run_time[0]))), data.typeFor === 'tv' ? null : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 98
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 99
     },
     __self: undefined
   }, "Budget"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 100
     },
     __self: undefined
-  }, data.revenue === 0 ? 'N/A' : `$${Object(_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__["default"])(data.revenue)}`)));
+  }, data.budget === 0 ? 'N/A' : `$${Object(_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__["default"])(data.budget)}`)), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105
+    },
+    __self: undefined
+  }, "Revenue"), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106
+    },
+    __self: undefined
+  }, data.revenue === 0 ? 'N/A' : `$${Object(_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__["default"])(data.revenue)}`))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Facts);
+/* harmony default export */ __webpack_exports__["default"] = (Facts); // .release_dates.map((item, i) => (
+//   <li key={i}>
+//     <div className='release--date'>
+//       <TiWorld className='world' />
+//       <span className='stat--subtext'>
+//         {setDateFormat(item.release_date.slice(0, 10))}
+//       </span>
+//     </div>
+//     <div className='certification'>
+//       <span className='rate'>{item.certification}</span>
+//       <span className='stat--subtext'>
+//         {getReleaseType[item.type]}
+//       </span>
+//     </div>
+//   </li>
 
 /***/ }),
 
@@ -2004,40 +2012,39 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.with
 })([""]);
 
 const Genre = ({
-  data
-}) => {
-  return __jsx(Styled, {
-    className: "profile--stats--genres",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: undefined
-  }, __jsx("h3", {
-    className: "title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: undefined
-  }, "Genres"), __jsx("div", {
-    className: "flex-w-container",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: undefined
-  }, data.genres.map(item => __jsx(_Tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    data: item,
-    typeFor: data.typeFor,
-    key: item.id,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }))));
-};
+  data,
+  typeFor
+}) => __jsx(Styled, {
+  className: "profile--stats--genres",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 8
+  },
+  __self: undefined
+}, __jsx("h3", {
+  className: "title",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 9
+  },
+  __self: undefined
+}, "Genres"), __jsx("div", {
+  className: "flex-w-container",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 10
+  },
+  __self: undefined
+}, data.map(item => __jsx(_Tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  data: item,
+  typeFor: typeFor,
+  key: item.id,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 12
+  },
+  __self: undefined
+}))));
 
 /* harmony default export */ __webpack_exports__["default"] = (Genre);
 
@@ -2068,7 +2075,8 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.with
 })([""]);
 
 const Keyords = ({
-  data
+  data,
+  typeFor
 }) => __jsx(Styled, {
   className: "profile--stats--genres",
   __source: {
@@ -2090,9 +2098,9 @@ const Keyords = ({
     lineNumber: 10
   },
   __self: undefined
-}, data.keywords.keywords.map(item => __jsx(_Tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}, data.map(item => __jsx(_Tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
   data: item,
-  typeFor: data.typeFor,
+  typeFor: typeFor,
   key: item.id,
   __source: {
     fileName: _jsxFileName,
@@ -2136,7 +2144,8 @@ const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.
 })(["display:grid;grid-row-gap:1em;background-color:var(--accent-clr);padding:2em 1em;*{color:var(--second-clr);}.title{font-size:1.2rem;margin-bottom:1em;}"]);
 
 const ProfileStats = ({
-  data
+  data,
+  keywords
 }) => {
   return __jsx(Styled, {
     className: "profile--stats",
@@ -2161,14 +2170,16 @@ const ProfileStats = ({
     },
     __self: undefined
   }), __jsx(_Genre__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    data: data,
+    data: data.genres,
+    typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: undefined
   }), __jsx(_Keyords__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    data: data,
+    data: keywords,
+    typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 29
@@ -2178,6 +2189,167 @@ const ProfileStats = ({
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProfileStats);
+
+/***/ }),
+
+/***/ "./components/ui/mediaProfile/ProfileStats/ReleaseContent.jsx":
+/*!********************************************************************!*\
+  !*** ./components/ui/mediaProfile/ProfileStats/ReleaseContent.jsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_ti__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/ti */ "react-icons/ti");
+/* harmony import */ var react_icons_ti__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_ti__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../context/types */ "./components/context/types.js");
+/* harmony import */ var _utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utility/setDateFormat */ "./components/utility/setDateFormat.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\ProfileStats\\ReleaseContent.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+const ReleaseContent = ({
+  data
+}) => {
+  const getReleaseType = {
+    1: 'Premiere',
+    2: 'Theatrical (limited)',
+    3: 'Theatrical',
+    4: 'Digital',
+    5: 'Physical',
+    6: 'Tv'
+  };
+  const networks = data.typeFor === 'tv' && data.networks.map(netWork => __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    key: netWork.id,
+    href: "/network/[id]",
+    as: `/network/${netWork.id}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, __jsx("img", {
+    className: "network--logo",
+    src: `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"]}${netWork.logo_path}`,
+    alt: netWork.name,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  })));
+  const setData = Object.values(data[data.typeFor === 'tv' ? 'content_ratings' : 'release_dates'].results.filter(item => item.iso_3166_1 === 'US')[0])[1];
+  return __jsx("ul", {
+    className: "release--content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, networks, data.typeFor === 'tv' && __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
+  }, "Certification"), data.typeFor === 'tv' ? __jsx("div", {
+    className: "release--date",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: undefined
+  }, __jsx(react_icons_ti__WEBPACK_IMPORTED_MODULE_2__["TiWorld"], {
+    className: "world",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: undefined
+  }), __jsx("span", {
+    className: "rate",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, data.typeFor === 'tv' && setData)) : setData.map(item => __jsx("li", {
+    key: item.release_date,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "release--date",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }, __jsx(react_icons_ti__WEBPACK_IMPORTED_MODULE_2__["TiWorld"], {
+    className: "world",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: undefined
+  }), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  }, Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__["default"])(item.release_date.slice(0, 10)))), __jsx("div", {
+    className: "certification",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: undefined
+  }, __jsx("span", {
+    className: "rate",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: undefined
+  }, item.certification), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: undefined
+  }, getReleaseType[item.type])))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReleaseContent);
+{
+  /* <li key={i}>
+  <div className='release--date'>
+  <TiWorld className='world' />
+  <span className='stat--subtext'>
+    {setDateFormat(item.release_date.slice(0, 10))}
+  </span>
+  </div>
+  <div className='certification'>
+  <span className='rate'>{item.certification}</span>
+  <span className='stat--subtext'>{getReleaseType[item.type]}</span>
+  </div>
+  </li> */
+}
 
 /***/ }),
 
@@ -4120,7 +4292,15 @@ const TvProfile = ({
       lineNumber: 66
     },
     __self: undefined
-  }))));
+  })), __jsx(_components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    data: tv,
+    keywords: Object.values(tv.keywords)[0],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  })));
 };
 
 TvProfile.getInitialProps = async ctx => {

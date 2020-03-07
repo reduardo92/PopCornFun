@@ -46,7 +46,7 @@ const Styled = styled.section`
   }
 `;
 
-const MovieProfile = ({ movie, typeFor }) => {
+const MovieProfile = ({ movie }) => {
   console.log(movie);
 
   return (
@@ -65,7 +65,10 @@ const MovieProfile = ({ movie, typeFor }) => {
           />
           <RecommenSection data={movie} />
         </div>
-        <ProfileStats data={movie} />
+        <ProfileStats
+          data={movie}
+          keywords={Object.values(movie.keywords)[0]}
+        />
       </Styled>
     </Layout>
   );

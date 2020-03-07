@@ -20,13 +20,13 @@ const Styled = styled.section`
   }
 `;
 
-const ProfileStats = ({ data }) => {
+const ProfileStats = ({ data, keywords }) => {
   return (
     <Styled className='profile--stats'>
       <SocialLinks data={data.external_ids} homepage={data.homepage} />
       <Facts data={data} />
-      <Genre data={data} />
-      <Keyords data={data} />
+      <Genre data={data.genres} typeFor={data.typeFor} />
+      <Keyords data={keywords} typeFor={data.typeFor} />
     </Styled>
   );
 };

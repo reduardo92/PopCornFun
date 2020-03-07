@@ -65,7 +65,7 @@ const TvProfile = ({ tv }) => {
           />
           <RecommenSection data={tv} />
         </div>
-        {/* <ProfileStats data={tv} /> */}
+        <ProfileStats data={tv} keywords={Object.values(tv.keywords)[0]} />
       </Styled>
     </Layout>
   );

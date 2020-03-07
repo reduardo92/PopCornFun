@@ -1697,8 +1697,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utility/numberWithCommas */ "./components/utility/numberWithCommas.js");
 /* harmony import */ var _utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utility/setDateFormat */ "./components/utility/setDateFormat.js");
 /* harmony import */ var react_icons_ti__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/ti */ "./node_modules/react-icons/ti/index.esm.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../context/types */ "./components/context/types.js");
+/* harmony import */ var _utility_getRating__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../utility/getRating */ "./components/utility/getRating.js");
+/* harmony import */ var _ReleaseContent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ReleaseContent */ "./components/ui/mediaProfile/ProfileStats/ReleaseContent.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\ProfileStats\\Facts.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
 
 
 
@@ -1708,18 +1717,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Facts__Styled",
   componentId: "a62vcl-0"
-})([".stat{text-transform:capitalize;margin-bottom:0.7em;}.stat--title{font-size:0.9rem;font-weight:bold;margin-bottom:0.1em;}.release--content{display:grid;grid-row-gap:1em;& >:first-child{margin-top:0.5em;}}.release--date,.certification{display:flex;align-items:center;justify-content:start;& >:first-child{margin-right:0.5em;}}.world{font-size:1.5rem;path{color:#535353;}}.rate{border-radius:2px;background-color:var(--primary-clr);color:#fff;padding:0.15em 0.5em;font-size:0.8rem;border-radius:5px;}"]);
+})([".stat{text-transform:capitalize;margin-bottom:0.7em;}.stat--title{font-size:0.9rem;font-weight:bold;margin-bottom:0.1em;}.release--content{display:grid;grid-row-gap:1em;& >:first-child{margin-top:0.5em;}}.release--date,.certification{display:flex;align-items:center;justify-content:start;& >:first-child{margin-right:0.5em;}}.world{font-size:1.5rem;path{color:#535353;}}.rate{border-radius:2px;background-color:var(--primary-clr);color:#fff;padding:0.15em 0.5em;font-size:0.8rem;border-radius:5px;}.network--logo{width:60px;}"]);
 
 var Facts = function Facts(_ref) {
   var data = _ref.data;
-  var getReleaseType = {
-    1: 'Premiere',
-    2: 'Theatrical (limited)',
-    3: 'Theatrical',
-    4: 'Digital',
-    5: 'Physical',
-    6: 'Tv'
-  };
   return __jsx(Styled, {
     className: "profile--stats--facts",
     __source: {
@@ -1769,133 +1770,136 @@ var Facts = function Facts(_ref) {
       lineNumber: 75
     },
     __self: this
-  }, "Release Information"), __jsx("ul", {
-    className: "release--content",
+  }, data.release_dates ? 'Release Information' : 'Networks'), __jsx(_ReleaseContent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    data: data,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 78
     },
     __self: this
-  }, data.release_dates.results.filter(function (item) {
-    return item.iso_3166_1 === 'US';
-  })[0].release_dates.map(function (item, i) {
-    return __jsx("li", {
-      key: i,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 80
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "release--date",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 81
-      },
-      __self: this
-    }, __jsx(react_icons_ti__WEBPACK_IMPORTED_MODULE_5__["TiWorld"], {
-      className: "world",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82
-      },
-      __self: this
-    }), __jsx("span", {
-      className: "stat--subtext",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83
-      },
-      __self: this
-    }, Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__["default"])(item.release_date.slice(0, 10)))), __jsx("div", {
-      className: "certification",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 87
-      },
-      __self: this
-    }, __jsx("span", {
-      className: "rate",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 88
-      },
-      __self: this
-    }, item.certification), __jsx("span", {
-      className: "stat--subtext",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89
-      },
-      __self: this
-    }, getReleaseType[item.type])));
-  }))), __jsx("div", {
+  })), data.typeFor === 'tv' && __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 81
     },
     __self: this
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 82
+    },
+    __self: this
+  }, "Type"), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: this
+  }, data.type)), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: this
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
     },
     __self: this
   }, "Original Language"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 88
     },
     __self: this
   }, data.original_language)), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 90
     },
     __self: this
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 91
     },
     __self: this
   }, "Runtime"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 92
     },
     __self: this
-  }, Object(_utility_timeConvert__WEBPACK_IMPORTED_MODULE_2__["default"])(data.runtime))), __jsx("div", {
+  }, Object(_utility_timeConvert__WEBPACK_IMPORTED_MODULE_2__["default"])(data.runtime || data.episode_run_time[0]))), data.typeFor === 'tv' ? null : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 98
     },
     __self: this
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 99
     },
     __self: this
   }, "Budget"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 100
     },
     __self: this
-  }, data.revenue === 0 ? 'N/A' : "$".concat(Object(_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__["default"])(data.revenue)))));
+  }, data.budget === 0 ? 'N/A' : "$".concat(Object(_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__["default"])(data.budget)))), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: this
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105
+    },
+    __self: this
+  }, "Revenue"), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 106
+    },
+    __self: this
+  }, data.revenue === 0 ? 'N/A' : "$".concat(Object(_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__["default"])(data.revenue))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Facts);
+/* harmony default export */ __webpack_exports__["default"] = (Facts); // .release_dates.map((item, i) => (
+//   <li key={i}>
+//     <div className='release--date'>
+//       <TiWorld className='world' />
+//       <span className='stat--subtext'>
+//         {setDateFormat(item.release_date.slice(0, 10))}
+//       </span>
+//     </div>
+//     <div className='certification'>
+//       <span className='rate'>{item.certification}</span>
+//       <span className='stat--subtext'>
+//         {getReleaseType[item.type]}
+//       </span>
+//     </div>
+//   </li>
 
 /***/ }),
 
@@ -1923,36 +1927,37 @@ var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withC
 })([""]);
 
 var Genre = function Genre(_ref) {
-  var data = _ref.data;
+  var data = _ref.data,
+      typeFor = _ref.typeFor;
   return __jsx(Styled, {
     className: "profile--stats--genres",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 8
     },
     __self: this
   }, __jsx("h3", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 9
     },
     __self: this
   }, "Genres"), __jsx("div", {
     className: "flex-w-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 10
     },
     __self: this
-  }, data.genres.map(function (item) {
+  }, data.map(function (item) {
     return __jsx(_Tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
       data: item,
-      typeFor: data.typeFor,
+      typeFor: typeFor,
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 12
       },
       __self: this
     });
@@ -1987,7 +1992,8 @@ var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withC
 })([""]);
 
 var Keyords = function Keyords(_ref) {
-  var data = _ref.data;
+  var data = _ref.data,
+      typeFor = _ref.typeFor;
   return __jsx(Styled, {
     className: "profile--stats--genres",
     __source: {
@@ -2009,10 +2015,10 @@ var Keyords = function Keyords(_ref) {
       lineNumber: 10
     },
     __self: this
-  }, data.keywords.keywords.map(function (item) {
+  }, data.map(function (item) {
     return __jsx(_Tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
       data: item,
-      typeFor: data.typeFor,
+      typeFor: typeFor,
       key: item.id,
       __source: {
         fileName: _jsxFileName,
@@ -2057,7 +2063,8 @@ var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.w
 })(["display:grid;grid-row-gap:1em;background-color:var(--accent-clr);padding:2em 1em;*{color:var(--second-clr);}.title{font-size:1.2rem;margin-bottom:1em;}"]);
 
 var ProfileStats = function ProfileStats(_ref) {
-  var data = _ref.data;
+  var data = _ref.data,
+      keywords = _ref.keywords;
   return __jsx(Styled, {
     className: "profile--stats",
     __source: {
@@ -2081,14 +2088,16 @@ var ProfileStats = function ProfileStats(_ref) {
     },
     __self: this
   }), __jsx(_Genre__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    data: data,
+    data: data.genres,
+    typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: this
   }), __jsx(_Keyords__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    data: data,
+    data: keywords,
+    typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 29
@@ -2098,6 +2107,176 @@ var ProfileStats = function ProfileStats(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProfileStats);
+
+/***/ }),
+
+/***/ "./components/ui/mediaProfile/ProfileStats/ReleaseContent.jsx":
+/*!********************************************************************!*\
+  !*** ./components/ui/mediaProfile/ProfileStats/ReleaseContent.jsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "./node_modules/@babel/runtime-corejs2/core-js/object/values.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_icons_ti__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/ti */ "./node_modules/react-icons/ti/index.esm.js");
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../context/types */ "./components/context/types.js");
+/* harmony import */ var _utility_setDateFormat__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../utility/setDateFormat */ "./components/utility/setDateFormat.js");
+
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\ProfileStats\\ReleaseContent.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+
+
+var ReleaseContent = function ReleaseContent(_ref) {
+  var data = _ref.data;
+  var getReleaseType = {
+    1: 'Premiere',
+    2: 'Theatrical (limited)',
+    3: 'Theatrical',
+    4: 'Digital',
+    5: 'Physical',
+    6: 'Tv'
+  };
+  var networks = data.typeFor === 'tv' && data.networks.map(function (netWork) {
+    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      key: netWork.id,
+      href: "/network/[id]",
+      as: "/network/".concat(netWork.id),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, __jsx("img", {
+      className: "network--logo",
+      src: "".concat(_context_types__WEBPACK_IMPORTED_MODULE_4__["IMG_URL"]).concat(netWork.logo_path),
+      alt: netWork.name,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }));
+  });
+
+  var setData = _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_0___default()(data[data.typeFor === 'tv' ? 'content_ratings' : 'release_dates'].results.filter(function (item) {
+    return item.iso_3166_1 === 'US';
+  })[0])[1];
+
+  return __jsx("ul", {
+    className: "release--content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, networks, data.typeFor === 'tv' && __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: this
+  }, "Certification"), data.typeFor === 'tv' ? __jsx("div", {
+    className: "release--date",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
+  }, __jsx(react_icons_ti__WEBPACK_IMPORTED_MODULE_3__["TiWorld"], {
+    className: "world",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }), __jsx("span", {
+    className: "rate",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }, data.typeFor === 'tv' && setData)) : setData.map(function (item) {
+    return __jsx("li", {
+      key: item.release_date,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "release--date",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, __jsx(react_icons_ti__WEBPACK_IMPORTED_MODULE_3__["TiWorld"], {
+      className: "world",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }), __jsx("span", {
+      className: "stat--subtext",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49
+      },
+      __self: this
+    }, Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_5__["default"])(item.release_date.slice(0, 10)))), __jsx("div", {
+      className: "certification",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53
+      },
+      __self: this
+    }, __jsx("span", {
+      className: "rate",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54
+      },
+      __self: this
+    }, item.certification), __jsx("span", {
+      className: "stat--subtext",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    }, getReleaseType[item.type])));
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReleaseContent);
+{
+  /* <li key={i}>
+  <div className='release--date'>
+  <TiWorld className='world' />
+  <span className='stat--subtext'>
+    {setDateFormat(item.release_date.slice(0, 10))}
+  </span>
+  </div>
+  <div className='certification'>
+  <span className='rate'>{item.certification}</span>
+  <span className='stat--subtext'>{getReleaseType[item.type]}</span>
+  </div>
+  </li> */
+}
 
 /***/ }),
 
@@ -2471,6 +2650,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "./no
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype-of */ "./node_modules/core-js/library/fn/object/set-prototype-of.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/values.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/values.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/values */ "./node_modules/core-js/library/fn/object/values.js");
 
 /***/ }),
 
@@ -6110,6 +6300,19 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 __webpack_require__(/*! ../../modules/es6.object.set-prototype-of */ "./node_modules/core-js/library/modules/es6.object.set-prototype-of.js");
 module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.setPrototypeOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/object/values.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/object/values.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es7.object.values */ "./node_modules/core-js/library/modules/es7.object.values.js");
+module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.values;
 
 
 /***/ }),
@@ -9760,6 +9963,26 @@ $export($export.S, 'Object', {
       if (desc !== undefined) createProperty(result, key, desc);
     }
     return result;
+  }
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es7.object.values.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es7.object.values.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/tc39/proposal-object-values-entries
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var $values = __webpack_require__(/*! ./_object-to-array */ "./node_modules/core-js/library/modules/_object-to-array.js")(false);
+
+$export($export.S, 'Object', {
+  values: function values(it) {
+    return $values(it);
   }
 });
 
@@ -39433,18 +39656,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/utility/movieDB */ "./components/utility/movieDB.js");
-/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/context/types */ "./components/context/types.js");
-/* harmony import */ var _components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/ui/TopBilledCast */ "./components/ui/TopBilledCast.jsx");
-/* harmony import */ var _components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/ui/ReviewSection */ "./components/ui/ReviewSection.jsx");
-/* harmony import */ var _components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../components/ui/MediaSection */ "./components/ui/MediaSection.jsx");
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
-/* harmony import */ var _components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileHeader */ "./components/ui/mediaProfile/ProfileHeader.jsx");
-/* harmony import */ var _components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../components/ui/RecommenSection */ "./components/ui/RecommenSection.jsx");
-/* harmony import */ var _components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileStats/ProfileStats */ "./components/ui/mediaProfile/ProfileStats/ProfileStats.jsx");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "./node_modules/@babel/runtime-corejs2/core-js/object/values.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/utility/movieDB */ "./components/utility/movieDB.js");
+/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/context/types */ "./components/context/types.js");
+/* harmony import */ var _components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/ui/TopBilledCast */ "./components/ui/TopBilledCast.jsx");
+/* harmony import */ var _components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../components/ui/ReviewSection */ "./components/ui/ReviewSection.jsx");
+/* harmony import */ var _components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../components/ui/MediaSection */ "./components/ui/MediaSection.jsx");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
+/* harmony import */ var _components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileHeader */ "./components/ui/mediaProfile/ProfileHeader.jsx");
+/* harmony import */ var _components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../components/ui/RecommenSection */ "./components/ui/RecommenSection.jsx");
+/* harmony import */ var _components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileStats/ProfileStats */ "./components/ui/mediaProfile/ProfileStats/ProfileStats.jsx");
+
 
 
 
@@ -39455,7 +39681,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\tv\\[id].jsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -39471,18 +39697,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
-var Styled = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].section.withConfig({
+var Styled = styled_components__WEBPACK_IMPORTED_MODULE_10__["default"].section.withConfig({
   displayName: "id__Styled",
   componentId: "sc-1qdj2gq-0"
 })(["background:var(--bg-gradient);margin-top:110px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;&__img{position:absolute;bottom:-20vw;left:20px;width:120px;}}.profile--header{position:relative;padding:2em 0.5em;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--header{max-width:1100px;padding:2em 1em;}}"], function (_ref) {
   var bgImg = _ref.bgImg;
-  return "".concat(_components_context_types__WEBPACK_IMPORTED_MODULE_11__["IMG_URL_OR"]).concat(bgImg);
+  return "".concat(_components_context_types__WEBPACK_IMPORTED_MODULE_12__["IMG_URL_OR"]).concat(bgImg);
 });
 
 var TvProfile = function TvProfile(_ref2) {
   var tv = _ref2.tv;
   console.log(tv);
-  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_16__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 53
@@ -39510,21 +39736,21 @@ var TvProfile = function TvProfile(_ref2) {
       lineNumber: 56
     },
     __self: this
-  }, __jsx(_components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  }, __jsx(_components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_17__["default"], {
     data: tv,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 57
     },
     __self: this
-  }), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_13__["default"], {
     data: tv.credits.cast,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 58
     },
     __self: this
-  }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_13__["default"], {
+  }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_14__["default"], {
     data: tv.reviews.results,
     movieId: tv.id,
     __source: {
@@ -39532,7 +39758,7 @@ var TvProfile = function TvProfile(_ref2) {
       lineNumber: 59
     },
     __self: this
-  }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_14__["default"], {
+  }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_15__["default"], {
     videos: tv.videos.results,
     posters: tv.images.posters,
     backdrops: tv.images.backdrops,
@@ -39542,14 +39768,22 @@ var TvProfile = function TvProfile(_ref2) {
       lineNumber: 60
     },
     __self: this
-  }), __jsx(_components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_17__["default"], {
+  }), __jsx(_components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_18__["default"], {
     data: tv,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 66
     },
     __self: this
-  }))));
+  })), __jsx(_components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_19__["default"], {
+    data: tv,
+    keywords: _babel_runtime_corejs2_core_js_object_values__WEBPACK_IMPORTED_MODULE_8___default()(tv.keywords)[0],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  })));
 };
 
 TvProfile.getInitialProps = function _callee(ctx) {
@@ -39562,7 +39796,7 @@ TvProfile.getInitialProps = function _callee(ctx) {
           console.log(ctx);
           _context.prev = 2;
           _context.next = 5;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_10__["default"])("tv/".concat(ctx.query.id || '62688'), 'append_to_response=account_states,external_ids,keywords,content_ratings,videos,recommendations,reviews,credits,images&include_image_language=en,null'));
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_6___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_11__["default"])("tv/".concat(ctx.query.id || '62688'), 'append_to_response=account_states,external_ids,keywords,content_ratings,videos,recommendations,reviews,credits,images&include_image_language=en,null'));
 
         case 5:
           tv = _context.sent;
