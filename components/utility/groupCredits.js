@@ -16,5 +16,6 @@ export default arry => {
     })
     .sort((a, b) => b.length - a.length);
 
+  // console.log(joinData);
   return joinData;
 };

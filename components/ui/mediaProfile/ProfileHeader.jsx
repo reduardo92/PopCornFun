@@ -9,6 +9,7 @@ import TagGroup from '../TagGroup';
 import PlayButton from '../PlayButton';
 import Link from 'next/link';
 import getRating from '../../utility/getRating';
+import CrewTab from './CrewTab';
 
 const Styled = styled.div`
   display: grid;
@@ -155,6 +156,18 @@ const ProfileHeader = ({ data }) => {
       </span>
     ));
 
+  const crew = (
+    <>
+      {data.created_by &&
+        data.created_by.map(item => <CrewTab key={item.id} crew={item} />)}
+      {groupCredits(data.credits.crew)
+        .slice(0, 6)
+        .map(item => (
+          <CrewTab key={item[0].id} crew={item[0]} />
+        ))}
+    </>
+  );
+
   return (
     <Styled className='profile--content'>
       <div className='head'>
@@ -167,7 +180,13 @@ const ProfileHeader = ({ data }) => {
         </div>
         <h2 className='title'>
           {data.title || data.name}{' '}
-          <span className='year'>({data.release_date.slice(0, 4)})</span>
+          <span className='year'>
+            (
+            {data.release_date
+              ? data.release_date.slice(0, 4)
+              : data.first_air_date.slice(0, 4)}
+            )
+          </span>
         </h2>
       </div>
       <div className='rating'>
@@ -176,11 +195,17 @@ const ProfileHeader = ({ data }) => {
       </div>
       <div className='meta'>
         <span className='release meta--tab'>
-          {data.release_date.slice(0, 4)}
+          {data.release_date
+            ? data.release_date.slice(0, 4)
+            : data.first_air_date.slice(0, 4)}
         </span>
-        <span className='runtime meta--tab'>{timeConvert(data.runtime)}</span>
+        <span className='runtime meta--tab'>
+          {timeConvert(data.runtime || data.episode_run_time[0])}
+        </span>
         <span className='rating meta--tab'>
-          {getRating(data.release_dates.results)}
+          {data.release_date
+            ? getRating(data.release_dates.results)
+            : getRating(data.content_ratings.results)}
         </span>
         <span className='genre meta--tab'>{getGenres()}</span>
       </div>
@@ -188,22 +213,8 @@ const ProfileHeader = ({ data }) => {
         <h3 className='subTitle'>OVERVIEW</h3>
         <p className='overview--para'>{data.overview}</p>
       </div>
-      <div className='crew'>
-        {groupCredits(data.credits.crew).map(
-          (c, i) =>
-            i < 6 && (
-              <div key={c[0].id} className='crew--person'>
-                <Link href='/person/[id]' as={`/person/${c[0].id}`}>
-                  <a>{c[0].name}</a>
-                </Link>
-                <small className='d-block mt-1'>
-                  {c[0].department.join(', ')}
-                </small>
-              </div>
-            )
-        )}
-      </div>
-      <PlayButton onclick={() => setModal(data.videos.results[1].key)} />
+      <div className='crew'>{crew}</div>
+      <PlayButton onclick={() => setModal(data.videos.results[0].key)} />
     </Styled>
   );
 };

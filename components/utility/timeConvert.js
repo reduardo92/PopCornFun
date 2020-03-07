@@ -3,5 +3,5 @@ export default time => {
   const rhours = Math.floor(hours);
   const minutes = Math.round((hours - rhours) * 60);
 
-  return `${rhours}h ${minutes}m`;
+  return rhours === 0 ? `${minutes}m` : `${rhours}h ${minutes}m`;
 };

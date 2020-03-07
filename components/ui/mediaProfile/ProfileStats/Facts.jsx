@@ -17,8 +17,41 @@ const Styled = styled.div`
     margin-bottom: 0.1em;
   }
 
+  .release--content {
+    display: grid;
+    grid-row-gap: 1em;
+
+    & > :first-child {
+      margin-top: 0.5em;
+    }
+  }
+
+  .release--date,
+  .certification {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    & > :first-child {
+      margin-right: 0.5em;
+    }
+  }
+
   .world {
     font-size: 1.5rem;
+
+    path {
+      color: #535353;
+    }
+  }
+
+  .rate {
+    border-radius: 2px;
+    background-color: var(--primary-clr);
+    color: #fff;
+    padding: 0.15em 0.5em;
+    font-size: 0.8rem;
+    border-radius: 5px;
   }
 `;
 
