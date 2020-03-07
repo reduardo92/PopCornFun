@@ -77,7 +77,7 @@ TvProfile.getInitialProps = async ctx => {
 
   try {
     const tv = await movieDB(
-      `tv/${ctx.query.id || '454626'}`,
+      `tv/${ctx.query.id || '62688'}`,
       'append_to_response=account_states,external_ids,keywords,content_ratings,videos,recommendations,reviews,credits,images&include_image_language=en,null'
     );
     return {

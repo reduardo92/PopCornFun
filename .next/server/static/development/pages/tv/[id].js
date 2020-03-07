@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -4096,7 +4096,7 @@ TvProfile.getInitialProps = async ctx => {
   console.log(ctx);
 
   try {
-    const tv = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_2__["default"])(`tv/${ctx.query.id || '454626'}`, 'append_to_response=account_states,external_ids,keywords,content_ratings,videos,recommendations,reviews,credits,images&include_image_language=en,null');
+    const tv = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_2__["default"])(`tv/${ctx.query.id || '62688'}`, 'append_to_response=account_states,external_ids,keywords,content_ratings,videos,recommendations,reviews,credits,images&include_image_language=en,null');
     return {
       tv: _objectSpread({
         typeFor: 'tv'
@@ -4111,7 +4111,7 @@ TvProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!*********************************!*\
   !*** multi ./pages/tv/[id].jsx ***!
   \*********************************/
