@@ -14,30 +14,6 @@ const Styled = styled.section`
     align-items: center;
   }
 
-  .tabs--container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .tab {
-    color: var(--white-clr);
-    border-bottom: 3px solid transparent;
-    text-transform: capitalize;
-    font-weight: 600;
-    padding-bottom: 5px;
-    margin-right: 1em;
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  .activeTab {
-    color: #ffffffc4;
-    border-bottom: 3px solid var(--primary-clr);
-  }
-
   .simple--flex {
     scroll-snap-points-x: repeat(200px);
     margin-bottom: 1.2em;

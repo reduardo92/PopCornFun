@@ -650,7 +650,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section.withConfig({
   displayName: "MediaSection__Styled",
   componentId: "ubdtc5-0"
-})(["padding:2em 0.5em;.head--container{display:flex;justify-content:space-between;align-items:center;}.tabs--container{display:flex;flex-wrap:wrap;align-items:center;}.tab{color:var(--white-clr);border-bottom:3px solid transparent;text-transform:capitalize;font-weight:600;padding-bottom:5px;margin-right:1em;&:focus{outline:none;}}.activeTab{color:#ffffffc4;border-bottom:3px solid var(--primary-clr);}.simple--flex{scroll-snap-points-x:repeat(200px);margin-bottom:1.2em;& > div{margin:0 0.5em;}.vid{width:350px;}.img{width:200px;margin:0 0.3em;}& > div:first-child{margin-left:0;}}"]);
+})(["padding:2em 0.5em;.head--container{display:flex;justify-content:space-between;align-items:center;}.simple--flex{scroll-snap-points-x:repeat(200px);margin-bottom:1.2em;& > div{margin:0 0.5em;}.vid{width:350px;}.img{width:200px;margin:0 0.3em;}& > div:first-child{margin-left:0;}}"]);
 
 var MediaSection = function MediaSection(_ref) {
   var videos = _ref.videos,
@@ -675,28 +675,28 @@ var MediaSection = function MediaSection(_ref) {
     className: "media--section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 50
     },
     __self: this
   }, __jsx("div", {
     className: "head--container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 51
     },
     __self: this
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 52
     },
     __self: this
   }, "Media"), __jsx("div", {
     className: "tabs--container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 53
     },
     __self: this
   }, __jsx("button", {
@@ -706,7 +706,7 @@ var MediaSection = function MediaSection(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 54
     },
     __self: this
   }, "videos"), __jsx("button", {
@@ -716,7 +716,7 @@ var MediaSection = function MediaSection(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 60
     },
     __self: this
   }, "posters"), __jsx("button", {
@@ -726,14 +726,14 @@ var MediaSection = function MediaSection(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 66
     },
     __self: this
   }, "backdrops"))), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: "simple--flex",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 74
     },
     __self: this
   }, media[tab].map(function (item, i) {
@@ -748,21 +748,21 @@ var MediaSection = function MediaSection(_ref) {
       }
     }, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "typeFor", tab), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "__source", {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 78
     }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "__self", this), _jsx));
   })), __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
     href: "/movie/[id]/media",
     as: "/movie/".concat(typeId, "/media"),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 90
     },
     __self: this
   }, __jsx("a", {
     className: "title redHover",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 91
     },
     __self: this
   }, "See All Media")));
@@ -843,7 +843,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.withConfig({
   displayName: "RecommenSection__Styled",
   componentId: "hey7bf-0"
-})(["padding:1em 0.5em;.subTitle{margin-bottom:1.5em;}@media screen and (min-width:1280px){.simple--flex{& > div{width:180px;}}}"]);
+})(["padding:1em 0.5em;.subTitle{margin-bottom:1.5em;}@media screen and (min-width:1280px){.recommendations--section{.simple--flex{& > div{width:180px;}}}}"]);
 
 var RecommenSection = function RecommenSection(_ref) {
   var data = _ref.data;
@@ -852,14 +852,14 @@ var RecommenSection = function RecommenSection(_ref) {
     className: "recommendations--section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 27
     },
     __self: this
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 28
     },
     __self: this
   }, "Recommendations"), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -867,7 +867,7 @@ var RecommenSection = function RecommenSection(_ref) {
     setWidth: "160px",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 29
     },
     __self: this
   }, data.recommendations.results.slice(0, 10).map(function (item) {
@@ -877,7 +877,7 @@ var RecommenSection = function RecommenSection(_ref) {
       typeFor: data.typeFor,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 31
       },
       __self: this
     });
@@ -39823,7 +39823,7 @@ MovieProfile.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 1:
 /*!***********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmovie%2F%5Bid%5D&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Cmovie%5C%5Bid%5D.jsx ***!
   \***********************************************************************************************************************************************************************************/
@@ -39846,5 +39846,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

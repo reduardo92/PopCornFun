@@ -11,9 +11,11 @@ const Styled = styled.section`
   }
 
   @media screen and (min-width: 1280px) {
-    .simple--flex {
-      & > div {
-        width: 180px;
+    .recommendations--section {
+      .simple--flex {
+        & > div {
+          width: 180px;
+        }
       }
     }
   }
