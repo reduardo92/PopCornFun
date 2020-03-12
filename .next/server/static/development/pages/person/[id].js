@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -399,10 +399,10 @@ const SimpleFlex = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.
 
 /***/ }),
 
-/***/ "./components/utility/groupCrew.js":
-/*!*****************************************!*\
-  !*** ./components/utility/groupCrew.js ***!
-  \*****************************************/
+/***/ "./components/utility/groupByDate.js":
+/*!*******************************************!*\
+  !*** ./components/utility/groupByDate.js ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -431,6 +431,49 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     acc[key].push(obj);
     return acc;
   }, []);
+});
+
+/***/ }),
+
+/***/ "./components/utility/groupeCrew.js":
+/*!******************************************!*\
+  !*** ./components/utility/groupeCrew.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _groupByDate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./groupByDate */ "./components/utility/groupByDate.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+/* harmony default export */ __webpack_exports__["default"] = ((arry, sortBy, sortDate) => {
+  const sortDepart = arry.reduce((acc, obj) => {
+    let key = obj[sortBy];
+
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+
+    acc[key].push(obj);
+    return acc;
+  }, []);
+  const arr = Object.entries(sortDepart).map(([key, value]) => ({
+    [key]: Object(_groupByDate__WEBPACK_IMPORTED_MODULE_0__["default"])(value, sortDate)
+  }));
+  const arrLength = arr.length - 1;
+  let newData = {};
+
+  for (let i = 0; i < arrLength; i++) {
+    newData = _objectSpread({}, newData, {}, arr[i]);
+  }
+
+  return newData;
 });
 
 /***/ }),
@@ -465,6 +508,19 @@ const movieDB = async (url, query = '', method = 'get') => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (movieDB);
+
+/***/ }),
+
+/***/ "./components/utility/numberWithCommas.js":
+/*!************************************************!*\
+  !*** ./components/utility/numberWithCommas.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
 
 /***/ }),
 
@@ -2160,7 +2216,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_context_MovieContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/context/MovieContext */ "./components/context/MovieContext.js");
 /* harmony import */ var _components_ui_SimpleFlex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/ui/SimpleFlex */ "./components/ui/SimpleFlex.js");
 /* harmony import */ var _components_ui_Cards_RecommenCard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/ui/Cards/RecommenCard */ "./components/ui/Cards/RecommenCard.jsx");
-/* harmony import */ var _components_utility_groupCrew__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/utility/groupCrew */ "./components/utility/groupCrew.js");
+/* harmony import */ var _components_utility_groupByDate__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/utility/groupByDate */ "./components/utility/groupByDate.js");
+/* harmony import */ var _components_utility_groupeCrew__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/utility/groupeCrew */ "./components/utility/groupeCrew.js");
+/* harmony import */ var _components_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/utility/numberWithCommas */ "./components/utility/numberWithCommas.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\person\\[id].jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2181,10 +2239,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.section.withConfig({
   displayName: "id__Styled",
   componentId: "sc-1s2kqjg-0"
-})(["background:var(--bg-gradient);margin-top:110px;padding:2em 1em;.profile--person{max-width:300px;margin:0 auto;}.profile--biography{margin:2em 0;display:grid;&__name{font-weight:bold;margin-bottom:1em;text-align:center;}.read--more{display:flex;align-items:center;margin:0 auto;background-color:var(--primary-clr);border-radius:50%;padding:0.25em;font-size:1.7rem;transition:var(--ease--in--out--02s);color:var(--white-clr);&:hover{opacity:0.8;transform:scale(0.9);}}}.profile--media__credits{display:grid;grid-template-columns:repeat(2,1fr);align-items:center;justify-content:center;&--content{grid-column:1 / 3;margin-top:1.2em;}}.grouped{& > div:first-child{padding-top:0.6em !important;}& > div:last-child{padding-bottom:0.6em !important;}.date{flex:0 0 9%;}}@media screen and (min-width:768px){}"]);
+})(["background:var(--bg-gradient);margin-top:110px;padding:2em 1em;.profile--person{max-width:300px;margin:0 auto;}.profile--biography{margin:2em 0;display:grid;&__name{font-weight:bold;margin-bottom:1em;text-align:center;}.read--more{display:flex;align-items:center;margin:0 auto;background-color:var(--primary-clr);border-radius:50%;padding:0.25em;font-size:1.7rem;transition:var(--ease--in--out--02s);color:var(--white-clr);&:hover{opacity:0.8;transform:scale(0.9);}}}.profile--media__credits{display:grid;grid-template-columns:repeat(2,1fr);align-items:center;justify-content:center;&--content{display:grid;grid-column:1 / 3;margin-top:1.2em;grid-gap:1.5em;}}}.grouped{& > div:first-child{padding-top:0.6em !important;}& > div:last-child{padding-bottom:0.6em !important;}.date{flex:0 0 9%;}}@media screen and (min-width:768px){}"]);
 
 const PersonProfile = ({
   person
@@ -2199,12 +2259,12 @@ const PersonProfile = ({
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_components_context_MovieContext__WEBPACK_IMPORTED_MODULE_6__["default"]);
   const knonwFor = person.combined_credits.cast.sort((a, b) => b.vote_count - a.vote_count).slice(0, 8);
 
-  const creditsDiv = arry => Object.entries(arry).sort((a, b) => b[0] - a[0]).map(([key, value], index) => __jsx("div", {
+  const actingDiv = arry => Object.entries(arry).sort((a, b) => b[0] - a[0]).map(([_, value], index) => __jsx("div", {
     key: index,
     className: "grouped border border-black ",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 99
     },
     __self: undefined
   }, value.map(i => __jsx("div", {
@@ -2212,56 +2272,119 @@ const PersonProfile = ({
     className: "d-flex shadow-sm border border-light bg-light py-1 px-2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 101
     },
     __self: undefined
   }, __jsx("span", {
     className: "date text-dark mr-4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 105
     },
     __self: undefined
   }, __jsx("strong", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 106
     },
     __self: undefined
   }, i.date === '' ? '-' : i.date)), __jsx("span", {
     className: "text-dark",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 108
     },
     __self: undefined
   }, __jsx("strong", {
     className: "d-block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 109
     },
     __self: undefined
   }, i.title || i.name), i.job ? `...${i.job}` : i.character ? `as ${i.character}` : '')))));
 
+  const crewDiv = (arr, sortBy) => {
+    const entr = Object.entries(Object(_components_utility_groupeCrew__WEBPACK_IMPORTED_MODULE_10__["default"])(arr, 'department', sortBy));
+    return entr.map(([key, _], index) => __jsx("div", {
+      className: "credit--role",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 121
+      },
+      __self: undefined
+    }, __jsx("h3", {
+      key: key,
+      className: "subTitle text-light my-3",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 122
+      },
+      __self: undefined
+    }, key), __jsx("div", {
+      className: "grouped border border-black bg-light ",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 125
+      },
+      __self: undefined
+    }, entr.map(([_, value]) => value)[index].map(item => item.map(i => __jsx("div", {
+      key: i.id + Math.random() * 10,
+      className: "d-flex shadow-sm border border-light bg-light py-1 px-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 130
+      },
+      __self: undefined
+    }, __jsx("span", {
+      className: "date text-dark mr-4",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 134
+      },
+      __self: undefined
+    }, __jsx("strong", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 135
+      },
+      __self: undefined
+    }, i.date === '' ? '-' : i.date)), __jsx("span", {
+      className: "text-dark",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 137
+      },
+      __self: undefined
+    }, __jsx("strong", {
+      className: "d-block",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 138
+      },
+      __self: undefined
+    }, i.title || i.name), i.job ? `${i.job}` : i.character ? `as ${i.character}` : '')))))));
+  };
+
+  console.log(Object(_components_utility_groupeCrew__WEBPACK_IMPORTED_MODULE_10__["default"])(person.tv_credits.crew, 'department', 'first_air_date'), person.tv_credits.crew);
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 159
     },
     __self: undefined
   }, __jsx(Styled, {
     className: "profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 160
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--person",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 161
     },
     __self: undefined
   }, __jsx("img", {
@@ -2269,35 +2392,35 @@ const PersonProfile = ({
     alt: person.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 162
     },
     __self: undefined
   })), __jsx("div", {
     className: "profile--biography",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 164
     },
     __self: undefined
   }, __jsx("h2", {
     className: "profile--biography__name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 165
     },
     __self: undefined
   }, person.name), __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 166
     },
     __self: undefined
   }, "Biography"), __jsx("p", {
     className: "profile--biography__bio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 167
     },
     __self: undefined
   }, `${person.biography.slice(0, 500)}...`), __jsx("a", {
@@ -2306,35 +2429,35 @@ const PersonProfile = ({
     className: "read--more",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 171
     },
     __self: undefined
   }, __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_5__["IoIosArrowDown"], {
     className: "read--more__arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 176
     },
     __self: undefined
   }))), __jsx("div", {
     className: "profile--media",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 179
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--media__knownFor",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 180
     },
     __self: undefined
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 181
     },
     __self: undefined
   }, "Known For"), __jsx(_components_ui_SimpleFlex__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -2342,7 +2465,7 @@ const PersonProfile = ({
     setWidth: "160px",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 182
     },
     __self: undefined
   }, knonwFor.map(item => __jsx(_components_ui_Cards_RecommenCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2351,28 +2474,28 @@ const PersonProfile = ({
     typeFor: item.media_type,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 184
     },
     __self: undefined
   })))), __jsx("div", {
     className: "profile--media__credits",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 192
     },
     __self: undefined
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 193
     },
     __self: undefined
-  }, "Acting"), __jsx("div", {
+  }, "Credits"), __jsx("div", {
     className: "tabs--container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 194
     },
     __self: undefined
   }, __jsx("button", {
@@ -2380,7 +2503,7 @@ const PersonProfile = ({
     onClick: () => setTab('movies'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149
+      lineNumber: 195
     },
     __self: undefined
   }, "Movies"), __jsx("button", {
@@ -2388,28 +2511,42 @@ const PersonProfile = ({
     onClick: () => setTab('tv'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155
+      lineNumber: 201
     },
     __self: undefined
   }, "Tv Shows")), __jsx("div", {
     className: "profile--media__credits--content table",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 208
     },
     __self: undefined
-  }, tab === 'movies' ? creditsDiv(Object(_components_utility_groupCrew__WEBPACK_IMPORTED_MODULE_9__["default"])(person.movie_credits.cast, 'release_date')) : creditsDiv(Object(_components_utility_groupCrew__WEBPACK_IMPORTED_MODULE_9__["default"])(person.tv_credits.cast, 'first_air_date'))))), __jsx("div", {
+  }, __jsx("div", {
+    className: "credit--role",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 209
+    },
+    __self: undefined
+  }, __jsx("h3", {
+    className: "subTitle text-light my-3",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 210
+    },
+    __self: undefined
+  }, "Acting"), tab === 'movies' ? actingDiv(Object(_components_utility_groupByDate__WEBPACK_IMPORTED_MODULE_9__["default"])(person.movie_credits.cast, 'release_date')) : actingDiv(Object(_components_utility_groupByDate__WEBPACK_IMPORTED_MODULE_9__["default"])(person.tv_credits.cast, 'first_air_date'))), tab === 'movies' ? crewDiv(person.movie_credits.crew, 'release_date') : crewDiv(person.tv_credits.crew, 'first_air_date')))), __jsx("div", {
     className: "profile--facts",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173
+      lineNumber: 225
     },
     __self: undefined
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 226
     },
     __self: undefined
   }, "Facts"))));
@@ -2435,7 +2572,7 @@ PersonProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*************************************!*\
   !*** multi ./pages/person/[id].jsx ***!
   \*************************************/

@@ -7,7 +7,9 @@ import { IoIosArrowDown } from 'react-icons/io';
 import MovieContext from '../../components/context/MovieContext';
 import SimpleFlex from '../../components/ui/SimpleFlex';
 import RecommenCard from '../../components/ui/Cards/RecommenCard';
-import groupCrew from '../../components/utility/groupCrew';
+import groupByDate from '../../components/utility/groupByDate';
+import groupeCrew from '../../components/utility/groupeCrew';
+import numberWithCommas from '../../components/utility/numberWithCommas';
 
 const Styled = styled.section`
   background: var(--bg-gradient);
@@ -53,8 +55,11 @@ const Styled = styled.section`
     justify-content: center;
 
     &--content {
-      grid-column: 1 / 3;
-      margin-top: 1.2em;
+    display: grid;
+    grid-column: 1 / 3;
+    margin-top: 1.2em;
+    grid-gap: 1.5em;
+}
     }
   }
 
@@ -87,10 +92,10 @@ const PersonProfile = ({ person }) => {
     .sort((a, b) => b.vote_count - a.vote_count)
     .slice(0, 8);
 
-  const creditsDiv = arry =>
+  const actingDiv = arry =>
     Object.entries(arry)
       .sort((a, b) => b[0] - a[0])
-      .map(([key, value], index) => (
+      .map(([_, value], index) => (
         <div key={index} className='grouped border border-black '>
           {value.map(i => (
             <div
@@ -108,6 +113,42 @@ const PersonProfile = ({ person }) => {
           ))}
         </div>
       ));
+
+  const crewDiv = (arr, sortBy) => {
+    const entr = Object.entries(groupeCrew(arr, 'department', sortBy));
+
+    return entr.map(([key, _], index) => (
+      <div className='credit--role'>
+        <h3 key={key} className='subTitle text-light my-3'>
+          {key}
+        </h3>
+        <div className='grouped border border-black bg-light '>
+          {entr
+            .map(([_, value]) => value)
+            [index].map(item =>
+              item.map(i => (
+                <div
+                  key={i.id + Math.random() * 10}
+                  className='d-flex shadow-sm border border-light bg-light py-1 px-2'
+                >
+                  <span className='date text-dark mr-4'>
+                    <strong>{i.date === '' ? '-' : i.date}</strong>
+                  </span>
+                  <span className='text-dark'>
+                    <strong className='d-block'>{i.title || i.name}</strong>
+                    {i.job
+                      ? `${i.job}`
+                      : i.character
+                      ? `as ${i.character}`
+                      : ''}
+                  </span>
+                </div>
+              ))
+            )}
+        </div>
+      </div>
+    ));
+  };
 
   return (
     <Layout>
@@ -144,7 +185,7 @@ const PersonProfile = ({ person }) => {
             </SimpleFlex>
           </div>
           <div className='profile--media__credits'>
-            <h3 className='subTitle'>Acting</h3>
+            <h3 className='subTitle'>Credits</h3>
             <div className='tabs--container'>
               <button
                 className={`tab ${tab === 'movies' && 'activeTab'}`}
@@ -160,13 +201,19 @@ const PersonProfile = ({ person }) => {
               </button>
             </div>
             <div className='profile--media__credits--content table'>
+              <div className='credit--role'>
+                <h3 className='subTitle text-light my-3'>Acting</h3>
+                {tab === 'movies'
+                  ? actingDiv(
+                      groupByDate(person.movie_credits.cast, 'release_date')
+                    )
+                  : actingDiv(
+                      groupByDate(person.tv_credits.cast, 'first_air_date')
+                    )}
+              </div>
               {tab === 'movies'
-                ? creditsDiv(
-                    groupCrew(person.movie_credits.cast, 'release_date')
-                  )
-                : creditsDiv(
-                    groupCrew(person.tv_credits.cast, 'first_air_date')
-                  )}
+                ? crewDiv(person.movie_credits.crew, 'release_date')
+                : crewDiv(person.tv_credits.crew, 'first_air_date')}
             </div>
           </div>
         </div>

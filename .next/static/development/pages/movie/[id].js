@@ -39823,7 +39823,7 @@ MovieProfile.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!***********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmovie%2F%5Bid%5D&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Cmovie%5C%5Bid%5D.jsx ***!
   \***********************************************************************************************************************************************************************************/
@@ -39846,5 +39846,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map
