@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1494,18 +1494,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\CrewTab.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  .crew--person__link {
+    cursor: pointer;
+    transition: var(--ease--in--out--02s);
+
+    &:hover,
+    &:focus {
+      color: var(--primary-clr);
+    }
+  }
+`;
+
 const CrewTab = ({
   crew
-}) => __jsx("div", {
+}) => __jsx(Styled, {
   className: "crew--person",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 5
+    lineNumber: 18
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1513,33 +1527,26 @@ const CrewTab = ({
   as: `/person/${crew.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 6
+    lineNumber: 19
   },
   __self: undefined
 }, __jsx("a", {
+  className: "crew--person__link",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 7
+    lineNumber: 20
   },
   __self: undefined
 }, crew.name)), __jsx("small", {
   className: "d-block mt-1",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9
+    lineNumber: 22
   },
   __self: undefined
 }, crew.department ? crew.department.join(', ') : 'Creator'));
 
 /* harmony default export */ __webpack_exports__["default"] = (CrewTab);
-{
-  /* <div className='crew--person'>
-  <Link href='/person/[id]' as={`/person/${crew[0].id}`}>
-  <a>{crew[0].name}</a>
-  </Link>
-  <small className='d-block mt-1'>{crew[0].department.join(', ')}</small>
-  </div> */
-}
 
 /***/ }),
 
@@ -2247,89 +2254,89 @@ const ReleaseContent = ({
     },
     __self: undefined
   })));
-  const setData = Object.values(data[data.typeFor === 'tv' ? 'content_ratings' : 'release_dates'].results.filter(item => item.iso_3166_1 === 'US')[0])[1];
+  const setData = data && Object.values(data[data.typeFor === 'tv' ? 'content_ratings' : 'release_dates'].results.filter(item => item.iso_3166_1 === 'US')[0])[1];
   return __jsx("ul", {
     className: "release--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 38
     },
     __self: undefined
   }, networks, data.typeFor === 'tv' && __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 40
     },
     __self: undefined
   }, "Certification"), data.typeFor === 'tv' ? __jsx("div", {
     className: "release--date",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 42
     },
     __self: undefined
   }, __jsx(react_icons_ti__WEBPACK_IMPORTED_MODULE_2__["TiWorld"], {
     className: "world",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 43
     },
     __self: undefined
   }), __jsx("span", {
     className: "rate",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 44
     },
     __self: undefined
   }, data.typeFor === 'tv' && setData)) : setData.map(item => __jsx("li", {
     key: item.release_date,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 48
     },
     __self: undefined
   }, __jsx("div", {
     className: "release--date",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx(react_icons_ti__WEBPACK_IMPORTED_MODULE_2__["TiWorld"], {
     className: "world",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 50
     },
     __self: undefined
   }), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 51
     },
     __self: undefined
   }, Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__["default"])(item.release_date.slice(0, 10)))), __jsx("div", {
     className: "certification",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 55
     },
     __self: undefined
   }, __jsx("span", {
     className: "rate",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 56
     },
     __self: undefined
   }, item.certification), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 57
     },
     __self: undefined
   }, getReleaseType[item.type])))));
@@ -4323,7 +4330,7 @@ MovieProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!************************************!*\
   !*** multi ./pages/movie/[id].jsx ***!
   \************************************/

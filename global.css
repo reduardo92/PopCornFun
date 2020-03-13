@@ -366,8 +366,16 @@ header {
   color: var(--white-clr);
   transition: var(--ease--in--out--02s);
 }
+
+.redBalckHover {
+  color: var(--second-clr);
+  transition: var(--ease--in--out--02s);
+}
+
 .redHover:hover,
-.redHover:focus {
+.redHover:focus,
+.redBalckHover:hover,
+.redBalckHover:focus {
   color: var(--primary-clr);
 }
 
@@ -402,6 +410,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .tab {

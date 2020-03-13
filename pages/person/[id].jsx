@@ -1,15 +1,13 @@
 import { useContext, useState } from 'react';
-import { IMG_URL } from '../../components/context/types';
-import movieDB from '../../components/utility/movieDB';
-import styled from 'styled-components';
-import Layout from '../../components/layout';
-import { IoIosArrowDown } from 'react-icons/io';
 import MovieContext from '../../components/context/MovieContext';
-import SimpleFlex from '../../components/ui/SimpleFlex';
-import RecommenCard from '../../components/ui/Cards/RecommenCard';
-import groupByDate from '../../components/utility/groupByDate';
-import groupeCrew from '../../components/utility/groupeCrew';
-import numberWithCommas from '../../components/utility/numberWithCommas';
+import Layout from '../../components/layout';
+import styled from 'styled-components';
+import movieDB from '../../components/utility/movieDB';
+import KnownFor from '../../components/ui/PersonProfile/KnownFor';
+import MediaCredits from '../../components/ui/PersonProfile/MediaCredits';
+import { IMG_URL } from '../../components/context/types';
+import { IoIosArrowDown } from 'react-icons/io';
+import PersonFacts from '../../components/ui/PersonProfile/PersonFacts';
 
 const Styled = styled.section`
   background: var(--bg-gradient);
@@ -48,11 +46,16 @@ const Styled = styled.section`
     }
   }
 
-  .profile--media__credits {
+  /* .profile--media__credits {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-content: center;
+
+    .tabs--container {
+      flex-wrap: nowrap;
+    }
+
 
     &--content {
     display: grid;
@@ -73,13 +76,8 @@ const Styled = styled.section`
     .date {
       flex: 0 0 9%;
     }
-  }
-  /* .knonwFor--content {
-    .card--one {
-      width: 100%;
-      margin: 0 1em;
-    }
   } */
+
   @media screen and (min-width: 768px) {
   }
 `;
@@ -91,64 +89,6 @@ const PersonProfile = ({ person }) => {
   const knonwFor = person.combined_credits.cast
     .sort((a, b) => b.vote_count - a.vote_count)
     .slice(0, 8);
-
-  const actingDiv = arry =>
-    Object.entries(arry)
-      .sort((a, b) => b[0] - a[0])
-      .map(([_, value], index) => (
-        <div key={index} className='grouped border border-black '>
-          {value.map(i => (
-            <div
-              key={i.id + Math.random() * 10}
-              className='d-flex shadow-sm border border-light bg-light py-1 px-2'
-            >
-              <span className='date text-dark mr-4'>
-                <strong>{i.date === '' ? '-' : i.date}</strong>
-              </span>
-              <span className='text-dark'>
-                <strong className='d-block'>{i.title || i.name}</strong>
-                {i.job ? `...${i.job}` : i.character ? `as ${i.character}` : ''}
-              </span>
-            </div>
-          ))}
-        </div>
-      ));
-
-  const crewDiv = (arr, sortBy) => {
-    const entr = Object.entries(groupeCrew(arr, 'department', sortBy));
-
-    return entr.map(([key, _], index) => (
-      <div className='credit--role'>
-        <h3 key={key} className='subTitle text-light my-3'>
-          {key}
-        </h3>
-        <div className='grouped border border-black bg-light '>
-          {entr
-            .map(([_, value]) => value)
-            [index].map(item =>
-              item.map(i => (
-                <div
-                  key={i.id + Math.random() * 10}
-                  className='d-flex shadow-sm border border-light bg-light py-1 px-2'
-                >
-                  <span className='date text-dark mr-4'>
-                    <strong>{i.date === '' ? '-' : i.date}</strong>
-                  </span>
-                  <span className='text-dark'>
-                    <strong className='d-block'>{i.title || i.name}</strong>
-                    {i.job
-                      ? `${i.job}`
-                      : i.character
-                      ? `as ${i.character}`
-                      : ''}
-                  </span>
-                </div>
-              ))
-            )}
-        </div>
-      </div>
-    ));
-  };
 
   return (
     <Layout>
@@ -172,54 +112,10 @@ const PersonProfile = ({ person }) => {
           </a>
         </div>
         <div className='profile--media'>
-          <div className='profile--media__knownFor'>
-            <h3 className='subTitle'>Known For</h3>
-            <SimpleFlex className='knonwFor--content' setWidth='160px'>
-              {knonwFor.map(item => (
-                <RecommenCard
-                  key={item.id}
-                  data={item}
-                  typeFor={item.media_type}
-                />
-              ))}
-            </SimpleFlex>
-          </div>
-          <div className='profile--media__credits'>
-            <h3 className='subTitle'>Credits</h3>
-            <div className='tabs--container'>
-              <button
-                className={`tab ${tab === 'movies' && 'activeTab'}`}
-                onClick={() => setTab('movies')}
-              >
-                Movies
-              </button>
-              <button
-                className={`tab ${tab === 'tv' && 'activeTab'}`}
-                onClick={() => setTab('tv')}
-              >
-                Tv Shows
-              </button>
-            </div>
-            <div className='profile--media__credits--content table'>
-              <div className='credit--role'>
-                <h3 className='subTitle text-light my-3'>Acting</h3>
-                {tab === 'movies'
-                  ? actingDiv(
-                      groupByDate(person.movie_credits.cast, 'release_date')
-                    )
-                  : actingDiv(
-                      groupByDate(person.tv_credits.cast, 'first_air_date')
-                    )}
-              </div>
-              {tab === 'movies'
-                ? crewDiv(person.movie_credits.crew, 'release_date')
-                : crewDiv(person.tv_credits.crew, 'first_air_date')}
-            </div>
-          </div>
+          <KnownFor data={knonwFor} />
+          <MediaCredits data={person} tab={tab} setTab={setTab} />
         </div>
-        <div className='profile--facts'>
-          <h3 className='subTitle'>Facts</h3>
-        </div>
+        <PersonFacts data={person} />
       </Styled>
     </Layout>
   );

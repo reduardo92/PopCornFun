@@ -1,24 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
+import styled from 'styled-components';
+
+const Styled = styled.div`
+  .crew--person__link {
+    cursor: pointer;
+    transition: var(--ease--in--out--02s);
+
+    &:hover,
+    &:focus {
+      color: var(--primary-clr);
+    }
+  }
+`;
 
 const CrewTab = ({ crew }) => (
-  <div className='crew--person'>
+  <Styled className='crew--person'>
     <Link href='/person/[id]' as={`/person/${crew.id}`}>
-      <a>{crew.name}</a>
+      <a className='crew--person__link'>{crew.name}</a>
     </Link>
     <small className='d-block mt-1'>
       {crew.department ? crew.department.join(', ') : 'Creator'}
     </small>
-  </div>
+  </Styled>
 );
 
 export default CrewTab;
-
-{
-  /* <div className='crew--person'>
-<Link href='/person/[id]' as={`/person/${crew[0].id}`}>
-  <a>{crew[0].name}</a>
-</Link>
-<small className='d-block mt-1'>{crew[0].department.join(', ')}</small>
-</div> */
-}

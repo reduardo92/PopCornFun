@@ -28,8 +28,7 @@ const Styled = styled.header`
     color: var(--white-clr);
     font-weight: bold;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: var(--primary-clr);
     }
   }

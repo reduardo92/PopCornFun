@@ -26,11 +26,13 @@ const ReleaseContent = ({ data }) => {
       </Link>
     ));
 
-  const setData = Object.values(
-    data[
-      data.typeFor === 'tv' ? 'content_ratings' : 'release_dates'
-    ].results.filter(item => item.iso_3166_1 === 'US')[0]
-  )[1];
+  const setData =
+    data &&
+    Object.values(
+      data[
+        data.typeFor === 'tv' ? 'content_ratings' : 'release_dates'
+      ].results.filter(item => item.iso_3166_1 === 'US')[0]
+    )[1];
 
   return (
     <ul className='release--content'>
