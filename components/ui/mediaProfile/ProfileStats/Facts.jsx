@@ -2,25 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import timeConvert from '../../../utility/timeConvert';
 import numberWithCommas from '../../../utility/numberWithCommas';
-import setDateFormat from '../../../utility/setDateFormat';
-import { TiWorld } from 'react-icons/ti';
-import Link from 'next/link';
-import { IMG_URL } from '../../../context/types';
-import getRating from '../../../utility/getRating';
 import ReleaseContent from './ReleaseContent';
 
 const Styled = styled.div`
-  .stat {
-    text-transform: capitalize;
-    margin-bottom: 0.7em;
-  }
-
-  .stat--title {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 0.1em;
-  }
-
   .release--content {
     display: grid;
     grid-row-gap: 1em;

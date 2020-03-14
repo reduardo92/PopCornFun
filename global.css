@@ -431,6 +431,17 @@ header {
   border-bottom: 3px solid var(--primary-clr);
 }
 
+/* Facts Style */
+.stat {
+  text-transform: capitalize;
+  margin-bottom: 0.7em;
+}
+
+.stat--title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.1em;
+}
 .modal-content:has(.modal--img) {
   width: fit-content;
 }

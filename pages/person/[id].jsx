@@ -12,7 +12,6 @@ import PersonFacts from '../../components/ui/PersonProfile/PersonFacts';
 const Styled = styled.section`
   background: var(--bg-gradient);
   margin-top: 110px;
-  padding: 2em 1em;
 
   .profile--person {
     max-width: 300px;
@@ -46,38 +45,6 @@ const Styled = styled.section`
     }
   }
 
-  /* .profile--media__credits {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-content: center;
-
-    .tabs--container {
-      flex-wrap: nowrap;
-    }
-
-
-    &--content {
-    display: grid;
-    grid-column: 1 / 3;
-    margin-top: 1.2em;
-    grid-gap: 1.5em;
-}
-    }
-  }
-
-  .grouped {
-    & > div:first-child {
-      padding-top: 0.6em !important;
-    }
-    & > div:last-child {
-      padding-bottom: 0.6em !important;
-    }
-    .date {
-      flex: 0 0 9%;
-    }
-  } */
-
   @media screen and (min-width: 768px) {
   }
 `;
@@ -94,15 +61,23 @@ const PersonProfile = ({ person }) => {
     <Layout>
       <Styled className='profile'>
         <div className='profile--person'>
-          <img src={`${IMG_URL}${person.profile_path}`} alt={person.name} />
+          <img
+            src={
+              person.profile_path
+                ? `${IMG_URL}${person.profile_path}`
+                : 'no_img.jpg'
+            }
+            alt={person.name}
+          />
         </div>
-        <div className='profile--biography'>
+        <div className='profile--biography px-2'>
           <h2 className='profile--biography__name'>{person.name}</h2>
           <h3 className='subTitle'>Biography</h3>
-          <p className='profile--biography__bio'>{`${person.biography.slice(
-            0,
-            500
-          )}...`}</p>
+          <p className='profile--biography__bio'>
+            {person.biography.length === 0
+              ? 'Sorry Nothing Available'
+              : `${person.biography.slice(0, 500)}...`}
+          </p>
           <a
             href='#'
             onClick={() => setModal(person.biography, 'person')}

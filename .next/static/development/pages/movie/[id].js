@@ -1026,7 +1026,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "SocialLinks__Styled",
   componentId: "sc-4eizea-0"
-})(["display:flex;align-items:center;justify-content:space-between;width:200px;font-size:1.6rem;"]);
+})(["display:flex;align-items:center;justify-content:space-between;width:200px;font-size:1.6rem;&:hover,&:focus{color:var(--primary-clr);}"]);
 
 var SocialLinks = function SocialLinks(_ref) {
   var data = _ref.data,
@@ -1035,67 +1035,82 @@ var SocialLinks = function SocialLinks(_ref) {
     className: "social--links",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 26
     },
     __self: this
-  }, __jsx("a", {
+  }, data.facebook_id && __jsx("a", {
     href: "https://www.facebook.com/".concat(data.facebook_id),
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 28
     },
     __self: this
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaFacebookF"], {
     className: "social--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 32
     },
     __self: this
-  })), __jsx("a", {
+  })), data.twitter_id && __jsx("a", {
     href: "https://twitter.com/".concat(data.twitter_id),
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 36
     },
     __self: this
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaTwitter"], {
     className: "social--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 37
     },
     __self: this
-  })), __jsx("a", {
+  })), data.instagram_id && __jsx("a", {
     href: "https://www.instagram.com/".concat(data.instagram_id),
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 41
     },
     __self: this
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaInstagram"], {
     className: "social--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 45
     },
     __self: this
-  })), __jsx("a", {
+  })), data.homepage && __jsx("a", {
     href: homepage,
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 49
     },
     __self: this
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaExternalLinkSquareAlt"], {
     className: "social--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 50
+    },
+    __self: this
+  })), data.imdb_id && __jsx("a", {
+    href: "https://www.imdb.com/".concat(data.imdb_id),
+    target: "_blank",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaImdb"], {
+    className: "social--link",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
     },
     __self: this
   })));
@@ -1704,20 +1719,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _utility_timeConvert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../utility/timeConvert */ "./components/utility/timeConvert.js");
 /* harmony import */ var _utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utility/numberWithCommas */ "./components/utility/numberWithCommas.js");
-/* harmony import */ var _utility_setDateFormat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utility/setDateFormat */ "./components/utility/setDateFormat.js");
-/* harmony import */ var react_icons_ti__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/ti */ "./node_modules/react-icons/ti/index.esm.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../context/types */ "./components/context/types.js");
-/* harmony import */ var _utility_getRating__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../utility/getRating */ "./components/utility/getRating.js");
-/* harmony import */ var _ReleaseContent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ReleaseContent */ "./components/ui/mediaProfile/ProfileStats/ReleaseContent.jsx");
+/* harmony import */ var _ReleaseContent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ReleaseContent */ "./components/ui/mediaProfile/ProfileStats/ReleaseContent.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\ProfileStats\\Facts.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
 
 
 
@@ -1726,7 +1730,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Facts__Styled",
   componentId: "a62vcl-0"
-})([".stat{text-transform:capitalize;margin-bottom:0.7em;}.stat--title{font-size:0.9rem;font-weight:bold;margin-bottom:0.1em;}.release--content{display:grid;grid-row-gap:1em;& >:first-child{margin-top:0.5em;}}.release--date,.certification{display:flex;align-items:center;justify-content:start;& >:first-child{margin-right:0.5em;}}.world{font-size:1.5rem;path{color:#535353;}}.rate{border-radius:2px;background-color:var(--primary-clr);color:#fff;padding:0.15em 0.5em;font-size:0.8rem;border-radius:5px;}.network--logo{width:60px;}"]);
+})([".release--content{display:grid;grid-row-gap:1em;& >:first-child{margin-top:0.5em;}}.release--date,.certification{display:flex;align-items:center;justify-content:start;& >:first-child{margin-right:0.5em;}}.world{font-size:1.5rem;path{color:#535353;}}.rate{border-radius:2px;background-color:var(--primary-clr);color:#fff;padding:0.15em 0.5em;font-size:0.8rem;border-radius:5px;}.network--logo{width:60px;}"]);
 
 var Facts = function Facts(_ref) {
   var data = _ref.data;
@@ -1734,17 +1738,80 @@ var Facts = function Facts(_ref) {
     className: "profile--stats--facts",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 52
     },
     __self: this
   }, __jsx("h3", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 53
     },
     __self: this
   }, "Facts"), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: this
+  }, "Status"), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }, data.status)), __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: this
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }, data.release_dates ? 'Release Information' : 'Networks'), __jsx(_ReleaseContent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    data: data,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: this
+  })), data.typeFor === 'tv' && __jsx("div", {
+    className: "stat",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: this
+  }, __jsx("p", {
+    className: "stat--title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: this
+  }, "Type"), __jsx("span", {
+    className: "stat--subtext",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: this
+  }, data.type)), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
@@ -1758,14 +1825,14 @@ var Facts = function Facts(_ref) {
       lineNumber: 71
     },
     __self: this
-  }, "Status"), __jsx("span", {
+  }, "Original Language"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 72
     },
     __self: this
-  }, data.status)), __jsx("div", {
+  }, data.original_language)), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
@@ -1779,116 +1846,53 @@ var Facts = function Facts(_ref) {
       lineNumber: 75
     },
     __self: this
-  }, data.release_dates ? 'Release Information' : 'Networks'), __jsx(_ReleaseContent__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    data: data,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: this
-  })), data.typeFor === 'tv' && __jsx("div", {
-    className: "stat",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81
-    },
-    __self: this
-  }, __jsx("p", {
-    className: "stat--title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82
-    },
-    __self: this
-  }, "Type"), __jsx("span", {
-    className: "stat--subtext",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: this
-  }, data.type)), __jsx("div", {
-    className: "stat",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86
-    },
-    __self: this
-  }, __jsx("p", {
-    className: "stat--title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87
-    },
-    __self: this
-  }, "Original Language"), __jsx("span", {
-    className: "stat--subtext",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88
-    },
-    __self: this
-  }, data.original_language)), __jsx("div", {
-    className: "stat",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 90
-    },
-    __self: this
-  }, __jsx("p", {
-    className: "stat--title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91
-    },
-    __self: this
   }, "Runtime"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 76
     },
     __self: this
   }, Object(_utility_timeConvert__WEBPACK_IMPORTED_MODULE_2__["default"])(data.runtime || data.episode_run_time[0]))), data.typeFor === 'tv' ? null : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 82
     },
     __self: this
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 83
     },
     __self: this
   }, "Budget"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 84
     },
     __self: this
   }, data.budget === 0 ? 'N/A' : "$".concat(Object(_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__["default"])(data.budget)))), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 88
     },
     __self: this
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 89
     },
     __self: this
   }, "Revenue"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 90
     },
     __self: this
   }, data.revenue === 0 ? 'N/A' : "$".concat(Object(_utility_numberWithCommas__WEBPACK_IMPORTED_MODULE_3__["default"])(data.revenue))))));
@@ -39906,7 +39910,7 @@ MovieProfile.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!***********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmovie%2F%5Bid%5D&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Cmovie%5C%5Bid%5D.jsx ***!
   \***********************************************************************************************************************************************************************************/
@@ -39929,5 +39933,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

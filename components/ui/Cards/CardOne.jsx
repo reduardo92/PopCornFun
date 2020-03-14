@@ -12,6 +12,13 @@ const Styled = styled.figure`
     position: relative;
     transition: var(--ease--in--out--02s);
     cursor: pointer;
+    background-color: var(--grey-clr);
+    height: 240px;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
 
     &::after {
       content: 'View More';
@@ -65,6 +72,10 @@ const Styled = styled.figure`
 
   @media screen and (min-width: 1280px) {
     width: 180px;
+
+    .card--poster {
+      height: 270px;
+    }
   }
 `;
 
@@ -74,7 +85,11 @@ const CardOne = ({ data, typeFor, invert }) => (
       <div className='card--poster'>
         <img
           className='poster__img'
-          src={`${IMG_URL}${data.poster_path || data.profile_path}`}
+          src={
+            data.poster_path || data.profile_path
+              ? `${IMG_URL}${data.poster_path || data.profile_path}`
+              : 'no_img.jpg'
+          }
           alt={data.title || data.name}
         />
       </div>

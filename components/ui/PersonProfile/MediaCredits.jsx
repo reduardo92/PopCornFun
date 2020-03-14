@@ -71,7 +71,7 @@ const MediaCredits = ({ data, tab, setTab }) => {
   };
 
   return (
-    <Styled className='profile--media__credits'>
+    <Styled className='profile--media__credits px-2'>
       <h3 className='subTitle'>Credits</h3>
       <div className='tabs--container'>
         <button
@@ -89,7 +89,9 @@ const MediaCredits = ({ data, tab, setTab }) => {
       </div>
       <div className='profile--media__credits--content table'>
         <div className='credit--role'>
-          <h3 className='subTitle text-light my-3'>Acting</h3>
+          {(data.movie_credits.cast || data.tv_credits.cast) && (
+            <h3 className='subTitle text-light my-3'>Acting</h3>
+          )}
           {tab === 'movies' ? (
             actingDiv(data.movie_credits.cast, 'release_date', 'movie')
           ) : tab === 'tv' ? (
