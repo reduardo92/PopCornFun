@@ -26,13 +26,26 @@ const ReleaseContent = ({ data }) => {
       </Link>
     ));
 
-  const setData =
-    data &&
-    Object.values(
-      data[
-        data.typeFor === 'tv' ? 'content_ratings' : 'release_dates'
-      ].results.filter(item => item.iso_3166_1 === 'US')[0]
-    )[1];
+  const setData = () => {
+    const setFor =
+      data[data.typeFor === 'tv' ? 'content_ratings' : 'release_dates'].results;
+
+    const getResults =
+      setFor.lenght === 0
+        ? []
+        : Object.values(
+            data[data.typeFor === 'tv' ? 'content_ratings' : 'release_dates']
+              .results
+          );
+
+    const getUS = getResults.find(item => item.iso_3166_1 === 'US');
+
+    if (getUS) {
+      return Object.values(getUS)[1];
+    } else {
+      return Object.values(getResults[0])[1];
+    }
+  };
 
   return (
     <ul className='release--content'>
@@ -41,10 +54,10 @@ const ReleaseContent = ({ data }) => {
       {data.typeFor === 'tv' ? (
         <div className='release--date'>
           <TiWorld className='world' />
-          <span className='rate'>{data.typeFor === 'tv' && setData}</span>
+          <span className='rate'>{data.typeFor === 'tv' && setData()}</span>
         </div>
       ) : (
-        setData.map(item => (
+        setData().map(item => (
           <li key={item.release_date}>
             <div className='release--date'>
               <TiWorld className='world' />
@@ -64,18 +77,3 @@ const ReleaseContent = ({ data }) => {
 };
 
 export default ReleaseContent;
-
-{
-  /* <li key={i}>
-<div className='release--date'>
-  <TiWorld className='world' />
-  <span className='stat--subtext'>
-    {setDateFormat(item.release_date.slice(0, 10))}
-  </span>
-</div>
-<div className='certification'>
-  <span className='rate'>{item.certification}</span>
-  <span className='stat--subtext'>{getReleaseType[item.type]}</span>
-</div>
-</li> */
-}

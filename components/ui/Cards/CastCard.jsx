@@ -49,8 +49,13 @@ const CastCard = ({ data }) => (
       <div className='card--poster'>
         <img
           className='cast--card__img'
-          src={`${IMG_URL}${data.profile_path}`}
+          // src={`${IMG_URL}${data.profile_path}`}
           alt={data.title || data.name}
+          src={
+            data.profile_path
+              ? `${IMG_URL}${data.profile_path}`
+              : 'blank_Person.svg'
+          }
         />
       </div>
     </Link>

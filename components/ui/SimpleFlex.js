@@ -20,7 +20,7 @@ const SimpleFlex = styled.div`
     }
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1100px) {
     ::-webkit-scrollbar {
       height: 10px;
       background-color: #f5f5f5;

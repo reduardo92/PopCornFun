@@ -38,7 +38,9 @@ const PersonFacts = ({ data }) => {
       </div>
       <div className='stat'>
         <p className='stat--title'>Birthday</p>
-        <span className='stat--subtext'>{setDateFormat(data.birthday)}</span>
+        <span className='stat--subtext'>
+          {data.birthday ? setDateFormat(data.birthday) : '-'}
+        </span>
       </div>
       <div className='stat'>
         <p className='stat--title'>Place of Birth</p>

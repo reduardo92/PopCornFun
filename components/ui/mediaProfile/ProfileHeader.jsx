@@ -66,7 +66,7 @@ const Styled = styled.div`
 
     &--tab {
       border-right: 1px solid #7b7b7b;
-      padding: 0 1em;
+      padding: 0 2em;
       text-align: center;
       display: flex;
       align-items: center;
@@ -75,6 +75,7 @@ const Styled = styled.div`
     &--tab:last-child {
       border: none;
       padding: 0;
+      padding-left: 1em;
       flex-wrap: wrap;
       justify-content: space-evenly;
     }
@@ -200,7 +201,9 @@ const ProfileHeader = ({ data }) => {
             : data.first_air_date.slice(0, 4)}
         </span>
         <span className='runtime meta--tab'>
-          {timeConvert(data.runtime || data.episode_run_time[0])}
+          {timeConvert(
+            data.typeFor === 'movie' ? data.runtime : data.episode_run_time[0]
+          )}
         </span>
         <span className='rating meta--tab'>
           {data.release_date

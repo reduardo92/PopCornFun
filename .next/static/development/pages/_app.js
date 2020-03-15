@@ -248,7 +248,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header.withConfig({
   displayName: "Navbar__Styled",
   componentId: "z1ydwt-0"
-})(["position:fixed;top:0;right:0;left:0;z-index:1030;background-image:var(--bg-gradient);.navbar{max-width:1500px;margin:0 auto;}.navbar-toggler{background-color:var(--white-clr);}.navbar-nav .nav-link,.navbar-brand{color:var(--white-clr);font-weight:bold;&:hover{color:var(--primary-clr);}}.selected{color:var(--primary-clr) !important;}.navbar-brand{width:30px;font-size:1rem;display:flex;align-items:center;img{display:inline-block;margin-right:0.5em;}}@media screen and (min-width:1000px){.navbar-collapse{margin-left:13em;}.navbar-brand{width:40px;}}"]);
+})(["position:fixed;top:0;right:0;left:0;z-index:1030;background-image:var(--bg-gradient);.navbar{max-width:1500px;margin:0 auto;}.navbar-toggler{background-color:var(--white-clr);}.navbar-nav .nav-link{color:var(--white-clr);font-weight:bold;&:hover{color:var(--primary-clr);}}.selected{color:var(--primary-clr) !important;}.navbar-brand{width:30px;font-size:1rem;display:flex;align-items:center;color:var(--white-clr);font-weight:bold;cursor:pointer;&:hover,&:focus{color:inherit;}img{display:inline-block;margin-right:0.5em;}}@media screen and (min-width:1000px){.navbar-collapse{margin-left:13em;}.navbar-brand{width:40px;}}"]);
 
 var NavCustom = function NavCustom() {
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]),
@@ -261,7 +261,7 @@ var NavCustom = function NavCustom() {
     navScroll: navScroll,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 73
     },
     __self: this
   }, __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -269,21 +269,21 @@ var NavCustom = function NavCustom() {
     expand: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 74
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 75
     },
     __self: this
   }, __jsx("a", {
     className: "navbar-brand",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 76
     },
     __self: this
   }, __jsx("img", {
@@ -291,35 +291,35 @@ var NavCustom = function NavCustom() {
     alt: "popcorn logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 77
     },
     __self: this
   }), "PopCorn Fun")), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"].Toggle, {
     "aria-controls": "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 81
     },
     __self: this
   }), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"].Collapse, {
     id: "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 82
     },
     __self: this
   }, __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "mr-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 83
     },
     __self: this
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 84
     },
     __self: this
   }, __jsx("a", {
@@ -327,14 +327,14 @@ var NavCustom = function NavCustom() {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 85
     },
     __self: this
   }, "Home")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/discover",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 89
     },
     __self: this
   }, __jsx("a", {
@@ -342,14 +342,14 @@ var NavCustom = function NavCustom() {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 90
     },
     __self: this
   }, "Discover")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 94
     },
     __self: this
   }, __jsx("a", {
@@ -357,14 +357,14 @@ var NavCustom = function NavCustom() {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 95
     },
     __self: this
   }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 99
     },
     __self: this
   }, __jsx("a", {
@@ -372,32 +372,11 @@ var NavCustom = function NavCustom() {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 100
     },
     __self: this
   }, "Tv Shows")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/person",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 97
-    },
-    __self: this
-  }, __jsx("a", {
-    className: "nav-link",
-    role: "button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: this
-  }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 103
-    },
-    __self: this
-  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/login",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 104
@@ -411,11 +390,17 @@ var NavCustom = function NavCustom() {
       lineNumber: 105
     },
     __self: this
-  }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/signup",
+  }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 110
+    },
+    __self: this
+  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/login",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111
     },
     __self: this
   }, __jsx("a", {
@@ -423,13 +408,28 @@ var NavCustom = function NavCustom() {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 112
+    },
+    __self: this
+  }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/signup",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116
+    },
+    __self: this
+  }, __jsx("a", {
+    className: "nav-link",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117
     },
     __self: this
   }, "Sign Up"))))), __jsx(_ui_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 124
     },
     __self: this
   }));
@@ -504,10 +504,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 var log = console.log;
 var movieInitalState = {
-  current_page: 1,
-  total_pages: 0,
   query: 'movie',
-  movieDBData: {},
+  mediaProfile: null,
+  personProfile: null,
   pageData: {},
   isModal: {
     media: null,
@@ -554,9 +553,9 @@ var StateProvider = function StateProvider(_ref) {
     setWindowSize(window.innerWidth);
   }, []); // Actions
 
-  var setData = function setData(data) {
+  var setData = function setData(type, data) {
     return dispatch({
-      type: _types__WEBPACK_IMPORTED_MODULE_10__["SET_MODAL_MEDIA"],
+      type: type,
       payload: data
     });
   };
@@ -590,7 +589,7 @@ var StateProvider = function StateProvider(_ref) {
     }, state),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 49
     },
     __self: this
   }, children);
@@ -604,7 +603,7 @@ var StateProvider = function StateProvider(_ref) {
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, getMovie */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_MEDIADATA, CLEAR_MEDIADATA, SET_PERSONDATA, CLEAR_PERSONDATA, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -615,6 +614,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL_OR", function() { return IMG_URL_OR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MODAL_MEDIA", function() { return SET_MODAL_MEDIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_MODAL_MEDIA", function() { return RESET_MODAL_MEDIA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MEDIADATA", function() { return SET_MEDIADATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_MEDIADATA", function() { return CLEAR_MEDIADATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_PERSONDATA", function() { return SET_PERSONDATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_PERSONDATA", function() { return CLEAR_PERSONDATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
@@ -623,7 +626,12 @@ var BASE_URL = 'https://api.themoviedb.org/3/';
 var IMG_URL = 'https://image.tmdb.org/t/p/w500';
 var IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
 var SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
-var RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // Movie DB
+var RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // DATA
+
+var SET_MEDIADATA = 'SET_MEDIADATA';
+var CLEAR_MEDIADATA = 'CLEAR_MEDIADATA';
+var SET_PERSONDATA = 'SET_PERSONDATA';
+var CLEAR_PERSONDATA = 'CLEAR_PERSONDATA '; // Movie DB
 
 function getMovie(id, param) {
   var movie = {
@@ -697,10 +705,30 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 var useMovieReducer = function useMovieReducer(state, action) {
   switch (action.type) {
-    case 'SET_DATA':
+    // Set Media for tv & movie profile
+    case _types__WEBPACK_IMPORTED_MODULE_7__["SET_MEDIADATA"]:
       return _objectSpread({}, state, {
-        movieDBData: action.payload
+        mediaProfile: action.payload
       });
+    // Clear Media for tv & movie profile
+
+    case _types__WEBPACK_IMPORTED_MODULE_7__["CLEAR_MEDIADATA"]:
+      return _objectSpread({}, state, {
+        mediaProfile: null
+      });
+    // Set Person Data profile
+
+    case _types__WEBPACK_IMPORTED_MODULE_7__["SET_PERSONDATA"]:
+      return _objectSpread({}, state, {
+        personProfile: action.payload
+      });
+    // Clear Person Data profile
+
+    case _types__WEBPACK_IMPORTED_MODULE_7__["CLEAR_PERSONDATA"]:
+      return _objectSpread({}, state, {
+        personProfile: null
+      });
+    // Set Modal Media
 
     case _types__WEBPACK_IMPORTED_MODULE_7__["SET_MODAL_MEDIA"]:
       return _objectSpread({}, state, {
@@ -710,6 +738,7 @@ var useMovieReducer = function useMovieReducer(state, action) {
           "for": action.typeFor
         }
       });
+    // Clear Modal Media
 
     case _types__WEBPACK_IMPORTED_MODULE_7__["RESET_MODAL_MEDIA"]:
       return _objectSpread({}, state, {
@@ -28858,13 +28887,13 @@ var MyApp = function MyApp(_ref) {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: this
   }, "PopCorn Fun"), __jsx("link", {
@@ -28872,7 +28901,7 @@ var MyApp = function MyApp(_ref) {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: this
   }), __jsx("link", {
@@ -28882,7 +28911,7 @@ var MyApp = function MyApp(_ref) {
     crossOrigin: "anonymous",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: this
   }), __jsx("meta", {
@@ -28891,31 +28920,31 @@ var MyApp = function MyApp(_ref) {
     key: "viewport",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 24
     },
     __self: this
   })), __jsx(_components_context_MovieProvider__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     },
     __self: this
   }, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: this
   }), __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 32
     },
     __self: this
   })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: this
   })));

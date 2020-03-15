@@ -6,10 +6,9 @@ import { SET_MODAL_MEDIA } from './types';
 const log = console.log;
 
 const movieInitalState = {
-  current_page: 1,
-  total_pages: 0,
   query: 'movie',
-  movieDBData: {},
+  mediaProfile: null,
+  personProfile: null,
   pageData: {},
   isModal: { media: null, toggle: false, for: null }
 };
@@ -38,7 +37,7 @@ const StateProvider = ({ children }) => {
 
   // Actions
 
-  const setData = data => dispatch({ type: SET_MODAL_MEDIA, payload: data });
+  const setData = (type, data) => dispatch({ type, payload: data });
 
   const setModal = (data, typeFor = 'videos') =>
     dispatch({ type: SET_MODAL_MEDIA, payload: data, typeFor });

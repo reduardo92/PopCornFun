@@ -74,7 +74,9 @@ const Facts = ({ data }) => {
       <div className='stat'>
         <p className='stat--title'>Runtime</p>
         <span className='stat--subtext'>
-          {timeConvert(data.runtime || data.episode_run_time[0])}
+          {timeConvert(
+            data.typeFor === 'movie' ? data.runtime : data.episode_run_time[0]
+          )}
         </span>
       </div>
       {data.typeFor === 'tv' ? null : (

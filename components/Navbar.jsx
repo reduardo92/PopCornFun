@@ -23,8 +23,7 @@ const Styled = styled.header`
     background-color: var(--white-clr);
   }
 
-  .navbar-nav .nav-link,
-  .navbar-brand {
+  .navbar-nav .nav-link {
     color: var(--white-clr);
     font-weight: bold;
 
@@ -42,6 +41,14 @@ const Styled = styled.header`
     font-size: 1rem;
     display: flex;
     align-items: center;
+    color: var(--white-clr);
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
     img {
       display: inline-block;
       margin-right: 0.5em;

@@ -8,6 +8,7 @@ const Styled = styled.div`
   .recommend--card--poster {
     position: relative;
     width: 160px;
+    height: 240px;
     cursor: pointer;
 
     &::after {
@@ -75,6 +76,7 @@ const Styled = styled.div`
   @media screen and (min-width: 1280px) {
     .recommend--card--poster {
       width: 180px;
+      height: 270px;
     }
   }
 `;

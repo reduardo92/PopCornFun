@@ -22,7 +22,6 @@ const Styled = styled.section`
 `;
 
 const RecommenSection = ({ data }) => {
-  console.log('rec', data.typeFor);
   return (
     <Styled className='recommendations--section'>
       <h3 className='subTitle'>Recommendations</h3>

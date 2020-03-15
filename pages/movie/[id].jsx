@@ -1,6 +1,11 @@
+import { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import movieDB from '../../components/utility/movieDB';
-import { IMG_URL_OR } from '../../components/context/types';
+import {
+  IMG_URL_OR,
+  SET_MEDIADATA,
+  CLEAR_MEDIADATA
+} from '../../components/context/types';
 import TopBilledCast from '../../components/ui/TopBilledCast';
 import ReviewSection from '../../components/ui/ReviewSection';
 import MediaSection from '../../components/ui/MediaSection';
@@ -8,6 +13,7 @@ import Layout from '../../components/layout';
 import ProfileHeader from '../../components/ui/mediaProfile/ProfileHeader';
 import RecommenSection from '../../components/ui/RecommenSection';
 import ProfileStats from '../../components/ui/mediaProfile/ProfileStats/ProfileStats';
+import MovieContext from '../../components/context/MovieContext';
 
 const Styled = styled.section`
   background: var(--bg-gradient);
@@ -47,30 +53,44 @@ const Styled = styled.section`
 `;
 
 const MovieProfile = ({ movie }) => {
-  console.log(movie);
+  const { setData, clearData, mediaProfile } = useContext(MovieContext);
+
+  useEffect(() => {
+    setData(SET_MEDIADATA, movie);
+    return () => {
+      clearData(CLEAR_MEDIADATA);
+    };
+  }, [movie]);
+
+  // console.log('from mediaProfile', mediaProfile);
 
   return (
-    <Layout>
-      <Styled className='profile' bgImg={movie.backdrop_path}>
-        <div className='profile--backdrop' />
-        <div className='profile--header'>
-          <ProfileHeader data={movie} />
-          <TopBilledCast data={movie.credits.cast} />
-          <ReviewSection data={movie.reviews.results} movieId={movie.id} />
-          <MediaSection
-            videos={movie.videos.results}
-            posters={movie.images.posters}
-            backdrops={movie.images.backdrops}
-            typeId={movie.id}
+    mediaProfile && (
+      <Layout>
+        <Styled className='profile' bgImg={mediaProfile.backdrop_path}>
+          <div className='profile--backdrop' />
+          <div className='profile--header'>
+            <ProfileHeader data={mediaProfile} />
+            <TopBilledCast data={mediaProfile.credits.cast} />
+            <ReviewSection
+              data={mediaProfile.reviews.results}
+              movieId={mediaProfile.id}
+            />
+            <MediaSection
+              videos={mediaProfile.videos.results}
+              posters={mediaProfile.images.posters}
+              backdrops={mediaProfile.images.backdrops}
+              typeId={mediaProfile.id}
+            />
+            <RecommenSection data={mediaProfile} />
+          </div>
+          <ProfileStats
+            data={mediaProfile}
+            keywords={Object.values(mediaProfile.keywords)[0]}
           />
-          <RecommenSection data={movie} />
-        </div>
-        <ProfileStats
-          data={movie}
-          keywords={Object.values(movie.keywords)[0]}
-        />
-      </Styled>
-    </Layout>
+        </Styled>
+      </Layout>
+    )
   );
 };
 

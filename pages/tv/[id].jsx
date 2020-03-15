@@ -1,6 +1,12 @@
+import { useContext, useEffect } from 'react';
+import MovieContext from '../../components/context/MovieContext';
+import {
+  IMG_URL_OR,
+  SET_MEDIADATA,
+  CLEAR_MEDIADATA
+} from '../../components/context/types';
 import styled from 'styled-components';
 import movieDB from '../../components/utility/movieDB';
-import { IMG_URL_OR } from '../../components/context/types';
 import TopBilledCast from '../../components/ui/TopBilledCast';
 import ReviewSection from '../../components/ui/ReviewSection';
 import MediaSection from '../../components/ui/MediaSection';
@@ -47,27 +53,43 @@ const Styled = styled.section`
 `;
 
 const TvProfile = ({ tv }) => {
-  console.log(tv);
+  const { setData, clearData, mediaProfile } = useContext(MovieContext);
 
+  useEffect(() => {
+    setData(SET_MEDIADATA, tv);
+    return () => {
+      clearData(CLEAR_MEDIADATA);
+    };
+  }, [tv]);
+
+  console.log('from mediaProfile', mediaProfile);
   return (
-    <Layout>
-      <Styled className='profile' bgImg={tv.backdrop_path}>
-        <div className='profile--backdrop' />
-        <div className='profile--header'>
-          <ProfileHeader data={tv} />
-          <TopBilledCast data={tv.credits.cast} />
-          <ReviewSection data={tv.reviews.results} movieId={tv.id} />
-          <MediaSection
-            videos={tv.videos.results}
-            posters={tv.images.posters}
-            backdrops={tv.images.backdrops}
-            typeId={tv.id}
+    mediaProfile && (
+      <Layout>
+        <Styled className='profile' bgImg={mediaProfile.backdrop_path}>
+          <div className='profile--backdrop' />
+          <div className='profile--header'>
+            <ProfileHeader data={mediaProfile} />
+            <TopBilledCast data={mediaProfile.credits.cast} />
+            <ReviewSection
+              data={mediaProfile.reviews.results}
+              movieId={mediaProfile.id}
+            />
+            <MediaSection
+              videos={mediaProfile.videos.results}
+              posters={mediaProfile.images.posters}
+              backdrops={mediaProfile.images.backdrops}
+              typeId={mediaProfile.id}
+            />
+            <RecommenSection data={mediaProfile} />
+          </div>
+          <ProfileStats
+            data={mediaProfile}
+            keywords={Object.values(mediaProfile.keywords)[0]}
           />
-          <RecommenSection data={tv} />
-        </div>
-        <ProfileStats data={tv} keywords={Object.values(tv.keywords)[0]} />
-      </Styled>
-    </Layout>
+        </Styled>
+      </Layout>
+    )
   );
 };
 

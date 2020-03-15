@@ -14,58 +14,56 @@ const IndexPage = ({
   feturedMovie,
   feturedTv,
   people
-}) => {
-  return (
-    <Layout>
-      <VideoHero />
-      <PopularSection
-        data={movieNowPlay}
-        typeFor='movie'
-        title={
-          <>
-            in theaters <br /> now to enjoy
-          </>
-        }
-        subtitle='Most watched movies'
-        toLink='/movie'
-      />
-      <SectionCarousel
-        data={people}
-        typeFor='person'
-        title='Popular persons in film'
-        toLink='/person'
-        order='true'
-      />
-      <FeturedSection data={feturedMovie} typeFor='movie' />
-      <PopularSection
-        data={tvOnAir}
-        typeFor='tv'
-        title={
-          <>
-            Popular TV <br />
-            Series Right Now
-          </>
-        }
-        subtitle='Most watched tv'
-        toLink='/tv'
-      />
-      <SectionCarousel
-        data={movieAction}
-        typeFor='movie'
-        title='popular action movies'
-        toLink='/movie'
-        order={'true'}
-      />
-      <FeturedSection data={feturedTv} typeFor='tv' />
-      <SectionCarousel
-        data={tvAnima}
-        typeFor='tv'
-        title='animation to Enjoy'
-        toLink='/tv'
-      />
-    </Layout>
-  );
-};
+}) => (
+  <Layout>
+    <VideoHero />
+    <PopularSection
+      data={movieNowPlay}
+      typeFor='movie'
+      title={
+        <>
+          in theaters <br /> now to enjoy
+        </>
+      }
+      subtitle='Most watched movies'
+      toLink='/movie'
+    />
+    <SectionCarousel
+      data={people}
+      typeFor='person'
+      title='Popular persons in film'
+      toLink='/person'
+      order='true'
+    />
+    <FeturedSection data={feturedMovie} typeFor='movie' />
+    <PopularSection
+      data={tvOnAir}
+      typeFor='tv'
+      title={
+        <>
+          Popular TV <br />
+          Series Right Now
+        </>
+      }
+      subtitle='Most watched tv'
+      toLink='/tv'
+    />
+    <SectionCarousel
+      data={movieAction}
+      typeFor='movie'
+      title='popular action movies'
+      toLink='/movie'
+      order={'true'}
+    />
+    <FeturedSection data={feturedTv} typeFor='tv' />
+    <SectionCarousel
+      data={tvAnima}
+      typeFor='tv'
+      title='animation to Enjoy'
+      toLink='/tv'
+    />
+  </Layout>
+);
 
 IndexPage.getInitialProps = async () => {
   try {

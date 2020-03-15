@@ -6,7 +6,7 @@ import RecommenCard from '../Cards/RecommenCard';
 const Styled = styled.div``;
 
 const KnownFor = ({ data }) => (
-  <Styled className='profile--media__knownFor px-2'>
+  <Styled className='profile--media__knownFor px-2 pb-5'>
     <h3 className='subTitle'>Known For</h3>
     {data.length === 0 ? (
       <p className='my-5'>Sorry Nothing Available</p>

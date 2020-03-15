@@ -112,7 +112,7 @@ const CardOne = ({ data, typeFor, invert }) => (
       </div>
       <div className='card--body__title'>
         <Link href={`/${typeFor}/[id]`} as={`/${typeFor}/${data.id}`}>
-          {data.title || data.name}
+          <a>{data.title || data.name}</a>
         </Link>
       </div>
     </div>
