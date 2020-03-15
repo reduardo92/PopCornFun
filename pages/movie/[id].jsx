@@ -53,62 +53,74 @@ const Styled = styled.section`
 `;
 
 const MovieProfile = ({ movie }) => {
-  const { setData, clearData, mediaProfile } = useContext(MovieContext);
+  // const { setData, clearData, mediaProfile } = useContext(MovieContext);
 
-  useEffect(() => {
-    setData(SET_MEDIADATA, movie);
-    return () => {
-      clearData(CLEAR_MEDIADATA);
-    };
-  }, [movie]);
+  // useEffect(() => {
+  //   setData(SET_MEDIADATA, movie);
+  //   return () => {
+  //     clearData(CLEAR_MEDIADATA);
+  //   };
+  // }, [movie]);
 
   // console.log('from mediaProfile', mediaProfile);
 
   return (
-    mediaProfile && (
-      <Layout>
-        <Styled className='profile' bgImg={mediaProfile.backdrop_path}>
-          <div className='profile--backdrop' />
-          <div className='profile--header'>
-            <ProfileHeader data={mediaProfile} />
-            <TopBilledCast data={mediaProfile.credits.cast} />
-            <ReviewSection
-              data={mediaProfile.reviews.results}
-              movieId={mediaProfile.id}
-            />
-            <MediaSection
-              videos={mediaProfile.videos.results}
-              posters={mediaProfile.images.posters}
-              backdrops={mediaProfile.images.backdrops}
-              typeId={mediaProfile.id}
-            />
-            <RecommenSection data={mediaProfile} />
-          </div>
-          <ProfileStats
-            data={mediaProfile}
-            keywords={Object.values(mediaProfile.keywords)[0]}
+    <Layout>
+      <Styled className='profile' bgImg={movie.backdrop_path}>
+        <div className='profile--backdrop' />
+        <div className='profile--header'>
+          <ProfileHeader data={movie} />
+          <TopBilledCast data={movie.credits.cast} />
+          <ReviewSection data={movie.reviews.results} movieId={movie.id} />
+          <MediaSection
+            videos={movie.videos.results}
+            posters={movie.images.posters}
+            backdrops={movie.images.backdrops}
+            typeId={movie.id}
           />
-        </Styled>
-      </Layout>
-    )
+          <RecommenSection data={movie} />
+        </div>
+        <ProfileStats
+          data={movie}
+          keywords={Object.values(movie.keywords)[0]}
+        />
+      </Styled>
+    </Layout>
   );
 };
 
-MovieProfile.getInitialProps = async ctx => {
-  console.log(ctx.query, 'ID');
-  console.log(ctx);
+// MovieProfile.getInitialProps = async ctx => {
+//   console.log(ctx.query, 'ID');
+//   console.log(ctx);
 
+//   try {
+//     const movie = await movieDB(
+//       `movie/${ctx.query.id || '454626'}`,
+//       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'
+//     );
+//     return {
+//       movie: { typeFor: 'movie', ...movie }
+//     };
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+export async function getServerSideProps(ctx) {
+  // Fetch data from external API
   try {
     const movie = await movieDB(
       `movie/${ctx.query.id || '454626'}`,
       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'
     );
     return {
-      movie: { typeFor: 'movie', ...movie }
+      props: {
+        movie: { typeFor: 'movie', ...movie }
+      }
     };
   } catch (error) {
     console.log(error);
   }
-};
+}
 
 export default MovieProfile;
