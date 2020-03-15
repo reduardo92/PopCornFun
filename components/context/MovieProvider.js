@@ -7,8 +7,6 @@ const log = console.log;
 
 const movieInitalState = {
   query: 'movie',
-  mediaProfile: null,
-  personProfile: null,
   pageData: {},
   isModal: { media: null, toggle: false, for: null }
 };

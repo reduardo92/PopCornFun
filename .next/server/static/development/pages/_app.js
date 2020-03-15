@@ -551,8 +551,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 const log = console.log;
 const movieInitalState = {
   query: 'movie',
-  mediaProfile: null,
-  personProfile: null,
   pageData: {},
   isModal: {
     media: null,
@@ -623,7 +621,7 @@ const StateProvider = ({
     }, state),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 47
     },
     __self: undefined
   }, children);
@@ -637,7 +635,7 @@ const StateProvider = ({
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_MEDIADATA, CLEAR_MEDIADATA, SET_PERSONDATA, CLEAR_PERSONDATA, getMovie */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -648,10 +646,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL_OR", function() { return IMG_URL_OR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MODAL_MEDIA", function() { return SET_MODAL_MEDIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_MODAL_MEDIA", function() { return RESET_MODAL_MEDIA; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MEDIADATA", function() { return SET_MEDIADATA; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_MEDIADATA", function() { return CLEAR_MEDIADATA; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_PERSONDATA", function() { return SET_PERSONDATA; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_PERSONDATA", function() { return CLEAR_PERSONDATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
@@ -661,11 +655,7 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
 const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
 const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // DATA
-
-const SET_MEDIADATA = 'SET_MEDIADATA';
-const CLEAR_MEDIADATA = 'CLEAR_MEDIADATA';
-const SET_PERSONDATA = 'SET_PERSONDATA';
-const CLEAR_PERSONDATA = 'CLEAR_PERSONDATA '; // Movie DB
+// Movie DB
 
 function getMovie(id, param) {
   const movie = {
@@ -720,31 +710,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 const useMovieReducer = (state, action) => {
   switch (action.type) {
-    // Set Media for tv & movie profile
-    case _types__WEBPACK_IMPORTED_MODULE_0__["SET_MEDIADATA"]:
-      return _objectSpread({}, state, {
-        mediaProfile: action.payload
-      });
-    // Clear Media for tv & movie profile
-
-    case _types__WEBPACK_IMPORTED_MODULE_0__["CLEAR_MEDIADATA"]:
-      return _objectSpread({}, state, {
-        mediaProfile: null
-      });
-    // Set Person Data profile
-
-    case _types__WEBPACK_IMPORTED_MODULE_0__["SET_PERSONDATA"]:
-      return _objectSpread({}, state, {
-        personProfile: action.payload
-      });
-    // Clear Person Data profile
-
-    case _types__WEBPACK_IMPORTED_MODULE_0__["CLEAR_PERSONDATA"]:
-      return _objectSpread({}, state, {
-        personProfile: null
-      });
     // Set Modal Media
-
     case _types__WEBPACK_IMPORTED_MODULE_0__["SET_MODAL_MEDIA"]:
       return _objectSpread({}, state, {
         isModal: {

@@ -1,10 +1,6 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import MovieContext from '../../components/context/MovieContext';
-import {
-  IMG_URL,
-  SET_PERSONDATA,
-  CLEAR_PERSONDATA
-} from '../../components/context/types';
+import { IMG_URL } from '../../components/context/types';
 import Layout from '../../components/layout';
 import styled from 'styled-components';
 import movieDB from '../../components/utility/movieDB';
@@ -56,72 +52,56 @@ const Styled = styled.section`
 const PersonProfile = ({ person }) => {
   const [tab, setTab] = useState('movies');
 
-  const { setData, clearData, personProfile, setModal } = useContext(
-    MovieContext
-  );
-
-  useEffect(() => {
-    setData(SET_PERSONDATA, person);
-    return () => {
-      clearData(CLEAR_PERSONDATA);
-    };
-  }, [person]);
+  const { setModal } = useContext(MovieContext);
 
   const knonwFor =
-    personProfile &&
-    personProfile.combined_credits.cast
+    person &&
+    person.combined_credits.cast
       .sort((a, b) => b.vote_count - a.vote_count)
       .slice(0, 8);
 
-  console.log(personProfile);
-
   return (
-    personProfile && (
-      <Layout>
-        <Styled className='profile'>
-          <div className='profile--person pt-5'>
-            <img
-              src={
-                personProfile.profile_path
-                  ? `${IMG_URL}${personProfile.profile_path}`
-                  : 'no_img.jpg'
-              }
-              alt={personProfile.name}
-            />
-          </div>
-          <div className='profile--biography px-2'>
-            <h2 className='profile--biography__name'>{personProfile.name}</h2>
-            <h3 className='subTitle'>Biography</h3>
-            <p className='profile--biography__bio'>
-              {personProfile.biography.length === 0
-                ? 'Sorry Nothing Available'
-                : `${personProfile.biography.slice(0, 500)}`}
-            </p>
-            {personProfile.biography.lenght <= 500 && (
-              <a
-                href='#'
-                onClick={() => setModal(personProfile.biography, 'person')}
-                className='read--more'
-              >
-                <IoIosArrowDown className='read--more__arrow' />
-              </a>
-            )}
-          </div>
-          <div className='profile--media'>
-            <KnownFor data={knonwFor} />
-            <MediaCredits data={personProfile} tab={tab} setTab={setTab} />
-          </div>
-          <PersonFacts data={personProfile} />
-        </Styled>
-      </Layout>
-    )
+    <Layout>
+      <Styled className='profile'>
+        <div className='profile--person pt-5'>
+          <img
+            src={
+              person.profile_path
+                ? `${IMG_URL}${person.profile_path}`
+                : 'no_img.jpg'
+            }
+            alt={person.name}
+          />
+        </div>
+        <div className='profile--biography px-2'>
+          <h2 className='profile--biography__name'>{person.name}</h2>
+          <h3 className='subTitle'>Biography</h3>
+          <p className='profile--biography__bio'>
+            {person.biography.length === 0
+              ? 'Sorry Nothing Available'
+              : `${person.biography.slice(0, 500)}`}
+          </p>
+          {person.biography.lenght <= 500 && (
+            <a
+              href='#'
+              onClick={() => setModal(person.biography, 'person')}
+              className='read--more'
+            >
+              <IoIosArrowDown className='read--more__arrow' />
+            </a>
+          )}
+        </div>
+        <div className='profile--media'>
+          <KnownFor data={knonwFor} />
+          <MediaCredits data={person} tab={tab} setTab={setTab} />
+        </div>
+        <PersonFacts data={person} />
+      </Styled>
+    </Layout>
   );
 };
 
 PersonProfile.getInitialProps = async ctx => {
-  console.log(ctx.query, 'ID');
-  console.log(ctx);
-
   try {
     const person = await movieDB(
       `person/${ctx.query.id || '85'}`,

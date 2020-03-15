@@ -7,10 +7,7 @@ export const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
 export const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
 export const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA';
 // DATA
-export const SET_MEDIADATA = 'SET_MEDIADATA';
-export const CLEAR_MEDIADATA = 'CLEAR_MEDIADATA';
-export const SET_PERSONDATA = 'SET_PERSONDATA';
-export const CLEAR_PERSONDATA = 'CLEAR_PERSONDATA ';
+
 // Movie DB
 
 export function getMovie(id, param) {

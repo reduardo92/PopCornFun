@@ -1,11 +1,6 @@
-import { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import movieDB from '../../components/utility/movieDB';
-import {
-  IMG_URL_OR,
-  SET_MEDIADATA,
-  CLEAR_MEDIADATA
-} from '../../components/context/types';
+import { IMG_URL_OR } from '../../components/context/types';
 import TopBilledCast from '../../components/ui/TopBilledCast';
 import ReviewSection from '../../components/ui/ReviewSection';
 import MediaSection from '../../components/ui/MediaSection';
@@ -13,7 +8,6 @@ import Layout from '../../components/layout';
 import ProfileHeader from '../../components/ui/mediaProfile/ProfileHeader';
 import RecommenSection from '../../components/ui/RecommenSection';
 import ProfileStats from '../../components/ui/mediaProfile/ProfileStats/ProfileStats';
-import MovieContext from '../../components/context/MovieContext';
 
 const Styled = styled.section`
   background: var(--bg-gradient);
@@ -53,17 +47,6 @@ const Styled = styled.section`
 `;
 
 const MovieProfile = ({ movie }) => {
-  // const { setData, clearData, mediaProfile } = useContext(MovieContext);
-
-  // useEffect(() => {
-  //   setData(SET_MEDIADATA, movie);
-  //   return () => {
-  //     clearData(CLEAR_MEDIADATA);
-  //   };
-  // }, [movie]);
-
-  // console.log('from mediaProfile', mediaProfile);
-
   return (
     <Layout>
       <Styled className='profile' bgImg={movie.backdrop_path}>
@@ -89,38 +72,18 @@ const MovieProfile = ({ movie }) => {
   );
 };
 
-// MovieProfile.getInitialProps = async ctx => {
-//   console.log(ctx.query, 'ID');
-//   console.log(ctx);
-
-//   try {
-//     const movie = await movieDB(
-//       `movie/${ctx.query.id || '454626'}`,
-//       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'
-//     );
-//     return {
-//       movie: { typeFor: 'movie', ...movie }
-//     };
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-export async function getServerSideProps(ctx) {
-  // Fetch data from external API
+MovieProfile.getInitialProps = async ctx => {
   try {
     const movie = await movieDB(
       `movie/${ctx.query.id || '454626'}`,
       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'
     );
     return {
-      props: {
-        movie: { typeFor: 'movie', ...movie }
-      }
+      movie: { typeFor: 'movie', ...movie }
     };
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 export default MovieProfile;

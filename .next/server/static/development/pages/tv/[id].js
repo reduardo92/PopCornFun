@@ -114,7 +114,7 @@ const MovieContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_MEDIADATA, CLEAR_MEDIADATA, SET_PERSONDATA, CLEAR_PERSONDATA, getMovie */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -125,10 +125,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL_OR", function() { return IMG_URL_OR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MODAL_MEDIA", function() { return SET_MODAL_MEDIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_MODAL_MEDIA", function() { return RESET_MODAL_MEDIA; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MEDIADATA", function() { return SET_MEDIADATA; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_MEDIADATA", function() { return CLEAR_MEDIADATA; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_PERSONDATA", function() { return SET_PERSONDATA; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_PERSONDATA", function() { return CLEAR_PERSONDATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
@@ -138,11 +134,7 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
 const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
 const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // DATA
-
-const SET_MEDIADATA = 'SET_MEDIADATA';
-const CLEAR_MEDIADATA = 'CLEAR_MEDIADATA';
-const SET_PERSONDATA = 'SET_PERSONDATA';
-const CLEAR_PERSONDATA = 'CLEAR_PERSONDATA '; // Movie DB
+// Movie DB
 
 function getMovie(id, param) {
   const movie = {
@@ -4197,18 +4189,17 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/context/MovieContext */ "./components/context/MovieContext.js");
-/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/context/types */ "./components/context/types.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/utility/movieDB */ "./components/utility/movieDB.js");
-/* harmony import */ var _components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ui/TopBilledCast */ "./components/ui/TopBilledCast.jsx");
-/* harmony import */ var _components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ui/ReviewSection */ "./components/ui/ReviewSection.jsx");
-/* harmony import */ var _components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/ui/MediaSection */ "./components/ui/MediaSection.jsx");
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
-/* harmony import */ var _components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileHeader */ "./components/ui/mediaProfile/ProfileHeader.jsx");
-/* harmony import */ var _components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/ui/RecommenSection */ "./components/ui/RecommenSection.jsx");
-/* harmony import */ var _components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileStats/ProfileStats */ "./components/ui/mediaProfile/ProfileStats/ProfileStats.jsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/utility/movieDB */ "./components/utility/movieDB.js");
+/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/context/types */ "./components/context/types.js");
+/* harmony import */ var _components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/ui/TopBilledCast */ "./components/ui/TopBilledCast.jsx");
+/* harmony import */ var _components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ui/ReviewSection */ "./components/ui/ReviewSection.jsx");
+/* harmony import */ var _components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ui/MediaSection */ "./components/ui/MediaSection.jsx");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
+/* harmony import */ var _components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileHeader */ "./components/ui/mediaProfile/ProfileHeader.jsx");
+/* harmony import */ var _components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/ui/RecommenSection */ "./components/ui/RecommenSection.jsx");
+/* harmony import */ var _components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/ui/mediaProfile/ProfileStats/ProfileStats */ "./components/ui/mediaProfile/ProfileStats/ProfileStats.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\tv\\[id].jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -4229,114 +4220,97 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.section.withConfig({
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "id__Styled",
   componentId: "sc-1qdj2gq-0"
 })(["background:var(--bg-gradient);margin-top:110px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;&__img{position:absolute;bottom:-20vw;left:20px;width:120px;}}.profile--header{position:relative;padding:2em 0.5em;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--header{max-width:1100px;padding:2em 1em;}}"], ({
   bgImg
-}) => `${_components_context_types__WEBPACK_IMPORTED_MODULE_2__["IMG_URL_OR"]}${bgImg}`);
+}) => `${_components_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL_OR"]}${bgImg}`);
 
 const TvProfile = ({
   tv
 }) => {
-  const {
-    setData,
-    clearData,
-    mediaProfile
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_components_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setData(_components_context_types__WEBPACK_IMPORTED_MODULE_2__["SET_MEDIADATA"], tv);
-    return () => {
-      clearData(_components_context_types__WEBPACK_IMPORTED_MODULE_2__["CLEAR_MEDIADATA"]);
-    };
-  }, [tv]);
-  console.log('from mediaProfile', mediaProfile);
-  return mediaProfile && __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx(Styled, {
     className: "profile",
-    bgImg: mediaProfile.backdrop_path,
+    bgImg: tv.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--backdrop",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 53
     },
     __self: undefined
   }), __jsx("div", {
     className: "profile--header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 54
     },
     __self: undefined
-  }, __jsx(_components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    data: mediaProfile,
+  }, __jsx(_components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    data: tv,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 55
     },
     __self: undefined
-  }), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    data: mediaProfile.credits.cast,
+  }), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    data: tv.credits.cast,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 56
     },
     __self: undefined
-  }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    data: mediaProfile.reviews.results,
-    movieId: mediaProfile.id,
+  }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    data: tv.reviews.results,
+    movieId: tv.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 57
     },
     __self: undefined
-  }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    videos: mediaProfile.videos.results,
-    posters: mediaProfile.images.posters,
-    backdrops: mediaProfile.images.backdrops,
-    typeId: mediaProfile.id,
+  }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    videos: tv.videos.results,
+    posters: tv.images.posters,
+    backdrops: tv.images.backdrops,
+    typeId: tv.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 58
     },
     __self: undefined
-  }), __jsx(_components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    data: mediaProfile,
+  }), __jsx(_components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    data: tv,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 64
     },
     __self: undefined
-  })), __jsx(_components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    data: mediaProfile,
-    keywords: Object.values(mediaProfile.keywords)[0],
+  })), __jsx(_components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    data: tv,
+    keywords: Object.values(tv.keywords)[0],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 66
     },
     __self: undefined
   })));
 };
 
 TvProfile.getInitialProps = async ctx => {
-  console.log(ctx.query, 'ID');
-  console.log(ctx);
-
   try {
-    const tv = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__["default"])(`tv/${ctx.query.id || '62688'}`, 'append_to_response=account_states,external_ids,keywords,content_ratings,videos,recommendations,reviews,credits,images&include_image_language=en,null');
+    const tv = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_2__["default"])(`tv/${ctx.query.id || '62688'}`, 'append_to_response=account_states,external_ids,keywords,content_ratings,videos,recommendations,reviews,credits,images&include_image_language=en,null');
     return {
       tv: _objectSpread({
         typeFor: 'tv'
