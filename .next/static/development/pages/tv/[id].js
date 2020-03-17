@@ -652,7 +652,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section.withConfig({
   displayName: "MediaSection__Styled",
   componentId: "ubdtc5-0"
-})(["padding:2em 0.5em;.head--container{display:flex;justify-content:space-between;align-items:center;}.simple--flex{scroll-snap-points-x:repeat(200px);margin-bottom:1.2em;& > div{margin:0 0.5em;}.vid{width:350px;}.img{width:200px;margin:0 0.3em;}& > div:first-child{margin-left:0;}}"]);
+})(["padding:2em 0em;.head--container{display:flex;justify-content:space-between;align-items:center;}.simple--flex{scroll-snap-points-x:repeat(200px);margin-bottom:1.2em;& > div{margin:0 0.5em;}.vid{width:320px;}.img{width:200px;margin:0 0.3em;}& > div:first-child{margin-left:0;}}"]);
 
 var MediaSection = function MediaSection(_ref) {
   var videos = _ref.videos,
@@ -845,7 +845,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.withConfig({
   displayName: "RecommenSection__Styled",
   componentId: "hey7bf-0"
-})(["padding:1em 0.5em;.subTitle{margin-bottom:1.5em;}@media screen and (min-width:1280px){.recommendations--section{.simple--flex{& > div{width:180px;}}}}"]);
+})(["padding:1em 0em;.subTitle{margin-bottom:1.5em;}@media screen and (min-width:1280px){.recommendations--section{.simple--flex{& > div{width:180px;}}}}"]);
 
 var RecommenSection = function RecommenSection(_ref) {
   var data = _ref.data;
@@ -916,7 +916,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.withConfig({
   displayName: "ReviewSection__Styled",
   componentId: "dlmh8n-0"
-})(["padding:2em 0.5em;display:grid;grid-gap:0.2em;.simple--flex{& > div{&:first-child{margin-left:0.1em;}}}.noReviews{padding:1em 0;}"]);
+})(["padding:2em 0em;display:grid;grid-gap:0.2em;.simple--flex{& > div{&:first-child{margin-left:0.1em;}}}.noReviews{padding:1em 0;}"]);
 
 var ReviewSection = function ReviewSection(_ref) {
   var data = _ref.data,
@@ -1322,7 +1322,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.withConfig({
   displayName: "TopBilledCast__Styled",
   componentId: "s5a97-0"
-})(["padding:1em 0.5em;.subTitle{margin-bottom:1.5em;}.view--more{display:flex;align-items:center;font-weight:bold;transition:var(--ease--in--out--02s);cursor:pointer;a{letter-spacing:0.8px;color:var(--white-clr);}svg{transition:var(--ease--in--out--02s);font-size:1rem;}&:hover,&:focus{opacity:0.8;margin-bottom:1em;}&:hover svg,&:focus svg{margin-left:0.2em;}}"]);
+})(["padding:1em 0;.subTitle{margin-bottom:1.5em;}.view--more{display:flex;align-items:center;font-weight:bold;transition:var(--ease--in--out--02s);cursor:pointer;a{letter-spacing:0.8px;color:var(--white-clr);}svg{transition:var(--ease--in--out--02s);font-size:1rem;}&:hover,&:focus{opacity:0.8;margin-bottom:1em;}&:hover svg,&:focus svg{margin-left:0.2em;}}"]);
 
 var TopBilledCast = function TopBilledCast(_ref) {
   var data = _ref.data;
@@ -1509,10 +1509,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "ProfileHeader__Styled",
   componentId: "sc-1pa4id6-0"
-})(["display:grid;grid-gap:1.7em;grid-auto-columns:auto;.rating{svg{margin-right:calc(3vw + 0.5em);}}.head{display:grid;grid-template-columns:auto 1fr;grid-gap:1em;padding:0 1em 0.5em;.title{align-self:center;font-size:calc(0.5em + 3vw);}}.profile--content__img{width:120px;margin-top:-8em;align-self:flex-end;}.year{opacity:0.6;font-weight:400;}.rating,.meta{display:flex;align-items:center;padding:0 0.5em;}.tag--group{border-left:1px solid #7b7b7b;padding-left:1.5em;}.meta{justify-content:space-between;font-size:0.85rem;align-items:stretch;&--tab{border-right:1px solid #7b7b7b;padding:0 2em;text-align:center;display:flex;align-items:center;justify-content:center;}&--tab:last-child{border:none;padding:0;padding-left:1em;flex-wrap:wrap;justify-content:space-evenly;}}.crew{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:1em;font-weight:bold;}.play--button{width:fit-content;}@media screen and (min-width:768px){.profile--header{max-width:1100px;padding:2em 1em;}.head .profile--content__img{width:160px;}.rating{grid-column:1 /2;}.meta{grid-column:2 /3;}.head,.overview,.crew{grid-column:1/ 3;}.play--button{flex-direction:row;font-size:1.1rem;&::before{width:auto;margin:auto;transform-origin:left;}svg{font-size:2rem;order:1;margin-left:5px;}&:hover svg,&:focus svg{margin-left:15px;margin-bottom:0;transform:scale(0.98);}}.CircularProgressbar{width:66px;}}"]);
+})([".inner--content{display:grid;grid-gap:1.7em;grid-auto-columns:auto;}.rating,.meta,.overview,.crew,.play--button{grid-column:1/ 3;}.rating{svg{margin-right:1em;}}.title{align-self:center;font-size:calc(0.5em + 3vw);}.profile--content__img{width:120px;margin-top:-8em;align-self:flex-end;}.year{opacity:0.6;font-weight:400;}.rating,.meta{display:flex;align-items:center;padding:0 0.5em;}.tag--group{border-left:1px solid #7b7b7b;padding-left:1.5em;}.meta{justify-content:space-between;font-size:0.85rem;align-items:stretch;&--tab{border-right:1px solid #7b7b7b;padding:0 2em;text-align:center;display:flex;align-items:center;justify-content:center;}&--tab:last-child{border:none;padding:0;padding-left:1em;flex-wrap:wrap;justify-content:space-evenly;}}.crew{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:1em;font-weight:bold;.subTitle{grid-column:1 / 3;margin-bottom:-1em;}}.play--button{width:fit-content;}@media screen and (min-width:768px){.profile--header{max-width:1100px;padding:2em 1em;}.profile--content__img{width:160px;justify-self:center;}.rating{grid-column:1 /2;}.meta{grid-column:2 /3;}.overview,.crew{grid-column:1/ 3;}.play--button{flex-direction:row;font-size:1.1rem;&::before{width:auto;margin:auto;transform-origin:left;}svg{font-size:2rem;order:1;margin-left:5px;}&:hover svg,&:focus svg{margin-left:15px;margin-bottom:0;transform:scale(0.98);}}.CircularProgressbar{width:66px;}}@media screen and (min-width:1000px){background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url(", ") no-repeat center;background-color:black;background-size:cover;background-position:top;object-fit:cover;position:relative;padding:8em 1em;.inner--content{max-width:1500px;margin:0 auto;grid-template-areas:'prImg title title' 'prImg rating play' 'prImg meta meta' 'prImg overV overV' 'prImg crew crew';grid-template-columns:500px 1fr 1fr;grid-gap:2em;}.profile--content__img{grid-area:prImg;width:100%;align-self:end;height:100%;justify-self:center;img{height:100%;object-fit:contain;}}.title{grid-area:title;font-size:3.5rem;margin-bottom:-0.3em;.year{font-size:smaller;}}.rating{grid-area:rating;}.meta{grid-area:meta;justify-self:start;align-self:center;&--tab{padding:1em 2em;}.genre--tab{margin:0 0.45em;}}.overview{grid-area:overV;&--para{max-width:90%;}}.crew{grid-area:crew;grid-template-columns:repeat(3,1fr);align-self:baseline;.subTitle{grid-column:1 / 4;}}.play--button{grid-area:play;align-self:center;}}"], function (_ref) {
+  var bgImg = _ref.bgImg;
+  return "".concat(_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL_OR"]).concat(bgImg);
+});
 
-var ProfileHeader = function ProfileHeader(_ref) {
-  var data = _ref.data;
+var ProfileHeader = function ProfileHeader(_ref2) {
+  var data = _ref2.data,
+      bgImg = _ref2.bgImg;
 
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_2__["default"]),
       setModal = _useContext.setModal;
@@ -1524,7 +1528,7 @@ var ProfileHeader = function ProfileHeader(_ref) {
         key: item.name,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 154
+          lineNumber: 244
         },
         __self: this
       }, item.name, data.genres.length - 1 === i ? '' : ', ');
@@ -1537,7 +1541,7 @@ var ProfileHeader = function ProfileHeader(_ref) {
       crew: item,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 163
+        lineNumber: 253
       },
       __self: this
     });
@@ -1547,7 +1551,7 @@ var ProfileHeader = function ProfileHeader(_ref) {
       crew: item[0],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 167
+        lineNumber: 257
       },
       __self: this
     });
@@ -1555,23 +1559,24 @@ var ProfileHeader = function ProfileHeader(_ref) {
 
   return __jsx(Styled, {
     className: "profile--content",
+    bgImg: bgImg,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173
+      lineNumber: 263
     },
     __self: this
   }, __jsx("div", {
-    className: "head",
+    className: "inner--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 264
     },
     __self: this
   }, __jsx("div", {
     className: "profile--content__img",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 265
     },
     __self: this
   }, __jsx("img", {
@@ -1580,116 +1585,123 @@ var ProfileHeader = function ProfileHeader(_ref) {
     alt: data.title || data.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 266
     },
     __self: this
   })), __jsx("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 272
     },
     __self: this
   }, data.title || data.name, ' ', __jsx("span", {
     className: "year",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 274
     },
     __self: this
-  }, "(", data.release_date ? data.release_date.slice(0, 4) : data.first_air_date.slice(0, 4), ")"))), __jsx("div", {
+  }, "(", data.release_date ? data.release_date.slice(0, 4) : data.first_air_date.slice(0, 4), ")")), __jsx("div", {
     className: "rating",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 282
     },
     __self: this
   }, __jsx(_CirclePercentage__WEBPACK_IMPORTED_MODULE_6__["default"], {
     value: data.vote_average * 10,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 283
     },
     __self: this
   }), __jsx(_TagGroup__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 284
     },
     __self: this
   })), __jsx("div", {
     className: "meta",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 197
+      lineNumber: 286
     },
     __self: this
   }, __jsx("span", {
     className: "release meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198
+      lineNumber: 287
     },
     __self: this
   }, data.release_date ? data.release_date.slice(0, 4) : data.first_air_date.slice(0, 4)), __jsx("span", {
     className: "runtime meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 203
+      lineNumber: 292
     },
     __self: this
   }, Object(_utility_timeConvert__WEBPACK_IMPORTED_MODULE_5__["default"])(data.typeFor === 'movie' ? data.runtime : data.episode_run_time[0])), __jsx("span", {
     className: "rating meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 297
     },
     __self: this
   }, data.release_date ? Object(_utility_getRating__WEBPACK_IMPORTED_MODULE_10__["default"])(data.release_dates.results) : Object(_utility_getRating__WEBPACK_IMPORTED_MODULE_10__["default"])(data.content_ratings.results)), __jsx("span", {
     className: "genre meta--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 213
+      lineNumber: 302
     },
     __self: this
   }, getGenres())), __jsx("div", {
     className: "overview",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215
+      lineNumber: 304
     },
     __self: this
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216
+      lineNumber: 305
     },
     __self: this
   }, "OVERVIEW"), __jsx("p", {
     className: "overview--para",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217
+      lineNumber: 306
     },
     __self: this
   }, data.overview)), __jsx("div", {
     className: "crew",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219
+      lineNumber: 308
     },
     __self: this
-  }, crew), __jsx(_PlayButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, __jsx("h3", {
+    className: "subTitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 309
+    },
+    __self: this
+  }, "Featured Crew"), crew), __jsx(_PlayButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
     onclick: function onclick() {
       return setModal(data.videos.results[0].key);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 220
+      lineNumber: 312
     },
     __self: this
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProfileHeader);
@@ -2019,14 +2031,14 @@ var Keyords = function Keyords(_ref) {
       lineNumber: 10
     },
     __self: this
-  }, data.map(function (item) {
+  }, data.length === 0 ? '-' : data.map(function (item) {
     return __jsx(_Tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
       data: item,
       typeFor: typeFor,
       key: item.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 13
       },
       __self: this
     });
@@ -2064,7 +2076,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.withConfig({
   displayName: "ProfileStats__Styled",
   componentId: "sc-1wmtszh-0"
-})(["display:grid;grid-row-gap:1em;background-color:var(--accent-clr);padding:2em 1em;*{color:var(--second-clr);}.title{font-size:1.2rem;margin-bottom:1em;}"]);
+})(["background-color:var(--accent-clr);*{color:var(--second-clr);}.inner--content{display:grid;grid-row-gap:1em;background-color:var(--accent-clr);padding:2em 1em;}.title{font-size:1.2rem;margin-bottom:1em;}@media screen and (min-width:1000px){width:calc((100vw - 1000px) / 2 + 220px);min-height:calc(100vh - 795px);}"]);
 
 var ProfileStats = function ProfileStats(_ref) {
   var data = _ref.data,
@@ -2073,7 +2085,14 @@ var ProfileStats = function ProfileStats(_ref) {
     className: "profile--stats",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 35
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "inner--content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
     },
     __self: this
   }, __jsx(_SocialLinks__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2081,14 +2100,14 @@ var ProfileStats = function ProfileStats(_ref) {
     homepage: data.homepage,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 37
     },
     __self: this
   }), __jsx(_Facts__WEBPACK_IMPORTED_MODULE_3__["default"], {
     data: data,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 38
     },
     __self: this
   }), __jsx(_Genre__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2096,7 +2115,7 @@ var ProfileStats = function ProfileStats(_ref) {
     typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 39
     },
     __self: this
   }), __jsx(_Keyords__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2104,10 +2123,10 @@ var ProfileStats = function ProfileStats(_ref) {
     typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 40
     },
     __self: this
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProfileStats);
@@ -34045,7 +34064,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].section.withConfig({
   displayName: "id__Styled",
   componentId: "sc-1qdj2gq-0"
-})(["background:var(--bg-gradient);margin-top:110px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;&__img{position:absolute;bottom:-20vw;left:20px;width:120px;}}.profile--header{position:relative;padding:2em 0.5em;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--header{max-width:1100px;padding:2em 1em;}}"], function (_ref) {
+})(["background:var(--bg-gradient);margin-top:90px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;}.profile--main{position:relative;padding:2em 0.5em;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--main{max-width:1100px;padding:2em 1em;}}@media screen and (min-width:1000px){margin-top:60px;.profile--backdrop{display:none;}.profile--main{padding:2em 0;max-width:100%;width:100%;display:flex;flex-wrap:wrap;.profile--content{flex:100%;}.main-con{max-width:1600px;margin:0 auto;}.profile--stats{flex:1;}}}"], function (_ref) {
   var bgImg = _ref.bgImg;
   return "".concat(_components_context_types__WEBPACK_IMPORTED_MODULE_5__["IMG_URL_OR"]).concat(bgImg);
 });
@@ -34055,7 +34074,7 @@ var TvProfile = function TvProfile(_ref2) {
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 85
     },
     __self: this
   }, __jsx(Styled, {
@@ -34063,35 +34082,43 @@ var TvProfile = function TvProfile(_ref2) {
     bgImg: tv.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 86
     },
     __self: this
   }, __jsx("div", {
     className: "profile--backdrop",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 87
     },
     __self: this
   }), __jsx("div", {
-    className: "profile--header",
+    className: "profile--main",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 88
     },
     __self: this
   }, __jsx(_components_ui_mediaProfile_ProfileHeader__WEBPACK_IMPORTED_MODULE_10__["default"], {
     data: tv,
+    bgImg: tv.backdrop_path,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 89
     },
     __self: this
-  }), __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx("div", {
+    className: "main-con",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: this
+  }, __jsx(_components_ui_TopBilledCast__WEBPACK_IMPORTED_MODULE_6__["default"], {
     data: tv.credits.cast,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 91
     },
     __self: this
   }), __jsx(_components_ui_ReviewSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -34099,7 +34126,7 @@ var TvProfile = function TvProfile(_ref2) {
     movieId: tv.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 92
     },
     __self: this
   }), __jsx(_components_ui_MediaSection__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -34109,22 +34136,22 @@ var TvProfile = function TvProfile(_ref2) {
     typeId: tv.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 93
     },
     __self: this
   }), __jsx(_components_ui_RecommenSection__WEBPACK_IMPORTED_MODULE_11__["default"], {
     data: tv,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 99
     },
     __self: this
-  })), __jsx(_components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }))), __jsx(_components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_12__["default"], {
     data: tv,
     keywords: Object.values(tv.keywords)[0],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 102
     },
     __self: this
   })));
@@ -34165,7 +34192,7 @@ TvProfile.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!*****************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ftv%2F%5Bid%5D&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Ctv%5C%5Bid%5D.jsx ***!
   \*****************************************************************************************************************************************************************************/
@@ -34188,5 +34215,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

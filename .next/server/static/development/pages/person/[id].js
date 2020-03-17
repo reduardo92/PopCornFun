@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2914,27 +2914,31 @@ const PersonProfile = ({
     1: setTab
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('movies');
   const {
-    setModal
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_components_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
+    0: bioActive,
+    1: setBioActive
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false); // const { setModal } = useContext(MovieContext);
+
+  const bio = person.biography.length === 0 ? 'Sorry Nothing Available' : person.biography.length <= 500 ? person.biography : `${person.biography.slice(0, 500)}...`;
   const knonwFor = person && person.combined_credits.cast.sort((a, b) => b.vote_count - a.vote_count).slice(0, 8);
+  console.log(person.biography.length);
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 73
     },
     __self: undefined
   }, __jsx(Styled, {
     className: "profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 74
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--person pt-5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 75
     },
     __self: undefined
   }, __jsx("img", {
@@ -2942,65 +2946,73 @@ const PersonProfile = ({
     alt: person.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 76
     },
     __self: undefined
   })), __jsx("div", {
     className: "profile--biography px-2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 85
     },
     __self: undefined
   }, __jsx("h2", {
     className: "profile--biography__name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 86
     },
     __self: undefined
   }, person.name), __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 87
     },
     __self: undefined
   }, "Biography"), __jsx("p", {
     className: "profile--biography__bio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 88
     },
     __self: undefined
-  }, person.biography.length === 0 ? 'Sorry Nothing Available' : `${person.biography.slice(0, 500)}`), person.biography.lenght <= 500 && __jsx("a", {
-    href: "#",
-    onClick: () => setModal(person.biography, 'person'),
+  }, bioActive ? person.biography : bio), person.biography.length >= 500 && __jsx("a", {
+    href: "#" // onClick={() => setModal(person.biography, 'person')}
+    ,
+    onClick: () => setBioActive(!bioActive),
     className: "read--more",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 92
     },
     __self: undefined
-  }, __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+  }, bioActive ? __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowUp"], {
     className: "read--more__arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 99
+    },
+    __self: undefined
+  }) : __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+    className: "read--more__arrow",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
     },
     __self: undefined
   }))), __jsx("div", {
     className: "profile--media",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 106
     },
     __self: undefined
   }, __jsx(_components_ui_PersonProfile_KnownFor__WEBPACK_IMPORTED_MODULE_6__["default"], {
     data: knonwFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 107
     },
     __self: undefined
   }), __jsx(_components_ui_PersonProfile_MediaCredits__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3009,14 +3021,14 @@ const PersonProfile = ({
     setTab: setTab,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 108
     },
     __self: undefined
   })), __jsx(_components_ui_PersonProfile_PersonFacts__WEBPACK_IMPORTED_MODULE_9__["default"], {
     data: person,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 110
     },
     __self: undefined
   })));
@@ -3039,7 +3051,7 @@ PersonProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!*************************************!*\
   !*** multi ./pages/person/[id].jsx ***!
   \*************************************/

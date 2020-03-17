@@ -6,7 +6,7 @@ import SimpleFlex from './SimpleFlex';
 import CastCard from './Cards/CastCard';
 
 const Styled = styled.section`
-  padding: 1em 0.5em;
+  padding: 1em 0;
 
   .subTitle {
     margin-bottom: 1.5em;

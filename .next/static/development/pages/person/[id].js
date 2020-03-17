@@ -26017,30 +26017,34 @@ var PersonProfile = function PersonProfile(_ref) {
       tab = _useState[0],
       setTab = _useState[1];
 
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_components_context_MovieContext__WEBPACK_IMPORTED_MODULE_3__["default"]),
-      setModal = _useContext.setModal;
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+      bioActive = _useState2[0],
+      setBioActive = _useState2[1]; // const { setModal } = useContext(MovieContext);
 
+
+  var bio = person.biography.length === 0 ? 'Sorry Nothing Available' : person.biography.length <= 500 ? person.biography : "".concat(person.biography.slice(0, 500), "...");
   var knonwFor = person && person.combined_credits.cast.sort(function (a, b) {
     return b.vote_count - a.vote_count;
   }).slice(0, 8);
+  console.log(person.biography.length);
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 73
     },
     __self: this
   }, __jsx(Styled, {
     className: "profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 74
     },
     __self: this
   }, __jsx("div", {
     className: "profile--person pt-5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 75
     },
     __self: this
   }, __jsx("img", {
@@ -26048,67 +26052,75 @@ var PersonProfile = function PersonProfile(_ref) {
     alt: person.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 76
     },
     __self: this
   })), __jsx("div", {
     className: "profile--biography px-2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 85
     },
     __self: this
   }, __jsx("h2", {
     className: "profile--biography__name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 86
     },
     __self: this
   }, person.name), __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 87
     },
     __self: this
   }, "Biography"), __jsx("p", {
     className: "profile--biography__bio",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 88
     },
     __self: this
-  }, person.biography.length === 0 ? 'Sorry Nothing Available' : "".concat(person.biography.slice(0, 500))), person.biography.lenght <= 500 && __jsx("a", {
-    href: "#",
+  }, bioActive ? person.biography : bio), person.biography.length >= 500 && __jsx("a", {
+    href: "#" // onClick={() => setModal(person.biography, 'person')}
+    ,
     onClick: function onClick() {
-      return setModal(person.biography, 'person');
+      return setBioActive(!bioActive);
     },
     className: "read--more",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 92
     },
     __self: this
-  }, __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_10__["IoIosArrowDown"], {
+  }, bioActive ? __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_10__["IoIosArrowUp"], {
     className: "read--more__arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 99
+    },
+    __self: this
+  }) : __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_10__["IoIosArrowDown"], {
+    className: "read--more__arrow",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
     },
     __self: this
   }))), __jsx("div", {
     className: "profile--media",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 106
     },
     __self: this
   }, __jsx(_components_ui_PersonProfile_KnownFor__WEBPACK_IMPORTED_MODULE_8__["default"], {
     data: knonwFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 107
     },
     __self: this
   }), __jsx(_components_ui_PersonProfile_MediaCredits__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -26117,14 +26129,14 @@ var PersonProfile = function PersonProfile(_ref) {
     setTab: setTab,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 108
     },
     __self: this
   })), __jsx(_components_ui_PersonProfile_PersonFacts__WEBPACK_IMPORTED_MODULE_11__["default"], {
     data: person,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 110
     },
     __self: this
   })));
@@ -26165,7 +26177,7 @@ PersonProfile.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!*************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fperson%2F%5Bid%5D&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Cperson%5C%5Bid%5D.jsx ***!
   \*************************************************************************************************************************************************************************************/
@@ -26188,5 +26200,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

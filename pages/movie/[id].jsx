@@ -11,7 +11,8 @@ import ProfileStats from '../../components/ui/mediaProfile/ProfileStats/ProfileS
 
 const Styled = styled.section`
   background: var(--bg-gradient);
-  margin-top: 110px;
+  /* background: var(--white-clr); */
+  margin-top: 90px;
 
   .profile--backdrop {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -23,15 +24,15 @@ const Styled = styled.section`
     object-fit: cover;
     position: relative;
 
-    &__img {
+    /* &__img {
       position: absolute;
       bottom: -20vw;
       left: 20px;
       width: 120px;
-    }
+    } */
   }
 
-  .profile--header {
+  .profile--main {
     position: relative;
     padding: 2em 0.5em;
     max-width: 750px;
@@ -39,9 +40,42 @@ const Styled = styled.section`
   }
 
   @media screen and (min-width: 768px) {
-    .profile--header {
+    .profile--main {
       max-width: 1100px;
       padding: 2em 1em;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    margin-top: 60px;
+
+    .profile--backdrop {
+      display: none;
+    }
+
+    .profile--main {
+      padding: 2em 0;
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      /* align-content: flex-start; */
+      flex-wrap: wrap;
+
+      .profile--content {
+        flex: 100%;
+      }
+
+      .main-con {
+        /* width: calc((100vw - 1000px) / 2 + 1100px); */
+        /* min-height: calc(100vh - 795px); */
+        max-width: 1600px;
+        /* flex: 80%; */
+        margin: 0 auto;
+      }
+
+      .profile--stats {
+        flex: 1;
+      }
     }
   }
 `;
@@ -51,17 +85,19 @@ const MovieProfile = ({ movie }) => {
     <Layout>
       <Styled className='profile' bgImg={movie.backdrop_path}>
         <div className='profile--backdrop' />
-        <div className='profile--header'>
-          <ProfileHeader data={movie} />
-          <TopBilledCast data={movie.credits.cast} />
-          <ReviewSection data={movie.reviews.results} movieId={movie.id} />
-          <MediaSection
-            videos={movie.videos.results}
-            posters={movie.images.posters}
-            backdrops={movie.images.backdrops}
-            typeId={movie.id}
-          />
-          <RecommenSection data={movie} />
+        <div className='profile--main'>
+          <ProfileHeader data={movie} bgImg={movie.backdrop_path} />
+          <div className='main-con'>
+            <TopBilledCast data={movie.credits.cast} />
+            <ReviewSection data={movie.reviews.results} movieId={movie.id} />
+            <MediaSection
+              videos={movie.videos.results}
+              posters={movie.images.posters}
+              backdrops={movie.images.backdrops}
+              typeId={movie.id}
+            />
+            <RecommenSection data={movie} />
+          </div>
         </div>
         <ProfileStats
           data={movie}

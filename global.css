@@ -420,6 +420,7 @@ header {
   font-weight: 600;
   padding-bottom: 5px;
   margin-right: 1em;
+  font-size: 0.9rem;
 }
 
 .tab:focus {

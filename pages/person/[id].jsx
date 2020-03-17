@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import movieDB from '../../components/utility/movieDB';
 import KnownFor from '../../components/ui/PersonProfile/KnownFor';
 import MediaCredits from '../../components/ui/PersonProfile/MediaCredits';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import PersonFacts from '../../components/ui/PersonProfile/PersonFacts';
 
 const Styled = styled.section`
@@ -51,8 +51,16 @@ const Styled = styled.section`
 
 const PersonProfile = ({ person }) => {
   const [tab, setTab] = useState('movies');
+  const [bioActive, setBioActive] = useState(false);
 
-  const { setModal } = useContext(MovieContext);
+  // const { setModal } = useContext(MovieContext);
+
+  const bio =
+    person.biography.length === 0
+      ? 'Sorry Nothing Available'
+      : person.biography.length <= 500
+      ? person.biography
+      : `${person.biography.slice(0, 500)}...`;
 
   const knonwFor =
     person &&
@@ -60,6 +68,7 @@ const PersonProfile = ({ person }) => {
       .sort((a, b) => b.vote_count - a.vote_count)
       .slice(0, 8);
 
+  console.log(person.biography.length);
   return (
     <Layout>
       <Styled className='profile'>
@@ -77,17 +86,20 @@ const PersonProfile = ({ person }) => {
           <h2 className='profile--biography__name'>{person.name}</h2>
           <h3 className='subTitle'>Biography</h3>
           <p className='profile--biography__bio'>
-            {person.biography.length === 0
-              ? 'Sorry Nothing Available'
-              : `${person.biography.slice(0, 500)}`}
+            {bioActive ? person.biography : bio}
           </p>
-          {person.biography.lenght <= 500 && (
+          {person.biography.length >= 500 && (
             <a
               href='#'
-              onClick={() => setModal(person.biography, 'person')}
+              // onClick={() => setModal(person.biography, 'person')}
+              onClick={() => setBioActive(!bioActive)}
               className='read--more'
             >
-              <IoIosArrowDown className='read--more__arrow' />
+              {bioActive ? (
+                <IoIosArrowUp className='read--more__arrow' />
+              ) : (
+                <IoIosArrowDown className='read--more__arrow' />
+              )}
             </a>
           )}
         </div>

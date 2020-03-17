@@ -6,7 +6,7 @@ import Link from 'next/link';
 import MovieContext from '../context/MovieContext';
 
 const Styled = styled.section`
-  padding: 2em 0.5em;
+  padding: 2em 0em;
 
   .head--container {
     display: flex;
@@ -23,7 +23,7 @@ const Styled = styled.section`
     }
 
     .vid {
-      width: 350px;
+      width: 320px;
     }
 
     .img {

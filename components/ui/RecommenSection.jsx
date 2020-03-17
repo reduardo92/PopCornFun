@@ -4,7 +4,7 @@ import RecommenCard from './Cards/RecommenCard';
 import SimpleFlex from './SimpleFlex';
 
 const Styled = styled.section`
-  padding: 1em 0.5em;
+  padding: 1em 0em;
 
   .subTitle {
     margin-bottom: 1.5em;

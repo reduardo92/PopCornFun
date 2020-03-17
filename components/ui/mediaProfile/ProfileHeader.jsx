@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import MovieContext from '../../context/MovieContext';
-import { IMG_URL } from '../../context/types';
+import { IMG_URL, IMG_URL_OR } from '../../context/types';
 import groupCredits from '../../utility/groupCredits';
 import timeConvert from '../../utility/timeConvert';
 import CirclePercentage from '../CirclePercentage';
@@ -12,26 +12,29 @@ import getRating from '../../utility/getRating';
 import CrewTab from './CrewTab';
 
 const Styled = styled.div`
-  display: grid;
-  grid-gap: 1.7em;
-  grid-auto-columns: auto;
+  .inner--content {
+    display: grid;
+    grid-gap: 1.7em;
+    grid-auto-columns: auto;
+  }
+
+  .rating,
+  .meta,
+  .overview,
+  .crew,
+  .play--button {
+    grid-column: 1/ 3;
+  }
 
   .rating {
     svg {
-      margin-right: calc(3vw + 0.5em);
+      margin-right: 1em;
     }
   }
 
-  .head {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 1em;
-    padding: 0 1em 0.5em;
-
-    .title {
-      align-self: center;
-      font-size: calc(0.5em + 3vw);
-    }
+  .title {
+    align-self: center;
+    font-size: calc(0.5em + 3vw);
   }
 
   /* profile--content__img */
@@ -86,6 +89,11 @@ const Styled = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1em;
     font-weight: bold;
+
+    .subTitle {
+      grid-column: 1 / 3;
+      margin-bottom: -1em;
+    }
   }
 
   .play--button {
@@ -98,8 +106,9 @@ const Styled = styled.div`
       padding: 2em 1em;
     }
 
-    .head .profile--content__img {
+    .profile--content__img {
       width: 160px;
+      justify-self: center;
     }
 
     .rating {
@@ -110,7 +119,6 @@ const Styled = styled.div`
       grid-column: 2 /3;
     }
 
-    .head,
     .overview,
     .crew {
       grid-column: 1/ 3;
@@ -144,9 +152,91 @@ const Styled = styled.div`
       width: 66px;
     }
   }
+
+  @media screen and (min-width: 1000px) {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(${({ bgImg }) => `${IMG_URL_OR}${bgImg}`}) no-repeat center;
+    background-color: black;
+    /* min-height: 500px; */
+    background-size: cover;
+    background-position: top;
+    object-fit: cover;
+    position: relative;
+    padding: 8em 1em;
+
+    .inner--content {
+      max-width: 1500px;
+      margin: 0 auto;
+      grid-template-areas:
+        'prImg title title'
+        'prImg rating play'
+        'prImg meta meta'
+        'prImg overV overV'
+        'prImg crew crew';
+      grid-template-columns: 500px 1fr 1fr;
+      grid-gap: 2em;
+    }
+
+    .profile--content__img {
+      grid-area: prImg;
+      width: 100%;
+      align-self: end;
+      /* max-width: 450px; */
+      height: 100%;
+      justify-self: center;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .title {
+      grid-area: title;
+      font-size: 3.5rem;
+      margin-bottom: -0.3em;
+      .year {
+        font-size: smaller;
+      }
+    }
+    .rating {
+      grid-area: rating;
+    }
+    .meta {
+      grid-area: meta;
+      justify-self: start;
+      align-self: center;
+
+      &--tab {
+        padding: 1em 2em;
+      }
+
+      .genre--tab {
+        margin: 0 0.45em;
+      }
+    }
+    .overview {
+      grid-area: overV;
+      &--para {
+        max-width: 90%;
+      }
+    }
+    .crew {
+      grid-area: crew;
+      grid-template-columns: repeat(3, 1fr);
+      align-self: baseline;
+
+      .subTitle {
+        grid-column: 1 / 4;
+      }
+    }
+    .play--button {
+      grid-area: play;
+      align-self: center;
+    }
+  }
 `;
 
-const ProfileHeader = ({ data }) => {
+const ProfileHeader = ({ data, bgImg }) => {
   const { setModal } = useContext(MovieContext);
 
   const getGenres = () =>
@@ -170,8 +260,8 @@ const ProfileHeader = ({ data }) => {
   );
 
   return (
-    <Styled className='profile--content'>
-      <div className='head'>
+    <Styled className='profile--content' bgImg={bgImg}>
+      <div className='inner--content'>
         <div className='profile--content__img'>
           <img
             className='poster'
@@ -189,35 +279,38 @@ const ProfileHeader = ({ data }) => {
             )
           </span>
         </h2>
+        <div className='rating'>
+          <CirclePercentage value={data.vote_average * 10} />
+          <TagGroup />
+        </div>
+        <div className='meta'>
+          <span className='release meta--tab'>
+            {data.release_date
+              ? data.release_date.slice(0, 4)
+              : data.first_air_date.slice(0, 4)}
+          </span>
+          <span className='runtime meta--tab'>
+            {timeConvert(
+              data.typeFor === 'movie' ? data.runtime : data.episode_run_time[0]
+            )}
+          </span>
+          <span className='rating meta--tab'>
+            {data.release_date
+              ? getRating(data.release_dates.results)
+              : getRating(data.content_ratings.results)}
+          </span>
+          <span className='genre meta--tab'>{getGenres()}</span>
+        </div>
+        <div className='overview'>
+          <h3 className='subTitle'>OVERVIEW</h3>
+          <p className='overview--para'>{data.overview}</p>
+        </div>
+        <div className='crew'>
+          <h3 className='subTitle'>Featured Crew</h3>
+          {crew}
+        </div>
+        <PlayButton onclick={() => setModal(data.videos.results[0].key)} />
       </div>
-      <div className='rating'>
-        <CirclePercentage value={data.vote_average * 10} />
-        <TagGroup />
-      </div>
-      <div className='meta'>
-        <span className='release meta--tab'>
-          {data.release_date
-            ? data.release_date.slice(0, 4)
-            : data.first_air_date.slice(0, 4)}
-        </span>
-        <span className='runtime meta--tab'>
-          {timeConvert(
-            data.typeFor === 'movie' ? data.runtime : data.episode_run_time[0]
-          )}
-        </span>
-        <span className='rating meta--tab'>
-          {data.release_date
-            ? getRating(data.release_dates.results)
-            : getRating(data.content_ratings.results)}
-        </span>
-        <span className='genre meta--tab'>{getGenres()}</span>
-      </div>
-      <div className='overview'>
-        <h3 className='subTitle'>OVERVIEW</h3>
-        <p className='overview--para'>{data.overview}</p>
-      </div>
-      <div className='crew'>{crew}</div>
-      <PlayButton onclick={() => setModal(data.videos.results[0].key)} />
     </Styled>
   );
 };
