@@ -54,7 +54,7 @@ const Styled = styled.section`
     }
 
     .profile--main {
-      padding: 2em 0;
+      padding: 2em 0 0;
       max-width: 100%;
       width: 100%;
       display: flex;
@@ -63,18 +63,18 @@ const Styled = styled.section`
 
       .profile--content {
         flex: 100%;
+        width: 100%;
       }
 
       .main-con {
-        /* width: calc((100vw - 1000px) / 2 + 1100px); */
-        /* min-height: calc(100vh - 795px); */
-        max-width: 1600px;
-        /* flex: 80%; */
-        margin: 0 auto;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: 5%;
+        padding: 3em 0;
       }
 
       .profile--stats {
-        flex: 1;
+        flex: 0 1 30%;
       }
     }
   }
@@ -98,8 +98,8 @@ const TvProfile = ({ tv }) => {
             />
             <RecommenSection data={tv} />
           </div>
+          <ProfileStats data={tv} keywords={Object.values(tv.keywords)[0]} />
         </div>
-        <ProfileStats data={tv} keywords={Object.values(tv.keywords)[0]} />
       </Styled>
     </Layout>
   );

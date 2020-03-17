@@ -7,6 +7,7 @@ import CastCard from './Cards/CastCard';
 
 const Styled = styled.section`
   padding: 1em 0;
+  max-width: 1000px;
 
   .subTitle {
     margin-bottom: 1.5em;

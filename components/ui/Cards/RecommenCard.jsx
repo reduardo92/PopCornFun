@@ -70,6 +70,12 @@ const Styled = styled.div`
 
     &--name {
       font-weight: bold;
+      transition: var(--ease--in--out--02s);
+
+      &:hover,
+      &:focus {
+        color: var(--primary-clr);
+      }
     }
   }
 

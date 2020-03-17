@@ -5,6 +5,7 @@ import SimpleFlex from './SimpleFlex';
 
 const Styled = styled.section`
   padding: 1em 0em;
+  max-width: 1000px;
 
   .subTitle {
     margin-bottom: 1.5em;

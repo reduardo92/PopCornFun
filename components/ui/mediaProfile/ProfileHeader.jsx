@@ -92,7 +92,7 @@ const Styled = styled.div`
 
     .subTitle {
       grid-column: 1 / 3;
-      margin-bottom: -1em;
+      margin-bottom: -0.1em;
     }
   }
 
@@ -173,7 +173,7 @@ const Styled = styled.div`
         'prImg meta meta'
         'prImg overV overV'
         'prImg crew crew';
-      grid-template-columns: 500px 1fr 1fr;
+      grid-template-columns: 500px 1fr 1.7fr;
       grid-gap: 2em;
     }
 

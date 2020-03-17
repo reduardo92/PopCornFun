@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -568,7 +568,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "RecommenCard__Styled",
   componentId: "sc-8rijlz-0"
-})([".recommend--card--poster{position:relative;width:160px;height:240px;cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(188,49,49,0.85);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}&__release{position:absolute;bottom:0;left:0;right:0;color:var(--white-clr);background-color:var(--primary-clr);padding:0.5em 0;text-align:center;font-weight:bold;font-size:0.9rem;display:flex;align-items:center;justify-content:center;z-index:1;.calendar{margin-right:0.5em;font-size:1.2rem;}.date{margin-right:0.5em;}}}.recommend--card__content{display:flex;align-items:baseline;margin-top:0.5em;&--name{font-weight:bold;}}@media screen and (min-width:1280px){.recommend--card--poster{width:180px;height:270px;}}"]);
+})([".recommend--card--poster{position:relative;width:160px;height:240px;cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(188,49,49,0.85);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}&__release{position:absolute;bottom:0;left:0;right:0;color:var(--white-clr);background-color:var(--primary-clr);padding:0.5em 0;text-align:center;font-weight:bold;font-size:0.9rem;display:flex;align-items:center;justify-content:center;z-index:1;.calendar{margin-right:0.5em;font-size:1.2rem;}.date{margin-right:0.5em;}}}.recommend--card__content{display:flex;align-items:baseline;margin-top:0.5em;&--name{font-weight:bold;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:1280px){.recommend--card--poster{width:180px;height:270px;}}"]);
 
 const RecommenCard = ({
   data,
@@ -578,7 +578,7 @@ const RecommenCard = ({
     className: "recommend--card",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 92
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -586,14 +586,14 @@ const RecommenCard = ({
     as: `/${typeFor}/${data.id}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 93
     },
     __self: undefined
   }, __jsx("div", {
     className: "recommend--card--poster",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 94
     },
     __self: undefined
   }, __jsx("img", {
@@ -602,35 +602,35 @@ const RecommenCard = ({
     alt: data.title || data.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 95
     },
     __self: undefined
   }), __jsx("div", {
     className: "recommend--card--poster__release",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 100
     },
     __self: undefined
   }, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoCalendar"], {
     className: "calendar",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 101
     },
     __self: undefined
   }), __jsx("span", {
     className: "date",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 102
     },
     __self: undefined
   }, data.release_date || data.first_air_date)))), __jsx("div", {
     className: "recommend--card__content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 109
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -638,28 +638,28 @@ const RecommenCard = ({
     as: `/${typeFor}/${data.id}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 110
     },
     __self: undefined
   }, __jsx("a", {
     className: "recommend--card__content--name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 111
     },
     __self: undefined
   }, data.title || data.name)), __jsx("span", {
     className: "rating--star",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 115
     },
     __self: undefined
   }, data.vote_average, __jsx(react_icons_go__WEBPACK_IMPORTED_MODULE_3__["GoStar"], {
     className: "star",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 117
     },
     __self: undefined
   }))));
@@ -747,7 +747,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "MediaSection__Styled",
   componentId: "ubdtc5-0"
-})(["padding:2em 0em;.head--container{display:flex;justify-content:space-between;align-items:center;}.simple--flex{scroll-snap-points-x:repeat(200px);margin-bottom:1.2em;& > div{margin:0 0.5em;}.vid{width:320px;}.img{width:200px;margin:0 0.3em;}& > div:first-child{margin-left:0;}}"]);
+})(["padding:2em 0em;max-width:1000px;.head--container{display:flex;justify-content:space-between;align-items:center;}.simple--flex{scroll-snap-points-x:repeat(200px);margin-bottom:1.2em;& > div{margin:0 0.5em;}.vid{width:320px;}.img{width:200px;margin:0 0.3em;}& > div:first-child{margin-left:0;}}"]);
 
 const MediaSection = ({
   videos,
@@ -772,28 +772,28 @@ const MediaSection = ({
     className: "media--section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx("div", {
     className: "head--container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 53
     },
     __self: undefined
   }, "Media"), __jsx("div", {
     className: "tabs--container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 54
     },
     __self: undefined
   }, __jsx("button", {
@@ -801,7 +801,7 @@ const MediaSection = ({
     onClick: () => setTab('videos'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 55
     },
     __self: undefined
   }, "videos"), __jsx("button", {
@@ -809,7 +809,7 @@ const MediaSection = ({
     onClick: () => setTab('posters'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 61
     },
     __self: undefined
   }, "posters"), __jsx("button", {
@@ -817,14 +817,14 @@ const MediaSection = ({
     onClick: () => setTab('backdrops'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 67
     },
     __self: undefined
   }, "backdrops"))), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: "simple--flex",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 75
     },
     __self: undefined
   }, media[tab].map((item, i) => i < 8 && __jsx(_Cards_MediaCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -835,7 +835,7 @@ const MediaSection = ({
     typeFor: tab,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 79
     },
     __self: undefined
   }))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -843,14 +843,14 @@ const MediaSection = ({
     as: `/movie/${typeId}/media`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 91
     },
     __self: undefined
   }, __jsx("a", {
     className: "title redHover",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 92
     },
     __self: undefined
   }, "See All Media")));
@@ -932,7 +932,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "RecommenSection__Styled",
   componentId: "hey7bf-0"
-})(["padding:1em 0em;.subTitle{margin-bottom:1.5em;}@media screen and (min-width:1280px){.recommendations--section{.simple--flex{& > div{width:180px;}}}}"]);
+})(["padding:1em 0em;max-width:1000px;.subTitle{margin-bottom:1.5em;}@media screen and (min-width:1280px){.recommendations--section{.simple--flex{& > div{width:180px;}}}}"]);
 
 const RecommenSection = ({
   data
@@ -941,14 +941,14 @@ const RecommenSection = ({
     className: "recommendations--section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 27
     },
     __self: undefined
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 28
     },
     __self: undefined
   }, "Recommendations"), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -956,7 +956,7 @@ const RecommenSection = ({
     setWidth: "160px",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 29
     },
     __self: undefined
   }, data.recommendations.results.slice(0, 10).map(item => __jsx(_Cards_RecommenCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -965,7 +965,7 @@ const RecommenSection = ({
     typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: undefined
   }))));
@@ -1003,7 +1003,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "ReviewSection__Styled",
   componentId: "dlmh8n-0"
-})(["padding:2em 0em;display:grid;grid-gap:0.2em;.simple--flex{& > div{&:first-child{margin-left:0.1em;}}}.noReviews{padding:1em 0;}"]);
+})(["padding:2em 0em;display:grid;grid-gap:0.2em;max-width:1000px;.simple--flex{& > div{&:first-child{margin-left:0.1em;}}}.noReviews{padding:1em 0;}"]);
 
 const ReviewSection = ({
   data,
@@ -1013,21 +1013,21 @@ const ReviewSection = ({
     className: "review--section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 29
     },
     __self: undefined
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     },
     __self: undefined
   }, "Reviews"), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "simple--flex",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: undefined
   }, data.length > 0 ? data.map((item, i) => i < 4 && __jsx(_Cards_CardReview__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1035,14 +1035,14 @@ const ReviewSection = ({
     data: item,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 34
     },
     __self: undefined
   })) : __jsx("div", {
     className: "noReviews",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: undefined
   }, "No reviews available")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1050,14 +1050,14 @@ const ReviewSection = ({
     as: `/movie/${movieId}/reviews`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: undefined
   }, __jsx("a", {
     className: "title redHover",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 41
     },
     __self: undefined
   }, "Read All Reviews")));
@@ -1413,7 +1413,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "TopBilledCast__Styled",
   componentId: "s5a97-0"
-})(["padding:1em 0;.subTitle{margin-bottom:1.5em;}.view--more{display:flex;align-items:center;font-weight:bold;transition:var(--ease--in--out--02s);cursor:pointer;a{letter-spacing:0.8px;color:var(--white-clr);}svg{transition:var(--ease--in--out--02s);font-size:1rem;}&:hover,&:focus{opacity:0.8;margin-bottom:1em;}&:hover svg,&:focus svg{margin-left:0.2em;}}"]);
+})(["padding:1em 0;max-width:1000px;.subTitle{margin-bottom:1.5em;}.view--more{display:flex;align-items:center;font-weight:bold;transition:var(--ease--in--out--02s);cursor:pointer;a{letter-spacing:0.8px;color:var(--white-clr);}svg{transition:var(--ease--in--out--02s);font-size:1rem;}&:hover,&:focus{opacity:0.8;margin-bottom:1em;}&:hover svg,&:focus svg{margin-left:0.2em;}}"]);
 
 const TopBilledCast = ({
   data
@@ -1422,14 +1422,14 @@ const TopBilledCast = ({
     className: "top--billed--cast",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 47
     },
     __self: undefined
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 48
     },
     __self: undefined
   }, "Top Billed Cast"), __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1437,7 +1437,7 @@ const TopBilledCast = ({
     setWidth: "150px",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 49
     },
     __self: undefined
   }, data.map((item, i) => i < 6 && __jsx(_Cards_CastCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1445,14 +1445,14 @@ const TopBilledCast = ({
     data: item,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 50
     },
     __self: undefined
   })), __jsx("div", {
     className: "view--more",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 51
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1460,19 +1460,19 @@ const TopBilledCast = ({
     as: `/movie/${data.id}/cast`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 53
     },
     __self: undefined
   }, "View More ", __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_3__["FaArrowAltCircleRight"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 54
     },
     __self: undefined
   }))))), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1480,14 +1480,14 @@ const TopBilledCast = ({
     as: `/movie/${data.id}/cast`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx("a", {
     className: "title redHover",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 60
     },
     __self: undefined
   }, "Full Cast & Crew")));
@@ -1600,7 +1600,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "ProfileHeader__Styled",
   componentId: "sc-1pa4id6-0"
-})([".inner--content{display:grid;grid-gap:1.7em;grid-auto-columns:auto;}.rating,.meta,.overview,.crew,.play--button{grid-column:1/ 3;}.rating{svg{margin-right:1em;}}.title{align-self:center;font-size:calc(0.5em + 3vw);}.profile--content__img{width:120px;margin-top:-8em;align-self:flex-end;}.year{opacity:0.6;font-weight:400;}.rating,.meta{display:flex;align-items:center;padding:0 0.5em;}.tag--group{border-left:1px solid #7b7b7b;padding-left:1.5em;}.meta{justify-content:space-between;font-size:0.85rem;align-items:stretch;&--tab{border-right:1px solid #7b7b7b;padding:0 2em;text-align:center;display:flex;align-items:center;justify-content:center;}&--tab:last-child{border:none;padding:0;padding-left:1em;flex-wrap:wrap;justify-content:space-evenly;}}.crew{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:1em;font-weight:bold;.subTitle{grid-column:1 / 3;margin-bottom:-1em;}}.play--button{width:fit-content;}@media screen and (min-width:768px){.profile--header{max-width:1100px;padding:2em 1em;}.profile--content__img{width:160px;justify-self:center;}.rating{grid-column:1 /2;}.meta{grid-column:2 /3;}.overview,.crew{grid-column:1/ 3;}.play--button{flex-direction:row;font-size:1.1rem;&::before{width:auto;margin:auto;transform-origin:left;}svg{font-size:2rem;order:1;margin-left:5px;}&:hover svg,&:focus svg{margin-left:15px;margin-bottom:0;transform:scale(0.98);}}.CircularProgressbar{width:66px;}}@media screen and (min-width:1000px){background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url(", ") no-repeat center;background-color:black;background-size:cover;background-position:top;object-fit:cover;position:relative;padding:8em 1em;.inner--content{max-width:1500px;margin:0 auto;grid-template-areas:'prImg title title' 'prImg rating play' 'prImg meta meta' 'prImg overV overV' 'prImg crew crew';grid-template-columns:500px 1fr 1fr;grid-gap:2em;}.profile--content__img{grid-area:prImg;width:100%;align-self:end;height:100%;justify-self:center;img{height:100%;object-fit:contain;}}.title{grid-area:title;font-size:3.5rem;margin-bottom:-0.3em;.year{font-size:smaller;}}.rating{grid-area:rating;}.meta{grid-area:meta;justify-self:start;align-self:center;&--tab{padding:1em 2em;}.genre--tab{margin:0 0.45em;}}.overview{grid-area:overV;&--para{max-width:90%;}}.crew{grid-area:crew;grid-template-columns:repeat(3,1fr);align-self:baseline;.subTitle{grid-column:1 / 4;}}.play--button{grid-area:play;align-self:center;}}"], ({
+})([".inner--content{display:grid;grid-gap:1.7em;grid-auto-columns:auto;}.rating,.meta,.overview,.crew,.play--button{grid-column:1/ 3;}.rating{svg{margin-right:1em;}}.title{align-self:center;font-size:calc(0.5em + 3vw);}.profile--content__img{width:120px;margin-top:-8em;align-self:flex-end;}.year{opacity:0.6;font-weight:400;}.rating,.meta{display:flex;align-items:center;padding:0 0.5em;}.tag--group{border-left:1px solid #7b7b7b;padding-left:1.5em;}.meta{justify-content:space-between;font-size:0.85rem;align-items:stretch;&--tab{border-right:1px solid #7b7b7b;padding:0 2em;text-align:center;display:flex;align-items:center;justify-content:center;}&--tab:last-child{border:none;padding:0;padding-left:1em;flex-wrap:wrap;justify-content:space-evenly;}}.crew{display:grid;grid-template-columns:repeat(2,1fr);grid-gap:1em;font-weight:bold;.subTitle{grid-column:1 / 3;margin-bottom:-0.1em;}}.play--button{width:fit-content;}@media screen and (min-width:768px){.profile--header{max-width:1100px;padding:2em 1em;}.profile--content__img{width:160px;justify-self:center;}.rating{grid-column:1 /2;}.meta{grid-column:2 /3;}.overview,.crew{grid-column:1/ 3;}.play--button{flex-direction:row;font-size:1.1rem;&::before{width:auto;margin:auto;transform-origin:left;}svg{font-size:2rem;order:1;margin-left:5px;}&:hover svg,&:focus svg{margin-left:15px;margin-bottom:0;transform:scale(0.98);}}.CircularProgressbar{width:66px;}}@media screen and (min-width:1000px){background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url(", ") no-repeat center;background-color:black;background-size:cover;background-position:top;object-fit:cover;position:relative;padding:8em 1em;.inner--content{max-width:1500px;margin:0 auto;grid-template-areas:'prImg title title' 'prImg rating play' 'prImg meta meta' 'prImg overV overV' 'prImg crew crew';grid-template-columns:500px 1fr 1.7fr;grid-gap:2em;}.profile--content__img{grid-area:prImg;width:100%;align-self:end;height:100%;justify-self:center;img{height:100%;object-fit:contain;}}.title{grid-area:title;font-size:3.5rem;margin-bottom:-0.3em;.year{font-size:smaller;}}.rating{grid-area:rating;}.meta{grid-area:meta;justify-self:start;align-self:center;&--tab{padding:1em 2em;}.genre--tab{margin:0 0.45em;}}.overview{grid-area:overV;&--para{max-width:90%;}}.crew{grid-area:crew;grid-template-columns:repeat(3,1fr);align-self:baseline;.subTitle{grid-column:1 / 4;}}.play--button{grid-area:play;align-self:center;}}"], ({
   bgImg
 }) => `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL_OR"]}${bgImg}`);
 
@@ -2156,7 +2156,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "ProfileStats__Styled",
   componentId: "sc-1wmtszh-0"
-})(["background-color:var(--accent-clr);*{color:var(--second-clr);}.inner--content{display:grid;grid-row-gap:1em;background-color:var(--accent-clr);padding:2em 1em;}.title{font-size:1.2rem;margin-bottom:1em;}@media screen and (min-width:1000px){width:calc((100vw - 1000px) / 2 + 220px);min-height:calc(100vh - 795px);}"]);
+})(["background-color:var(--accent-clr);*{color:var(--second-clr);}.inner--content{display:grid;grid-row-gap:1em;background-color:var(--accent-clr);padding:2em;}.title{font-size:1.2rem;margin-bottom:1em;}@media screen and (min-width:1000px){width:calc((100vw - 1000px) / 2 + 220px);min-height:calc(100vh - 795px);}"]);
 
 const ProfileStats = ({
   data,
@@ -4241,7 +4241,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "id__Styled",
   componentId: "sc-1qdj2gq-0"
-})(["background:var(--bg-gradient);margin-top:90px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;}.profile--main{position:relative;padding:2em 0.5em;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--main{max-width:1100px;padding:2em 1em;}}@media screen and (min-width:1000px){margin-top:60px;.profile--backdrop{display:none;}.profile--main{padding:2em 0;max-width:100%;width:100%;display:flex;flex-wrap:wrap;.profile--content{flex:100%;}.main-con{max-width:1600px;margin:0 auto;}.profile--stats{flex:1;}}}"], ({
+})(["background:var(--bg-gradient);margin-top:90px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;}.profile--main{position:relative;padding:2em 0.5em;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--main{max-width:1100px;padding:2em 1em;}}@media screen and (min-width:1000px){margin-top:60px;.profile--backdrop{display:none;}.profile--main{padding:2em 0 0;max-width:100%;width:100%;display:flex;flex-wrap:wrap;.profile--content{flex:100%;width:100%;}.main-con{max-width:60%;margin-left:auto;margin-right:5%;padding:3em 0;}.profile--stats{flex:0 1 30%;}}}"], ({
   bgImg
 }) => `${_components_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL_OR"]}${bgImg}`);
 
@@ -4323,15 +4323,15 @@ const TvProfile = ({
       lineNumber: 99
     },
     __self: undefined
-  }))), __jsx(_components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  })), __jsx(_components_ui_mediaProfile_ProfileStats_ProfileStats__WEBPACK_IMPORTED_MODULE_10__["default"], {
     data: tv,
     keywords: Object.values(tv.keywords)[0],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 101
     },
     __self: undefined
-  })));
+  }))));
 };
 
 TvProfile.getInitialProps = async ctx => {
@@ -4351,7 +4351,7 @@ TvProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!*********************************!*\
   !*** multi ./pages/tv/[id].jsx ***!
   \*********************************/

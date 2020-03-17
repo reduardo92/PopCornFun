@@ -9,6 +9,7 @@ const Styled = styled.section`
   padding: 2em 0em;
   display: grid;
   grid-gap: 0.2em;
+  max-width: 1000px;
 
   .simple--flex {
     & > div {

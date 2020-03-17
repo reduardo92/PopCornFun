@@ -16,7 +16,7 @@ const Styled = styled.section`
     display: grid;
     grid-row-gap: 1em;
     background-color: var(--accent-clr);
-    padding: 2em 1em;
+    padding: 2em;
   }
 
   .title {

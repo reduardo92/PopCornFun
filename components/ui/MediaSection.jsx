@@ -7,6 +7,7 @@ import MovieContext from '../context/MovieContext';
 
 const Styled = styled.section`
   padding: 2em 0em;
+  max-width: 1000px;
 
   .head--container {
     display: flex;
