@@ -1,21 +1,47 @@
 :root {
   /* Colors */
-  --primary-clr: #bc3131;
-  --second-clr: #212122;
+  --primary-clr: #f15c2b;
+  --second-clr: #1a1616;
   --accent-clr: #e7e6e5;
   --white-clr: #fff;
   --grey-clr: #efefef;
   --hover--clr: #5d5e5e;
-
+  --primary-clr-rgba: rgba(241, 92, 43, 0.9);
   /* Gradient  */
   --bg-gradient: linear-gradient(
+    to top,
+    #f15c2b,
+    #ec5828,
+    #e75425,
+    #e35021,
+    #de4c1e
+  );
+  --bg-dark-gradient: radial-gradient(
+    circle,
+    #1a1616,
+    #1c1717,
+    #1d1818,
+    #1f191a,
+    #211a1b,
+    #211a1b,
+    #211a1b,
+    #211a1b,
+    #1f191a,
+    #1d1818,
+    #1c1717,
+    #1a1616
+  );
+
+  /* --bg-gradient: linear-gradient(
     to top,
     #240808,
     #210707,
     #1d0707,
     #190606,
     #140505
-  );
+  ); */
+  /* #b79940  */
+  /* #F15C2B  */
 
   /* Box Shadow */
   --shadow: 3px 2px 7px rgba(0, 0, 0, 1);
@@ -30,7 +56,7 @@
   --fs-italic: italic;
 
   /* Transitions */
-  --ease--in--out--02s: all 0.2s ease-in-out;
+  --ease--in--out--02s: all 0.18s ease-in-out;
 }
 
 html {

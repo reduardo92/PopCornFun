@@ -20,7 +20,7 @@ const Styled = styled.div`
       position: absolute;
       font-size: 0.8rem;
       font-weight: bold;
-      background-color: rgba(188, 49, 49, 0.85);
+      background-color: var(--primary-clr-rgba);
       height: 0;
       width: 100%;
       opacity: 0;

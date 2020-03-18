@@ -28,12 +28,12 @@ const Styled = styled.header`
     font-weight: bold;
 
     &:hover {
-      color: var(--primary-clr);
+      color: var(--second-clr);
     }
   }
   /* Change Nav Links Active */
   .selected {
-    color: var(--primary-clr) !important;
+    color: var(--second-clr) !important;
   }
 
   .navbar-brand {

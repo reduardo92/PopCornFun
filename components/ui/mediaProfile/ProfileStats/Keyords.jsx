@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Tab from '../../Tab';
 
-const Styled = styled.div``;
+const Styled = styled.div`
+  .flex-w-container {
+    max-width: 300px;
+  }
+`;
 
 const Keyords = ({ data, typeFor }) => (
   <Styled className='profile--stats--genres'>

@@ -12,10 +12,12 @@ import getRating from '../../utility/getRating';
 import CrewTab from './CrewTab';
 
 const Styled = styled.div`
+  margin-bottom: 2em;
+
   .inner--content {
     display: grid;
-    grid-gap: 1.7em;
-    grid-auto-columns: auto;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1.7em 0.4em;
   }
 
   .rating,
@@ -110,6 +112,9 @@ const Styled = styled.div`
       width: 160px;
       justify-self: center;
     }
+    .title {
+      align-self: flex-end;
+    }
 
     .rating {
       grid-column: 1 /2;
@@ -117,6 +122,7 @@ const Styled = styled.div`
 
     .meta {
       grid-column: 2 /3;
+      justify-self: center;
     }
 
     .overview,
@@ -153,16 +159,18 @@ const Styled = styled.div`
     }
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1100px) {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
       url(${({ bgImg }) => `${IMG_URL_OR}${bgImg}`}) no-repeat center;
     background-color: black;
     /* min-height: 500px; */
     background-size: cover;
     background-position: top;
+    background-attachment: fixed;
     object-fit: cover;
     position: relative;
     padding: 8em 1em;
+    margin-bottom: 0;
 
     .inner--content {
       max-width: 1500px;
@@ -260,7 +268,7 @@ const ProfileHeader = ({ data, bgImg }) => {
   );
 
   return (
-    <Styled className='profile--content' bgImg={bgImg}>
+    <Styled className='profile--content px-2' bgImg={bgImg}>
       <div className='inner--content'>
         <div className='profile--content__img'>
           <img

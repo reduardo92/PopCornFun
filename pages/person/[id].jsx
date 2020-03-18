@@ -1,66 +1,85 @@
-import { useContext, useState } from 'react';
-import MovieContext from '../../components/context/MovieContext';
+import { useState } from 'react';
 import { IMG_URL } from '../../components/context/types';
 import Layout from '../../components/layout';
 import styled from 'styled-components';
 import movieDB from '../../components/utility/movieDB';
 import KnownFor from '../../components/ui/PersonProfile/KnownFor';
 import MediaCredits from '../../components/ui/PersonProfile/MediaCredits';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import PersonFacts from '../../components/ui/PersonProfile/PersonFacts';
+import Biography from '../../components/ui/PersonProfile/Biography';
 
 const Styled = styled.section`
-  background: var(--bg-gradient);
+  background: var(--bg-dark-gradient);
   margin-top: 110px;
 
   .profile--person {
     max-width: 300px;
     margin: 0 auto;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
   }
 
-  .profile--biography {
-    margin: 2em 0;
+  .profile--media {
+    padding-bottom: 2em;
+  }
+
+  .line-between {
+    display: none;
+    width: 100%;
+    background: var(--bg-gradient);
+  }
+
+  @media screen and (min-width: 1000px) {
+    margin-top: 100px;
     display: grid;
-    &__name {
-      font-weight: bold;
-      margin-bottom: 1em;
-      text-align: center;
+    grid-template-areas:
+      'pp bio'
+      'lin lin'
+      'pf pm';
+    grid-template-columns: calc(100% - 60%) 1fr;
+    grid-auto-rows: auto 40px auto;
+
+    .profile--person {
+      grid-area: pp;
+      justify-self: end;
+      max-width: 355px;
+      margin: 0;
+      margin-bottom: 2em;
+      z-index: 10;
     }
 
-    .read--more {
-      display: flex;
-      align-items: center;
-      margin: 0 auto;
-      background-color: var(--primary-clr);
-      border-radius: 50%;
-      padding: 0.25em;
-      font-size: 1.7rem;
-      transition: var(--ease--in--out--02s);
-      color: var(--white-clr);
-
-      &:hover {
-        opacity: 0.8;
-        transform: scale(0.9);
-      }
+    .profile--biography {
+      grid-area: bio;
     }
-  }
 
-  @media screen and (min-width: 768px) {
+    .line-between {
+      grid-area: lin;
+      display: block;
+    }
+
+    .profile--media {
+      grid-area: pm;
+      background: var(--white-clr);
+      padding: 1.2em 0 3em 2em;
+    }
+
+    .profile--media--container {
+      max-width: 1100px;
+    }
+
+    .profile--facts {
+      grid-area: pf;
+    }
   }
 `;
 
 const PersonProfile = ({ person }) => {
   const [tab, setTab] = useState('movies');
-  const [bioActive, setBioActive] = useState(false);
 
   // const { setModal } = useContext(MovieContext);
-
-  const bio =
-    person.biography.length === 0
-      ? 'Sorry Nothing Available'
-      : person.biography.length <= 500
-      ? person.biography
-      : `${person.biography.slice(0, 500)}...`;
 
   const knonwFor =
     person &&
@@ -68,7 +87,6 @@ const PersonProfile = ({ person }) => {
       .sort((a, b) => b.vote_count - a.vote_count)
       .slice(0, 8);
 
-  console.log(person.biography.length);
   return (
     <Layout>
       <Styled className='profile'>
@@ -82,30 +100,13 @@ const PersonProfile = ({ person }) => {
             alt={person.name}
           />
         </div>
-        <div className='profile--biography px-2'>
-          <h2 className='profile--biography__name'>{person.name}</h2>
-          <h3 className='subTitle'>Biography</h3>
-          <p className='profile--biography__bio'>
-            {bioActive ? person.biography : bio}
-          </p>
-          {person.biography.length >= 500 && (
-            <a
-              href='#'
-              // onClick={() => setModal(person.biography, 'person')}
-              onClick={() => setBioActive(!bioActive)}
-              className='read--more'
-            >
-              {bioActive ? (
-                <IoIosArrowUp className='read--more__arrow' />
-              ) : (
-                <IoIosArrowDown className='read--more__arrow' />
-              )}
-            </a>
-          )}
-        </div>
+        <Biography name={person.name} bio={person.biography} />
+        <div className='line-between' />
         <div className='profile--media'>
-          <KnownFor data={knonwFor} />
-          <MediaCredits data={person} tab={tab} setTab={setTab} />
+          <div className='profile--media--container'>
+            <KnownFor data={knonwFor} />
+            <MediaCredits data={person} tab={tab} setTab={setTab} />
+          </div>
         </div>
         <PersonFacts data={person} />
       </Styled>

@@ -9,9 +9,18 @@ const Styled = styled.div`
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
+  max-width: 1022px;
 
   .tabs--container {
     flex-wrap: nowrap;
+  }
+
+  .subTitle {
+    color: var(--white-clr);
+  }
+
+  .credit--inner {
+    box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.3);
   }
 
   .profile--media__credits--content {
@@ -30,6 +39,16 @@ const Styled = styled.div`
     }
     .date {
       flex: 0 0 9%;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    * {
+      color: var(--second-clr);
+    }
+
+    .subTitle {
+      color: var(--second-clr);
     }
   }
 `;
@@ -53,19 +72,21 @@ const MediaCredits = ({ data, tab, setTab }) => {
 
     return data.map(([key, _], index) => (
       <div key={key} className='credit--role'>
-        <h3 className='subTitle text-light my-3'>{key}</h3>
-        {data
-          .map(([_, value]) => value)
-          [index].map(item =>
-            item.map(i => (
-              <div
-                key={Math.random() * 10}
-                className='grouped border border-black'
-              >
-                <CreditsTabs data={i} typeFor={media} />
-              </div>
-            ))
-          )}
+        <h3 className='subTitle my-3'>{key}</h3>
+        <div className='credit--inner'>
+          {data
+            .map(([_, value]) => value)
+            [index].map(item =>
+              item.map(i => (
+                <div
+                  key={Math.random() * 10}
+                  className='grouped border border-black'
+                >
+                  <CreditsTabs data={i} typeFor={media} />
+                </div>
+              ))
+            )}
+        </div>
       </div>
     ));
   };
@@ -90,15 +111,17 @@ const MediaCredits = ({ data, tab, setTab }) => {
       <div className='profile--media__credits--content table'>
         <div className='credit--role'>
           {(data.movie_credits.cast || data.tv_credits.cast) && (
-            <h3 className='subTitle text-light my-3'>Acting</h3>
+            <h3 className='subTitle my-3'>Acting</h3>
           )}
-          {tab === 'movies' ? (
-            actingDiv(data.movie_credits.cast, 'release_date', 'movie')
-          ) : tab === 'tv' ? (
-            actingDiv(data.tv_credits.cast, 'first_air_date', 'tv')
-          ) : (
-            <p>nothing available</p>
-          )}
+          <div className='credit--inner'>
+            {tab === 'movies' ? (
+              actingDiv(data.movie_credits.cast, 'release_date', 'movie')
+            ) : tab === 'tv' ? (
+              actingDiv(data.tv_credits.cast, 'first_air_date', 'tv')
+            ) : (
+              <p>nothing available</p>
+            )}
+          </div>
         </div>
         {tab === 'movies' ? (
           crewDiv(data.movie_credits.crew, 'release_date', 'movie')

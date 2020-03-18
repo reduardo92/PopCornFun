@@ -6,7 +6,7 @@ import ButtonSimple from './ButtonSimple';
 import Button from './button';
 
 const Styled = styled.section`
-  background: var(--bg-gradient);
+  background: var(--bg-dark-gradient);
   padding: 4em 1em;
   position: relative;
 

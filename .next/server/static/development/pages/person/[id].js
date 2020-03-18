@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -275,7 +275,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "RecommenCard__Styled",
   componentId: "sc-8rijlz-0"
-})([".recommend--card--poster{position:relative;width:160px;height:240px;cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:rgba(188,49,49,0.85);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}&__release{position:absolute;bottom:0;left:0;right:0;color:var(--white-clr);background-color:var(--primary-clr);padding:0.5em 0;text-align:center;font-weight:bold;font-size:0.9rem;display:flex;align-items:center;justify-content:center;z-index:1;.calendar{margin-right:0.5em;font-size:1.2rem;}.date{margin-right:0.5em;}}}.recommend--card__content{display:flex;align-items:baseline;margin-top:0.5em;&--name{font-weight:bold;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:1280px){.recommend--card--poster{width:180px;height:270px;}}"]);
+})([".recommend--card--poster{position:relative;width:160px;height:240px;cursor:pointer;&::after{content:'View More';transition:var(--ease--in--out--02s);display:flex;justify-content:center;align-items:center;position:absolute;font-size:0.8rem;font-weight:bold;background-color:var(--primary-clr-rgba);height:0;width:100%;opacity:0;top:0;left:0;right:0;}&:hover::after,&:focus::after{opacity:1;height:100%;}&__release{position:absolute;bottom:0;left:0;right:0;color:var(--white-clr);background-color:var(--primary-clr);padding:0.5em 0;text-align:center;font-weight:bold;font-size:0.9rem;display:flex;align-items:center;justify-content:center;z-index:1;.calendar{margin-right:0.5em;font-size:1.2rem;}.date{margin-right:0.5em;}}}.recommend--card__content{display:flex;align-items:baseline;margin-top:0.5em;&--name{font-weight:bold;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:1280px){.recommend--card--poster{width:180px;height:270px;}}"]);
 
 const RecommenCard = ({
   data,
@@ -376,6 +376,100 @@ const RecommenCard = ({
 
 /***/ }),
 
+/***/ "./components/ui/PersonProfile/Biography.jsx":
+/*!***************************************************!*\
+  !*** ./components/ui/PersonProfile/Biography.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/io */ "react-icons/io");
+/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_io__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\PersonProfile\\Biography.jsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Biography__Styled",
+  componentId: "qujsc4-0"
+})(["margin:2em 0;display:grid;max-width:1020px;.profile--biography__name{font-weight:bold;margin-bottom:1em;text-align:center;}.subTitle{margin-bottom:1em;}.read--more{display:flex;align-items:center;margin:0 auto;background-color:var(--primary-clr);border-radius:50%;padding:0.25em;font-size:1.7rem;transition:var(--ease--in--out--02s);color:var(--white-clr);&:hover{opacity:0.8;transform:scale(0.9);}}@media screen and (min-width:1000px){justify-self:start;align-self:center;margin-left:2em;.profile--biography__name{text-align:left;}}"]);
+
+const Biography = ({
+  name,
+  bio
+}) => {
+  const {
+    0: bioActive,
+    1: setBioActive
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const bioCondetion = bio.length === 0 ? 'Sorry Nothing Available' : bio.length <= 600 ? bio : `${bio.slice(0, 600)}...`;
+  return __jsx(Styled, {
+    className: "profile--biography px-2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    className: "profile--biography__name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: undefined
+  }, name), __jsx("h3", {
+    className: "subTitle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: undefined
+  }, "Biography"), __jsx("p", {
+    className: "profile--biography__bio",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: undefined
+  }, bioActive ? bio : bioCondetion), bio.length >= 600 && __jsx("a", {
+    href: "#" // onClick={() => setModal(person.biography, 'person')}
+    ,
+    onClick: () => setBioActive(!bioActive),
+    className: "read--more",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }, bioActive ? __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_2__["IoIosArrowUp"], {
+    className: "read--more__arrow",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: undefined
+  }) : __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_2__["IoIosArrowDown"], {
+    className: "read--more__arrow",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Biography);
+
+/***/ }),
+
 /***/ "./components/ui/PersonProfile/KnownFor.jsx":
 /*!**************************************************!*\
   !*** ./components/ui/PersonProfile/KnownFor.jsx ***!
@@ -400,7 +494,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "KnownFor__Styled",
   componentId: "sc-1fqp2dp-0"
-})([""]);
+})(["@media screen and (min-width:1000px){.knonwFor--content{all:unset;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));grid-gap:2.7em 1em;padding-top:1.2em;div{margin:0;}}}@media screen and (min-width:1000px){.subTitle,.rating--star{color:var(--second-clr);}.recommend--card__content--name{color:var(--second-clr);}}"]);
 
 const KnownFor = ({
   data
@@ -408,21 +502,21 @@ const KnownFor = ({
   className: "profile--media__knownFor px-2 pb-5",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9
+    lineNumber: 34
   },
   __self: undefined
 }, __jsx("h3", {
   className: "subTitle",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 10
+    lineNumber: 35
   },
   __self: undefined
 }, "Known For"), data.length === 0 ? __jsx("p", {
   className: "my-5",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 12
+    lineNumber: 37
   },
   __self: undefined
 }, "Sorry Nothing Available") : __jsx(_SimpleFlex__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -430,7 +524,7 @@ const KnownFor = ({
   setWidth: "160px",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 14
+    lineNumber: 39
   },
   __self: undefined
 }, data.map(item => __jsx(_Cards_RecommenCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -439,7 +533,7 @@ const KnownFor = ({
   typeFor: item.media_type,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16
+    lineNumber: 41
   },
   __self: undefined
 }))));
@@ -474,7 +568,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "MediaCredits__Styled",
   componentId: "sc-1z0m3bt-0"
-})(["display:grid;grid-template-columns:repeat(2,1fr);align-items:center;justify-content:center;.tabs--container{flex-wrap:nowrap;}.profile--media__credits--content{display:grid;grid-column:1 / 3;margin-top:1.2em;grid-gap:1.5em;}.grouped{& > div:first-child{padding-top:0.6em !important;}& > div:last-child{padding-bottom:0.6em !important;}.date{flex:0 0 9%;}}"]);
+})(["display:grid;grid-template-columns:repeat(2,1fr);align-items:center;justify-content:center;max-width:1022px;.tabs--container{flex-wrap:nowrap;}.subTitle{color:var(--white-clr);}.credit--inner{box-shadow:0px 7px 21px rgba(0,0,0,0.3);}.profile--media__credits--content{display:grid;grid-column:1 / 3;margin-top:1.2em;grid-gap:1.5em;}.grouped{& > div:first-child{padding-top:0.6em !important;}& > div:last-child{padding-bottom:0.6em !important;}.date{flex:0 0 9%;}}@media screen and (min-width:1000px){*{color:var(--second-clr);}.subTitle{color:var(--second-clr);}}"]);
 
 const MediaCredits = ({
   data,
@@ -488,7 +582,7 @@ const MediaCredits = ({
       className: "grouped border border-black ",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 62
       },
       __self: undefined
     }, value.map(i => __jsx(_mediaProfile_CreditsTabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -497,7 +591,7 @@ const MediaCredits = ({
       typeFor: media,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 64
       },
       __self: undefined
     }))));
@@ -510,22 +604,29 @@ const MediaCredits = ({
       className: "credit--role",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 74
       },
       __self: undefined
     }, __jsx("h3", {
-      className: "subTitle text-light my-3",
+      className: "subTitle my-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 75
       },
       __self: undefined
-    }, key), data.map(([_, value]) => value)[index].map(item => item.map(i => __jsx("div", {
+    }, key), __jsx("div", {
+      className: "credit--inner",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 76
+      },
+      __self: undefined
+    }, data.map(([_, value]) => value)[index].map(item => item.map(i => __jsx("div", {
       key: Math.random() * 10,
       className: "grouped border border-black",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 81
       },
       __self: undefined
     }, __jsx(_mediaProfile_CreditsTabs__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -533,31 +634,31 @@ const MediaCredits = ({
       typeFor: media,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 85
       },
       __self: undefined
-    }))))));
+    })))))));
   };
 
   return __jsx(Styled, {
     className: "profile--media__credits px-2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 95
     },
     __self: undefined
   }, __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 96
     },
     __self: undefined
   }, "Credits"), __jsx("div", {
     className: "tabs--container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 97
     },
     __self: undefined
   }, __jsx("button", {
@@ -565,7 +666,7 @@ const MediaCredits = ({
     onClick: () => setTab('movies'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 98
     },
     __self: undefined
   }, "Movies"), __jsx("button", {
@@ -573,40 +674,47 @@ const MediaCredits = ({
     onClick: () => setTab('tv'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 104
     },
     __self: undefined
   }, "Tv Shows")), __jsx("div", {
     className: "profile--media__credits--content table",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 111
     },
     __self: undefined
   }, __jsx("div", {
     className: "credit--role",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 112
     },
     __self: undefined
   }, (data.movie_credits.cast || data.tv_credits.cast) && __jsx("h3", {
-    className: "subTitle text-light my-3",
+    className: "subTitle my-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 114
     },
     __self: undefined
-  }, "Acting"), tab === 'movies' ? actingDiv(data.movie_credits.cast, 'release_date', 'movie') : tab === 'tv' ? actingDiv(data.tv_credits.cast, 'first_air_date', 'tv') : __jsx("p", {
+  }, "Acting"), __jsx("div", {
+    className: "credit--inner",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 116
     },
     __self: undefined
-  }, "nothing available")), tab === 'movies' ? crewDiv(data.movie_credits.crew, 'release_date', 'movie') : tab === 'tv' ? crewDiv(data.tv_credits.crew, 'first_air_date', 'tv') : __jsx("p", {
+  }, tab === 'movies' ? actingDiv(data.movie_credits.cast, 'release_date', 'movie') : tab === 'tv' ? actingDiv(data.tv_credits.cast, 'first_air_date', 'tv') : __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 122
+    },
+    __self: undefined
+  }, "nothing available"))), tab === 'movies' ? crewDiv(data.movie_credits.crew, 'release_date', 'movie') : tab === 'tv' ? crewDiv(data.tv_credits.crew, 'first_air_date', 'tv') : __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 131
     },
     __self: undefined
   }, "nothing available")));
@@ -640,7 +748,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "PersonFacts__Styled",
   componentId: "sc-9rx50k-0"
-})(["background-color:var(--accent-clr);padding:2em 1em;*{color:var(--second-clr);}.subTitle{margin:1em 0;}"]);
+})(["background-color:var(--accent-clr);*{color:var(--second-clr);}.inner--content{padding:2em 1em;}.subTitle{margin:1em 0;}@media screen and (min-width:1000px){.inner--content{margin-left:auto;display:flex;flex-direction:column;width:375px;padding-top:0.5em;}}"]);
 
 const PersonFacts = ({
   data
@@ -649,7 +757,14 @@ const PersonFacts = ({
     className: "profile--facts",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 32
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "inner--content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
     },
     __self: undefined
   }, __jsx(_SocialLinks__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -657,161 +772,161 @@ const PersonFacts = ({
     homepage: data.homepage,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 34
     },
     __self: undefined
   }), __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 35
     },
     __self: undefined
   }, "Personal Info"), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 36
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 37
     },
     __self: undefined
   }, "Know For"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 38
     },
     __self: undefined
   }, data.known_for_department)), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 40
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 41
     },
     __self: undefined
   }, "Gender"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 42
     },
     __self: undefined
   }, data.gender === 1 ? 'Female' : 'Male')), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 46
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 47
     },
     __self: undefined
   }, "Know Credits"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 48
     },
     __self: undefined
   }, parseInt(data.combined_credits.cast.length - 1) + parseInt(data.combined_credits.crew.length - 1))), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 54
     },
     __self: undefined
   }, "Birthday"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 55
     },
     __self: undefined
   }, data.birthday ? Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_2__["default"])(data.birthday) : '-')), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 60
     },
     __self: undefined
   }, "Place of Birth"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 61
     },
     __self: undefined
   }, data.place_of_birth)), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 63
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 64
     },
     __self: undefined
   }, "Official Site"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 65
     },
     __self: undefined
   }, data.homepage ? data.homepage : '-')), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 69
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 70
     },
     __self: undefined
   }, "Also Know As"), __jsx("div", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 71
     },
     __self: undefined
   }, data.also_known_as.map(name => __jsx("span", {
@@ -819,10 +934,10 @@ const PersonFacts = ({
     className: "d-block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 73
     },
     __self: undefined
-  }, name)))));
+  }, name))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PersonFacts);
@@ -2870,17 +2985,15 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/context/MovieContext */ "./components/context/MovieContext.js");
-/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/context/types */ "./components/context/types.js");
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/utility/movieDB */ "./components/utility/movieDB.js");
-/* harmony import */ var _components_ui_PersonProfile_KnownFor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ui/PersonProfile/KnownFor */ "./components/ui/PersonProfile/KnownFor.jsx");
-/* harmony import */ var _components_ui_PersonProfile_MediaCredits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/ui/PersonProfile/MediaCredits */ "./components/ui/PersonProfile/MediaCredits.jsx");
-/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-icons/io */ "react-icons/io");
-/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_icons_io__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_ui_PersonProfile_PersonFacts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/ui/PersonProfile/PersonFacts */ "./components/ui/PersonProfile/PersonFacts.jsx");
+/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/context/types */ "./components/context/types.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/utility/movieDB */ "./components/utility/movieDB.js");
+/* harmony import */ var _components_ui_PersonProfile_KnownFor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ui/PersonProfile/KnownFor */ "./components/ui/PersonProfile/KnownFor.jsx");
+/* harmony import */ var _components_ui_PersonProfile_MediaCredits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ui/PersonProfile/MediaCredits */ "./components/ui/PersonProfile/MediaCredits.jsx");
+/* harmony import */ var _components_ui_PersonProfile_PersonFacts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/ui/PersonProfile/PersonFacts */ "./components/ui/PersonProfile/PersonFacts.jsx");
+/* harmony import */ var _components_ui_PersonProfile_Biography__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/ui/PersonProfile/Biography */ "./components/ui/PersonProfile/Biography.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\person\\[id].jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -2900,11 +3013,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_4___default.a.section.withConfig({
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.section.withConfig({
   displayName: "id__Styled",
   componentId: "sc-1s2kqjg-0"
-})(["background:var(--bg-gradient);margin-top:110px;.profile--person{max-width:300px;margin:0 auto;}.profile--biography{margin:2em 0;display:grid;&__name{font-weight:bold;margin-bottom:1em;text-align:center;}.read--more{display:flex;align-items:center;margin:0 auto;background-color:var(--primary-clr);border-radius:50%;padding:0.25em;font-size:1.7rem;transition:var(--ease--in--out--02s);color:var(--white-clr);&:hover{opacity:0.8;transform:scale(0.9);}}}@media screen and (min-width:768px){}"]);
+})(["background:var(--bg-dark-gradient);margin-top:110px;.profile--person{max-width:300px;margin:0 auto;img{height:100%;object-fit:contain;}}.profile--media{padding-bottom:2em;}.line-between{display:none;width:100%;background:var(--bg-gradient);}@media screen and (min-width:1000px){margin-top:100px;display:grid;grid-template-areas:'pp bio' 'lin lin' 'pf pm';grid-template-columns:calc(100% - 60%) 1fr;grid-auto-rows:auto 40px auto;.profile--person{grid-area:pp;justify-self:end;max-width:355px;margin:0;margin-bottom:2em;z-index:10;}.profile--biography{grid-area:bio;}.line-between{grid-area:lin;display:block;}.profile--media{grid-area:pm;background:var(--white-clr);padding:1.2em 0 3em 2em;}.profile--media--container{max-width:1100px;}.profile--facts{grid-area:pf;}}"]);
 
 const PersonProfile = ({
   person
@@ -2912,110 +3024,74 @@ const PersonProfile = ({
   const {
     0: tab,
     1: setTab
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('movies');
-  const {
-    0: bioActive,
-    1: setBioActive
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false); // const { setModal } = useContext(MovieContext);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('movies'); // const { setModal } = useContext(MovieContext);
 
-  const bio = person.biography.length === 0 ? 'Sorry Nothing Available' : person.biography.length <= 500 ? person.biography : `${person.biography.slice(0, 500)}...`;
   const knonwFor = person && person.combined_credits.cast.sort((a, b) => b.vote_count - a.vote_count).slice(0, 8);
-  console.log(person.biography.length);
-  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 91
     },
     __self: undefined
   }, __jsx(Styled, {
     className: "profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 92
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--person pt-5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 93
     },
     __self: undefined
   }, __jsx("img", {
-    src: person.profile_path ? `${_components_context_types__WEBPACK_IMPORTED_MODULE_2__["IMG_URL"]}${person.profile_path}` : 'no_img.jpg',
+    src: person.profile_path ? `${_components_context_types__WEBPACK_IMPORTED_MODULE_1__["IMG_URL"]}${person.profile_path}` : 'no_img.jpg',
     alt: person.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 94
     },
     __self: undefined
-  })), __jsx("div", {
-    className: "profile--biography px-2",
+  })), __jsx(_components_ui_PersonProfile_Biography__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    name: person.name,
+    bio: person.biography,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 103
     },
     __self: undefined
-  }, __jsx("h2", {
-    className: "profile--biography__name",
+  }), __jsx("div", {
+    className: "line-between",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 104
     },
     __self: undefined
-  }, person.name), __jsx("h3", {
-    className: "subTitle",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87
-    },
-    __self: undefined
-  }, "Biography"), __jsx("p", {
-    className: "profile--biography__bio",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88
-    },
-    __self: undefined
-  }, bioActive ? person.biography : bio), person.biography.length >= 500 && __jsx("a", {
-    href: "#" // onClick={() => setModal(person.biography, 'person')}
-    ,
-    onClick: () => setBioActive(!bioActive),
-    className: "read--more",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92
-    },
-    __self: undefined
-  }, bioActive ? __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowUp"], {
-    className: "read--more__arrow",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99
-    },
-    __self: undefined
-  }) : __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
-    className: "read--more__arrow",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 101
-    },
-    __self: undefined
-  }))), __jsx("div", {
+  }), __jsx("div", {
     className: "profile--media",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "profile--media--container",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 106
     },
     __self: undefined
-  }, __jsx(_components_ui_PersonProfile_KnownFor__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_components_ui_PersonProfile_KnownFor__WEBPACK_IMPORTED_MODULE_5__["default"], {
     data: knonwFor,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 107
     },
     __self: undefined
-  }), __jsx(_components_ui_PersonProfile_MediaCredits__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_components_ui_PersonProfile_MediaCredits__WEBPACK_IMPORTED_MODULE_6__["default"], {
     data: person,
     tab: tab,
     setTab: setTab,
@@ -3024,11 +3100,11 @@ const PersonProfile = ({
       lineNumber: 108
     },
     __self: undefined
-  })), __jsx(_components_ui_PersonProfile_PersonFacts__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }))), __jsx(_components_ui_PersonProfile_PersonFacts__WEBPACK_IMPORTED_MODULE_7__["default"], {
     data: person,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 111
     },
     __self: undefined
   })));
@@ -3036,7 +3112,7 @@ const PersonProfile = ({
 
 PersonProfile.getInitialProps = async ctx => {
   try {
-    const person = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_5__["default"])(`person/${ctx.query.id || '85'}`, 'append_to_response=movie_credits,tv_credits,combined_credits,external_ids,images&include_image_language=en,null');
+    const person = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__["default"])(`person/${ctx.query.id || '85'}`, 'append_to_response=movie_credits,tv_credits,combined_credits,external_ids,images&include_image_language=en,null');
     return {
       person: _objectSpread({
         typeFor: 'person'
@@ -3051,7 +3127,7 @@ PersonProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!*************************************!*\
   !*** multi ./pages/person/[id].jsx ***!
   \*************************************/

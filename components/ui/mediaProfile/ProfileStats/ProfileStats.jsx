@@ -6,7 +6,7 @@ import Genre from './Genre';
 import Keyords from './Keyords';
 
 const Styled = styled.section`
-  background-color: var(--accent-clr);
+  background-color: #e2e2e2;
 
   * {
     color: var(--second-clr);
@@ -15,8 +15,7 @@ const Styled = styled.section`
   .inner--content {
     display: grid;
     grid-row-gap: 1em;
-    background-color: var(--accent-clr);
-    padding: 2em;
+    padding: 2em 1em;
   }
 
   .title {
@@ -25,8 +24,9 @@ const Styled = styled.section`
   }
 
   @media screen and (min-width: 1000px) {
-    width: calc((100vw - 1000px) / 2 + 220px);
-    min-height: calc(100vh - 795px);
+    .inner--content {
+      padding: 2em;
+    }
   }
 `;
 
