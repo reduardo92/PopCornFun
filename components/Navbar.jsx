@@ -13,7 +13,7 @@ const Styled = styled.header`
   right: 0;
   left: 0;
   z-index: 1030;
-  background-image: var(--bg-gradient);
+  background-image: var(--bg-dark-gradient);
   .navbar {
     max-width: 1500px;
     margin: 0 auto;
@@ -28,12 +28,12 @@ const Styled = styled.header`
     font-weight: bold;
 
     &:hover {
-      color: var(--second-clr);
+      color: var(--primary-clr);
     }
   }
   /* Change Nav Links Active */
   .selected {
-    color: var(--second-clr) !important;
+    color: var(--primary-clr) !important;
   }
 
   .navbar-brand {
