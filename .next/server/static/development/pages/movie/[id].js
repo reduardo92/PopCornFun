@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1082,7 +1082,7 @@ __webpack_require__.r(__webpack_exports__);
 const SimpleFlex = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "SimpleFlex",
   componentId: "sc-9wbivm-0"
-})(["display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-points-x:repeat( ", " );scroll-snap-type:mandatory;padding:1em 0;& > div{flex-shrink:0;width:", ";margin:0 1em;&:first-child{margin-left:0;}}@media screen and (min-width:1100px){::-webkit-scrollbar{height:10px;background-color:#f5f5f5;}::-webkit-scrollbar-thumb{background-color:#535353;}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#f5f5f5;}}"], ({
+})(["display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-points-x:repeat( ", " );scroll-snap-type:mandatory;padding:1em 0;scrollbar-width:thin;scrollbar-color:var(--primary-clr) var(--accent-clr);& > div{flex-shrink:0;width:", ";margin:0 1em;&:first-child{margin-left:0;}}@media screen and (min-width:1100px){::-webkit-scrollbar{height:10px;background-color:#f5f5f5;}::-webkit-scrollbar-thumb{background-color:#535353;}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#f5f5f5;}}"], ({
   setWidth
 }) => setWidth ? setWidth : '100%', ({
   setWidth
@@ -2156,7 +2156,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
   displayName: "ProfileStats__Styled",
   componentId: "sc-1wmtszh-0"
-})(["background-color:#e2e2e2;*{color:var(--second-clr);}.inner--content{display:grid;grid-row-gap:1em;padding:2em 1em;}.title{font-size:1.2rem;margin-bottom:1em;}@media screen and (min-width:1000px){.inner--content{padding:2em;}}"]);
+})(["background-color:#e2e2e2;position:relative;*{color:var(--second-clr);}.inner--content{display:grid;grid-row-gap:1em;padding:2em 1em;}.title{font-size:1.2rem;margin-bottom:1em;}@media screen and (min-width:1000px){.inner--content{padding:2em;}}"]);
 
 const ProfileStats = ({
   data,
@@ -2166,14 +2166,14 @@ const ProfileStats = ({
     className: "profile--stats",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     },
     __self: undefined
   }, __jsx("div", {
     className: "inner--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: undefined
   }, __jsx(_SocialLinks__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2181,14 +2181,14 @@ const ProfileStats = ({
     homepage: data.homepage,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 38
     },
     __self: undefined
   }), __jsx(_Facts__WEBPACK_IMPORTED_MODULE_3__["default"], {
     data: data,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: undefined
   }), __jsx(_Genre__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2196,7 +2196,7 @@ const ProfileStats = ({
     typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: undefined
   }), __jsx(_Keyords__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2204,7 +2204,7 @@ const ProfileStats = ({
     typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 41
     },
     __self: undefined
   })));
@@ -2390,7 +2390,7 @@ __webpack_require__.r(__webpack_exports__);
 const MediaMainStyle = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.section.withConfig({
   displayName: "mediaMainStyle__MediaMainStyle",
   componentId: "chwpvr-0"
-})(["background:var(--bg-dark-gradient);margin-top:90px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;}.profile--main{position:relative;padding:2em 0em 0;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--main{max-width:1100px;padding:1em 0 0;}}@media screen and (min-width:1100px){margin-top:60px;.profile--backdrop{display:none;}.profile--main{max-width:100%;width:100%;display:flex;flex-wrap:wrap;.profile--content{flex:100%;width:100%;}.main-con{max-width:60%;margin-left:auto;margin-right:5%;padding:3em 0;}.profile--stats{flex:0 1 30%;}}}"], ({
+})(["background:var(--bg-dark-gradient);margin-top:90px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;}.profile--main{position:relative;padding:2em 0em 0;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--main{max-width:1100px;padding:1em 0 0;}}@media screen and (min-width:1100px){margin-top:60px;.profile--backdrop{display:none;}.profile--main{max-width:100%;width:100%;display:flex;flex-wrap:wrap;z-index:1;.profile--content{flex:100%;width:100%;}.main-con{max-width:60%;margin-left:auto;margin-right:5%;padding:3em 0;position:relative;}.profile--stats{flex:0 1 30%;}}}"], ({
   bgImg
 }) => `${_context_types__WEBPACK_IMPORTED_MODULE_1__["IMG_URL_OR"]}${bgImg}`);
 /* harmony default export */ __webpack_exports__["default"] = (MediaMainStyle);
@@ -4364,7 +4364,7 @@ MovieProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!************************************!*\
   !*** multi ./pages/movie/[id].jsx ***!
   \************************************/

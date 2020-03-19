@@ -995,7 +995,7 @@ __webpack_require__.r(__webpack_exports__);
 var SimpleFlex = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "SimpleFlex",
   componentId: "sc-9wbivm-0"
-})(["display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-points-x:repeat( ", " );scroll-snap-type:mandatory;padding:1em 0;& > div{flex-shrink:0;width:", ";margin:0 1em;&:first-child{margin-left:0;}}@media screen and (min-width:1100px){::-webkit-scrollbar{height:10px;background-color:#f5f5f5;}::-webkit-scrollbar-thumb{background-color:#535353;}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#f5f5f5;}}"], function (_ref) {
+})(["display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-points-x:repeat( ", " );scroll-snap-type:mandatory;padding:1em 0;scrollbar-width:thin;scrollbar-color:var(--primary-clr) var(--accent-clr);& > div{flex-shrink:0;width:", ";margin:0 1em;&:first-child{margin-left:0;}}@media screen and (min-width:1100px){::-webkit-scrollbar{height:10px;background-color:#f5f5f5;}::-webkit-scrollbar-thumb{background-color:#535353;}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#f5f5f5;}}"], function (_ref) {
   var setWidth = _ref.setWidth;
   return setWidth ? setWidth : '100%';
 }, function (_ref2) {
@@ -2076,7 +2076,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.withConfig({
   displayName: "ProfileStats__Styled",
   componentId: "sc-1wmtszh-0"
-})(["background-color:#e2e2e2;*{color:var(--second-clr);}.inner--content{display:grid;grid-row-gap:1em;padding:2em 1em;}.title{font-size:1.2rem;margin-bottom:1em;}@media screen and (min-width:1000px){.inner--content{padding:2em;}}"]);
+})(["background-color:#e2e2e2;position:relative;*{color:var(--second-clr);}.inner--content{display:grid;grid-row-gap:1em;padding:2em 1em;}.title{font-size:1.2rem;margin-bottom:1em;}@media screen and (min-width:1000px){.inner--content{padding:2em;}}"]);
 
 var ProfileStats = function ProfileStats(_ref) {
   var data = _ref.data,
@@ -2085,14 +2085,14 @@ var ProfileStats = function ProfileStats(_ref) {
     className: "profile--stats",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 36
     },
     __self: this
   }, __jsx("div", {
     className: "inner--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: this
   }, __jsx(_SocialLinks__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2100,14 +2100,14 @@ var ProfileStats = function ProfileStats(_ref) {
     homepage: data.homepage,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 38
     },
     __self: this
   }), __jsx(_Facts__WEBPACK_IMPORTED_MODULE_3__["default"], {
     data: data,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: this
   }), __jsx(_Genre__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2115,7 +2115,7 @@ var ProfileStats = function ProfileStats(_ref) {
     typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: this
   }), __jsx(_Keyords__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2123,7 +2123,7 @@ var ProfileStats = function ProfileStats(_ref) {
     typeFor: data.typeFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 41
     },
     __self: this
   })));
@@ -2312,7 +2312,7 @@ __webpack_require__.r(__webpack_exports__);
 var MediaMainStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].section.withConfig({
   displayName: "mediaMainStyle__MediaMainStyle",
   componentId: "chwpvr-0"
-})(["background:var(--bg-dark-gradient);margin-top:90px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;}.profile--main{position:relative;padding:2em 0em 0;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--main{max-width:1100px;padding:1em 0 0;}}@media screen and (min-width:1100px){margin-top:60px;.profile--backdrop{display:none;}.profile--main{max-width:100%;width:100%;display:flex;flex-wrap:wrap;.profile--content{flex:100%;width:100%;}.main-con{max-width:60%;margin-left:auto;margin-right:5%;padding:3em 0;}.profile--stats{flex:0 1 30%;}}}"], function (_ref) {
+})(["background:var(--bg-dark-gradient);margin-top:90px;.profile--backdrop{background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(", ") no-repeat center;background-color:black;min-height:400px;background-size:cover;background-position:top;object-fit:cover;position:relative;}.profile--main{position:relative;padding:2em 0em 0;max-width:750px;margin:0 auto;}@media screen and (min-width:768px){.profile--main{max-width:1100px;padding:1em 0 0;}}@media screen and (min-width:1100px){margin-top:60px;.profile--backdrop{display:none;}.profile--main{max-width:100%;width:100%;display:flex;flex-wrap:wrap;z-index:1;.profile--content{flex:100%;width:100%;}.main-con{max-width:60%;margin-left:auto;margin-right:5%;padding:3em 0;position:relative;}.profile--stats{flex:0 1 30%;}}}"], function (_ref) {
   var bgImg = _ref.bgImg;
   return "".concat(_context_types__WEBPACK_IMPORTED_MODULE_1__["IMG_URL_OR"]).concat(bgImg);
 });
@@ -34207,7 +34207,7 @@ MovieProfile.getInitialProps = function _callee(ctx) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!***********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fmovie%2F%5Bid%5D&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Cmovie%5C%5Bid%5D.jsx ***!
   \***********************************************************************************************************************************************************************************/
@@ -34230,5 +34230,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

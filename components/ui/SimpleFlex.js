@@ -9,6 +9,8 @@ const SimpleFlex = styled.div`
   );
   scroll-snap-type: mandatory;
   padding: 1em 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-clr) var(--accent-clr);
 
   & > div {
     flex-shrink: 0;

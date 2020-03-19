@@ -748,7 +748,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "PersonFacts__Styled",
   componentId: "sc-9rx50k-0"
-})(["background-color:var(--accent-clr);*{color:var(--second-clr);}.inner--content{padding:2em 1em;}.subTitle{margin:1em 0;}@media screen and (min-width:1000px){.inner--content{margin-left:auto;display:flex;flex-direction:column;width:375px;padding-top:0.5em;}}"]);
+})(["background-color:var(--accent-clr);position:relative;z-index:1;*{color:var(--second-clr);}.inner--content{padding:2em 1em;}.subTitle{margin:1em 0;}@media screen and (min-width:1000px){&::before{content:'';background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('/theater_sets2.jpg') no-repeat center;background-color:black;min-height:800px;position:absolute;top:0;left:0;right:calc(375px - -10px);bottom:0;background-size:cover;background-position:0 85%;background-attachment:fixed;object-fit:cover;z-index:-1;}.inner--content{margin-left:auto;display:flex;flex-direction:column;width:375px;padding-top:0.5em;}}"]);
 
 const PersonFacts = ({
   data
@@ -757,14 +757,14 @@ const PersonFacts = ({
     className: "profile--facts",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 52
     },
     __self: undefined
   }, __jsx("div", {
     className: "inner--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx(_SocialLinks__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -772,161 +772,161 @@ const PersonFacts = ({
     homepage: data.homepage,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 54
     },
     __self: undefined
   }), __jsx("h3", {
     className: "subTitle",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 55
     },
     __self: undefined
   }, "Personal Info"), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 56
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 57
     },
     __self: undefined
   }, "Know For"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 58
     },
     __self: undefined
   }, data.known_for_department)), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 60
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 61
     },
     __self: undefined
   }, "Gender"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 62
     },
     __self: undefined
   }, data.gender === 1 ? 'Female' : 'Male')), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 66
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 67
     },
     __self: undefined
   }, "Know Credits"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 68
     },
     __self: undefined
   }, parseInt(data.combined_credits.cast.length - 1) + parseInt(data.combined_credits.crew.length - 1))), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 73
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 74
     },
     __self: undefined
   }, "Birthday"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 75
     },
     __self: undefined
   }, data.birthday ? Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_2__["default"])(data.birthday) : '-')), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 79
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 80
     },
     __self: undefined
   }, "Place of Birth"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 81
     },
     __self: undefined
   }, data.place_of_birth)), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 83
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 84
     },
     __self: undefined
   }, "Official Site"), __jsx("span", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 85
     },
     __self: undefined
   }, data.homepage ? data.homepage : '-')), __jsx("div", {
     className: "stat",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 89
     },
     __self: undefined
   }, __jsx("p", {
     className: "stat--title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 90
     },
     __self: undefined
   }, "Also Know As"), __jsx("div", {
     className: "stat--subtext",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 91
     },
     __self: undefined
   }, data.also_known_as.map(name => __jsx("span", {
@@ -934,7 +934,7 @@ const PersonFacts = ({
     className: "d-block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 93
     },
     __self: undefined
   }, name))))));
@@ -959,7 +959,7 @@ __webpack_require__.r(__webpack_exports__);
 const SimpleFlex = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
   displayName: "SimpleFlex",
   componentId: "sc-9wbivm-0"
-})(["display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-points-x:repeat( ", " );scroll-snap-type:mandatory;padding:1em 0;& > div{flex-shrink:0;width:", ";margin:0 1em;&:first-child{margin-left:0;}}@media screen and (min-width:1100px){::-webkit-scrollbar{height:10px;background-color:#f5f5f5;}::-webkit-scrollbar-thumb{background-color:#535353;}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#f5f5f5;}}"], ({
+})(["display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-points-x:repeat( ", " );scroll-snap-type:mandatory;padding:1em 0;scrollbar-width:thin;scrollbar-color:var(--primary-clr) var(--accent-clr);& > div{flex-shrink:0;width:", ";margin:0 1em;&:first-child{margin-left:0;}}@media screen and (min-width:1100px){::-webkit-scrollbar{height:10px;background-color:#f5f5f5;}::-webkit-scrollbar-thumb{background-color:#535353;}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#f5f5f5;}}"], ({
   setWidth
 }) => setWidth ? setWidth : '100%', ({
   setWidth
@@ -3016,7 +3016,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.section.withConfig({
   displayName: "id__Styled",
   componentId: "sc-1s2kqjg-0"
-})(["background:var(--bg-dark-gradient);margin-top:110px;.profile--person{max-width:300px;margin:0 auto;img{height:100%;object-fit:contain;}}.profile--media{padding-bottom:2em;}.line-between{display:none;width:100%;background:var(--bg-gradient);}@media screen and (min-width:1000px){margin-top:100px;display:grid;grid-template-areas:'pp bio' 'lin lin' 'pf pm';grid-template-columns:calc(100% - 60%) 1fr;grid-auto-rows:auto 40px auto;.profile--person{grid-area:pp;justify-self:end;max-width:355px;margin:0;margin-bottom:2em;z-index:10;}.profile--biography{grid-area:bio;}.line-between{grid-area:lin;display:block;}.profile--media{grid-area:pm;background:var(--white-clr);padding:1.2em 0 3em 2em;}.profile--media--container{max-width:1100px;}.profile--facts{grid-area:pf;}}"]);
+})(["background:var(--bg-dark-gradient);margin-top:110px;position:relative;.profile--person{max-width:300px;margin:0 auto;img{height:100%;object-fit:contain;}}.profile--media{padding-bottom:2em;}.line-between{display:none;width:100%;background:var(--bg-gradient);}@media screen and (min-width:1000px){margin-top:100px;display:grid;grid-template-areas:'pp bio' 'lin lin' 'pf pm';grid-template-columns:calc(100% - 60%) 1fr;grid-auto-rows:auto 40px auto;z-index:1;&::before{content:'';background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('/theater_sets.jpg') no-repeat center;background-color:black;min-height:800px;position:absolute;top:0;left:0;right:0;background-size:cover;background-position:0 85%;background-attachment:fixed;object-fit:cover;z-index:-1;}.profile--person{grid-area:pp;justify-self:end;max-width:355px;margin:0;margin-bottom:2em;z-index:10;}.profile--biography{grid-area:bio;}.line-between{grid-area:lin;display:block;}.profile--media{grid-area:pm;background:var(--white-clr);padding:1.2em 0 3em 2em;}.profile--media--container{max-width:1100px;}.profile--facts{grid-area:pf;}}"]);
 
 const PersonProfile = ({
   person
@@ -3030,21 +3030,21 @@ const PersonProfile = ({
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 110
     },
     __self: undefined
   }, __jsx(Styled, {
     className: "profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 111
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--person pt-5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 112
     },
     __self: undefined
   }, __jsx("img", {
@@ -3052,7 +3052,7 @@ const PersonProfile = ({
     alt: person.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 113
     },
     __self: undefined
   })), __jsx(_components_ui_PersonProfile_Biography__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -3060,35 +3060,35 @@ const PersonProfile = ({
     bio: person.biography,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 122
     },
     __self: undefined
   }), __jsx("div", {
     className: "line-between",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 123
     },
     __self: undefined
   }), __jsx("div", {
     className: "profile--media",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 124
     },
     __self: undefined
   }, __jsx("div", {
     className: "profile--media--container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 125
     },
     __self: undefined
   }, __jsx(_components_ui_PersonProfile_KnownFor__WEBPACK_IMPORTED_MODULE_5__["default"], {
     data: knonwFor,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 126
     },
     __self: undefined
   }), __jsx(_components_ui_PersonProfile_MediaCredits__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -3097,14 +3097,14 @@ const PersonProfile = ({
     setTab: setTab,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 127
     },
     __self: undefined
   }))), __jsx(_components_ui_PersonProfile_PersonFacts__WEBPACK_IMPORTED_MODULE_7__["default"], {
     data: person,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 130
     },
     __self: undefined
   })));

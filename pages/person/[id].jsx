@@ -11,6 +11,7 @@ import Biography from '../../components/ui/PersonProfile/Biography';
 const Styled = styled.section`
   background: var(--bg-dark-gradient);
   margin-top: 110px;
+  position: relative;
 
   .profile--person {
     max-width: 300px;
@@ -41,6 +42,24 @@ const Styled = styled.section`
       'pf pm';
     grid-template-columns: calc(100% - 60%) 1fr;
     grid-auto-rows: auto 40px auto;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url('/theater_sets.jpg') no-repeat center;
+      background-color: black;
+      min-height: 800px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-size: cover;
+      background-position: 0 85%;
+      background-attachment: fixed;
+      object-fit: cover;
+      z-index: -1;
+    }
 
     .profile--person {
       grid-area: pp;

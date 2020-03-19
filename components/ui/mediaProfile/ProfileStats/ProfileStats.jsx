@@ -7,6 +7,7 @@ import Keyords from './Keyords';
 
 const Styled = styled.section`
   background-color: #e2e2e2;
+  position: relative;
 
   * {
     color: var(--second-clr);

@@ -5,6 +5,8 @@ import SocialLinks from '../SocialLinks';
 
 const Styled = styled.div`
   background-color: var(--accent-clr);
+  position: relative;
+  z-index: 1;
   * {
     color: var(--second-clr);
   }
@@ -18,6 +20,24 @@ const Styled = styled.div`
   }
 
   @media screen and (min-width: 1000px) {
+    &::before {
+      content: '';
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url('/theater_sets2.jpg') no-repeat center;
+      background-color: black;
+      min-height: 800px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: calc(375px - -10px);
+      bottom: 0;
+      background-size: cover;
+      background-position: 0 85%;
+      background-attachment: fixed;
+      object-fit: cover;
+      z-index: -1;
+    }
+
     .inner--content {
       margin-left: auto;
       display: flex;

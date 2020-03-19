@@ -42,6 +42,25 @@ const MediaMainStyle = styled.section`
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+      z-index: 1;
+
+      /* &::before {
+        content: '';
+        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+          url('/theater_sets.jpg') no-repeat center;
+        background-color: black;
+        min-height: 800px;
+        position: absolute;
+        top: 800px;
+        left: 0;
+        right: calc(88rem - -24vw);
+        bottom: 0;
+        background-size: cover;
+        background-position: 0 85%;
+        background-attachment: fixed;
+        object-fit: cover;
+        z-index: -1;
+      } */
 
       .profile--content {
         flex: 100%;
@@ -53,6 +72,7 @@ const MediaMainStyle = styled.section`
         margin-left: auto;
         margin-right: 5%;
         padding: 3em 0;
+        position: relative;
       }
 
       .profile--stats {
