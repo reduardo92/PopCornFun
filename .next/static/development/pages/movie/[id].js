@@ -21,7 +21,7 @@ var MovieContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])()
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, getMovie */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_SEARCH_DATA, CLEAR_SEARCH_DATA, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32,6 +32,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL_OR", function() { return IMG_URL_OR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MODAL_MEDIA", function() { return SET_MODAL_MEDIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_MODAL_MEDIA", function() { return RESET_MODAL_MEDIA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_SEARCH_DATA", function() { return SET_SEARCH_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SEARCH_DATA", function() { return CLEAR_SEARCH_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
@@ -41,7 +43,9 @@ var IMG_URL = 'https://image.tmdb.org/t/p/w500';
 var IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
 var SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
 var RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // DATA
-// Movie DB
+
+var SET_SEARCH_DATA = 'SET_SEARCH_DATA';
+var CLEAR_SEARCH_DATA = 'CLEAR_SEARCH_DATA'; // Movie DB
 
 function getMovie(id, param) {
   var movie = {

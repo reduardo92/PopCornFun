@@ -26,14 +26,18 @@ const Styled = styled.header`
   .navbar-nav .nav-link {
     color: var(--white-clr);
     font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: var(--ease--in--out--02s);
 
     &:hover {
-      color: var(--primary-clr);
+      color: var(--white-clr);
+      border-bottom-color: var(--primary-clr);
     }
   }
   /* Change Nav Links Active */
   .selected {
-    color: var(--primary-clr) !important;
+    border-bottom-color: var(--primary-clr) !important;
+    color: var(--white-clr) !important;
   }
 
   .navbar-brand {

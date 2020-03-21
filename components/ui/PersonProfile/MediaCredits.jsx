@@ -19,6 +19,10 @@ const Styled = styled.div`
     color: var(--white-clr);
   }
 
+  .credit--role {
+    font-size: 0.9rem;
+  }
+
   .credit--inner {
     box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.3);
   }
@@ -49,6 +53,10 @@ const Styled = styled.div`
 
     .subTitle {
       color: var(--second-clr);
+    }
+
+    .credit--role {
+      font-size: 1rem;
     }
   }
 `;

@@ -106,6 +106,7 @@ const PersonProfile = ({ person }) => {
       .sort((a, b) => b.vote_count - a.vote_count)
       .slice(0, 8);
 
+  console.log('PErson', person);
   return (
     <Layout>
       <Styled className='profile'>

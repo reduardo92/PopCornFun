@@ -177,60 +177,6 @@ const Footer = () => __jsx(Styled, {
 
 /***/ }),
 
-/***/ "./components/Hooks/useForm.js":
-/*!*************************************!*\
-  !*** ./components/Hooks/useForm.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-const useForm = (initialState, callback) => {
-  const {
-    0: form,
-    1: setForm
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState);
-
-  const handleChange = e => {
-    e.persist();
-    setForm(form => _objectSpread({}, form, {
-      [e.target.name]: e.target.value
-    }));
-  };
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-
-    if (e.currentTarget.checkValidity() === false) {
-      e.stopPropagation();
-    }
-
-    callback();
-  };
-
-  return {
-    handleChange,
-    handleSubmit,
-    form,
-    setForm
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (useForm);
-
-/***/ }),
-
 /***/ "./components/Link.js":
 /*!****************************!*\
   !*** ./components/Link.js ***!
@@ -312,7 +258,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.header.withConfig({
   displayName: "Navbar__Styled",
   componentId: "z1ydwt-0"
-})(["position:fixed;top:0;right:0;left:0;z-index:1030;background-image:var(--bg-dark-gradient);.navbar{max-width:1500px;margin:0 auto;}.navbar-toggler{background-color:var(--white-clr);}.navbar-nav .nav-link{color:var(--white-clr);font-weight:bold;&:hover{color:var(--primary-clr);}}.selected{color:var(--primary-clr) !important;}.navbar-brand{width:30px;font-size:1rem;display:flex;align-items:center;color:var(--white-clr);font-weight:bold;cursor:pointer;&:hover,&:focus{color:inherit;}img{display:inline-block;margin-right:0.5em;}}@media screen and (min-width:1000px){.navbar-collapse{margin-left:13em;}.navbar-brand{width:40px;}}"]);
+})(["position:fixed;top:0;right:0;left:0;z-index:1030;background-image:var(--bg-dark-gradient);.navbar{max-width:1500px;margin:0 auto;}.navbar-toggler{background-color:var(--white-clr);}.navbar-nav .nav-link{color:var(--white-clr);font-weight:bold;border-bottom:2px solid transparent;transition:var(--ease--in--out--02s);&:hover{color:var(--white-clr);border-bottom-color:var(--primary-clr);}}.selected{border-bottom-color:var(--primary-clr) !important;color:var(--white-clr) !important;}.navbar-brand{width:30px;font-size:1rem;display:flex;align-items:center;color:var(--white-clr);font-weight:bold;cursor:pointer;&:hover,&:focus{color:inherit;}img{display:inline-block;margin-right:0.5em;}}@media screen and (min-width:1000px){.navbar-collapse{margin-left:13em;}.navbar-brand{width:40px;}}"]);
 
 const NavCustom = () => {
   const {
@@ -325,7 +271,7 @@ const NavCustom = () => {
     navScroll: navScroll,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 77
     },
     __self: undefined
   }, __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -333,21 +279,21 @@ const NavCustom = () => {
     expand: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 78
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 79
     },
     __self: undefined
   }, __jsx("a", {
     className: "navbar-brand",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 80
     },
     __self: undefined
   }, __jsx("img", {
@@ -355,35 +301,35 @@ const NavCustom = () => {
     alt: "popcorn logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 81
     },
     __self: undefined
   }), "PopCorn Fun")), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Toggle, {
     "aria-controls": "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 85
     },
     __self: undefined
   }), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Collapse, {
     id: "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 86
     },
     __self: undefined
   }, __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
     className: "mr-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 87
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 88
     },
     __self: undefined
   }, __jsx("a", {
@@ -391,14 +337,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 89
     },
     __self: undefined
   }, "Home")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/discover",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 93
     },
     __self: undefined
   }, __jsx("a", {
@@ -406,14 +352,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 94
     },
     __self: undefined
   }, "Discover")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 98
     },
     __self: undefined
   }, __jsx("a", {
@@ -421,14 +367,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 99
     },
     __self: undefined
   }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 103
     },
     __self: undefined
   }, __jsx("a", {
@@ -436,14 +382,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 104
     },
     __self: undefined
   }, "Tv Shows")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/person",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 108
     },
     __self: undefined
   }, __jsx("a", {
@@ -451,20 +397,20 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 109
     },
     __self: undefined
   }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 114
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 115
     },
     __self: undefined
   }, __jsx("a", {
@@ -472,14 +418,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 116
     },
     __self: undefined
   }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/signup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 120
     },
     __self: undefined
   }, __jsx("a", {
@@ -487,13 +433,13 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 121
     },
     __self: undefined
   }, "Sign Up"))))), __jsx(_ui_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
+      lineNumber: 128
     },
     __self: undefined
   }));
@@ -534,6 +480,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MovieContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MovieContext */ "./components/context/MovieContext.js");
 /* harmony import */ var _useMovieReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useMovieReducer */ "./components/context/useMovieReducer.js");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./types */ "./components/context/types.js");
+/* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\context\\MovieProvider.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -548,9 +495,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 const log = console.log;
 const movieInitalState = {
-  query: 'movie',
+  searchQuery: null,
+  searchData: null,
   pageData: {},
   isModal: {
     media: null,
@@ -607,6 +556,20 @@ const StateProvider = ({
     type
   });
 
+  const getSearchData = async search => {
+    try {
+      const {
+        results
+      } = await Object(_utility_movieDB__WEBPACK_IMPORTED_MODULE_4__["default"])('search/multi', `page=1&include_adult=false&query=${search}`);
+      dispatch({
+        type: _types__WEBPACK_IMPORTED_MODULE_3__["SET_SEARCH_DATA"],
+        payload: results
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   console.log(state);
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
     value: _objectSpread({
@@ -617,11 +580,12 @@ const StateProvider = ({
       setData,
       setModal,
       clearData,
-      navRef
+      navRef,
+      getSearchData
     }, state),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 61
     },
     __self: undefined
   }, children);
@@ -635,7 +599,7 @@ const StateProvider = ({
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, getMovie */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_SEARCH_DATA, CLEAR_SEARCH_DATA, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -646,6 +610,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL_OR", function() { return IMG_URL_OR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_MODAL_MEDIA", function() { return SET_MODAL_MEDIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_MODAL_MEDIA", function() { return RESET_MODAL_MEDIA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_SEARCH_DATA", function() { return SET_SEARCH_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SEARCH_DATA", function() { return CLEAR_SEARCH_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
@@ -655,7 +621,9 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
 const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
 const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // DATA
-// Movie DB
+
+const SET_SEARCH_DATA = 'SET_SEARCH_DATA';
+const CLEAR_SEARCH_DATA = 'CLEAR_SEARCH_DATA'; // Movie DB
 
 function getMovie(id, param) {
   const movie = {
@@ -710,7 +678,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 const useMovieReducer = (state, action) => {
   switch (action.type) {
+    // Set Search Data
+    case _types__WEBPACK_IMPORTED_MODULE_0__["SET_SEARCH_DATA"]:
+      return _objectSpread({}, state, {
+        searchData: action.payload
+      });
+    // Clear Search Data
+
+    case _types__WEBPACK_IMPORTED_MODULE_0__["CLEAR_SEARCH_DATA"]:
+      return _objectSpread({}, state, {
+        searchData: null
+      });
     // Set Modal Media
+
     case _types__WEBPACK_IMPORTED_MODULE_0__["SET_MODAL_MEDIA"]:
       return _objectSpread({}, state, {
         isModal: {
@@ -750,91 +730,202 @@ const useMovieReducer = (state, action) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Hooks_useForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Hooks/useForm */ "./components/Hooks/useForm.js");
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Form */ "react-bootstrap/Form");
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/MovieContext */ "./components/context/MovieContext.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Form */ "react-bootstrap/Form");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../context/types */ "./components/context/types.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\SearchFrom.jsx";
+
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
 
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "SearchFrom__Styled",
   componentId: "fc5opr-0"
-})(["background-color:var(--white-clr);padding:0 1em;.form{max-width:920px;margin:0 auto;}.form-group{display:flex;margin:0;}.form-label{margin-right:0.5em;display:flex;align-items:center;justify-content:center;svg{color:var(--grey-clr);}}.form-control{border:0;}"]);
+})(["background-color:var(--white-clr);padding:0;.form{max-width:920px;margin:0 auto;padding:0 1em;position:relative;}.form-group{display:flex;margin:0;}.form-label{margin-right:0.5em;display:flex;align-items:center;justify-content:center;svg{color:var(--grey-clr);}}.form--clear{position:absolute;top:50%;right:2%;transform:translate(-2%,-50%);color:var(--primary-clr);font-weight:bold;font-size:1.5rem;cursor:pointer;transition:var(--ease--in--out--02s);&:hover{opacity:0.7;}}.form-control{border:0;color:var(--grey-clr);&::placeholder{font-size:0.9rem;}}.search--content{height:auto;display:block;}.search--content--item{border-top:1px solid rgba(0,0,0,0.1);padding:0.1em 1em;transition:var(--ease--in--out--02s);cursor:pointer;&:hover{background-color:rgba(196,196,196,0.4);}&__name{color:var(--second-clr);margin-bottom:0;margin-left:1em;.media--in{color:rgb(151,151,151);margin-left:0.3em;}}&:hover .search--content--item__name,&:hover .search--content--item__icon{color:var(--primary-clr);}}.wrapper{margin:0 auto;max-width:920px;display:flex;align-items:center;font-size:0.9em;color:var(--second-clr);text-transform:capitalize;}.closee{display:none;}"]);
 
 const SearchFrom = () => {
-  const submit = () => {
-    if (form.search === '') {
-      console.log('enter something'); //   setAlert('Please search something...', 'danger');
+  const {
+    getSearchData,
+    clearData,
+    searchData
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  const {
+    0: search,
+    1: setSearch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  const {
+    0: isFocus,
+    1: setIsFocus
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const inputRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["useRouter"])();
+
+  const handleChange = e => setSearch(e.target.value);
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (search === '') {
+      console.log('emty', search);
+      clearData(_context_types__WEBPACK_IMPORTED_MODULE_7__["CLEAR_SEARCH_DATA"]);
+      return;
     } else {
-      console.log('loged', form.search);
-      setForm({
-        search: ''
-      });
+      getSearchData(search);
+      console.log('sea', search);
     }
+  }, [search]);
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    if (search === '') {
+      console.log('enter something');
+    } else {
+      console.log('loged', search);
+      router.push('/search/[query]', `/search/${search}`);
+    }
+
+    setSearch('');
   };
 
-  const {
-    handleChange,
-    handleSubmit,
-    form,
-    setForm
-  } = Object(_Hooks_useForm__WEBPACK_IMPORTED_MODULE_2__["default"])({
-    search: ''
-  }, submit);
   return __jsx(Styled, {
     classname: "search form",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 146
     },
     __self: undefined
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a, {
     className: "form",
+    onClick: () => setIsFocus(true),
+    onBlur: () => setTimeout(() => setIsFocus(false), 100),
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 147
     },
     __self: undefined
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Group, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Group, {
     controlId: "search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 153
     },
     __self: undefined
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Label, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 154
     },
     __self: undefined
-  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_4__["FaSearch"], {
+  }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__["FaSearch"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 155
     },
     __self: undefined
-  })), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3___default.a.Control, {
+  })), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Control, {
+    ref: inputRef,
     type: "text",
     name: "search",
-    value: form.search,
+    value: search,
     onChange: handleChange,
     placeholder: "Search for a movie, tv show, person...",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 157
     },
     __self: undefined
-  }))));
+  }), isFocus && __jsx("span", {
+    onClick: () => setSearch(''),
+    className: "form--clear",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 166
+    },
+    __self: undefined
+  }, "x"))), __jsx("div", {
+    className: `search--content ${isFocus ? 'showw' : 'closee'}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 172
+    },
+    __self: undefined
+  }, searchData && searchData.map(item => __jsx("div", {
+    key: item.id,
+    className: "search--content--item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 175
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    href: `/${item.media_type}/[id]`,
+    as: `/${item.media_type}/${item.id}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 176
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "wrapper",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 180
+    },
+    __self: undefined
+  }, item.media_type === 'movie' ? __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdLocalMovies"], {
+    className: "search--content--item__icon",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 182
+    },
+    __self: undefined
+  }) : item.media_type === 'tv' ? __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdTv"], {
+    className: "search--content--item__icon",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 184
+    },
+    __self: undefined
+  }) : __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdPerson"], {
+    className: "search--content--item__icon",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 186
+    },
+    __self: undefined
+  }), __jsx("p", {
+    className: "search--content--item__name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 188
+    },
+    __self: undefined
+  }, item.name || item.title, __jsx("span", {
+    className: "media--in",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 190
+    },
+    __self: undefined
+  }, "in", ' ', item.media_type === 'person' ? 'People' : item.media_type))))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchFrom);
@@ -2894,6 +2985,17 @@ module.exports = require("react-bootstrap/Navbar");
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/fa");
+
+/***/ }),
+
+/***/ "react-icons/md":
+/*!*********************************!*\
+  !*** external "react-icons/md" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/md");
 
 /***/ }),
 

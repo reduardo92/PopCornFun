@@ -7,6 +7,8 @@ export const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
 export const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
 export const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA';
 // DATA
+export const SET_SEARCH_DATA = 'SET_SEARCH_DATA';
+export const CLEAR_SEARCH_DATA = 'CLEAR_SEARCH_DATA';
 
 // Movie DB
 
