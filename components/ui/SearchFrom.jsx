@@ -17,6 +17,10 @@ const Styled = styled.div`
     margin: 0 auto;
     padding: 0 1em;
     position: relative;
+
+    &:hover svg {
+      color: var(--primary-clr);
+    }
   }
 
   .form-group {
@@ -24,13 +28,20 @@ const Styled = styled.div`
     margin: 0;
   }
   .form-label {
+    margin: 0;
     margin-right: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+
     svg {
       color: var(--grey-clr);
     }
+
+    /* &:hover svg {
+      color: var(--primary-clr);
+    } */
   }
 
   .form--clear {
@@ -57,19 +68,24 @@ const Styled = styled.div`
     &::placeholder {
       font-size: 0.9rem;
     }
-
-    /* &:not( {
-      background-color: red;
-    } */
   }
 
   .search--content {
     height: auto;
-    display: block;
+    overflow-y: auto;
+    box-shadow: 0 11px 15px rgba(0, 0, 0, 0.28);
+
+    & > .search--content--item:first-child {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    & > .search--content--item:last-child {
+      border-top: none;
+    }
   }
 
   .search--content--item {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0.1em 1em;
     transition: var(--ease--in--out--02s);
     cursor: pointer;
@@ -104,13 +120,17 @@ const Styled = styled.div`
     text-transform: capitalize;
   }
 
-  .closee {
-    display: none;
+  @media screen and (min-width: 1000px) {
+    .form {
+      padding: 0;
+    }
   }
 `;
 
 const SearchFrom = () => {
-  const { getSearchData, clearData, searchData } = useContext(MovieContext);
+  const { getSearchData, clearData, searchData, searchQuery } = useContext(
+    MovieContext
+  );
   const [search, setSearch] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const inputRef = useRef();
@@ -142,14 +162,10 @@ const SearchFrom = () => {
     setSearch('');
   };
 
+  console.log(isFocus, search, searchData);
   return (
     <Styled classname='search form'>
-      <Form
-        className='form'
-        onClick={() => setIsFocus(true)}
-        onBlur={() => setTimeout(() => setIsFocus(false), 100)}
-        onSubmit={handleSubmit}
-      >
+      <Form className='form' onSubmit={handleSubmit}>
         <Form.Group controlId='search'>
           <Form.Label>
             <FaSearch />
@@ -160,22 +176,36 @@ const SearchFrom = () => {
             name='search'
             value={search}
             onChange={handleChange}
+            onClick={() => setIsFocus(true)}
+            onBlur={() => setTimeout(() => setIsFocus(false), 300)}
             placeholder='Search for a movie, tv show, person...'
           />
-          {isFocus && (
-            <span onClick={() => setSearch('')} className='form--clear'>
-              x
-            </span>
-          )}
         </Form.Group>
+        {(isFocus === true || search !== '') && (
+          <span
+            onClick={() => {
+              setSearch('');
+              setIsFocus(false);
+            }}
+            className='form--clear'
+          >
+            x
+          </span>
+        )}
       </Form>
-      <div className={`search--content ${isFocus ? 'showw' : 'closee'}`}>
-        {searchData &&
+      <div className='search--content'>
+        {isFocus &&
+          searchData &&
           searchData.map(item => (
-            <div key={item.id} className='search--content--item'>
-              <Link
-                href={`/${item.media_type}/[id]`}
-                as={`/${item.media_type}/${item.id}`}
+            <Link
+              key={item.id}
+              href={`/${item.media_type}/[id]`}
+              as={`/${item.media_type}/${item.id}`}
+            >
+              <div
+                // key={item.id}
+                onClick={() => setSearch('')}
+                className='search--content--item'
               >
                 <div className='wrapper'>
                   {item.media_type === 'movie' ? (
@@ -195,8 +225,8 @@ const SearchFrom = () => {
                     </span>
                   </p>
                 </div>
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
       </div>
     </Styled>

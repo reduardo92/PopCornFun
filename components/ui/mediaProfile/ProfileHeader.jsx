@@ -71,7 +71,7 @@ const Styled = styled.div`
 
     &--tab {
       border-right: 1px solid #7b7b7b;
-      padding: 0 2em;
+      padding: 0 calc(2em - 1em);
       text-align: center;
       display: flex;
       align-items: center;
