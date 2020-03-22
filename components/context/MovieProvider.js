@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, useReducer } from 'react';
 import MovieContext from './MovieContext';
 import useMovieReducer from './useMovieReducer';
-import { SET_MODAL_MEDIA, SET_SEARCH_DATA, CLEAR_SEARCH_DATA } from './types';
+import { SET_MODAL_MEDIA, SET_SEARCH_DATA } from './types';
 import movieDB from '../utility/movieDB';
 
 const log = console.log;
 
 const movieInitalState = {
-  searchQuery: null,
+  searchQuery: '',
   searchData: null,
   pageData: {},
   isModal: { media: null, toggle: false, for: null }

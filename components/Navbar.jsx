@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Link from './Link';
 import NextLink from 'next/link';
 import SearchFrom from './ui/SearchFrom';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Styled = styled.header`
   position: fixed;
@@ -59,6 +60,31 @@ const Styled = styled.header`
     }
   }
 
+  .nav--dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown--link {
+    display: none;
+  }
+
+  .dropdown--btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    outline-color: transparent;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .dropdown--btn {
+      display: none;
+    }
+
+    .dropdown--link {
+      display: block;
+    }
+  }
+
   @media screen and (min-width: 1000px) {
     .navbar-collapse {
       margin-left: 13em;
@@ -95,16 +121,83 @@ const NavCustom = () => {
                 Discover
               </a>
             </Link>
-            <Link href='/movie'>
+            {/* <Link href='/movie'>
               <a className='nav-link' role='button'>
                 Movies
+                <IoIosArrowDown className='nav--arrow' />
               </a>
-            </Link>
-            <Link href='/tv'>
+            </Link> */}
+            {/*  */}
+            <div className='dropdown nav-item nav--dropdown'>
+              <Link href='/movie'>
+                <a className='nav-link dropdown--link' role='button'>
+                  Movies <IoIosArrowDown className='nav--arrow' />
+                </a>
+              </Link>
+              <button className='nav-link dropdown--btn' role='button'>
+                Movies <IoIosArrowDown className='nav--arrow' />
+              </button>
+              <div className='dropdown-menu'>
+                <Link href='/movie'>
+                  <a className='dropdown-item' role='button'>
+                    Popular
+                  </a>
+                </Link>
+                <Link href='/movie?query=top_rated'>
+                  <a className='dropdown-item' role='button'>
+                    Top Rated
+                  </a>
+                </Link>
+                <Link href='/movie?query=upcoming'>
+                  <a className='dropdown-item' role='button'>
+                    Upcoming
+                  </a>
+                </Link>
+                <Link href='/movie?query=now_playing'>
+                  <a className='dropdown-item' role='button'>
+                    Now Playing
+                  </a>
+                </Link>
+              </div>
+            </div>
+            {/*  */}
+            <div className='dropdown nav-item nav--dropdown'>
+              <Link href='/tv'>
+                <a className='nav-link dropdown--link' role='button'>
+                  Tv <IoIosArrowDown className='nav--arrow' />
+                </a>
+              </Link>
+              <button className='nav-link dropdown--btn' role='button'>
+                Tv <IoIosArrowDown className='nav--arrow' />
+              </button>
+              <div className='dropdown-menu'>
+                <Link href='/tv'>
+                  <a className='dropdown-item' role='button'>
+                    Popular
+                  </a>
+                </Link>
+                <Link href='/tv?query=top_rated'>
+                  <a className='dropdown-item' role='button'>
+                    Top Rated
+                  </a>
+                </Link>
+                <Link href='/tv?query=on_the_air'>
+                  <a className='dropdown-item' role='button'>
+                    On Tv
+                  </a>
+                </Link>
+                <Link href='/tv?query=airing_today'>
+                  <a className='dropdown-item' role='button'>
+                    Airing Today
+                  </a>
+                </Link>
+              </div>
+            </div>
+            {/* <Link href='/tv'>
               <a className='nav-link' role='button'>
                 Tv Shows
               </a>
-            </Link>
+            </Link> */}
             <Link href='/person'>
               <a className='nav-link' role='button'>
                 People

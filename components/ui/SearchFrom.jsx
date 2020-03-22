@@ -128,9 +128,7 @@ const Styled = styled.div`
 `;
 
 const SearchFrom = () => {
-  const { getSearchData, clearData, searchData, searchQuery } = useContext(
-    MovieContext
-  );
+  const { getSearchData, clearData, searchData } = useContext(MovieContext);
   const [search, setSearch] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const inputRef = useRef();
@@ -162,7 +160,6 @@ const SearchFrom = () => {
     setSearch('');
   };
 
-  console.log(isFocus, search, searchData);
   return (
     <Styled classname='search form'>
       <Form className='form' onSubmit={handleSubmit}>

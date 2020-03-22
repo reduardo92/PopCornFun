@@ -20,11 +20,15 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/movie/[id]": [
+    "/movie": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/person/[id]": [
+    "/tv": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/tv/[id]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
