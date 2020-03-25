@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useReducer } from 'react';
 import MovieContext from './MovieContext';
 import useMovieReducer from './useMovieReducer';
-import { SET_MODAL_MEDIA, SET_SEARCH_DATA } from './types';
+import { SET_MODAL_MEDIA, SET_SEARCH_DATA, SET_CURRENT_PAGE } from './types';
 import movieDB from '../utility/movieDB';
 
 const log = console.log;
@@ -10,7 +10,10 @@ const movieInitalState = {
   searchQuery: '',
   searchData: null,
   pageData: {},
-  isModal: { media: null, toggle: false, for: null }
+  isModal: { media: null, toggle: false, for: null },
+  currentPage: 1,
+  itemPerPage: 20,
+  total_pages: null
 };
 
 const StateProvider = ({ children }) => {
@@ -33,7 +36,7 @@ const StateProvider = ({ children }) => {
 
   useEffect(() => {
     setWindowSize(window.innerWidth);
-  }, []);
+  }, [windowSize]);
 
   // Actions
 
@@ -56,6 +59,14 @@ const StateProvider = ({ children }) => {
     }
   };
 
+  // Get current posts
+  const indexOfLastPost = state.currentPage * state.itemPerPage;
+  const indexOfFirstPost = indexOfLastPost - state.itemPerPage;
+
+  // Change page
+  const paginate = pageNumber =>
+    dispatch({ type: SET_CURRENT_PAGE, payload: pageNumber });
+
   console.log(state);
   return (
     <MovieContext.Provider
@@ -69,6 +80,7 @@ const StateProvider = ({ children }) => {
         clearData,
         navRef,
         getSearchData,
+        paginate,
         ...state
       }}
     >

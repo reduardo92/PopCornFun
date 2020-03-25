@@ -362,14 +362,14 @@ const NavCustom = () => {
     className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 125
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132
+      lineNumber: 126
     },
     __self: undefined
   }, __jsx("a", {
@@ -377,14 +377,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 127
     },
     __self: undefined
   }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 128
     },
     __self: undefined
   }))), __jsx("button", {
@@ -392,28 +392,28 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 131
     },
     __self: undefined
   }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 132
     },
     __self: undefined
   })), __jsx("div", {
     className: "dropdown-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 134
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 135
     },
     __self: undefined
   }, __jsx("a", {
@@ -421,14 +421,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 136
     },
     __self: undefined
   }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie?query=top_rated",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 140
     },
     __self: undefined
   }, __jsx("a", {
@@ -436,14 +436,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 141
     },
     __self: undefined
   }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie?query=upcoming",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 145
     },
     __self: undefined
   }, __jsx("a", {
@@ -451,14 +451,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 146
     },
     __self: undefined
   }, "Upcoming")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie?query=now_playing",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 150
     },
     __self: undefined
   }, __jsx("a", {
@@ -466,21 +466,21 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 151
     },
     __self: undefined
   }, "Now Playing")))), __jsx("div", {
     className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 158
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 159
     },
     __self: undefined
   }, __jsx("a", {
@@ -488,14 +488,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 160
     },
     __self: undefined
   }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 161
     },
     __self: undefined
   }))), __jsx("button", {
@@ -503,28 +503,28 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 164
     },
     __self: undefined
   }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 165
     },
     __self: undefined
   })), __jsx("div", {
     className: "dropdown-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173
+      lineNumber: 167
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 168
     },
     __self: undefined
   }, __jsx("a", {
@@ -532,14 +532,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 169
     },
     __self: undefined
   }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv?query=top_rated",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 173
     },
     __self: undefined
   }, __jsx("a", {
@@ -547,14 +547,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 174
     },
     __self: undefined
   }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv?query=on_the_air",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 178
     },
     __self: undefined
   }, __jsx("a", {
@@ -562,14 +562,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 179
     },
     __self: undefined
   }, "On Tv")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv?query=airing_today",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189
+      lineNumber: 183
     },
     __self: undefined
   }, __jsx("a", {
@@ -577,14 +577,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 184
     },
     __self: undefined
   }, "Airing Today")))), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/person",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201
+      lineNumber: 191
     },
     __self: undefined
   }, __jsx("a", {
@@ -592,20 +592,20 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 202
+      lineNumber: 192
     },
     __self: undefined
   }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 197
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 198
     },
     __self: undefined
   }, __jsx("a", {
@@ -613,14 +613,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 199
     },
     __self: undefined
   }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/signup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 213
+      lineNumber: 203
     },
     __self: undefined
   }, __jsx("a", {
@@ -628,13 +628,13 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 214
+      lineNumber: 204
     },
     __self: undefined
   }, "Sign Up"))))), __jsx(_ui_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 221
+      lineNumber: 211
     },
     __self: undefined
   }));
@@ -700,7 +700,10 @@ const movieInitalState = {
     media: null,
     toggle: false,
     for: null
-  }
+  },
+  currentPage: 1,
+  itemPerPage: 20,
+  total_pages: null
 };
 
 const StateProvider = ({
@@ -734,7 +737,7 @@ const StateProvider = ({
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     setWindowSize(window.innerWidth);
-  }, []); // Actions
+  }, [windowSize]); // Actions
 
   const setData = (type, data) => dispatch({
     type,
@@ -763,7 +766,16 @@ const StateProvider = ({
     } catch (error) {
       console.log(error);
     }
-  };
+  }; // Get current posts
+
+
+  const indexOfLastPost = state.currentPage * state.itemPerPage;
+  const indexOfFirstPost = indexOfLastPost - state.itemPerPage; // Change page
+
+  const paginate = pageNumber => dispatch({
+    type: _types__WEBPACK_IMPORTED_MODULE_3__["SET_CURRENT_PAGE"],
+    payload: pageNumber
+  });
 
   console.log(state);
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
@@ -776,11 +788,12 @@ const StateProvider = ({
       setModal,
       clearData,
       navRef,
-      getSearchData
+      getSearchData,
+      paginate
     }, state),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 72
     },
     __self: undefined
   }, children);
@@ -794,7 +807,7 @@ const StateProvider = ({
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_SEARCH_DATA, CLEAR_SEARCH_DATA, getMovie */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_SEARCH_DATA, CLEAR_SEARCH_DATA, SET_CURRENT_PAGE, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -807,6 +820,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_MODAL_MEDIA", function() { return RESET_MODAL_MEDIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_SEARCH_DATA", function() { return SET_SEARCH_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SEARCH_DATA", function() { return CLEAR_SEARCH_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_CURRENT_PAGE", function() { return SET_CURRENT_PAGE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
@@ -818,7 +832,8 @@ const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
 const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // DATA
 
 const SET_SEARCH_DATA = 'SET_SEARCH_DATA';
-const CLEAR_SEARCH_DATA = 'CLEAR_SEARCH_DATA'; // Movie DB
+const CLEAR_SEARCH_DATA = 'CLEAR_SEARCH_DATA';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'; // Movie DB
 
 function getMovie(id, param) {
   const movie = {
@@ -903,6 +918,11 @@ const useMovieReducer = (state, action) => {
           toggle: false,
           for: null
         }
+      });
+
+    case _types__WEBPACK_IMPORTED_MODULE_0__["SET_CURRENT_PAGE"]:
+      return _objectSpread({}, state, {
+        currentPage: action.payload
       });
 
     default:

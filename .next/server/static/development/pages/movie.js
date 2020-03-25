@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -114,7 +114,7 @@ const MovieContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_SEARCH_DATA, CLEAR_SEARCH_DATA, getMovie */
+/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_SEARCH_DATA, CLEAR_SEARCH_DATA, SET_CURRENT_PAGE, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -127,6 +127,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_MODAL_MEDIA", function() { return RESET_MODAL_MEDIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_SEARCH_DATA", function() { return SET_SEARCH_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SEARCH_DATA", function() { return CLEAR_SEARCH_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_CURRENT_PAGE", function() { return SET_CURRENT_PAGE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
@@ -138,7 +139,8 @@ const SET_MODAL_MEDIA = ' SET_MODAL_MEDIA';
 const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // DATA
 
 const SET_SEARCH_DATA = 'SET_SEARCH_DATA';
-const CLEAR_SEARCH_DATA = 'CLEAR_SEARCH_DATA'; // Movie DB
+const CLEAR_SEARCH_DATA = 'CLEAR_SEARCH_DATA';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'; // Movie DB
 
 function getMovie(id, param) {
   const movie = {
@@ -420,6 +422,138 @@ const CardTwo = ({
 
 /***/ }),
 
+/***/ "./components/ui/Cards/PersonCard.jsx":
+/*!********************************************!*\
+  !*** ./components/ui/Cards/PersonCard.jsx ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/types */ "./components/context/types.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Cards\\PersonCard.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "PersonCard__Styled",
+  componentId: "sc-10zmgx9-0"
+})(["width:160px;.person--profile{.person--profile__link--img{transition:var(--ease--in--out--02s);}&:hover .person--profile__link--img{opacity:0.5;}}.name{font-weight:bold;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}.job{display:block;}.know--for{font-size:0.7rem;margin-top:0.1em;&__item{margin-right:0.3em;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:768px){width:100%;max-width:300px;.person--body__title{display:flex;align-items:baseline;}.name{font-size:1.1rem;}.job{display:inline-block;margin-left:auto;font-size:0.9rem;}.know--for{font-size:0.8rem;}}@media screen and (min-width:1000px){.name{font-size:1.3rem;}.job{font-size:1rem;}.know--for{font-size:0.9rem;}}"]);
+
+const PersonCard = ({
+  data
+}) => __jsx(Styled, {
+  className: "person--card",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 85
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "person--profile",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 86
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: `/person/[id]`,
+  as: `/person/${data.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 87
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "person--profile__link",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 88
+  },
+  __self: undefined
+}, __jsx("img", {
+  className: "person--profile__link--img",
+  src: data.profile_path ? `${_context_types__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"]}${data.profile_path}` : 'no_img.jpg',
+  alt: data.title || data.name,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 89
+  },
+  __self: undefined
+})))), __jsx("div", {
+  className: "person--body",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 101
+  },
+  __self: undefined
+}, __jsx("div", {
+  className: "person--body__title",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 102
+  },
+  __self: undefined
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: `/person/[id]`,
+  as: `/person/${data.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 103
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "name",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 104
+  },
+  __self: undefined
+}, data.name)), __jsx("small", {
+  className: "job",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 106
+  },
+  __self: undefined
+}, "(", data.known_for_department, ")")), __jsx("div", {
+  className: "know--for",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 108
+  },
+  __self: undefined
+}, !data.known_for ? 'N/A' : data.known_for.map((item, i) => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  key: item.id,
+  href: `/${item.media_type}/[id]`,
+  as: `/${item.media_type}/${item.id}`,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 112
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "know--for__item",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 117
+  },
+  __self: undefined
+}, item.name || item.title, data.known_for.length - 1 === i ? '' : ', '))))));
+
+/* harmony default export */ __webpack_exports__["default"] = (PersonCard);
+
+/***/ }),
+
 /***/ "./components/ui/CirclePercentage.jsx":
 /*!********************************************!*\
   !*** ./components/ui/CirclePercentage.jsx ***!
@@ -466,6 +600,447 @@ const CirclePercentage = ({
 });
 
 /* harmony default export */ __webpack_exports__["default"] = (CirclePercentage);
+
+/***/ }),
+
+/***/ "./components/ui/Pagination/Pagination.jsx":
+/*!*************************************************!*\
+  !*** ./components/ui/Pagination/Pagination.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/MovieContext */ "./components/context/MovieContext.js");
+/* harmony import */ var _createPagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createPagination */ "./components/ui/Pagination/createPagination.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
+/* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_5__);
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Pagination\\Pagination.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  ul {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+
+    li {
+      margin-right: 4px;
+      border-radius: 4px;
+      font-family: sans-serif;
+      background: var(--white-clr);
+      font-size: 1rem;
+      font-weight: bold;
+      min-width: 20px;
+      text-align: center;
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .link--item {
+        display: block;
+        padding: 10px 15px;
+        color: var(--second-clr);
+      }
+
+      .controls {
+        font-size: 0.9rem;
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+
+      &:not(.active):not(.disabled) {
+        cursor: pointer;
+      }
+      &:not(.active):not(.disabled):hover {
+        background: var(--bg-gradient);
+        .link--item {
+          color: var(--white-clr);
+        }
+      }
+
+      &:not(.active):not(.disabled):active {
+        background: rgb(245, 110, 67);
+        .link--item {
+          color: var(--white-clr);
+        }
+      }
+
+      &.active {
+        background: rgb(245, 110, 67);
+        .link--item {
+          color: var(--white-clr);
+        }
+      }
+      &.disabled {
+        background: #fbeaff;
+        pointer-events: none;
+      }
+    }
+  }
+`;
+
+const Pagination = ({
+  numberOfArticles,
+  articlesPerPage = 1,
+  numberOfButtons = 5,
+  typeFor
+}) => {
+  const {
+    paginate,
+    currentPage,
+    windowSize
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_2__["default"]);
+
+  const numberBB = () => windowSize >= 768 ? numberOfButtons + 5 : numberOfButtons;
+
+  const {
+    pagination
+  } = Object(_createPagination__WEBPACK_IMPORTED_MODULE_3__["default"])({
+    numberOfArticles,
+    articlesPerPage,
+    numberOfButtons: numberBB(),
+    currentPage
+  });
+  return __jsx(Styled, {
+    className: "pagination--section",
+    numberOfButtons: numberOfButtons,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: undefined
+  }, __jsx("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 102
+    },
+    __self: undefined
+  }, __jsx("li", {
+    className: `${pagination[0] === currentPage && 'disabled d-none'}`,
+    onClick: () => paginate(1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: typeFor + 1,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "link--item controls",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108
+    },
+    __self: undefined
+  }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdFirstPage"], {
+    className: "icons",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109
+    },
+    __self: undefined
+  })))), __jsx("li", {
+    className: `${pagination[0] === currentPage && 'disabled d-none'}`,
+    onClick: () => paginate(currentPage - 1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: currentPage === 1 ? typeFor + 1 : typeFor + (currentPage - 1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "link--item controls",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120
+    },
+    __self: undefined
+  }, "Prev"))), pagination.map(page => __jsx("li", {
+    key: page,
+    className: `${currentPage === page && 'active'}`,
+    onClick: () => paginate(page),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 124
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: typeFor + page,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 129
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "link--item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 130
+    },
+    __self: undefined
+  }, page)))), __jsx("li", {
+    className: `${pagination.reverse()[0] === currentPage && 'disabled d-none'}`,
+    onClick: () => paginate(currentPage + 1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 134
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: typeFor + (currentPage + 1),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 139
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "link--item controls",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 140
+    },
+    __self: undefined
+  }, "Next"))), __jsx("li", {
+    className: `${numberOfArticles === currentPage && 'disabled d-none'}`,
+    onClick: () => paginate(numberOfArticles),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 143
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: typeFor + numberOfArticles,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 147
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "link--item controls",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 148
+    },
+    __self: undefined
+  }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdLastPage"], {
+    className: "icons",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 149
+    },
+    __self: undefined
+  }))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Pagination);
+{
+  /* <li
+  className={`${currentPage === page && 'active'}`}
+  onClick={() => paginate(page)}
+  >
+  {page}
+  </li> */
+}
+
+/***/ }),
+
+/***/ "./components/ui/Pagination/createPagination.js":
+/*!******************************************************!*\
+  !*** ./components/ui/Pagination/createPagination.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const createPagination = params => {
+  const {
+    numberOfArticles,
+    articlesPerPage,
+    currentPage,
+    numberOfButtons
+  } = params;
+  const numberOfPages = Math.ceil(numberOfArticles / articlesPerPage);
+  if (currentPage > numberOfPages || currentPage < 1) return {
+    pagination: [],
+    currentPage
+  };
+  const buttons = Array(numberOfPages).fill(1).map((e, i) => e + i);
+  const sideButtons = numberOfButtons % 2 === 0 ? numberOfButtons / 2 : (numberOfButtons - 1) / 2;
+
+  const calculLeft = (rest = 0) => {
+    return {
+      array: buttons.slice(0, currentPage - 1).reverse().slice(0, sideButtons + rest).reverse(),
+      rest: function () {
+        return sideButtons - this.array.length;
+      }
+    };
+  };
+
+  const calculRight = (rest = 0) => {
+    return {
+      array: buttons.slice(currentPage).slice(0, sideButtons + rest),
+      rest: function () {
+        return sideButtons - this.array.length;
+      }
+    };
+  };
+
+  const leftButtons = calculLeft(calculRight().rest()).array;
+  const rightButtons = calculRight(calculLeft().rest()).array;
+  return {
+    pagination: [...leftButtons, currentPage, ...rightButtons],
+    currentPage
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (createPagination);
+
+/***/ }),
+
+/***/ "./components/ui/mediaProfile/MediaSection.jsx":
+/*!*****************************************************!*\
+  !*** ./components/ui/mediaProfile/MediaSection.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../context/MovieContext */ "./components/context/MovieContext.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../layout */ "./components/layout.js");
+/* harmony import */ var _Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Pagination/Pagination */ "./components/ui/Pagination/Pagination.jsx");
+/* harmony import */ var _Cards_CardTwo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Cards/CardTwo */ "./components/ui/Cards/CardTwo.jsx");
+/* harmony import */ var _Cards_PersonCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Cards/PersonCard */ "./components/ui/Cards/PersonCard.jsx");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\MediaSection.jsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.section.withConfig({
+  displayName: "MediaSection__Styled",
+  componentId: "sc-1m2ky1s-0"
+})(["background:var(--bg-dark-gradient);padding:150px 1em 5em 1em;.wrapper{max-width:1500px;margin:0 auto;.title{font-size:1.5rem;margin-bottom:1em;}}.content--container{display:grid;grid-gap:2em;margin:3em 0;justify-items:center;}.person--grid{display:grid;grid-template-columns:repeat(2,1fr);justify-items:center;grid-gap:1em;grid-row-gap:2em;margin:3em 0;}@media screen and (min-width:768px){.content--container{grid-row-gap:3.5em;grid-template-columns:repeat(2,1fr);}.person--grid{grid-template-columns:repeat(3,1fr);}}@media screen and (min-width:1000px){.person--grid{grid-template-columns:repeat(4,1fr);}}"]);
+
+const MediaSection = ({
+  mediaFor
+}) => {
+  const {
+    paginate
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    paginate(mediaFor.page);
+  }, [mediaFor.page]);
+  return __jsx(_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: undefined
+  }, __jsx(Styled, {
+    className: "MediaSection",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "wrapper",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    className: "title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: undefined
+  }, mediaFor.title, ' ', mediaFor.typeFor === 'tv' ? 'TV' : mediaFor.typeFor), __jsx(_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    numberOfArticles: mediaFor.total_pages,
+    typeFor: `/${mediaFor.typeFor}?query=${mediaFor.title.split(' ').join('_')}&page=`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
+  }), __jsx("div", {
+    className: mediaFor.typeFor === 'person' ? 'person--grid' : 'content--container',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: undefined
+  }, mediaFor.results.map(item => mediaFor.typeFor === 'person' ? __jsx(_Cards_PersonCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    key: item.id,
+    data: item,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
+    },
+    __self: undefined
+  }) : __jsx(_Cards_CardTwo__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    key: item.id,
+    data: item,
+    typeFor: mediaFor.typeFor,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: undefined
+  }))), __jsx(_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    numberOfArticles: mediaFor.total_pages,
+    typeFor: `/${mediaFor.typeFor}?query=${mediaFor.title.split(' ').join('_')}&page=`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93
+    },
+    __self: undefined
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MediaSection);
 
 /***/ }),
 
@@ -2206,11 +2781,8 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/utility/movieDB */ "./components/utility/movieDB.js");
-/* harmony import */ var _components_ui_Cards_CardTwo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/ui/Cards/CardTwo */ "./components/ui/Cards/CardTwo.jsx");
+/* harmony import */ var _components_utility_movieDB__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/utility/movieDB */ "./components/utility/movieDB.js");
+/* harmony import */ var _components_ui_mediaProfile_MediaSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/ui/mediaProfile/MediaSection */ "./components/ui/mediaProfile/MediaSection.jsx");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\movie\\index.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2224,61 +2796,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.section.withConfig({
-  displayName: "movie__Styled",
-  componentId: "sc-1781jcz-0"
-})(["background:var(--bg-dark-gradient);padding:150px 1em 0 1em;.wrapper{max-width:1500px;margin:0 auto;.title{font-size:1.5rem;margin-bottom:1em;}}.content--container{display:grid;grid-gap:2em;}@media screen and (min-width:768px){.content--container{grid-row-gap:3.5em;grid-template-columns:repeat(2,1fr);}}"]);
-
 const movie = ({
   movies
-}) => {
-  console.log(movies);
-  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: undefined
-  }, __jsx(Styled, {
-    className: "movie--section",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  }, __jsx("h2", {
-    className: "title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }, movies.title, " Movies"), __jsx("div", {
-    className: "content--container",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: undefined
-  }, movies.results.map(item => __jsx(_components_ui_Cards_CardTwo__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    key: item.id,
-    data: item,
-    typeFor: movies.typeFor,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }))))));
-};
+}) => __jsx(_components_ui_mediaProfile_MediaSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  mediaFor: movies,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5
+  },
+  __self: undefined
+});
 
 movie.getInitialProps = async ({
   query
@@ -2286,7 +2813,7 @@ movie.getInitialProps = async ({
   const queryLeng = Object.keys(query).length;
 
   try {
-    const movies = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_3__["default"])(`movie/${queryLeng === 0 ? 'popular' : query.query}`);
+    const movies = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_1__["default"])(`movie/${queryLeng === 0 ? 'popular' : query.query}`, `page=${query.page ? query.page : 1}`);
     return {
       movies: _objectSpread({
         typeFor: 'movie',
@@ -2302,7 +2829,7 @@ movie.getInitialProps = async ({
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*************************************!*\
   !*** multi ./pages/movie/index.jsx ***!
   \*************************************/
@@ -2377,6 +2904,17 @@ module.exports = require("react-bootstrap/Modal");
 /***/ (function(module, exports) {
 
 module.exports = require("react-circular-progressbar");
+
+/***/ }),
+
+/***/ "react-icons/md":
+/*!*********************************!*\
+  !*** external "react-icons/md" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/md");
 
 /***/ }),
 

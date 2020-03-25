@@ -2,7 +2,8 @@ import {
   SET_MODAL_MEDIA,
   RESET_MODAL_MEDIA,
   SET_SEARCH_DATA,
-  CLEAR_SEARCH_DATA
+  CLEAR_SEARCH_DATA,
+  SET_CURRENT_PAGE
 } from './types';
 
 const useMovieReducer = (state, action) => {
@@ -31,7 +32,11 @@ const useMovieReducer = (state, action) => {
         ...state,
         isModal: { media: null, toggle: false, for: null }
       };
-
+    case SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload
+      };
     default:
       return state;
   }

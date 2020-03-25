@@ -9,6 +9,7 @@ export const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA';
 // DATA
 export const SET_SEARCH_DATA = 'SET_SEARCH_DATA';
 export const CLEAR_SEARCH_DATA = 'CLEAR_SEARCH_DATA';
+export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 
 // Movie DB
 
