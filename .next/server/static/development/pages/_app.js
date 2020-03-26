@@ -243,7 +243,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Link */ "./components/Link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _ui_SearchFrom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ui/SearchFrom */ "./components/ui/SearchFrom.jsx");
+/* harmony import */ var _ui_Forms_SearchFrom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ui/Forms/SearchFrom */ "./components/ui/Forms/SearchFrom.jsx");
 /* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-icons/io */ "react-icons/io");
 /* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_icons_io__WEBPACK_IMPORTED_MODULE_8__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\Navbar.jsx";
@@ -343,33 +343,18 @@ const NavCustom = () => {
       lineNumber: 115
     },
     __self: undefined
-  }, "Home")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/discover",
+  }, "Home")), __jsx("div", {
+    className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 119
     },
     __self: undefined
-  }, __jsx("a", {
-    className: "nav-link",
-    role: "button",
+  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/discover?query=movie",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 120
-    },
-    __self: undefined
-  }, "Discover")), __jsx("div", {
-    className: "dropdown nav-item nav--dropdown",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: undefined
-  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/movie",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 126
     },
     __self: undefined
   }, __jsx("a", {
@@ -377,14 +362,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 121
     },
     __self: undefined
-  }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+  }, "Discover ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 122
     },
     __self: undefined
   }))), __jsx("button", {
@@ -392,28 +377,28 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 125
     },
     __self: undefined
-  }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+  }, "Discover ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132
+      lineNumber: 126
     },
     __self: undefined
   })), __jsx("div", {
     className: "dropdown-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 128
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/movie",
+    href: "/discover?query=movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 129
     },
     __self: undefined
   }, __jsx("a", {
@@ -421,14 +406,95 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136
+      lineNumber: 130
+    },
+    __self: undefined
+  }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/discover?query=tv",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 134
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "dropdown-item",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 135
+    },
+    __self: undefined
+  }, "Tv Shows")))), __jsx("div", {
+    className: "dropdown nav-item nav--dropdown",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142
+    },
+    __self: undefined
+  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/movie",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 143
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "nav-link dropdown--link",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 144
+    },
+    __self: undefined
+  }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+    className: "nav--arrow",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 145
+    },
+    __self: undefined
+  }))), __jsx("button", {
+    className: "nav-link dropdown--btn",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 148
+    },
+    __self: undefined
+  }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+    className: "nav--arrow",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 149
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "dropdown-menu",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 151
+    },
+    __self: undefined
+  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/movie",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 152
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "dropdown-item",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 153
     },
     __self: undefined
   }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie?query=top_rated",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 157
     },
     __self: undefined
   }, __jsx("a", {
@@ -436,14 +502,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141
+      lineNumber: 158
     },
     __self: undefined
   }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie?query=upcoming",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 162
     },
     __self: undefined
   }, __jsx("a", {
@@ -451,14 +517,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 163
     },
     __self: undefined
   }, "Upcoming")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie?query=now_playing",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 167
     },
     __self: undefined
   }, __jsx("a", {
@@ -466,21 +532,21 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 168
     },
     __self: undefined
   }, "Now Playing")))), __jsx("div", {
     className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 175
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159
+      lineNumber: 176
     },
     __self: undefined
   }, __jsx("a", {
@@ -488,14 +554,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160
+      lineNumber: 177
     },
     __self: undefined
   }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 178
     },
     __self: undefined
   }))), __jsx("button", {
@@ -503,28 +569,28 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 181
     },
     __self: undefined
   }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 182
     },
     __self: undefined
   })), __jsx("div", {
     className: "dropdown-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 184
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168
+      lineNumber: 185
     },
     __self: undefined
   }, __jsx("a", {
@@ -532,14 +598,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169
+      lineNumber: 186
     },
     __self: undefined
   }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv?query=top_rated",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173
+      lineNumber: 190
     },
     __self: undefined
   }, __jsx("a", {
@@ -547,14 +613,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 191
     },
     __self: undefined
   }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv?query=on_the_air",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 195
     },
     __self: undefined
   }, __jsx("a", {
@@ -562,14 +628,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 196
     },
     __self: undefined
   }, "On Tv")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv?query=airing_today",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183
+      lineNumber: 200
     },
     __self: undefined
   }, __jsx("a", {
@@ -577,14 +643,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 201
     },
     __self: undefined
   }, "Airing Today")))), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/person",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191
+      lineNumber: 208
     },
     __self: undefined
   }, __jsx("a", {
@@ -592,20 +658,20 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 209
     },
     __self: undefined
   }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 197
+      lineNumber: 214
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198
+      lineNumber: 215
     },
     __self: undefined
   }, __jsx("a", {
@@ -613,14 +679,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 199
+      lineNumber: 216
     },
     __self: undefined
   }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/signup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 203
+      lineNumber: 220
     },
     __self: undefined
   }, __jsx("a", {
@@ -628,13 +694,13 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 204
+      lineNumber: 221
     },
     __self: undefined
-  }, "Sign Up"))))), __jsx(_ui_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, "Sign Up"))))), __jsx(_ui_Forms_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211
+      lineNumber: 228
     },
     __self: undefined
   }));
@@ -934,10 +1000,10 @@ const useMovieReducer = (state, action) => {
 
 /***/ }),
 
-/***/ "./components/ui/SearchFrom.jsx":
-/*!**************************************!*\
-  !*** ./components/ui/SearchFrom.jsx ***!
-  \**************************************/
+/***/ "./components/ui/Forms/SearchFrom.jsx":
+/*!********************************************!*\
+  !*** ./components/ui/Forms/SearchFrom.jsx ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -947,7 +1013,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/MovieContext */ "./components/context/MovieContext.js");
+/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../context/MovieContext */ "./components/context/MovieContext.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Form */ "react-bootstrap/Form");
@@ -956,10 +1022,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-icons/md */ "react-icons/md");
 /* harmony import */ var react_icons_md__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_icons_md__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../context/types */ "./components/context/types.js");
+/* harmony import */ var _context_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../context/types */ "./components/context/types.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\SearchFrom.jsx";
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Forms\\SearchFrom.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -973,7 +1039,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "SearchFrom__Styled",
-  componentId: "fc5opr-0"
+  componentId: "sc-3mqi02-0"
 })(["background-color:var(--white-clr);padding:0;.form{max-width:920px;margin:0 auto;padding:0 1em;position:relative;&:hover svg{color:var(--primary-clr);}}.form-group{display:flex;margin:0;}.form-label{margin:0;margin-right:0.5em;display:flex;align-items:center;justify-content:center;cursor:pointer;svg{color:var(--grey-clr);}}.form--clear{position:absolute;top:50%;right:2%;transform:translate(-2%,-50%);color:var(--primary-clr);font-weight:bold;font-size:1.5rem;cursor:pointer;transition:var(--ease--in--out--02s);&:hover{opacity:0.7;}}.form-control{border:0;color:var(--grey-clr);&::placeholder{font-size:0.9rem;}}.search--content{height:auto;overflow-y:auto;box-shadow:0 11px 15px rgba(0,0,0,0.28);& > .search--content--item:first-child{border-top:1px solid rgba(0,0,0,0.1);}& > .search--content--item:last-child{border-top:none;}}.search--content--item{border-bottom:1px solid rgba(0,0,0,0.1);padding:0.1em 1em;transition:var(--ease--in--out--02s);cursor:pointer;&:hover{background-color:rgba(196,196,196,0.4);}&__name{color:var(--second-clr);margin-bottom:0;margin-left:1em;.media--in{color:rgb(151,151,151);margin-left:0.3em;}}&:hover .search--content--item__name,&:hover .search--content--item__icon{color:var(--primary-clr);}}.wrapper{margin:0 auto;max-width:920px;display:flex;align-items:center;font-size:0.9em;color:var(--second-clr);text-transform:capitalize;}@media screen and (min-width:1000px){.form{padding:0;}}"]);
 
 const SearchFrom = () => {

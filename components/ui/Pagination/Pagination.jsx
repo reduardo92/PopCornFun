@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import MovieContext from '../../context/MovieContext';
 import createPagination from './createPagination';
 import Link from 'next/link';
-import { useState } from 'react';
 import {
   MdFirstPage,
   MdLastPage,

@@ -5,6 +5,8 @@ import Layout from '../../layout';
 import Pagination from '../Pagination/Pagination';
 import CardTwo from '../Cards/CardTwo';
 import PersonCard from '../Cards/PersonCard';
+import Link from 'next/link';
+import DiscoverForm from '../Forms/DiscoverFrom';
 
 const Styled = styled.section`
   background: var(--bg-dark-gradient);
@@ -36,7 +38,57 @@ const Styled = styled.section`
     margin: 3em 0;
   }
 
+  /* Set Styles for When Discover Page is Active */
+  .head--tabs {
+    display: flex;
+    max-width: 240px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 1.2em;
+
+    &__tab {
+      font-size: 1.25rem;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: var(--ease-12s);
+      color: var(--white-clr);
+
+      &:hover {
+        opacity: 0.5;
+        border-bottom-color: var(--primary-clr);
+      }
+
+      &:first-child {
+        /* margin-right: 1em; */
+      }
+    }
+    .disabled {
+      border-bottom-color: var(--primary-clr);
+      pointer-events: none;
+    }
+  }
+
   @media screen and (min-width: 768px) {
+    /* Set Styles for When Discover Page is Active */
+    .head {
+      display: flex;
+      flex-wrap: wrap;
+
+      .title {
+        flex: 100%;
+      }
+
+      .head--tabs {
+        margin: 0;
+        margin-bottom: 1em;
+        flex: 1;
+
+        &__tab {
+          margin-right: 1em;
+        }
+      }
+    }
+
     .content--container {
       grid-row-gap: 3.5em;
       grid-template-columns: repeat(2, 1fr);
@@ -51,29 +103,89 @@ const Styled = styled.section`
     .person--grid {
       grid-template-columns: repeat(4, 1fr);
     }
+
+    /* Set Styles for When Discover Page is Active */
+    .head {
+      .head--tabs {
+        margin: 0;
+        flex: 1;
+
+        &__tab {
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .head {
+      padding: 0 2.2em 0 2em;
+    }
   }
 `;
 
-const MediaSection = ({ mediaFor }) => {
-  const { paginate } = useContext(MovieContext);
+const MediaSection = ({ mediaFor, forPage }) => {
+  const { paginate, currentPage } = useContext(MovieContext);
 
   useEffect(() => {
     paginate(mediaFor.page);
   }, [mediaFor.page]);
 
+  const setLink = () => {
+    const mediaLink = `/${mediaFor.typeFor}?query=${mediaFor.title
+      .split(' ')
+      .join('_')}&page=`;
+
+    const discLink = `/discover?query=${mediaFor.typeFor}&page=`;
+
+    return forPage === 'disc' ? discLink : mediaLink;
+  };
+
   return (
     <Layout>
       <Styled className='MediaSection'>
         <div className='wrapper'>
-          <h2 className='title'>
-            {mediaFor.title}{' '}
-            {mediaFor.typeFor === 'tv' ? 'TV' : mediaFor.typeFor}
-          </h2>
+          <div className={`head`}>
+            <h2 className='title'>
+              {forPage ? (
+                'Discover New Movies & TV Shows'
+              ) : (
+                <>
+                  {mediaFor.title}
+                  {'  '}
+                  {mediaFor.typeFor === 'tv' ? 'TV' : mediaFor.typeFor}
+                </>
+              )}
+            </h2>
+            {forPage && (
+              <>
+                <div className='head--tabs'>
+                  <Link href='/discover?query=movie&page=1'>
+                    <a
+                      className={`head--tabs__tab ${mediaFor.title ===
+                        'movie' && 'disabled'}`}
+                    >
+                      {' '}
+                      Movies
+                    </a>
+                  </Link>
+                  <Link href='/discover?query=tv&page=1'>
+                    <a
+                      className={`head--tabs__tab ${mediaFor.title === 'tv' &&
+                        'disabled'}`}
+                    >
+                      Tv Shows
+                    </a>
+                  </Link>
+                </div>
+                <DiscoverForm />
+              </>
+            )}
+          </div>
+
           <Pagination
             numberOfArticles={mediaFor.total_pages}
-            typeFor={`/${mediaFor.typeFor}?query=${mediaFor.title
-              .split(' ')
-              .join('_')}&page=`}
+            typeFor={setLink()}
           />
           <div
             className={
@@ -92,9 +204,7 @@ const MediaSection = ({ mediaFor }) => {
           </div>
           <Pagination
             numberOfArticles={mediaFor.total_pages}
-            typeFor={`/${mediaFor.typeFor}?query=${mediaFor.title
-              .split(' ')
-              .join('_')}&page=`}
+            typeFor={setLink()}
           />
         </div>
       </Styled>

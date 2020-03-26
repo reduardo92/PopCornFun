@@ -57,6 +57,7 @@
 
   /* Transitions */
   --ease--in--out--02s: all 0.19s ease-in-out;
+  --ease-12s: all 0.12s ease;
 }
 
 html {

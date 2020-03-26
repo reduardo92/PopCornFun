@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Link from './Link';
 import NextLink from 'next/link';
-import SearchFrom from './ui/SearchFrom';
+import SearchFrom from './ui/Forms/SearchFrom';
 import { IoIosArrowDown } from 'react-icons/io';
 
 const Styled = styled.header`
@@ -116,11 +116,28 @@ const NavCustom = () => {
                 Home
               </a>
             </Link>
-            <Link href='/discover'>
-              <a className='nav-link' role='button'>
-                Discover
-              </a>
-            </Link>
+            <div className='dropdown nav-item nav--dropdown'>
+              <Link href='/discover?query=movie'>
+                <a className='nav-link dropdown--link' role='button'>
+                  Discover <IoIosArrowDown className='nav--arrow' />
+                </a>
+              </Link>
+              <button className='nav-link dropdown--btn' role='button'>
+                Discover <IoIosArrowDown className='nav--arrow' />
+              </button>
+              <div className='dropdown-menu'>
+                <Link href='/discover?query=movie'>
+                  <a className='dropdown-item' role='button'>
+                    Movies
+                  </a>
+                </Link>
+                <Link href='/discover?query=tv'>
+                  <a className='dropdown-item' role='button'>
+                    Tv Shows
+                  </a>
+                </Link>
+              </div>
+            </div>
             {/*  */}
             <div className='dropdown nav-item nav--dropdown'>
               <Link href='/movie'>
