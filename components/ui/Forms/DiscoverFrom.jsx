@@ -44,7 +44,7 @@ const Styled = styled.div`
 `;
 
 const DiscoverForm = props => {
-  const { handleChange, handleSubmit, form, setForm } = useForm({
+  const { handleChange, handleSubmit, form } = useForm({
     year: 'none',
     sort_by: 'popularity descending',
     genre: '',
