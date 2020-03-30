@@ -1,16 +1,43 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import useForm from '../../Hooks/useForm';
+import MovieContext from '../../context/MovieContext';
 import Form from 'react-bootstrap/Form';
 import getYears from '../../utility/getYears';
+import uuid from 'uuid';
 
 const Styled = styled.div`
+  .discover--from {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+  }
+
+  .clear--fields {
+    background: var(--bg-gradient);
+    font-size: 1.3rem;
+    padding: 0em 0.5em;
+    align-self: center;
+    text-align: center;
+    margin-bottom: 1.1em;
+    border-radius: 3px;
+    transition: var(--ease-12s);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      transform: scale(0.9);
+      opacity: 0.8;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     flex: 100%;
     margin-bottom: 1em;
 
     .discover--from {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
 
       & > div {
@@ -21,7 +48,18 @@ const Styled = styled.div`
       & > :last-child {
         margin-right: 0;
       }
+
+      .clear--fields {
+        flex: 0 0 30px;
+        align-self: center;
+        margin: 0;
+        margin-top: 0.85em;
+      }
     }
+  }
+
+  .genre--control .tv {
+    display: ${({ genre }) => genre && 'none'};
   }
   @media screen and (min-width: 1000px) {
     flex: 1;
@@ -43,48 +81,99 @@ const Styled = styled.div`
   }
 `;
 
-const DiscoverForm = props => {
-  const { handleChange, handleSubmit, form } = useForm({
-    year: 'none',
-    sort_by: 'popularity descending',
-    genre: '',
-    keywords: ''
-  });
+const DiscoverForm = ({ typeFor }) => {
+  const {
+    discoverForm: { handleChange, handleSubmit, form, setForm }
+  } = useContext(MovieContext);
+
+  const { query, push } = useRouter();
 
   const { year, sort_by, genre } = form;
 
   const sortBy = [
-    'popularity descending',
-    'popularity ascending',
-    'rating descending',
-    'rating ascending',
-    'release date descending',
-    'release date ascending',
-    'title (A-Z)',
-    'title (Z-A)'
+    { id: uuid.v4(), value: 'popularity.desc', name: 'popularity descending' },
+    { id: uuid.v4(), value: 'popularity.asc', name: 'popularity ascending' },
+    { id: uuid.v4(), value: 'vote_average.desc', name: 'rating descending' },
+    { id: uuid.v4(), value: 'vote_average.asc', name: 'rating ascending' },
+    {
+      id: uuid.v4(),
+      value: 'primary_release_date.desc',
+      name: 'release date descending'
+    },
+    {
+      id: uuid.v4(),
+      value: '"primary_release_date.asc',
+      name: 'release date ascending'
+    },
+    { id: uuid.v4(), value: 'title.asc', name: 'title (A-Z)' },
+    { id: uuid.v4(), value: 'title.desc', name: 'title (Z-A)' }
   ];
 
   const genres = [
-    'Action & Adventure',
-    'Animation',
-    'Comedy',
-    'Crime',
-    'Documentary',
-    'Drama',
-    'Family',
-    'Kids',
-    'Mystery',
-    'News',
-    'Reality',
-    'Sci-Fi & Fantasy',
-    'Soap',
-    'Talk',
-    'War & Politics',
-    'Western'
+    { id: 28, name: 'Action' },
+    { id: 12, name: 'Adventure' },
+    { id: 10759, name: 'Action & Adventure', for: 'tv' },
+    { id: 16, name: 'Animation' },
+    { id: 35, name: 'Comedy' },
+    { id: 80, name: 'Crime' },
+    { id: 99, name: 'Documentary' },
+    { id: 18, name: 'Drama' },
+    { id: 10751, name: 'Family' },
+    { id: 14, name: 'Fantasy' },
+    { id: 36, name: 'History' },
+    { id: 27, name: 'Horror' },
+    { id: 10762, name: 'Kids', for: 'tv' },
+    { id: 10402, name: 'Music' },
+    { id: 9648, name: 'Mystery' },
+    { id: 10749, name: 'Romance' },
+    { id: 10763, name: 'News', for: 'tv' },
+    { id: 10764, name: 'Reality', for: 'tv' },
+    { id: 10770, name: 'Tv Movie' },
+    { id: 53, name: 'Thriller' },
+    { id: 878, name: 'Sci-Fi & Fantasy' },
+    { id: 10766, name: 'Soap', for: 'tv' },
+    { id: 10767, name: 'Talk', for: 'tv' },
+    { id: 10768, name: 'War & Politics', for: 'tv' },
+    { id: 10752, name: 'War' },
+    { id: 37, name: 'Western' }
   ];
 
+  const handleReset = () => {
+    setForm({
+      year: '',
+      sort_by: 'popularity.desc',
+      genre: ''
+    });
+    push(
+      `/discover?query=${query.query}${sortQuery}${yearQuery}${genreQuery}&page=1`
+    );
+  };
+
+  const sortQuery = sort_by === 'popularity.desc' ? '' : `&sort_by=${sort_by}`;
+  const yearQuery = year === '' ? '' : `&year=${year}`;
+  const genreQuery = genre === '' ? '' : `&genres=${genre}`;
+
+  useEffect(() => {
+    if (genre === '') {
+      push(
+        `/discover?query=${query.query}${sortQuery}${yearQuery}&page=${query.page}`
+      );
+    }
+    if (year === '') {
+      push(
+        `/discover?query=${query.query}${sortQuery}${genreQuery}&page=${query.page}`
+      );
+    }
+    push(
+      `/discover?query=${query.query}${sortQuery}${yearQuery}${genreQuery}&page=${query.page}`
+    );
+  }, [year, sort_by, genre]);
+
   return (
-    <Styled className='discover--form--section'>
+    <Styled
+      className='discover--form--section'
+      genre={query.query === 'movie' && true}
+    >
       <Form className='discover--from' onSubmit={handleSubmit}>
         <Form.Group controlId='year'>
           <Form.Label>Year</Form.Label>
@@ -94,7 +183,7 @@ const DiscoverForm = props => {
             value={year}
             onChange={handleChange}
           >
-            <option>none</option>
+            <option></option>
             {getYears()
               .reverse()
               .map(year => (
@@ -110,45 +199,42 @@ const DiscoverForm = props => {
             value={sort_by}
             onChange={handleChange}
           >
-            {sortBy.map(sort => (
-              <option key={sort}>{sort}</option>
+            {sortBy.map(({ id, value, name }) => (
+              <option key={id} value={value}>
+                {name}
+              </option>
             ))}
           </Form.Control>
         </Form.Group>
         <Form.Group controlId='genres'>
           <Form.Label>Genres</Form.Label>
           <Form.Control
+            className='genre--control'
             as='select'
             name='genre'
             value={genre}
             onChange={handleChange}
           >
-            <option disabled></option>
+            <option></option>
             {genres.map(genre => (
-              <option key={genre}>{genre}</option>
+              <option
+                key={genre.id}
+                value={genre.id}
+                className={!genre.for ? 'both' : 'tv'}
+              >
+                {genre.name}
+              </option>
             ))}
           </Form.Control>
         </Form.Group>
+        {(year != '' || genre != '' || sort_by != 'popularity.desc') && (
+          <div className='clear--fields' onClick={handleReset}>
+            x
+          </div>
+        )}
       </Form>
     </Styled>
   );
 };
 
 export default DiscoverForm;
-
-{
-  /* <option value='popularity.desc' selected='selected'>
-              Popularity Descending
-            </option>
-            <option value='popularity.asc'>Popularity Ascending</option>
-            <option value='vote_average.desc'>Rating Descending</option>
-            <option value='vote_average.asc'>Rating Ascending</option>
-            <option value='primary_release_date.desc'>
-              Release Date Descending
-            </option>
-            <option value='primary_release_date.asc'>
-              Release Date Ascending
-            </option>
-            <option value='title.asc'>Title (A-Z)</option>
-            <option value='title.desc'>Title (Z-A)</option> */
-}

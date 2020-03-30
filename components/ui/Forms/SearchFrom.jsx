@@ -139,12 +139,10 @@ const SearchFrom = () => {
 
   useEffect(() => {
     if (search === '') {
-      console.log('emty', search);
       clearData(CLEAR_SEARCH_DATA);
       return;
     } else {
       getSearchData(search);
-      console.log('sea', search);
     }
   }, [search]);
 

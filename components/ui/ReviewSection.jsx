@@ -6,7 +6,7 @@ import SimpleFlex from './SimpleFlex';
 // import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 const Styled = styled.section`
-  padding: 2em 0em;
+  padding: 2em 0.5em;
   display: grid;
   grid-gap: 0.2em;
   max-width: 1000px;

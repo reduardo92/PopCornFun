@@ -3,8 +3,6 @@ import movieDB from '../../components/utility/movieDB';
 import MediaSection from '../../components/ui/mediaProfile/MediaSection';
 
 const discover = ({ discover }) => {
-  console.log(discover);
-
   return <MediaSection mediaFor={discover} forPage='disc' />;
 };
 
@@ -13,13 +11,18 @@ discover.getInitialProps = async ({ query }) => {
   const sort_by = `sort_by=${
     query.sort_by ? query.sort_by : 'popularity.desc'
   }`;
-  const year = `&year=${query.year ? query.year : ''}`;
-  const genres = `&with_genres=${query.genres ? query.genres : ''}`;
-  const keywords = `&with_keywords=${query.keywords ? query.keywords : ''}`;
+  const year = query.year
+    ? `&${
+        query.query === 'movie' ? 'primary_release_year' : 'first_air_date_year'
+      }=${query.year}`
+    : '';
+  const genres = query.genres ? `&with_genres=${query.genres}` : '';
+
+  console.log('from query', year, genres);
   try {
     const discover = await movieDB(
       `discover/${query.query}`,
-      `${sort_by}${year}${genres}${keywords}${page}`
+      `${sort_by}${year}${genres}${page}`
     );
     return {
       discover: {

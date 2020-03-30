@@ -7,6 +7,7 @@ import CardTwo from '../Cards/CardTwo';
 import PersonCard from '../Cards/PersonCard';
 import Link from 'next/link';
 import DiscoverForm from '../Forms/DiscoverFrom';
+import { useRouter } from 'next/router';
 
 const Styled = styled.section`
   background: var(--bg-dark-gradient);
@@ -125,20 +126,25 @@ const Styled = styled.section`
 `;
 
 const MediaSection = ({ mediaFor, forPage }) => {
-  const { paginate, currentPage } = useContext(MovieContext);
+  const {
+    paginate,
+    discoverForm: { setForm }
+  } = useContext(MovieContext);
 
   useEffect(() => {
     paginate(mediaFor.page);
   }, [mediaFor.page]);
+
+  const { asPath } = useRouter();
 
   const setLink = () => {
     const mediaLink = `/${mediaFor.typeFor}?query=${mediaFor.title
       .split(' ')
       .join('_')}&page=`;
 
-    const discLink = `/discover?query=${mediaFor.typeFor}&page=`;
+    const discLink = forPage && asPath.slice(0, -1);
 
-    return forPage === 'disc' ? discLink : mediaLink;
+    return forPage ? discLink : mediaLink;
   };
 
   return (
@@ -162,6 +168,13 @@ const MediaSection = ({ mediaFor, forPage }) => {
                 <div className='head--tabs'>
                   <Link href='/discover?query=movie&page=1'>
                     <a
+                      onClick={() =>
+                        setForm({
+                          year: '',
+                          sort_by: 'popularity.desc',
+                          genre: ''
+                        })
+                      }
                       className={`head--tabs__tab ${mediaFor.title ===
                         'movie' && 'disabled'}`}
                     >
@@ -171,6 +184,13 @@ const MediaSection = ({ mediaFor, forPage }) => {
                   </Link>
                   <Link href='/discover?query=tv&page=1'>
                     <a
+                      onClick={() =>
+                        setForm({
+                          year: '',
+                          sort_by: 'popularity.desc',
+                          genre: ''
+                        })
+                      }
                       className={`head--tabs__tab ${mediaFor.title === 'tv' &&
                         'disabled'}`}
                     >
@@ -178,11 +198,12 @@ const MediaSection = ({ mediaFor, forPage }) => {
                     </a>
                   </Link>
                 </div>
-                <DiscoverForm />
+                <DiscoverForm
+                  typeFor={mediaFor.title === 'movie' ? 'tv' : 'movie'}
+                />
               </>
             )}
           </div>
-
           <Pagination
             numberOfArticles={mediaFor.total_pages}
             typeFor={setLink()}
@@ -194,11 +215,19 @@ const MediaSection = ({ mediaFor, forPage }) => {
                 : 'content--container'
             }
           >
-            {mediaFor.results.map(item =>
-              mediaFor.typeFor === 'person' ? (
-                <PersonCard key={item.id} data={item} />
-              ) : (
-                <CardTwo key={item.id} data={item} typeFor={mediaFor.typeFor} />
+            {mediaFor.results.length === 0 ? (
+              <h3 className='text-dark vh-100'>Sorry Nothing Found</h3>
+            ) : (
+              mediaFor.results.map(item =>
+                mediaFor.typeFor === 'person' ? (
+                  <PersonCard key={item.id} data={item} />
+                ) : (
+                  <CardTwo
+                    key={item.id}
+                    data={item}
+                    typeFor={mediaFor.typeFor}
+                  />
+                )
               )
             )}
           </div>

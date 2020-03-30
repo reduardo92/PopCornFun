@@ -3,6 +3,7 @@ import MovieContext from './MovieContext';
 import useMovieReducer from './useMovieReducer';
 import { SET_MODAL_MEDIA, SET_SEARCH_DATA, SET_CURRENT_PAGE } from './types';
 import movieDB from '../utility/movieDB';
+import useForm from '../Hooks/useForm';
 
 const log = console.log;
 
@@ -10,6 +11,11 @@ const movieInitalState = {
   searchQuery: '',
   searchData: null,
   pageData: {},
+  discForm: {
+    year: '',
+    sort_by: 'popularity.desc',
+    genre: ''
+  },
   isModal: { media: null, toggle: false, for: null },
   currentPage: 1,
   itemPerPage: 20,
@@ -39,7 +45,6 @@ const StateProvider = ({ children }) => {
   }, [windowSize]);
 
   // Actions
-
   const setData = (type, data) => dispatch({ type, payload: data });
 
   const setModal = (data, typeFor = 'videos') =>
@@ -59,15 +64,18 @@ const StateProvider = ({ children }) => {
     }
   };
 
-  // Get current posts
-  const indexOfLastPost = state.currentPage * state.itemPerPage;
-  const indexOfFirstPost = indexOfLastPost - state.itemPerPage;
+  // Discover Form
+  const discoverForm = useForm({
+    year: '',
+    sort_by: 'popularity.desc',
+    genre: ''
+  });
 
   // Change page
   const paginate = pageNumber =>
     dispatch({ type: SET_CURRENT_PAGE, payload: pageNumber });
 
-  console.log(state);
+  // console.log(state);
   return (
     <MovieContext.Provider
       value={{
@@ -80,6 +88,7 @@ const StateProvider = ({ children }) => {
         clearData,
         navRef,
         getSearchData,
+        discoverForm,
         paginate,
         ...state
       }}

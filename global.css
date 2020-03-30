@@ -357,6 +357,11 @@ a {
   color: var(--white-clr);
 }
 
+img {
+  height: 100%;
+  object-fit: cover;
+}
+
 #__next {
   display: flex;
   flex-direction: column;

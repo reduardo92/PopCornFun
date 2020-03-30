@@ -117,7 +117,7 @@ const NavCustom = () => {
               </a>
             </Link>
             <div className='dropdown nav-item nav--dropdown'>
-              <Link href='/discover?query=movie'>
+              <Link href='/discover?query=movie&page=1'>
                 <a className='nav-link dropdown--link' role='button'>
                   Discover <IoIosArrowDown className='nav--arrow' />
                 </a>
@@ -126,12 +126,12 @@ const NavCustom = () => {
                 Discover <IoIosArrowDown className='nav--arrow' />
               </button>
               <div className='dropdown-menu'>
-                <Link href='/discover?query=movie'>
+                <Link href='/discover?query=movie&page=1'>
                   <a className='dropdown-item' role='button'>
                     Movies
                   </a>
                 </Link>
-                <Link href='/discover?query=tv'>
+                <Link href='/discover?query=tv&page=1'>
                   <a className='dropdown-item' role='button'>
                     Tv Shows
                   </a>

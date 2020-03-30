@@ -8,6 +8,7 @@ const movieDB = async (url, query = '', method = 'get') => {
         query == '' ? '' : `&${query}`
       }`
     );
+
     return data;
   } catch (error) {
     console.log(error);

@@ -3,12 +3,7 @@ import styled from 'styled-components';
 import MovieContext from '../../context/MovieContext';
 import createPagination from './createPagination';
 import Link from 'next/link';
-import {
-  MdFirstPage,
-  MdLastPage,
-  MdNavigateNext,
-  MdNavigateBefore
-} from 'react-icons/md';
+import { MdFirstPage, MdLastPage } from 'react-icons/md';
 
 const Styled = styled.div`
   ul {
@@ -119,17 +114,19 @@ const Pagination = ({
             <a className='link--item controls'>Prev</a>
           </Link>
         </li>
-        {pagination.map(page => (
-          <li
-            key={page}
-            className={`${currentPage === page && 'active'}`}
-            onClick={() => paginate(page)}
-          >
-            <Link href={typeFor + page}>
-              <a className='link--item'>{page}</a>
-            </Link>
-          </li>
-        ))}
+        {pagination.length === 1
+          ? ''
+          : pagination.map(page => (
+              <li
+                key={page}
+                className={`${currentPage === page && 'active'}`}
+                onClick={() => paginate(page)}
+              >
+                <Link href={typeFor + page}>
+                  <a className='link--item'>{page}</a>
+                </Link>
+              </li>
+            ))}
         <li
           className={`${pagination.reverse()[0] === currentPage &&
             'disabled d-none'}`}
@@ -155,12 +152,3 @@ const Pagination = ({
 };
 
 export default Pagination;
-
-{
-  /* <li
-className={`${currentPage === page && 'active'}`}
-onClick={() => paginate(page)}
->
-{page}
-</li> */
-}

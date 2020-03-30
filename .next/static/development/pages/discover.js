@@ -82,74 +82,6 @@ function getMovie(id, param) {
 
 /***/ }),
 
-/***/ "./components/hooks/useForm.js":
-/*!*************************************!*\
-  !*** ./components/hooks/useForm.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-
-
-var useForm = function useForm(initialState, callback) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(initialState),
-      form = _useState[0],
-      setForm = _useState[1];
-
-  var handleChange = function handleChange(e) {
-    e.persist();
-    setForm(function (form) {
-      return _objectSpread({}, form, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, e.target.name, e.target.value));
-    });
-  };
-
-  var handleSubmit = function handleSubmit(e) {
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleSubmit$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            e.preventDefault();
-
-            if (e.currentTarget.checkValidity() === false) {
-              e.stopPropagation();
-            }
-
-            callback();
-
-          case 3:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, null, null, null, Promise);
-  };
-
-  return {
-    handleChange: handleChange,
-    handleSubmit: handleSubmit,
-    form: form,
-    setForm: setForm
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (useForm);
-
-/***/ }),
-
 /***/ "./components/layout.js":
 /*!******************************!*\
   !*** ./components/layout.js ***!
@@ -257,7 +189,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "CardTwo__Styled",
   componentId: "sc-1cfe07e-0"
-})(["display:flex;flex-direction:column;.poster__img{display:none;}.card--poster{.card--poster--link img{transition:var(--ease--in--out--02s);height:100%;object-fit:cover;}.backdrop__img{max-height:197.82px;}&:hover .card--poster--link img{opacity:0.5;}}.card--body{background:var(--bg-gradient);border-radius:0 0 3px 3px;height:100%;&__head{display:flex;align-items:center;padding:0.5em 0;padding-left:0.5em;.CircularProgressbar{width:2.8em;flex:0 0 2.8em;margin-right:1em;}}&__overview{font-size:0.9rem;padding:0 0.5em;}}.title--section{.title{font-size:1.1rem;color:var(--white-clr);&:hover{opacity:0.7;}}.release--date{color:rgba(255,255,255,0.68);}}.more--info{border-top:1px solid rgba(191,191,191,0.52);padding:0.8em 0.8em;font-size:0.9rem;.more--info__link{color:var(--white-clr);transition:var(--ease--in--out--02s);}&:hover .more--info__link{opacity:0.7;}}@media screen and (min-width:1000px){flex-direction:row;max-width:90%;.poster__img{display:block;}.backdrop__img{display:none;}.card--body{height:auto;display:flex;flex-direction:column;justify-content:space-around;flex:0 0 73.5%;width:73.5%;&__head{padding:0.5em 0.5em 0;height:auto;}&__overview{max-width:85%;font-size:0.95rem;}}.more--info{font-size:0.95rem;}}"]);
+})(["display:flex;flex-direction:column;.poster__img{display:none;}.card--poster{.card--poster--link img{transition:var(--ease--in--out--02s);height:100%;object-fit:cover;}.backdrop__img{max-height:197.82px;}&:hover .card--poster--link img{opacity:0.5;}}.card--body{background:var(--bg-gradient);border-radius:0 0 3px 3px;height:100%;&__head{display:flex;align-items:center;padding:0.5em 0;padding-left:0.5em;.CircularProgressbar{width:2.8em;flex:0 0 2.8em;margin-right:1em;}}&__overview{font-size:0.9rem;padding:0 0.5em;min-height:95px;}}.title--section{.title{font-size:1.1rem;color:var(--white-clr);&:hover{opacity:0.7;}}.release--date{color:rgba(255,255,255,0.68);}}.more--info{border-top:1px solid rgba(191,191,191,0.52);padding:0.8em 0.8em;font-size:0.9rem;.more--info__link{color:var(--white-clr);transition:var(--ease--in--out--02s);}&:hover .more--info__link{opacity:0.7;}}@media screen and (min-width:1000px){flex-direction:row;max-width:90%;.poster__img{display:block;}.backdrop__img{display:none;}.card--body{height:auto;display:flex;flex-direction:column;justify-content:space-around;flex:0 0 73.5%;width:73.5%;&__head{padding:0.5em 0.5em 0;height:auto;}&__overview{max-width:85%;font-size:0.95rem;}}.more--info{font-size:0.95rem;}}"]);
 
 var CardTwo = function CardTwo(_ref) {
   var data = _ref.data,
@@ -266,14 +198,14 @@ var CardTwo = function CardTwo(_ref) {
     className: "card--two",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 126
     },
     __self: this
   }, __jsx("div", {
     className: "card--poster",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 127
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -281,14 +213,14 @@ var CardTwo = function CardTwo(_ref) {
     as: "/".concat(typeFor, "/").concat(data.id),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 128
     },
     __self: this
   }, __jsx("a", {
     className: "card--poster--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 129
     },
     __self: this
   }, __jsx("img", {
@@ -297,7 +229,7 @@ var CardTwo = function CardTwo(_ref) {
     alt: data.title || data.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 130
     },
     __self: this
   }), __jsx("img", {
@@ -306,21 +238,21 @@ var CardTwo = function CardTwo(_ref) {
     alt: data.title || data.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 139
     },
     __self: this
   })))), __jsx("div", {
     className: "card--body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 151
     },
     __self: this
   }, __jsx("div", {
     className: "card--body__head",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 152
     },
     __self: this
   }, __jsx(_CirclePercentage__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -328,14 +260,14 @@ var CardTwo = function CardTwo(_ref) {
     value: data.vote_average * 10,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 153
     },
     __self: this
   }), __jsx("div", {
     className: "title--section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 157
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -343,35 +275,35 @@ var CardTwo = function CardTwo(_ref) {
     as: "/".concat(typeFor, "/").concat(data.id),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 158
     },
     __self: this
   }, __jsx("a", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 159
     },
     __self: this
   }, data.title || data.name)), __jsx("div", {
     className: "release--date",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160
+      lineNumber: 161
     },
     __self: this
   }, data.release_date ? Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_5__["default"])(data.release_date) : data.first_air_date ? Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_5__["default"])(data.first_air_date) : data.known_for_department))), __jsx("p", {
     className: "card--body__overview",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169
+      lineNumber: 170
     },
     __self: this
   }, data.overview.length >= 170 ? "".concat(data.overview.slice(0, 170), "...") : data.overview), __jsx("div", {
     className: "more--info",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 175
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -379,14 +311,14 @@ var CardTwo = function CardTwo(_ref) {
     as: "/".concat(typeFor, "/").concat(data.id),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 176
     },
     __self: this
   }, __jsx("a", {
     className: "more--info__link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 177
     },
     __self: this
   }, "More Info")))));
@@ -420,7 +352,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "PersonCard__Styled",
   componentId: "sc-10zmgx9-0"
-})(["width:160px;.person--profile{.person--profile__link--img{transition:var(--ease--in--out--02s);}&:hover .person--profile__link--img{opacity:0.5;}}.name{font-weight:bold;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}.job{display:block;}.know--for{font-size:0.7rem;margin-top:0.1em;&__item{margin-right:0.3em;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:768px){width:100%;max-width:300px;.person--body__title{display:flex;align-items:baseline;}.name{font-size:1.1rem;}.job{display:inline-block;margin-left:auto;font-size:0.9rem;}.know--for{font-size:0.8rem;}}@media screen and (min-width:1000px){.name{font-size:1.3rem;}.job{font-size:1rem;}.know--for{font-size:0.9rem;}}"]);
+})(["width:160px;display:grid;grid-template-rows:240px auto;.person--profile{background-color:var(--grey-clr);.person--profile__link--img{transition:var(--ease--in--out--02s);}&:hover .person--profile__link--img{opacity:0.5;}}.name{font-weight:bold;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}.job{display:block;}.know--for{font-size:0.7rem;margin-top:0.1em;&__item{margin-right:0.3em;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:768px){width:100%;max-width:300px;grid-template-rows:400px auto;.person--body__title{display:flex;align-items:baseline;}.name{font-size:1.1rem;}.job{display:inline-block;margin-left:auto;font-size:0.9rem;}.know--for{font-size:0.8rem;}}@media screen and (min-width:1000px){.name{font-size:1.3rem;}.job{font-size:1rem;}.know--for{font-size:0.9rem;}}"]);
 
 var PersonCard = function PersonCard(_ref) {
   var data = _ref.data;
@@ -428,14 +360,14 @@ var PersonCard = function PersonCard(_ref) {
     className: "person--card",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 90
     },
     __self: this
   }, __jsx("div", {
     className: "person--profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 91
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -443,14 +375,14 @@ var PersonCard = function PersonCard(_ref) {
     as: "/person/".concat(data.id),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 92
     },
     __self: this
   }, __jsx("a", {
     className: "person--profile__link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 93
     },
     __self: this
   }, __jsx("img", {
@@ -459,21 +391,21 @@ var PersonCard = function PersonCard(_ref) {
     alt: data.title || data.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 94
     },
     __self: this
   })))), __jsx("div", {
     className: "person--body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 106
     },
     __self: this
   }, __jsx("div", {
     className: "person--body__title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 107
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -481,28 +413,28 @@ var PersonCard = function PersonCard(_ref) {
     as: "/person/".concat(data.id),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 108
     },
     __self: this
   }, __jsx("a", {
     className: "name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 109
     },
     __self: this
   }, data.name)), __jsx("small", {
     className: "job",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 111
     },
     __self: this
   }, "(", data.known_for_department, ")")), __jsx("div", {
     className: "know--for",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 113
     },
     __self: this
   }, !data.known_for ? 'N/A' : data.known_for.map(function (item, i) {
@@ -512,14 +444,14 @@ var PersonCard = function PersonCard(_ref) {
       as: "/".concat(item.media_type, "/").concat(item.id),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112
+        lineNumber: 117
       },
       __self: this
     }, __jsx("a", {
       className: "know--for__item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117
+        lineNumber: 122
       },
       __self: this
     }, item.name || item.title, data.known_for.length - 1 === i ? '' : ', '));
@@ -591,10 +523,14 @@ var CirclePercentage = function CirclePercentage(_ref3) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
-/* harmony import */ var _utility_getYears__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utility/getYears */ "./components/utility/getYears.js");
-/* harmony import */ var _hooks_useForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/useForm */ "./components/hooks/useForm.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/MovieContext */ "./components/context/MovieContext.js");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
+/* harmony import */ var _utility_getYears__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utility/getYears */ "./components/utility/getYears.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Forms\\DiscoverFrom.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -602,172 +538,319 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+
+
+var Styled = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "DiscoverFrom__Styled",
   componentId: "sc-1qw32to-0"
-})(["@media screen and (min-width:768px){flex:100%;margin-bottom:1em;.discover--from{display:flex;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}}}@media screen and (min-width:1000px){flex:1;margin-left:2em;.discover--from{display:flex;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}}}"]);
+})([".discover--from{display:flex;flex-direction:column;}.clear--fields{background:var(--bg-gradient);font-size:1.3rem;padding:0em 0.5em;align-self:center;text-align:center;margin-bottom:1.1em;border-radius:3px;transition:var(--ease-12s);cursor:pointer;&:hover,&:focus{transform:scale(0.9);opacity:0.8;}}@media screen and (min-width:768px){flex:100%;margin-bottom:1em;.discover--from{display:flex;flex-direction:row;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}.clear--fields{flex:0 0 30px;align-self:center;margin:0;margin-top:0.85em;}}}.genre--control .tv{display:", ";}@media screen and (min-width:1000px){flex:1;margin-left:2em;.discover--from{display:flex;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}}}"], function (_ref) {
+  var genre = _ref.genre;
+  return genre && 'none';
+});
 
-var DiscoverForm = function DiscoverForm(props) {
-  var _useForm = Object(_hooks_useForm__WEBPACK_IMPORTED_MODULE_4__["default"])({
-    year: 'none',
-    sort_by: 'popularity descending',
-    genre: '',
-    keywords: ''
-  }),
-      handleChange = _useForm.handleChange,
-      handleSubmit = _useForm.handleSubmit,
-      form = _useForm.form,
-      setForm = _useForm.setForm;
+var DiscoverForm = function DiscoverForm(_ref2) {
+  var typeFor = _ref2.typeFor;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_3__["default"]),
+      _useContext$discoverF = _useContext.discoverForm,
+      handleChange = _useContext$discoverF.handleChange,
+      handleSubmit = _useContext$discoverF.handleSubmit,
+      form = _useContext$discoverF.form,
+      setForm = _useContext$discoverF.setForm;
+
+  var _useRouter = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["useRouter"])(),
+      query = _useRouter.query,
+      push = _useRouter.push;
 
   var year = form.year,
       sort_by = form.sort_by,
       genre = form.genre;
-  var sortBy = ['popularity descending', 'popularity ascending', 'rating descending', 'rating ascending', 'release date descending', 'release date ascending', 'title (A-Z)', 'title (Z-A)'];
-  var genres = ['Action & Adventure', 'Animation', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Family', 'Kids', 'Mystery', 'News', 'Reality', 'Sci-Fi & Fantasy', 'Soap', 'Talk', 'War & Politics', 'Western'];
+  var sortBy = [{
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'popularity.desc',
+    name: 'popularity descending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'popularity.asc',
+    name: 'popularity ascending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'vote_average.desc',
+    name: 'rating descending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'vote_average.asc',
+    name: 'rating ascending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'primary_release_date.desc',
+    name: 'release date descending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: '"primary_release_date.asc',
+    name: 'release date ascending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'title.asc',
+    name: 'title (A-Z)'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'title.desc',
+    name: 'title (Z-A)'
+  }];
+  var genres = [{
+    id: 28,
+    name: 'Action'
+  }, {
+    id: 12,
+    name: 'Adventure'
+  }, {
+    id: 10759,
+    name: 'Action & Adventure',
+    "for": 'tv'
+  }, {
+    id: 16,
+    name: 'Animation'
+  }, {
+    id: 35,
+    name: 'Comedy'
+  }, {
+    id: 80,
+    name: 'Crime'
+  }, {
+    id: 99,
+    name: 'Documentary'
+  }, {
+    id: 18,
+    name: 'Drama'
+  }, {
+    id: 10751,
+    name: 'Family'
+  }, {
+    id: 14,
+    name: 'Fantasy'
+  }, {
+    id: 36,
+    name: 'History'
+  }, {
+    id: 27,
+    name: 'Horror'
+  }, {
+    id: 10762,
+    name: 'Kids',
+    "for": 'tv'
+  }, {
+    id: 10402,
+    name: 'Music'
+  }, {
+    id: 9648,
+    name: 'Mystery'
+  }, {
+    id: 10749,
+    name: 'Romance'
+  }, {
+    id: 10763,
+    name: 'News',
+    "for": 'tv'
+  }, {
+    id: 10764,
+    name: 'Reality',
+    "for": 'tv'
+  }, {
+    id: 10770,
+    name: 'Tv Movie'
+  }, {
+    id: 53,
+    name: 'Thriller'
+  }, {
+    id: 878,
+    name: 'Sci-Fi & Fantasy'
+  }, {
+    id: 10766,
+    name: 'Soap',
+    "for": 'tv'
+  }, {
+    id: 10767,
+    name: 'Talk',
+    "for": 'tv'
+  }, {
+    id: 10768,
+    name: 'War & Politics',
+    "for": 'tv'
+  }, {
+    id: 10752,
+    name: 'War'
+  }, {
+    id: 37,
+    name: 'Western'
+  }];
+
+  var handleReset = function handleReset() {
+    setForm({
+      year: '',
+      sort_by: 'popularity.desc',
+      genre: ''
+    });
+    push("/discover?query=".concat(query.query).concat(sortQuery).concat(yearQuery).concat(genreQuery, "&page=1"));
+  };
+
+  var sortQuery = sort_by === 'popularity.desc' ? '' : "&sort_by=".concat(sort_by);
+  var yearQuery = year === '' ? '' : "&year=".concat(year);
+  var genreQuery = genre === '' ? '' : "&genres=".concat(genre);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (genre === '') {
+      push("/discover?query=".concat(query.query).concat(sortQuery).concat(yearQuery, "&page=").concat(query.page));
+    }
+
+    if (year === '') {
+      push("/discover?query=".concat(query.query).concat(sortQuery).concat(genreQuery, "&page=").concat(query.page));
+    }
+
+    push("/discover?query=".concat(query.query).concat(sortQuery).concat(yearQuery).concat(genreQuery, "&page=").concat(query.page));
+  }, [year, sort_by, genre]);
   return __jsx(Styled, {
     className: "discover--form--section",
+    genre: query.query === 'movie' && true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 173
     },
     __self: this
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "discover--from",
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 177
     },
     __self: this
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"].Group, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
     controlId: "year",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 178
     },
     __self: this
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"].Label, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 179
     },
     __self: this
-  }, "Year"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"].Control, {
+  }, "Year"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
     as: "select",
     name: "year",
     value: year,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 180
     },
     __self: this
   }, __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 186
     },
     __self: this
-  }, "none"), Object(_utility_getYears__WEBPACK_IMPORTED_MODULE_3__["default"])().reverse().map(function (year) {
+  }), Object(_utility_getYears__WEBPACK_IMPORTED_MODULE_5__["default"])().reverse().map(function (year) {
     return __jsx("option", {
       key: year,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 190
       },
       __self: this
     }, year);
-  }))), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"].Group, {
+  }))), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
     controlId: "sort_by",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 194
     },
     __self: this
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"].Label, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 195
     },
     __self: this
-  }, "Sort By"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"].Control, {
+  }, "Sort By"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
     as: "select",
     name: "sort_by",
     value: sort_by,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 196
     },
     __self: this
-  }, sortBy.map(function (sort) {
+  }, sortBy.map(function (_ref3) {
+    var id = _ref3.id,
+        value = _ref3.value,
+        name = _ref3.name;
     return __jsx("option", {
-      key: sort,
+      key: id,
+      value: value,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 203
       },
       __self: this
-    }, sort);
-  }))), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"].Group, {
+    }, name);
+  }))), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
     controlId: "genres",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 209
     },
     __self: this
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"].Label, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 210
     },
     __self: this
-  }, "Genres"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__["default"].Control, {
+  }, "Genres"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
+    className: "genre--control",
     as: "select",
     name: "genre",
     value: genre,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 211
     },
     __self: this
   }, __jsx("option", {
-    disabled: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 218
     },
     __self: this
   }), genres.map(function (genre) {
     return __jsx("option", {
-      key: genre,
+      key: genre.id,
+      value: genre.id,
+      className: !genre["for"] ? 'both' : 'tv',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 128
+        lineNumber: 220
       },
       __self: this
-    }, genre);
-  })))));
+    }, genre.name);
+  }))), (year != '' || genre != '' || sort_by != 'popularity.desc') && __jsx("div", {
+    className: "clear--fields",
+    onClick: handleReset,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 231
+    },
+    __self: this
+  }, "x")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (DiscoverForm);
-{
-  /* <option value='popularity.desc' selected='selected'>
-              Popularity Descending
-            </option>
-            <option value='popularity.asc'>Popularity Ascending</option>
-            <option value='vote_average.desc'>Rating Descending</option>
-            <option value='vote_average.asc'>Rating Ascending</option>
-            <option value='primary_release_date.desc'>
-              Release Date Descending
-            </option>
-            <option value='primary_release_date.asc'>
-              Release Date Ascending
-            </option>
-            <option value='title.asc'>Title (A-Z)</option>
-            <option value='title.desc'>Title (Z-A)</option> */
-}
 
 /***/ }),
 
@@ -831,13 +914,13 @@ var Pagination = function Pagination(_ref) {
     numberOfButtons: numberOfButtons,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 95
     },
     __self: this
   }, __jsx("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 96
     },
     __self: this
   }, __jsx("li", {
@@ -847,28 +930,28 @@ var Pagination = function Pagination(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 97
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: typeFor + 1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 101
     },
     __self: this
   }, __jsx("a", {
     className: "link--item controls",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 102
     },
     __self: this
   }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdFirstPage"], {
     className: "icons",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 103
     },
     __self: this
   })))), __jsx("li", {
@@ -878,24 +961,24 @@ var Pagination = function Pagination(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 107
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: currentPage === 1 ? typeFor + 1 : typeFor + (currentPage - 1),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 111
     },
     __self: this
   }, __jsx("a", {
     className: "link--item controls",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 114
     },
     __self: this
-  }, "Prev"))), pagination.map(function (page) {
+  }, "Prev"))), pagination.length === 1 ? '' : pagination.map(function (page) {
     return __jsx("li", {
       key: page,
       className: "".concat(currentPage === page && 'active'),
@@ -904,21 +987,21 @@ var Pagination = function Pagination(_ref) {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 120
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
       href: typeFor + page,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 128
+        lineNumber: 125
       },
       __self: this
     }, __jsx("a", {
       className: "link--item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 126
       },
       __self: this
     }, page)));
@@ -929,21 +1012,21 @@ var Pagination = function Pagination(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 130
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: typeFor + (currentPage + 1),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 135
     },
     __self: this
   }, __jsx("a", {
     className: "link--item controls",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 136
     },
     __self: this
   }, "Next"))), __jsx("li", {
@@ -953,42 +1036,34 @@ var Pagination = function Pagination(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 139
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: typeFor + numberOfArticles,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 143
     },
     __self: this
   }, __jsx("a", {
     className: "link--item controls",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 144
     },
     __self: this
   }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdLastPage"], {
     className: "icons",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 145
     },
     __self: this
   }))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Pagination);
-{
-  /* <li
-  className={`${currentPage === page && 'active'}`}
-  onClick={() => paginate(page)}
-  >
-  {page}
-  </li> */
-}
 
 /***/ }),
 
@@ -1071,8 +1146,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _Forms_DiscoverFrom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Forms/DiscoverFrom */ "./components/ui/Forms/DiscoverFrom.jsx");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\MediaSection.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1093,91 +1171,109 @@ var MediaSection = function MediaSection(_ref) {
 
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]),
       paginate = _useContext.paginate,
-      currentPage = _useContext.currentPage;
+      setForm = _useContext.discoverForm.setForm;
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     paginate(mediaFor.page);
   }, [mediaFor.page]);
 
+  var _useRouter = Object(next_router__WEBPACK_IMPORTED_MODULE_9__["useRouter"])(),
+      asPath = _useRouter.asPath;
+
   var setLink = function setLink() {
     var mediaLink = "/".concat(mediaFor.typeFor, "?query=").concat(mediaFor.title.split(' ').join('_'), "&page=");
-    var discLink = "/discover?query=".concat(mediaFor.typeFor, "&page=");
-    return forPage === 'disc' ? discLink : mediaLink;
+    var discLink = forPage && asPath.slice(0, -1);
+    return forPage ? discLink : mediaLink;
   };
 
   return __jsx(_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 151
     },
     __self: this
   }, __jsx(Styled, {
     className: "MediaSection",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 152
     },
     __self: this
   }, __jsx("div", {
     className: "wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 153
     },
     __self: this
   }, __jsx("div", {
     className: "head",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 154
     },
     __self: this
   }, __jsx("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149
+      lineNumber: 155
     },
     __self: this
   }, forPage ? 'Discover New Movies & TV Shows' : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, mediaFor.title, '  ', mediaFor.typeFor === 'tv' ? 'TV' : mediaFor.typeFor)), forPage && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "head--tabs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 168
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/discover?query=movie&page=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 169
     },
     __self: this
   }, __jsx("a", {
+    onClick: function onClick() {
+      return setForm({
+        year: '',
+        sort_by: 'popularity.desc',
+        genre: ''
+      });
+    },
     className: "head--tabs__tab ".concat(mediaFor.title === 'movie' && 'disabled'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 170
     },
     __self: this
   }, ' ', "Movies")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/discover?query=tv&page=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172
+      lineNumber: 185
     },
     __self: this
   }, __jsx("a", {
+    onClick: function onClick() {
+      return setForm({
+        year: '',
+        sort_by: 'popularity.desc',
+        genre: ''
+      });
+    },
     className: "head--tabs__tab ".concat(mediaFor.title === 'tv' && 'disabled'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173
+      lineNumber: 186
     },
     __self: this
   }, "Tv Shows"))), __jsx(_Forms_DiscoverFrom__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    typeFor: mediaFor.title === 'movie' ? 'tv' : 'movie',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 181
+      lineNumber: 201
     },
     __self: this
   }))), __jsx(_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1185,23 +1281,30 @@ var MediaSection = function MediaSection(_ref) {
     typeFor: setLink(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 207
     },
     __self: this
   }), __jsx("div", {
     className: mediaFor.typeFor === 'person' ? 'person--grid' : 'content--container',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 211
     },
     __self: this
-  }, mediaFor.results.map(function (item) {
+  }, mediaFor.results.length === 0 ? __jsx("h3", {
+    className: "text-dark vh-100",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 219
+    },
+    __self: this
+  }, "Sorry Nothing Found") : mediaFor.results.map(function (item) {
     return mediaFor.typeFor === 'person' ? __jsx(_Cards_PersonCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
       key: item.id,
       data: item,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 199
+        lineNumber: 223
       },
       __self: this
     }) : __jsx(_Cards_CardTwo__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1210,7 +1313,7 @@ var MediaSection = function MediaSection(_ref) {
       typeFor: mediaFor.typeFor,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 201
+        lineNumber: 225
       },
       __self: this
     });
@@ -1219,7 +1322,7 @@ var MediaSection = function MediaSection(_ref) {
     typeFor: setLink(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 234
     },
     __self: this
   }))));
@@ -19887,6 +19990,267 @@ if ( true && typeof window !== 'undefined') {
 
 /***/ }),
 
+/***/ "./node_modules/uuid/index.js":
+/*!************************************!*\
+  !*** ./node_modules/uuid/index.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var v1 = __webpack_require__(/*! ./v1 */ "./node_modules/uuid/v1.js");
+var v4 = __webpack_require__(/*! ./v4 */ "./node_modules/uuid/v4.js");
+
+var uuid = v4;
+uuid.v1 = v1;
+uuid.v4 = v4;
+
+module.exports = uuid;
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/lib/bytesToUuid.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/bytesToUuid.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+for (var i = 0; i < 256; ++i) {
+  byteToHex[i] = (i + 0x100).toString(16).substr(1);
+}
+
+function bytesToUuid(buf, offset) {
+  var i = offset || 0;
+  var bth = byteToHex;
+  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
+  return ([
+    bth[buf[i++]], bth[buf[i++]],
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]], '-',
+    bth[buf[i++]], bth[buf[i++]],
+    bth[buf[i++]], bth[buf[i++]],
+    bth[buf[i++]], bth[buf[i++]]
+  ]).join('');
+}
+
+module.exports = bytesToUuid;
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/lib/rng-browser.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/rng-browser.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Unique ID creation requires a high quality random # generator.  In the
+// browser this is a little complicated due to unknown quality of Math.random()
+// and inconsistent support for the `crypto` API.  We do the best we can via
+// feature-detection
+
+// getRandomValues needs to be invoked in a context where "this" is a Crypto
+// implementation. Also, find the complete implementation of crypto on IE11.
+var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
+                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
+
+if (getRandomValues) {
+  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
+  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
+
+  module.exports = function whatwgRNG() {
+    getRandomValues(rnds8);
+    return rnds8;
+  };
+} else {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var rnds = new Array(16);
+
+  module.exports = function mathRNG() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return rnds;
+  };
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/v1.js":
+/*!*********************************!*\
+  !*** ./node_modules/uuid/v1.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var rng = __webpack_require__(/*! ./lib/rng */ "./node_modules/uuid/lib/rng-browser.js");
+var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ "./node_modules/uuid/lib/bytesToUuid.js");
+
+// **`v1()` - Generate time-based UUID**
+//
+// Inspired by https://github.com/LiosK/UUID.js
+// and http://docs.python.org/library/uuid.html
+
+var _nodeId;
+var _clockseq;
+
+// Previous uuid creation time
+var _lastMSecs = 0;
+var _lastNSecs = 0;
+
+// See https://github.com/uuidjs/uuid for API details
+function v1(options, buf, offset) {
+  var i = buf && offset || 0;
+  var b = buf || [];
+
+  options = options || {};
+  var node = options.node || _nodeId;
+  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
+
+  // node and clockseq need to be initialized to random values if they're not
+  // specified.  We do this lazily to minimize issues related to insufficient
+  // system entropy.  See #189
+  if (node == null || clockseq == null) {
+    var seedBytes = rng();
+    if (node == null) {
+      // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
+      node = _nodeId = [
+        seedBytes[0] | 0x01,
+        seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]
+      ];
+    }
+    if (clockseq == null) {
+      // Per 4.2.2, randomize (14 bit) clockseq
+      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 0x3fff;
+    }
+  }
+
+  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
+  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
+  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
+  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
+  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
+
+  // Per 4.2.1.2, use count of uuid's generated during the current clock
+  // cycle to simulate higher resolution clock
+  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
+
+  // Time since last uuid creation (in msecs)
+  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
+
+  // Per 4.2.1.2, Bump clockseq on clock regression
+  if (dt < 0 && options.clockseq === undefined) {
+    clockseq = clockseq + 1 & 0x3fff;
+  }
+
+  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
+  // time interval
+  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
+    nsecs = 0;
+  }
+
+  // Per 4.2.1.2 Throw error if too many uuids are requested
+  if (nsecs >= 10000) {
+    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
+  }
+
+  _lastMSecs = msecs;
+  _lastNSecs = nsecs;
+  _clockseq = clockseq;
+
+  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
+  msecs += 12219292800000;
+
+  // `time_low`
+  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
+  b[i++] = tl >>> 24 & 0xff;
+  b[i++] = tl >>> 16 & 0xff;
+  b[i++] = tl >>> 8 & 0xff;
+  b[i++] = tl & 0xff;
+
+  // `time_mid`
+  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
+  b[i++] = tmh >>> 8 & 0xff;
+  b[i++] = tmh & 0xff;
+
+  // `time_high_and_version`
+  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
+  b[i++] = tmh >>> 16 & 0xff;
+
+  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
+  b[i++] = clockseq >>> 8 | 0x80;
+
+  // `clock_seq_low`
+  b[i++] = clockseq & 0xff;
+
+  // `node`
+  for (var n = 0; n < 6; ++n) {
+    b[i + n] = node[n];
+  }
+
+  return buf ? buf : bytesToUuid(b);
+}
+
+module.exports = v1;
+
+
+/***/ }),
+
+/***/ "./node_modules/uuid/v4.js":
+/*!*********************************!*\
+  !*** ./node_modules/uuid/v4.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var rng = __webpack_require__(/*! ./lib/rng */ "./node_modules/uuid/lib/rng-browser.js");
+var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ "./node_modules/uuid/lib/bytesToUuid.js");
+
+function v4(options, buf, offset) {
+  var i = buf && offset || 0;
+
+  if (typeof(options) == 'string') {
+    buf = options === 'binary' ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] & 0x0f) | 0x40;
+  rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii < 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}
+
+module.exports = v4;
+
+
+/***/ }),
+
 /***/ "./node_modules/warning/warning.js":
 /*!*****************************************!*\
   !*** ./node_modules/warning/warning.js ***!
@@ -19992,20 +20356,19 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 var discover = function discover(_ref) {
   var discover = _ref.discover;
-  console.log(discover);
   return __jsx(_components_ui_mediaProfile_MediaSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
     mediaFor: discover,
     forPage: "disc",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 6
     },
     __self: this
   });
 };
 
 discover.getInitialProps = function _callee(_ref2) {
-  var query, page, sort_by, year, genres, keywords, _discover;
+  var query, page, sort_by, year, genres, _discover;
 
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function _callee$(_context) {
     while (1) {
@@ -20014,12 +20377,12 @@ discover.getInitialProps = function _callee(_ref2) {
           query = _ref2.query;
           page = "&page=".concat(query.page ? query.page : 1);
           sort_by = "sort_by=".concat(query.sort_by ? query.sort_by : 'popularity.desc');
-          year = "&year=".concat(query.year ? query.year : '');
-          genres = "&with_genres=".concat(query.genres ? query.genres : '');
-          keywords = "&with_keywords=".concat(query.keywords ? query.keywords : '');
+          year = query.year ? "&".concat(query.query === 'movie' ? 'primary_release_year' : 'first_air_date_year', "=").concat(query.year) : '';
+          genres = query.genres ? "&with_genres=".concat(query.genres) : '';
+          console.log('from query', year, genres);
           _context.prev = 6;
           _context.next = 9;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_3__["default"])("discover/".concat(query.query), "".concat(sort_by).concat(year).concat(genres).concat(keywords).concat(page)));
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_3__["default"])("discover/".concat(query.query), "".concat(sort_by).concat(year).concat(genres).concat(page)));
 
         case 9:
           _discover = _context.sent;

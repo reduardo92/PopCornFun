@@ -6,7 +6,7 @@ import SimpleFlex from './SimpleFlex';
 import CastCard from './Cards/CastCard';
 
 const Styled = styled.section`
-  padding: 1em 0;
+  padding: 1em 0.5em;
   max-width: 1000px;
 
   .subTitle {

@@ -51,6 +51,7 @@ const Styled = styled.div`
     &__overview {
       font-size: 0.9rem;
       padding: 0 0.5em;
+      min-height: 95px;
     }
   }
 

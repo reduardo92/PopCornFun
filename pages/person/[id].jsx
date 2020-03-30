@@ -98,13 +98,11 @@ const Styled = styled.section`
 const PersonProfile = ({ person }) => {
   const [tab, setTab] = useState('movies');
 
-  // const { setModal } = useContext(MovieContext);
-
   const knonwFor =
     person &&
     person.combined_credits.cast
       .sort((a, b) => b.vote_count - a.vote_count)
-      .slice(0, 8);
+      .slice(0, 10);
 
   console.log('PErson', person);
   return (

@@ -15,6 +15,7 @@ const Styled = styled.section`
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     justify-items: center;
+    grid-row-gap: 2em;
   }
 
   .btn--container {

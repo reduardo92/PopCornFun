@@ -175,60 +175,6 @@ function getMovie(id, param) {
 
 /***/ }),
 
-/***/ "./components/hooks/useForm.js":
-/*!*************************************!*\
-  !*** ./components/hooks/useForm.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-const useForm = (initialState, callback) => {
-  const {
-    0: form,
-    1: setForm
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState);
-
-  const handleChange = e => {
-    e.persist();
-    setForm(form => _objectSpread({}, form, {
-      [e.target.name]: e.target.value
-    }));
-  };
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-
-    if (e.currentTarget.checkValidity() === false) {
-      e.stopPropagation();
-    }
-
-    callback();
-  };
-
-  return {
-    handleChange,
-    handleSubmit,
-    form,
-    setForm
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (useForm);
-
-/***/ }),
-
 /***/ "./components/layout.js":
 /*!******************************!*\
   !*** ./components/layout.js ***!
@@ -336,7 +282,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "CardTwo__Styled",
   componentId: "sc-1cfe07e-0"
-})(["display:flex;flex-direction:column;.poster__img{display:none;}.card--poster{.card--poster--link img{transition:var(--ease--in--out--02s);height:100%;object-fit:cover;}.backdrop__img{max-height:197.82px;}&:hover .card--poster--link img{opacity:0.5;}}.card--body{background:var(--bg-gradient);border-radius:0 0 3px 3px;height:100%;&__head{display:flex;align-items:center;padding:0.5em 0;padding-left:0.5em;.CircularProgressbar{width:2.8em;flex:0 0 2.8em;margin-right:1em;}}&__overview{font-size:0.9rem;padding:0 0.5em;}}.title--section{.title{font-size:1.1rem;color:var(--white-clr);&:hover{opacity:0.7;}}.release--date{color:rgba(255,255,255,0.68);}}.more--info{border-top:1px solid rgba(191,191,191,0.52);padding:0.8em 0.8em;font-size:0.9rem;.more--info__link{color:var(--white-clr);transition:var(--ease--in--out--02s);}&:hover .more--info__link{opacity:0.7;}}@media screen and (min-width:1000px){flex-direction:row;max-width:90%;.poster__img{display:block;}.backdrop__img{display:none;}.card--body{height:auto;display:flex;flex-direction:column;justify-content:space-around;flex:0 0 73.5%;width:73.5%;&__head{padding:0.5em 0.5em 0;height:auto;}&__overview{max-width:85%;font-size:0.95rem;}}.more--info{font-size:0.95rem;}}"]);
+})(["display:flex;flex-direction:column;.poster__img{display:none;}.card--poster{.card--poster--link img{transition:var(--ease--in--out--02s);height:100%;object-fit:cover;}.backdrop__img{max-height:197.82px;}&:hover .card--poster--link img{opacity:0.5;}}.card--body{background:var(--bg-gradient);border-radius:0 0 3px 3px;height:100%;&__head{display:flex;align-items:center;padding:0.5em 0;padding-left:0.5em;.CircularProgressbar{width:2.8em;flex:0 0 2.8em;margin-right:1em;}}&__overview{font-size:0.9rem;padding:0 0.5em;min-height:95px;}}.title--section{.title{font-size:1.1rem;color:var(--white-clr);&:hover{opacity:0.7;}}.release--date{color:rgba(255,255,255,0.68);}}.more--info{border-top:1px solid rgba(191,191,191,0.52);padding:0.8em 0.8em;font-size:0.9rem;.more--info__link{color:var(--white-clr);transition:var(--ease--in--out--02s);}&:hover .more--info__link{opacity:0.7;}}@media screen and (min-width:1000px){flex-direction:row;max-width:90%;.poster__img{display:block;}.backdrop__img{display:none;}.card--body{height:auto;display:flex;flex-direction:column;justify-content:space-around;flex:0 0 73.5%;width:73.5%;&__head{padding:0.5em 0.5em 0;height:auto;}&__overview{max-width:85%;font-size:0.95rem;}}.more--info{font-size:0.95rem;}}"]);
 
 const CardTwo = ({
   data,
@@ -346,14 +292,14 @@ const CardTwo = ({
     className: "card--two",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 126
     },
     __self: undefined
   }, __jsx("div", {
     className: "card--poster",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 127
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -361,14 +307,14 @@ const CardTwo = ({
     as: `/${typeFor}/${data.id}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 128
     },
     __self: undefined
   }, __jsx("a", {
     className: "card--poster--link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 129
     },
     __self: undefined
   }, __jsx("img", {
@@ -377,7 +323,7 @@ const CardTwo = ({
     alt: data.title || data.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 130
     },
     __self: undefined
   }), __jsx("img", {
@@ -386,21 +332,21 @@ const CardTwo = ({
     alt: data.title || data.name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 139
     },
     __self: undefined
   })))), __jsx("div", {
     className: "card--body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150
+      lineNumber: 151
     },
     __self: undefined
   }, __jsx("div", {
     className: "card--body__head",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151
+      lineNumber: 152
     },
     __self: undefined
   }, __jsx(_CirclePercentage__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -408,14 +354,14 @@ const CardTwo = ({
     value: data.vote_average * 10,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 153
     },
     __self: undefined
   }), __jsx("div", {
     className: "title--section",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156
+      lineNumber: 157
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -423,35 +369,35 @@ const CardTwo = ({
     as: `/${typeFor}/${data.id}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157
+      lineNumber: 158
     },
     __self: undefined
   }, __jsx("a", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 159
     },
     __self: undefined
   }, data.title || data.name)), __jsx("div", {
     className: "release--date",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160
+      lineNumber: 161
     },
     __self: undefined
   }, data.release_date ? Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_5__["default"])(data.release_date) : data.first_air_date ? Object(_utility_setDateFormat__WEBPACK_IMPORTED_MODULE_5__["default"])(data.first_air_date) : data.known_for_department))), __jsx("p", {
     className: "card--body__overview",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169
+      lineNumber: 170
     },
     __self: undefined
   }, data.overview.length >= 170 ? `${data.overview.slice(0, 170)}...` : data.overview), __jsx("div", {
     className: "more--info",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 174
+      lineNumber: 175
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -459,14 +405,14 @@ const CardTwo = ({
     as: `/${typeFor}/${data.id}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 176
     },
     __self: undefined
   }, __jsx("a", {
     className: "more--info__link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 177
     },
     __self: undefined
   }, "More Info")))));
@@ -501,7 +447,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "PersonCard__Styled",
   componentId: "sc-10zmgx9-0"
-})(["width:160px;.person--profile{.person--profile__link--img{transition:var(--ease--in--out--02s);}&:hover .person--profile__link--img{opacity:0.5;}}.name{font-weight:bold;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}.job{display:block;}.know--for{font-size:0.7rem;margin-top:0.1em;&__item{margin-right:0.3em;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:768px){width:100%;max-width:300px;.person--body__title{display:flex;align-items:baseline;}.name{font-size:1.1rem;}.job{display:inline-block;margin-left:auto;font-size:0.9rem;}.know--for{font-size:0.8rem;}}@media screen and (min-width:1000px){.name{font-size:1.3rem;}.job{font-size:1rem;}.know--for{font-size:0.9rem;}}"]);
+})(["width:160px;display:grid;grid-template-rows:240px auto;.person--profile{background-color:var(--grey-clr);.person--profile__link--img{transition:var(--ease--in--out--02s);}&:hover .person--profile__link--img{opacity:0.5;}}.name{font-weight:bold;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}.job{display:block;}.know--for{font-size:0.7rem;margin-top:0.1em;&__item{margin-right:0.3em;transition:var(--ease--in--out--02s);&:hover,&:focus{color:var(--primary-clr);}}}@media screen and (min-width:768px){width:100%;max-width:300px;grid-template-rows:400px auto;.person--body__title{display:flex;align-items:baseline;}.name{font-size:1.1rem;}.job{display:inline-block;margin-left:auto;font-size:0.9rem;}.know--for{font-size:0.8rem;}}@media screen and (min-width:1000px){.name{font-size:1.3rem;}.job{font-size:1rem;}.know--for{font-size:0.9rem;}}"]);
 
 const PersonCard = ({
   data
@@ -509,14 +455,14 @@ const PersonCard = ({
   className: "person--card",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 85
+    lineNumber: 90
   },
   __self: undefined
 }, __jsx("div", {
   className: "person--profile",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 86
+    lineNumber: 91
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -524,14 +470,14 @@ const PersonCard = ({
   as: `/person/${data.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 87
+    lineNumber: 92
   },
   __self: undefined
 }, __jsx("a", {
   className: "person--profile__link",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 88
+    lineNumber: 93
   },
   __self: undefined
 }, __jsx("img", {
@@ -540,21 +486,21 @@ const PersonCard = ({
   alt: data.title || data.name,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 89
+    lineNumber: 94
   },
   __self: undefined
 })))), __jsx("div", {
   className: "person--body",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 101
+    lineNumber: 106
   },
   __self: undefined
 }, __jsx("div", {
   className: "person--body__title",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 102
+    lineNumber: 107
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -562,28 +508,28 @@ const PersonCard = ({
   as: `/person/${data.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 103
+    lineNumber: 108
   },
   __self: undefined
 }, __jsx("a", {
   className: "name",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 104
+    lineNumber: 109
   },
   __self: undefined
 }, data.name)), __jsx("small", {
   className: "job",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 106
+    lineNumber: 111
   },
   __self: undefined
 }, "(", data.known_for_department, ")")), __jsx("div", {
   className: "know--for",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 108
+    lineNumber: 113
   },
   __self: undefined
 }, !data.known_for ? 'N/A' : data.known_for.map((item, i) => __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -592,14 +538,14 @@ const PersonCard = ({
   as: `/${item.media_type}/${item.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 112
+    lineNumber: 117
   },
   __self: undefined
 }, __jsx("a", {
   className: "know--for__item",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 117
+    lineNumber: 122
   },
   __self: undefined
 }, item.name || item.title, data.known_for.length - 1 === i ? '' : ', '))))));
@@ -668,12 +614,16 @@ const CirclePercentage = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Form */ "react-bootstrap/Form");
-/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utility_getYears__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utility/getYears */ "./components/utility/getYears.js");
-/* harmony import */ var _hooks_useForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/useForm */ "./components/hooks/useForm.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _context_MovieContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/MovieContext */ "./components/context/MovieContext.js");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Form */ "react-bootstrap/Form");
+/* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utility_getYears__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utility/getYears */ "./components/utility/getYears.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! uuid */ "uuid");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\Forms\\DiscoverFrom.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -681,168 +631,316 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+
+
+const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "DiscoverFrom__Styled",
   componentId: "sc-1qw32to-0"
-})(["@media screen and (min-width:768px){flex:100%;margin-bottom:1em;.discover--from{display:flex;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}}}@media screen and (min-width:1000px){flex:1;margin-left:2em;.discover--from{display:flex;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}}}"]);
+})([".discover--from{display:flex;flex-direction:column;}.clear--fields{background:var(--bg-gradient);font-size:1.3rem;padding:0em 0.5em;align-self:center;text-align:center;margin-bottom:1.1em;border-radius:3px;transition:var(--ease-12s);cursor:pointer;&:hover,&:focus{transform:scale(0.9);opacity:0.8;}}@media screen and (min-width:768px){flex:100%;margin-bottom:1em;.discover--from{display:flex;flex-direction:row;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}.clear--fields{flex:0 0 30px;align-self:center;margin:0;margin-top:0.85em;}}}.genre--control .tv{display:", ";}@media screen and (min-width:1000px){flex:1;margin-left:2em;.discover--from{display:flex;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}}}"], ({
+  genre
+}) => genre && 'none');
 
-const DiscoverForm = props => {
+const DiscoverForm = ({
+  typeFor
+}) => {
   const {
-    handleChange,
-    handleSubmit,
-    form,
-    setForm
-  } = Object(_hooks_useForm__WEBPACK_IMPORTED_MODULE_4__["default"])({
-    year: 'none',
-    sort_by: 'popularity descending',
-    genre: '',
-    keywords: ''
-  });
+    discoverForm: {
+      handleChange,
+      handleSubmit,
+      form,
+      setForm
+    }
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  const {
+    query,
+    push
+  } = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["useRouter"])();
   const {
     year,
     sort_by,
     genre
   } = form;
-  const sortBy = ['popularity descending', 'popularity ascending', 'rating descending', 'rating ascending', 'release date descending', 'release date ascending', 'title (A-Z)', 'title (Z-A)'];
-  const genres = ['Action & Adventure', 'Animation', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Family', 'Kids', 'Mystery', 'News', 'Reality', 'Sci-Fi & Fantasy', 'Soap', 'Talk', 'War & Politics', 'Western'];
+  const sortBy = [{
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'popularity.desc',
+    name: 'popularity descending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'popularity.asc',
+    name: 'popularity ascending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'vote_average.desc',
+    name: 'rating descending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'vote_average.asc',
+    name: 'rating ascending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'primary_release_date.desc',
+    name: 'release date descending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: '"primary_release_date.asc',
+    name: 'release date ascending'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'title.asc',
+    name: 'title (A-Z)'
+  }, {
+    id: uuid__WEBPACK_IMPORTED_MODULE_6___default.a.v4(),
+    value: 'title.desc',
+    name: 'title (Z-A)'
+  }];
+  const genres = [{
+    id: 28,
+    name: 'Action'
+  }, {
+    id: 12,
+    name: 'Adventure'
+  }, {
+    id: 10759,
+    name: 'Action & Adventure',
+    for: 'tv'
+  }, {
+    id: 16,
+    name: 'Animation'
+  }, {
+    id: 35,
+    name: 'Comedy'
+  }, {
+    id: 80,
+    name: 'Crime'
+  }, {
+    id: 99,
+    name: 'Documentary'
+  }, {
+    id: 18,
+    name: 'Drama'
+  }, {
+    id: 10751,
+    name: 'Family'
+  }, {
+    id: 14,
+    name: 'Fantasy'
+  }, {
+    id: 36,
+    name: 'History'
+  }, {
+    id: 27,
+    name: 'Horror'
+  }, {
+    id: 10762,
+    name: 'Kids',
+    for: 'tv'
+  }, {
+    id: 10402,
+    name: 'Music'
+  }, {
+    id: 9648,
+    name: 'Mystery'
+  }, {
+    id: 10749,
+    name: 'Romance'
+  }, {
+    id: 10763,
+    name: 'News',
+    for: 'tv'
+  }, {
+    id: 10764,
+    name: 'Reality',
+    for: 'tv'
+  }, {
+    id: 10770,
+    name: 'Tv Movie'
+  }, {
+    id: 53,
+    name: 'Thriller'
+  }, {
+    id: 878,
+    name: 'Sci-Fi & Fantasy'
+  }, {
+    id: 10766,
+    name: 'Soap',
+    for: 'tv'
+  }, {
+    id: 10767,
+    name: 'Talk',
+    for: 'tv'
+  }, {
+    id: 10768,
+    name: 'War & Politics',
+    for: 'tv'
+  }, {
+    id: 10752,
+    name: 'War'
+  }, {
+    id: 37,
+    name: 'Western'
+  }];
+
+  const handleReset = () => {
+    setForm({
+      year: '',
+      sort_by: 'popularity.desc',
+      genre: ''
+    });
+    push(`/discover?query=${query.query}${sortQuery}${yearQuery}${genreQuery}&page=1`);
+  };
+
+  const sortQuery = sort_by === 'popularity.desc' ? '' : `&sort_by=${sort_by}`;
+  const yearQuery = year === '' ? '' : `&year=${year}`;
+  const genreQuery = genre === '' ? '' : `&genres=${genre}`;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (genre === '') {
+      push(`/discover?query=${query.query}${sortQuery}${yearQuery}&page=${query.page}`);
+    }
+
+    if (year === '') {
+      push(`/discover?query=${query.query}${sortQuery}${genreQuery}&page=${query.page}`);
+    }
+
+    push(`/discover?query=${query.query}${sortQuery}${yearQuery}${genreQuery}&page=${query.page}`);
+  }, [year, sort_by, genre]);
   return __jsx(Styled, {
     className: "discover--form--section",
+    genre: query.query === 'movie' && true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 173
     },
     __self: undefined
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a, {
     className: "discover--from",
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 177
     },
     __self: undefined
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a.Group, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Group, {
     controlId: "year",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 178
     },
     __self: undefined
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a.Label, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 179
     },
     __self: undefined
-  }, "Year"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a.Control, {
+  }, "Year"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Control, {
     as: "select",
     name: "year",
     value: year,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 180
     },
     __self: undefined
   }, __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97
+      lineNumber: 186
     },
     __self: undefined
-  }, "none"), Object(_utility_getYears__WEBPACK_IMPORTED_MODULE_3__["default"])().reverse().map(year => __jsx("option", {
+  }), Object(_utility_getYears__WEBPACK_IMPORTED_MODULE_5__["default"])().reverse().map(year => __jsx("option", {
     key: year,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 190
     },
     __self: undefined
-  }, year)))), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a.Group, {
+  }, year)))), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Group, {
     controlId: "sort_by",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 194
     },
     __self: undefined
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a.Label, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 195
     },
     __self: undefined
-  }, "Sort By"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a.Control, {
+  }, "Sort By"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Control, {
     as: "select",
     name: "sort_by",
     value: sort_by,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 196
     },
     __self: undefined
-  }, sortBy.map(sort => __jsx("option", {
-    key: sort,
+  }, sortBy.map(({
+    id,
+    value,
+    name
+  }) => __jsx("option", {
+    key: id,
+    value: value,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 203
     },
     __self: undefined
-  }, sort)))), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a.Group, {
+  }, name)))), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Group, {
     controlId: "genres",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 209
     },
     __self: undefined
-  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a.Label, {
+  }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 210
     },
     __self: undefined
-  }, "Genres"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_2___default.a.Control, {
+  }, "Genres"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Control, {
+    className: "genre--control",
     as: "select",
     name: "genre",
     value: genre,
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 211
     },
     __self: undefined
   }, __jsx("option", {
-    disabled: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 218
     },
     __self: undefined
   }), genres.map(genre => __jsx("option", {
-    key: genre,
+    key: genre.id,
+    value: genre.id,
+    className: !genre.for ? 'both' : 'tv',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 220
     },
     __self: undefined
-  }, genre))))));
+  }, genre.name)))), (year != '' || genre != '' || sort_by != 'popularity.desc') && __jsx("div", {
+    className: "clear--fields",
+    onClick: handleReset,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 231
+    },
+    __self: undefined
+  }, "x")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (DiscoverForm);
-{
-  /* <option value='popularity.desc' selected='selected'>
-              Popularity Descending
-            </option>
-            <option value='popularity.asc'>Popularity Ascending</option>
-            <option value='vote_average.desc'>Rating Descending</option>
-            <option value='vote_average.asc'>Rating Ascending</option>
-            <option value='primary_release_date.desc'>
-              Release Date Descending
-            </option>
-            <option value='primary_release_date.asc'>
-              Release Date Ascending
-            </option>
-            <option value='title.asc'>Title (A-Z)</option>
-            <option value='title.desc'>Title (Z-A)</option> */
-}
 
 /***/ }),
 
@@ -905,13 +1003,13 @@ const Pagination = ({
     numberOfButtons: numberOfButtons,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 95
     },
     __self: undefined
   }, __jsx("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 96
     },
     __self: undefined
   }, __jsx("li", {
@@ -919,28 +1017,28 @@ const Pagination = ({
     onClick: () => paginate(1),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 97
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: typeFor + 1,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 101
     },
     __self: undefined
   }, __jsx("a", {
     className: "link--item controls",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 102
     },
     __self: undefined
   }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdFirstPage"], {
     className: "icons",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 103
     },
     __self: undefined
   })))), __jsx("li", {
@@ -948,44 +1046,44 @@ const Pagination = ({
     onClick: () => paginate(currentPage - 1),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 107
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: currentPage === 1 ? typeFor + 1 : typeFor + (currentPage - 1),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 111
     },
     __self: undefined
   }, __jsx("a", {
     className: "link--item controls",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 114
     },
     __self: undefined
-  }, "Prev"))), pagination.map(page => __jsx("li", {
+  }, "Prev"))), pagination.length === 1 ? '' : pagination.map(page => __jsx("li", {
     key: page,
     className: `${currentPage === page && 'active'}`,
     onClick: () => paginate(page),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 120
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: typeFor + page,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 125
     },
     __self: undefined
   }, __jsx("a", {
     className: "link--item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 126
     },
     __self: undefined
   }, page)))), __jsx("li", {
@@ -993,21 +1091,21 @@ const Pagination = ({
     onClick: () => paginate(currentPage + 1),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 130
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: typeFor + (currentPage + 1),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 135
     },
     __self: undefined
   }, __jsx("a", {
     className: "link--item controls",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 136
     },
     __self: undefined
   }, "Next"))), __jsx("li", {
@@ -1015,42 +1113,34 @@ const Pagination = ({
     onClick: () => paginate(numberOfArticles),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 139
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
     href: typeFor + numberOfArticles,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 143
     },
     __self: undefined
   }, __jsx("a", {
     className: "link--item controls",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 144
     },
     __self: undefined
   }, __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_5__["MdLastPage"], {
     className: "icons",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 145
     },
     __self: undefined
   }))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Pagination);
-{
-  /* <li
-  className={`${currentPage === page && 'active'}`}
-  onClick={() => paginate(page)}
-  >
-  {page}
-  </li> */
-}
 
 /***/ }),
 
@@ -1129,8 +1219,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _Forms_DiscoverFrom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Forms/DiscoverFrom */ "./components/ui/Forms/DiscoverFrom.jsx");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\mediaProfile\\MediaSection.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1151,120 +1244,104 @@ const MediaSection = ({
 }) => {
   const {
     paginate,
-    currentPage
+    discoverForm: {
+      setForm
+    }
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     paginate(mediaFor.page);
   }, [mediaFor.page]);
+  const {
+    asPath
+  } = Object(next_router__WEBPACK_IMPORTED_MODULE_9__["useRouter"])();
 
   const setLink = () => {
     const mediaLink = `/${mediaFor.typeFor}?query=${mediaFor.title.split(' ').join('_')}&page=`;
-    const discLink = `/discover?query=${mediaFor.typeFor}&page=`;
-    return forPage === 'disc' ? discLink : mediaLink;
+    const discLink = forPage && asPath.slice(0, -1);
+    return forPage ? discLink : mediaLink;
   };
 
   return __jsx(_layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 151
     },
     __self: undefined
   }, __jsx(Styled, {
     className: "MediaSection",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 152
     },
     __self: undefined
   }, __jsx("div", {
     className: "wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 153
     },
     __self: undefined
   }, __jsx("div", {
     className: `head`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 154
     },
     __self: undefined
   }, __jsx("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149
+      lineNumber: 155
     },
     __self: undefined
   }, forPage ? 'Discover New Movies & TV Shows' : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, mediaFor.title, '  ', mediaFor.typeFor === 'tv' ? 'TV' : mediaFor.typeFor)), forPage && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "head--tabs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 168
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/discover?query=movie&page=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 169
     },
     __self: undefined
   }, __jsx("a", {
+    onClick: () => setForm({
+      year: '',
+      sort_by: 'popularity.desc',
+      genre: ''
+    }),
     className: `head--tabs__tab ${mediaFor.title === 'movie' && 'disabled'}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 170
     },
     __self: undefined
   }, ' ', "Movies")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/discover?query=tv&page=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172
+      lineNumber: 185
     },
     __self: undefined
   }, __jsx("a", {
+    onClick: () => setForm({
+      year: '',
+      sort_by: 'popularity.desc',
+      genre: ''
+    }),
     className: `head--tabs__tab ${mediaFor.title === 'tv' && 'disabled'}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 173
-    },
-    __self: undefined
-  }, "Tv Shows"))), __jsx(_Forms_DiscoverFrom__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 181
-    },
-    __self: undefined
-  }))), __jsx(_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    numberOfArticles: mediaFor.total_pages,
-    typeFor: setLink(),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 186
     },
     __self: undefined
-  }), __jsx("div", {
-    className: mediaFor.typeFor === 'person' ? 'person--grid' : 'content--container',
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 190
-    },
-    __self: undefined
-  }, mediaFor.results.map(item => mediaFor.typeFor === 'person' ? __jsx(_Cards_PersonCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    key: item.id,
-    data: item,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 199
-    },
-    __self: undefined
-  }) : __jsx(_Cards_CardTwo__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    key: item.id,
-    data: item,
-    typeFor: mediaFor.typeFor,
+  }, "Tv Shows"))), __jsx(_Forms_DiscoverFrom__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    typeFor: mediaFor.title === 'movie' ? 'tv' : 'movie',
     __source: {
       fileName: _jsxFileName,
       lineNumber: 201
@@ -1275,7 +1352,46 @@ const MediaSection = ({
     typeFor: setLink(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 207
+    },
+    __self: undefined
+  }), __jsx("div", {
+    className: mediaFor.typeFor === 'person' ? 'person--grid' : 'content--container',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 211
+    },
+    __self: undefined
+  }, mediaFor.results.length === 0 ? __jsx("h3", {
+    className: "text-dark vh-100",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 219
+    },
+    __self: undefined
+  }, "Sorry Nothing Found") : mediaFor.results.map(item => mediaFor.typeFor === 'person' ? __jsx(_Cards_PersonCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    key: item.id,
+    data: item,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 223
+    },
+    __self: undefined
+  }) : __jsx(_Cards_CardTwo__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    key: item.id,
+    data: item,
+    typeFor: mediaFor.typeFor,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 225
+    },
+    __self: undefined
+  }))), __jsx(_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    numberOfArticles: mediaFor.total_pages,
+    typeFor: setLink(),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 234
     },
     __self: undefined
   }))));
@@ -3063,13 +3179,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 const discover = ({
   discover
 }) => {
-  console.log(discover);
   return __jsx(_components_ui_mediaProfile_MediaSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
     mediaFor: discover,
     forPage: "disc",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 6
     },
     __self: undefined
   });
@@ -3080,12 +3195,12 @@ discover.getInitialProps = async ({
 }) => {
   const page = `&page=${query.page ? query.page : 1}`;
   const sort_by = `sort_by=${query.sort_by ? query.sort_by : 'popularity.desc'}`;
-  const year = `&year=${query.year ? query.year : ''}`;
-  const genres = `&with_genres=${query.genres ? query.genres : ''}`;
-  const keywords = `&with_keywords=${query.keywords ? query.keywords : ''}`;
+  const year = query.year ? `&${query.query === 'movie' ? 'primary_release_year' : 'first_air_date_year'}=${query.year}` : '';
+  const genres = query.genres ? `&with_genres=${query.genres}` : '';
+  console.log('from query', year, genres);
 
   try {
-    const discover = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_1__["default"])(`discover/${query.query}`, `${sort_by}${year}${genres}${keywords}${page}`);
+    const discover = await Object(_components_utility_movieDB__WEBPACK_IMPORTED_MODULE_1__["default"])(`discover/${query.query}`, `${sort_by}${year}${genres}${page}`);
     return {
       discover: _objectSpread({
         typeFor: query.query,
@@ -3121,6 +3236,17 @@ module.exports = __webpack_require__(/*! C:\Users\Eduardo Rivas\Desktop\react_St
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
@@ -3231,6 +3357,17 @@ module.exports = require("styled-components");
 /***/ (function(module, exports) {
 
 module.exports = require("url");
+
+/***/ }),
+
+/***/ "uuid":
+/*!***********************!*\
+  !*** external "uuid" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("uuid");
 
 /***/ })
 

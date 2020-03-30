@@ -4,9 +4,6 @@ import Link from 'next/link';
 import { IMG_URL } from '../../context/types';
 
 const Styled = styled.div`
-  /* width: 150px; */
-  /* height: 200px; */
-
   .card--poster {
     width: 100%;
     height: 230px;
@@ -15,7 +12,7 @@ const Styled = styled.div`
 
     &:hover,
     &:focus {
-      opacity: 0.8;
+      opacity: 0.5;
     }
 
     img {
@@ -49,7 +46,6 @@ const CastCard = ({ data }) => (
       <div className='card--poster'>
         <img
           className='cast--card__img'
-          // src={`${IMG_URL}${data.profile_path}`}
           alt={data.title || data.name}
           src={
             data.profile_path

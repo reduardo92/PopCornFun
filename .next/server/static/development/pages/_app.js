@@ -177,6 +177,60 @@ const Footer = () => __jsx(Styled, {
 
 /***/ }),
 
+/***/ "./components/Hooks/useForm.js":
+/*!*************************************!*\
+  !*** ./components/Hooks/useForm.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+const useForm = (initialState, callback) => {
+  const {
+    0: form,
+    1: setForm
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState);
+
+  const handleChange = e => {
+    e.persist();
+    setForm(form => _objectSpread({}, form, {
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    if (e.currentTarget.checkValidity() === false) {
+      e.stopPropagation();
+    }
+
+    callback();
+  };
+
+  return {
+    handleChange,
+    handleSubmit,
+    form,
+    setForm
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (useForm);
+
+/***/ }),
+
 /***/ "./components/Link.js":
 /*!****************************!*\
   !*** ./components/Link.js ***!
@@ -351,7 +405,7 @@ const NavCustom = () => {
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/discover?query=movie",
+    href: "/discover?query=movie&page=1",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 120
@@ -395,7 +449,7 @@ const NavCustom = () => {
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/discover?query=movie",
+    href: "/discover?query=movie&page=1",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 129
@@ -410,7 +464,7 @@ const NavCustom = () => {
     },
     __self: undefined
   }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/discover?query=tv",
+    href: "/discover?query=tv&page=1",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 134
@@ -742,6 +796,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _useMovieReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useMovieReducer */ "./components/context/useMovieReducer.js");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./types */ "./components/context/types.js");
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
+/* harmony import */ var _Hooks_useForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Hooks/useForm */ "./components/Hooks/useForm.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\context\\MovieProvider.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -757,11 +812,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 const log = console.log;
 const movieInitalState = {
   searchQuery: '',
   searchData: null,
   pageData: {},
+  discForm: {
+    year: '',
+    sort_by: 'popularity.desc',
+    genre: ''
+  },
   isModal: {
     media: null,
     toggle: false,
@@ -832,18 +893,21 @@ const StateProvider = ({
     } catch (error) {
       console.log(error);
     }
-  }; // Get current posts
+  }; // Discover Form
 
 
-  const indexOfLastPost = state.currentPage * state.itemPerPage;
-  const indexOfFirstPost = indexOfLastPost - state.itemPerPage; // Change page
+  const discoverForm = Object(_Hooks_useForm__WEBPACK_IMPORTED_MODULE_5__["default"])({
+    year: '',
+    sort_by: 'popularity.desc',
+    genre: ''
+  }); // Change page
 
   const paginate = pageNumber => dispatch({
     type: _types__WEBPACK_IMPORTED_MODULE_3__["SET_CURRENT_PAGE"],
     payload: pageNumber
-  });
+  }); // console.log(state);
 
-  console.log(state);
+
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
     value: _objectSpread({
       windowSize,
@@ -855,11 +919,12 @@ const StateProvider = ({
       clearData,
       navRef,
       getSearchData,
+      discoverForm,
       paginate
     }, state),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 80
     },
     __self: undefined
   }, children);
@@ -1063,12 +1128,10 @@ const SearchFrom = () => {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     if (search === '') {
-      console.log('emty', search);
       clearData(_context_types__WEBPACK_IMPORTED_MODULE_7__["CLEAR_SEARCH_DATA"]);
       return;
     } else {
       getSearchData(search);
-      console.log('sea', search);
     }
   }, [search]);
 
@@ -1089,7 +1152,7 @@ const SearchFrom = () => {
     classname: "search form",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 162
     },
     __self: undefined
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -1097,26 +1160,26 @@ const SearchFrom = () => {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 163
     },
     __self: undefined
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Group, {
     controlId: "search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 164
     },
     __self: undefined
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 165
     },
     __self: undefined
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__["FaSearch"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168
+      lineNumber: 166
     },
     __self: undefined
   })), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Control, {
@@ -1130,7 +1193,7 @@ const SearchFrom = () => {
     placeholder: "Search for a movie, tv show, person...",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 168
     },
     __self: undefined
   })), (isFocus === true || search !== '') && __jsx("span", {
@@ -1141,14 +1204,14 @@ const SearchFrom = () => {
     className: "form--clear",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 180
     },
     __self: undefined
   }, "x")), __jsx("div", {
     className: "search--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 191
     },
     __self: undefined
   }, isFocus && searchData && searchData.map(item => __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1157,7 +1220,7 @@ const SearchFrom = () => {
     as: `/${item.media_type}/${item.id}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 197
+      lineNumber: 195
     },
     __self: undefined
   }, __jsx("div", {
@@ -1166,49 +1229,49 @@ const SearchFrom = () => {
     className: "search--content--item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 202
+      lineNumber: 200
     },
     __self: undefined
   }, __jsx("div", {
     className: "wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 205
     },
     __self: undefined
   }, item.media_type === 'movie' ? __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdLocalMovies"], {
     className: "search--content--item__icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 207
     },
     __self: undefined
   }) : item.media_type === 'tv' ? __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdTv"], {
     className: "search--content--item__icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211
+      lineNumber: 209
     },
     __self: undefined
   }) : __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdPerson"], {
     className: "search--content--item__icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 213
+      lineNumber: 211
     },
     __self: undefined
   }), __jsx("p", {
     className: "search--content--item__name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215
+      lineNumber: 213
     },
     __self: undefined
   }, item.name || item.title, __jsx("span", {
     className: "media--in",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217
+      lineNumber: 215
     },
     __self: undefined
   }, "in", ' ', item.media_type === 'person' ? 'People' : item.media_type))))))));

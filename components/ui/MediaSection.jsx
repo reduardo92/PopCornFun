@@ -6,7 +6,7 @@ import Link from 'next/link';
 import MovieContext from '../context/MovieContext';
 
 const Styled = styled.section`
-  padding: 2em 0em;
+  padding: 2em 0.5em;
   max-width: 1000px;
 
   .head--container {

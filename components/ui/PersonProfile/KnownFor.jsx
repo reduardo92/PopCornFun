@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import SimpleFlex from '../SimpleFlex';
-import RecommenCard from '../Cards/RecommenCard';
+import CardOne from '../Cards/CardOne';
 
 const Styled = styled.div`
+  .card--one {
+    flex: 0 0 160px;
+    margin-right: 1.5em;
+  }
+
   @media screen and (min-width: 1000px) {
     .knonwFor--content {
       all: unset;
       display: grid;
-      /* grid-template-columns: repeat(min, 1fr); */
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-gap: 2.7em 1em;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-gap: 2em;
       padding-top: 1.2em;
-
       div {
         margin: 0;
       }
@@ -20,11 +23,10 @@ const Styled = styled.div`
   }
 
   @media screen and (min-width: 1000px) {
-    .subTitle,
-    .rating--star {
+    .subTitle {
       color: var(--second-clr);
     }
-    .recommend--card__content--name {
+    .card--body__title a {
       color: var(--second-clr);
     }
   }
@@ -38,7 +40,7 @@ const KnownFor = ({ data }) => (
     ) : (
       <SimpleFlex className='knonwFor--content' setWidth='160px'>
         {data.map(item => (
-          <RecommenCard
+          <CardOne
             key={Math.random() * 10}
             data={item}
             typeFor={item.media_type}

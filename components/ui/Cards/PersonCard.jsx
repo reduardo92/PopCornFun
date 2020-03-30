@@ -5,7 +5,11 @@ import { IMG_URL } from '../../context/types';
 
 const Styled = styled.div`
   width: 160px;
+  display: grid;
+  grid-template-rows: 240px auto;
+
   .person--profile {
+    background-color: var(--grey-clr);
     .person--profile__link--img {
       transition: var(--ease--in--out--02s);
     }
@@ -47,6 +51,7 @@ const Styled = styled.div`
   @media screen and (min-width: 768px) {
     width: 100%;
     max-width: 300px;
+    grid-template-rows: 400px auto;
 
     .person--body__title {
       display: flex;
