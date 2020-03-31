@@ -68,6 +68,24 @@ const Styled = styled.header`
     display: none;
   }
 
+  .dropdown-menu .selected {
+    color: black !important;
+
+    &:hover,
+    &:active {
+      color: var(--white-clr) !important;
+      background: var(--bg-gradient);
+    }
+  }
+
+  .dropdown-item {
+    &:hover,
+    &:active {
+      color: var(--white-clr);
+      background: var(--bg-gradient);
+    }
+  }
+
   .dropdown--btn {
     display: block;
     width: 100%;

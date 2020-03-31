@@ -204,37 +204,39 @@ const MediaSection = ({ mediaFor, forPage }) => {
               </>
             )}
           </div>
-          <Pagination
-            numberOfArticles={mediaFor.total_pages}
-            typeFor={setLink()}
-          />
-          <div
-            className={
-              mediaFor.typeFor === 'person'
-                ? 'person--grid'
-                : 'content--container'
-            }
-          >
-            {mediaFor.results.length === 0 ? (
-              <h3 className='text-dark vh-100'>Sorry Nothing Found</h3>
-            ) : (
-              mediaFor.results.map(item =>
-                mediaFor.typeFor === 'person' ? (
-                  <PersonCard key={item.id} data={item} />
-                ) : (
-                  <CardTwo
-                    key={item.id}
-                    data={item}
-                    typeFor={mediaFor.typeFor}
-                  />
+          <div className='main--content'>
+            <Pagination
+              numberOfArticles={mediaFor.total_pages}
+              typeFor={setLink()}
+            />
+            <div
+              className={
+                mediaFor.typeFor === 'person'
+                  ? 'person--grid'
+                  : 'content--container'
+              }
+            >
+              {mediaFor.results.length === 0 ? (
+                <h3 className='text-dark vh-100'>Sorry Nothing Found</h3>
+              ) : (
+                mediaFor.results.map(item =>
+                  mediaFor.typeFor === 'person' ? (
+                    <PersonCard key={item.id} data={item} />
+                  ) : (
+                    <CardTwo
+                      key={item.id}
+                      data={item}
+                      typeFor={mediaFor.typeFor}
+                    />
+                  )
                 )
-              )
-            )}
+              )}
+            </div>
+            <Pagination
+              numberOfArticles={mediaFor.total_pages}
+              typeFor={setLink()}
+            />
           </div>
-          <Pagination
-            numberOfArticles={mediaFor.total_pages}
-            typeFor={setLink()}
-          />
         </div>
       </Styled>
     </Layout>

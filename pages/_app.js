@@ -12,9 +12,9 @@ const MyApp = ({ Component, pageProps }) => {
       <Head>
         <title>PopCorn Fun</title>
         <link
-          href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400&display=swap'
+          href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap'
           rel='stylesheet'
-        />
+        ></link>
         <link
           rel='stylesheet'
           href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'

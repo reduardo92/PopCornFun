@@ -30,7 +30,7 @@ const Styled = styled.div`
 
       .link--item {
         display: block;
-        padding: 10px 15px;
+        padding: 5px 11px;
         color: var(--second-clr);
       }
 

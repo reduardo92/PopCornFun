@@ -32,7 +32,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/person/[id]": [
+    "/signup": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

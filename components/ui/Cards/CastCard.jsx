@@ -35,7 +35,7 @@ const Styled = styled.div`
   }
 
   .character {
-    font-size: 12px;
+    font-size: 0.85rem;
     opacity: 0.8;
   }
 `;

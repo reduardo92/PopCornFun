@@ -47,11 +47,11 @@
   --shadow: 3px 2px 7px rgba(0, 0, 0, 1);
 
   /* Fonts */
-  --fn-monterrat: 'Montserrat', sans-serif;
+  --fn-source-sans: 'Source Sans Pro', sans-serif;
   --fn-roboto: 'Roboto', sans-serif;
   /* font weight */
   --fw-bold: 900;
-  --fw-medium: 500;
+  --fw-medium: 600;
   --fw-regular: 400;
   --fs-italic: italic;
 
@@ -343,8 +343,8 @@ template {
 
 body,
 html {
-  font-family: var(--fn-monterrat);
-  font-family: 1.1rem;
+  font-family: var(--fn-source-sans);
+  font-size: 1.05rem;
   overflow-x: hidden;
   width: 100%;
   height: 100%;
@@ -380,6 +380,10 @@ header {
 .max-width {
   max-width: 1500px;
   margin: 0 auto;
+}
+
+.ds-grid {
+  display: grid;
 }
 
 .flex-w-container {
@@ -469,6 +473,10 @@ header {
 .activeTab {
   color: #ffffffc4;
   border-bottom: 3px solid var(--primary-clr);
+}
+
+.btn {
+  transition: var(--ease-12s);
 }
 
 /* Facts Style */

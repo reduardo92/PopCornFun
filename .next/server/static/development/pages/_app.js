@@ -258,7 +258,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   const router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
   let className = children.props.className || '';
 
-  if (router.pathname === href) {
+  if (router.asPath === href) {
     className = `${className} selected`;
   }
 
@@ -315,7 +315,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.header.withConfig({
   displayName: "Navbar__Styled",
   componentId: "z1ydwt-0"
-})(["position:fixed;top:0;right:0;left:0;z-index:1030;background-image:var(--bg-dark-gradient);.navbar{max-width:1500px;margin:0 auto;}.navbar-toggler{background-color:var(--white-clr);}.navbar-nav .nav-link{color:var(--white-clr);font-weight:bold;border-bottom:2px solid transparent;transition:var(--ease--in--out--02s);&:hover{color:var(--white-clr);border-bottom-color:var(--primary-clr);}}.selected{border-bottom-color:var(--primary-clr) !important;color:var(--white-clr) !important;}.navbar-brand{width:30px;font-size:1rem;display:flex;align-items:center;color:var(--white-clr);font-weight:bold;cursor:pointer;&:hover,&:focus{color:inherit;}img{display:inline-block;margin-right:0.5em;}}.nav--dropdown:hover .dropdown-menu{display:block;}.dropdown--link{display:none;}.dropdown--btn{display:block;width:100%;text-align:left;outline-color:transparent;}@media screen and (min-width:1000px){.dropdown--btn{display:none;}.dropdown--link{display:block;}}@media screen and (min-width:1000px){.navbar-collapse{margin-left:13em;}.navbar-brand{width:40px;}}"]);
+})(["position:fixed;top:0;right:0;left:0;z-index:1030;background-image:var(--bg-dark-gradient);.navbar{max-width:1500px;margin:0 auto;}.navbar-toggler{background-color:var(--white-clr);}.navbar-nav .nav-link{color:var(--white-clr);font-weight:bold;border-bottom:2px solid transparent;transition:var(--ease--in--out--02s);&:hover{color:var(--white-clr);border-bottom-color:var(--primary-clr);}}.selected{border-bottom-color:var(--primary-clr) !important;color:var(--white-clr) !important;}.navbar-brand{width:30px;font-size:1rem;display:flex;align-items:center;color:var(--white-clr);font-weight:bold;cursor:pointer;&:hover,&:focus{color:inherit;}img{display:inline-block;margin-right:0.5em;}}.nav--dropdown:hover .dropdown-menu{display:block;}.dropdown--link{display:none;}.dropdown-menu .selected{color:black !important;&:hover,&:active{color:var(--white-clr) !important;background:var(--bg-gradient);}}.dropdown-item{&:hover,&:active{color:var(--white-clr);background:var(--bg-gradient);}}.dropdown--btn{display:block;width:100%;text-align:left;outline-color:transparent;}@media screen and (min-width:1000px){.dropdown--btn{display:none;}.dropdown--link{display:block;}}@media screen and (min-width:1000px){.navbar-collapse{margin-left:13em;}.navbar-brand{width:40px;}}"]);
 
 const NavCustom = () => {
   const {
@@ -328,7 +328,7 @@ const NavCustom = () => {
     navScroll: navScroll,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 121
     },
     __self: undefined
   }, __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -336,21 +336,21 @@ const NavCustom = () => {
     expand: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 122
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 123
     },
     __self: undefined
   }, __jsx("a", {
     className: "navbar-brand",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 124
     },
     __self: undefined
   }, __jsx("img", {
@@ -358,35 +358,35 @@ const NavCustom = () => {
     alt: "popcorn logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 125
     },
     __self: undefined
   }), "PopCorn Fun")), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Toggle, {
     "aria-controls": "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 129
     },
     __self: undefined
   }), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Collapse, {
     id: "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 130
     },
     __self: undefined
   }, __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
     className: "mr-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 131
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114
+      lineNumber: 132
     },
     __self: undefined
   }, __jsx("a", {
@@ -394,21 +394,21 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 133
     },
     __self: undefined
   }, "Home")), __jsx("div", {
     className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 137
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/discover?query=movie&page=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 138
     },
     __self: undefined
   }, __jsx("a", {
@@ -416,14 +416,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 139
     },
     __self: undefined
   }, "Discover ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 140
     },
     __self: undefined
   }))), __jsx("button", {
@@ -431,106 +431,40 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 143
     },
     __self: undefined
   }, "Discover ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 144
     },
     __self: undefined
   })), __jsx("div", {
     className: "dropdown-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 146
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/discover?query=movie&page=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 147
     },
     __self: undefined
   }, __jsx("a", {
     className: "dropdown-item",
-    role: "button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 130
-    },
-    __self: undefined
-  }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/discover?query=tv&page=1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 134
-    },
-    __self: undefined
-  }, __jsx("a", {
-    className: "dropdown-item",
-    role: "button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 135
-    },
-    __self: undefined
-  }, "Tv Shows")))), __jsx("div", {
-    className: "dropdown nav-item nav--dropdown",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 142
-    },
-    __self: undefined
-  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/movie",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 143
-    },
-    __self: undefined
-  }, __jsx("a", {
-    className: "nav-link dropdown--link",
-    role: "button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 144
-    },
-    __self: undefined
-  }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
-    className: "nav--arrow",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 145
-    },
-    __self: undefined
-  }))), __jsx("button", {
-    className: "nav-link dropdown--btn",
     role: "button",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 148
     },
     __self: undefined
-  }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
-    className: "nav--arrow",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 149
-    },
-    __self: undefined
-  })), __jsx("div", {
-    className: "dropdown-menu",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 151
-    },
-    __self: undefined
-  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/movie",
+  }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/discover?query=tv&page=1",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 152
@@ -544,63 +478,18 @@ const NavCustom = () => {
       lineNumber: 153
     },
     __self: undefined
-  }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/movie?query=top_rated",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 157
-    },
-    __self: undefined
-  }, __jsx("a", {
-    className: "dropdown-item",
-    role: "button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 158
-    },
-    __self: undefined
-  }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/movie?query=upcoming",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 162
-    },
-    __self: undefined
-  }, __jsx("a", {
-    className: "dropdown-item",
-    role: "button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 163
-    },
-    __self: undefined
-  }, "Upcoming")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/movie?query=now_playing",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 167
-    },
-    __self: undefined
-  }, __jsx("a", {
-    className: "dropdown-item",
-    role: "button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 168
-    },
-    __self: undefined
-  }, "Now Playing")))), __jsx("div", {
+  }, "Tv Shows")))), __jsx("div", {
     className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 160
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/tv",
+    href: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 161
     },
     __self: undefined
   }, __jsx("a", {
@@ -608,14 +497,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177
+      lineNumber: 162
     },
     __self: undefined
-  }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+  }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 163
     },
     __self: undefined
   }))), __jsx("button", {
@@ -623,25 +512,70 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 181
+      lineNumber: 166
     },
     __self: undefined
-  }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+  }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 167
     },
     __self: undefined
   })), __jsx("div", {
     className: "dropdown-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 169
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/tv",
+    href: "/movie",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 170
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "dropdown-item",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 171
+    },
+    __self: undefined
+  }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/movie?query=top_rated",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 175
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "dropdown-item",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 176
+    },
+    __self: undefined
+  }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/movie?query=upcoming",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 180
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "dropdown-item",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 181
+    },
+    __self: undefined
+  }, "Upcoming")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/movie?query=now_playing",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 185
@@ -655,41 +589,62 @@ const NavCustom = () => {
       lineNumber: 186
     },
     __self: undefined
-  }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/tv?query=top_rated",
+  }, "Now Playing")))), __jsx("div", {
+    className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 190
+      lineNumber: 193
+    },
+    __self: undefined
+  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/tv",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 194
     },
     __self: undefined
   }, __jsx("a", {
-    className: "dropdown-item",
+    className: "nav-link dropdown--link",
     role: "button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 191
-    },
-    __self: undefined
-  }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/tv?query=on_the_air",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 195
     },
     __self: undefined
-  }, __jsx("a", {
-    className: "dropdown-item",
-    role: "button",
+  }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+    className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 196
     },
     __self: undefined
-  }, "On Tv")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/tv?query=airing_today",
+  }))), __jsx("button", {
+    className: "nav-link dropdown--btn",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 199
+    },
+    __self: undefined
+  }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
+    className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 200
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "dropdown-menu",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 202
+    },
+    __self: undefined
+  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/tv",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 203
     },
     __self: undefined
   }, __jsx("a", {
@@ -697,35 +652,80 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201
+      lineNumber: 204
     },
     __self: undefined
-  }, "Airing Today")))), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/person",
+  }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/tv?query=top_rated",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 208
     },
     __self: undefined
   }, __jsx("a", {
-    className: "nav-link",
+    className: "dropdown-item",
     role: "button",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 209
     },
     __self: undefined
-  }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/tv?query=on_the_air",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 213
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "dropdown-item",
+    role: "button",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 214
+    },
+    __self: undefined
+  }, "On Tv")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/tv?query=airing_today",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 218
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "dropdown-item",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 219
+    },
+    __self: undefined
+  }, "Airing Today")))), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/person",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 226
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "nav-link",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 227
+    },
+    __self: undefined
+  }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 232
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215
+      lineNumber: 233
     },
     __self: undefined
   }, __jsx("a", {
@@ -733,14 +733,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216
+      lineNumber: 234
     },
     __self: undefined
   }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/signup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 220
+      lineNumber: 238
     },
     __self: undefined
   }, __jsx("a", {
@@ -748,13 +748,13 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 221
+      lineNumber: 239
     },
     __self: undefined
   }, "Sign Up"))))), __jsx(_ui_Forms_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 228
+      lineNumber: 246
     },
     __self: undefined
   }));
@@ -1105,7 +1105,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "SearchFrom__Styled",
   componentId: "sc-3mqi02-0"
-})(["background-color:var(--white-clr);padding:0;.form{max-width:920px;margin:0 auto;padding:0 1em;position:relative;&:hover svg{color:var(--primary-clr);}}.form-group{display:flex;margin:0;}.form-label{margin:0;margin-right:0.5em;display:flex;align-items:center;justify-content:center;cursor:pointer;svg{color:var(--grey-clr);}}.form--clear{position:absolute;top:50%;right:2%;transform:translate(-2%,-50%);color:var(--primary-clr);font-weight:bold;font-size:1.5rem;cursor:pointer;transition:var(--ease--in--out--02s);&:hover{opacity:0.7;}}.form-control{border:0;color:var(--grey-clr);&::placeholder{font-size:0.9rem;}}.search--content{height:auto;overflow-y:auto;box-shadow:0 11px 15px rgba(0,0,0,0.28);& > .search--content--item:first-child{border-top:1px solid rgba(0,0,0,0.1);}& > .search--content--item:last-child{border-top:none;}}.search--content--item{border-bottom:1px solid rgba(0,0,0,0.1);padding:0.1em 1em;transition:var(--ease--in--out--02s);cursor:pointer;&:hover{background-color:rgba(196,196,196,0.4);}&__name{color:var(--second-clr);margin-bottom:0;margin-left:1em;.media--in{color:rgb(151,151,151);margin-left:0.3em;}}&:hover .search--content--item__name,&:hover .search--content--item__icon{color:var(--primary-clr);}}.wrapper{margin:0 auto;max-width:920px;display:flex;align-items:center;font-size:0.9em;color:var(--second-clr);text-transform:capitalize;}@media screen and (min-width:1000px){.form{padding:0;}}"]);
+})(["background-color:var(--white-clr);padding:0;box-shadow:0px 1px 17px rgba(0,0,0,0.2);.form{max-width:920px;margin:0 auto;padding:0 1em;position:relative;&:hover svg{color:var(--primary-clr);}}.form-group{display:flex;margin:0;}.form-label{margin:0;margin-right:0.5em;display:flex;align-items:center;justify-content:center;cursor:pointer;svg{color:var(--grey-clr);}}.form--clear{position:absolute;top:50%;right:6%;transform:translate(-6%,-50%);color:var(--primary-clr);font-weight:bold;font-size:1.5rem;cursor:pointer;transition:var(--ease--in--out--02s);&:hover{opacity:0.7;}}.form-control{border:0;color:var(--grey-clr);&:focus{outline:0;border-color:var(--primary-clr-rgba);}&::placeholder{font-size:0.9rem;}}.search--content{height:auto;overflow-y:auto;box-shadow:0 11px 15px rgba(0,0,0,0.28);& > .search--content--item:first-child{border-top:1px solid rgba(0,0,0,0.1);}& > .search--content--item:last-child{border-top:none;}}.search--content--item{border-bottom:1px solid rgba(0,0,0,0.1);padding:0.1em 1em;transition:var(--ease--in--out--02s);cursor:pointer;&:hover{background-color:rgba(196,196,196,0.4);}&__name{color:var(--second-clr);margin-bottom:0;margin-left:1em;.media--in{color:rgb(151,151,151);margin-left:0.3em;}}&:hover .search--content--item__name,&:hover .search--content--item__icon{color:var(--primary-clr);}}.wrapper{margin:0 auto;max-width:920px;display:flex;align-items:center;font-size:0.9em;color:var(--second-clr);text-transform:capitalize;}@media screen and (min-width:1000px){.form{padding:0;}.form--clear{right:2%;transform:translate(-2%,-50%);}}"]);
 
 const SearchFrom = () => {
   const {
@@ -1152,7 +1152,7 @@ const SearchFrom = () => {
     classname: "search form",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 169
     },
     __self: undefined
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -1160,26 +1160,26 @@ const SearchFrom = () => {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 170
     },
     __self: undefined
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Group, {
     controlId: "search",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164
+      lineNumber: 171
     },
     __self: undefined
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 172
     },
     __self: undefined
   }, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__["FaSearch"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 173
     },
     __self: undefined
   })), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4___default.a.Control, {
@@ -1193,7 +1193,7 @@ const SearchFrom = () => {
     placeholder: "Search for a movie, tv show, person...",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168
+      lineNumber: 175
     },
     __self: undefined
   })), (isFocus === true || search !== '') && __jsx("span", {
@@ -1204,14 +1204,14 @@ const SearchFrom = () => {
     className: "form--clear",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 187
     },
     __self: undefined
   }, "x")), __jsx("div", {
     className: "search--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191
+      lineNumber: 198
     },
     __self: undefined
   }, isFocus && searchData && searchData.map(item => __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1220,7 +1220,7 @@ const SearchFrom = () => {
     as: `/${item.media_type}/${item.id}`,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 202
     },
     __self: undefined
   }, __jsx("div", {
@@ -1229,49 +1229,49 @@ const SearchFrom = () => {
     className: "search--content--item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 200
+      lineNumber: 207
     },
     __self: undefined
   }, __jsx("div", {
     className: "wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 205
+      lineNumber: 212
     },
     __self: undefined
   }, item.media_type === 'movie' ? __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdLocalMovies"], {
     className: "search--content--item__icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 214
     },
     __self: undefined
   }) : item.media_type === 'tv' ? __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdTv"], {
     className: "search--content--item__icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 216
     },
     __self: undefined
   }) : __jsx(react_icons_md__WEBPACK_IMPORTED_MODULE_6__["MdPerson"], {
     className: "search--content--item__icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211
+      lineNumber: 218
     },
     __self: undefined
   }), __jsx("p", {
     className: "search--content--item__name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 213
+      lineNumber: 220
     },
     __self: undefined
   }, item.name || item.title, __jsx("span", {
     className: "media--in",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215
+      lineNumber: 222
     },
     __self: undefined
   }, "in", ' ', item.media_type === 'person' ? 'People' : item.media_type))))))));
@@ -3158,7 +3158,7 @@ const MyApp = ({
     },
     __self: undefined
   }, "PopCorn Fun"), __jsx("link", {
-    href: "https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400&display=swap",
+    href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap",
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,

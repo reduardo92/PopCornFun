@@ -11,6 +11,7 @@ import Link from 'next/link';
 const Styled = styled.div`
   background-color: var(--white-clr);
   padding: 0;
+  box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.2);
 
   .form {
     max-width: 920px;
@@ -38,18 +39,14 @@ const Styled = styled.div`
     svg {
       color: var(--grey-clr);
     }
-
-    /* &:hover svg {
-      color: var(--primary-clr);
-    } */
   }
 
   .form--clear {
     position: absolute;
     /* display: none; */
     top: 50%;
-    right: 2%;
-    transform: translate(-2%, -50%);
+    right: 6%;
+    transform: translate(-6%, -50%);
     color: var(--primary-clr);
     font-weight: bold;
     font-size: 1.5rem;
@@ -64,6 +61,11 @@ const Styled = styled.div`
   .form-control {
     border: 0;
     color: var(--grey-clr);
+
+    &:focus {
+      outline: 0;
+      border-color: var(--primary-clr-rgba);
+    }
 
     &::placeholder {
       font-size: 0.9rem;
@@ -123,6 +125,11 @@ const Styled = styled.div`
   @media screen and (min-width: 1000px) {
     .form {
       padding: 0;
+    }
+
+    .form--clear {
+      right: 2%;
+      transform: translate(-2%, -50%);
     }
   }
 `;

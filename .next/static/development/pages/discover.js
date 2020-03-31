@@ -105,13 +105,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var Layout = function Layout(_ref) {
-  var children = _ref.children;
+  var className = _ref.className,
+      children = _ref.children;
 
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]),
       clearData = _useContext.clearData,
       isModal = _useContext.isModal;
 
   return __jsx("main", {
+    className: className,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -543,7 +545,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "DiscoverFrom__Styled",
   componentId: "sc-1qw32to-0"
-})([".discover--from{display:flex;flex-direction:column;}.clear--fields{background:var(--bg-gradient);font-size:1.3rem;padding:0em 0.5em;align-self:center;text-align:center;margin-bottom:1.1em;border-radius:3px;transition:var(--ease-12s);cursor:pointer;&:hover,&:focus{transform:scale(0.9);opacity:0.8;}}@media screen and (min-width:768px){flex:100%;margin-bottom:1em;.discover--from{display:flex;flex-direction:row;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}.clear--fields{flex:0 0 30px;align-self:center;margin:0;margin-top:0.85em;}}}.genre--control .tv{display:", ";}@media screen and (min-width:1000px){flex:1;margin-left:2em;.discover--from{display:flex;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}}}"], function (_ref) {
+})([".discover--from{display:flex;flex-direction:column;}.option--tab{&:hover,&:focus{background-color:var(--primary-clr-rgba) !important;color:var(--white-clr);outline-color:var(--primary-clr);}}.clear--fields{background:var(--bg-gradient);font-size:1.3rem;padding:0em 0.5em;align-self:center;text-align:center;margin-bottom:1.1em;border-radius:3px;transition:var(--ease-12s);cursor:pointer;&:hover,&:focus{transform:scale(0.9);opacity:0.8;}}@media screen and (min-width:768px){flex:100%;margin-bottom:1em;.discover--from{display:flex;flex-direction:row;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}.clear--fields{flex:0 0 30px;align-self:center;margin:0;margin-top:0.85em;}}}.genre--control .tv{display:", ";}@media screen and (min-width:1000px){flex:1;margin-left:2em;.discover--from{display:flex;justify-content:space-between;& > div{flex:1;margin-right:1em;}& >:last-child{margin-right:0;}}}"], function (_ref) {
   var genre = _ref.genre;
   return genre && 'none';
 });
@@ -713,7 +715,7 @@ var DiscoverForm = function DiscoverForm(_ref2) {
     genre: query.query === 'movie' && true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 173
+      lineNumber: 182
     },
     __self: this
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -721,20 +723,20 @@ var DiscoverForm = function DiscoverForm(_ref2) {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177
+      lineNumber: 186
     },
     __self: this
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
     controlId: "year",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178
+      lineNumber: 187
     },
     __self: this
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 179
+      lineNumber: 188
     },
     __self: this
   }, "Year"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
@@ -744,21 +746,23 @@ var DiscoverForm = function DiscoverForm(_ref2) {
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 189
     },
     __self: this
   }, __jsx("option", {
+    className: "option--tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 195
     },
     __self: this
   }), Object(_utility_getYears__WEBPACK_IMPORTED_MODULE_5__["default"])().reverse().map(function (year) {
     return __jsx("option", {
       key: year,
+      className: "option--tab",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 190
+        lineNumber: 199
       },
       __self: this
     }, year);
@@ -766,13 +770,13 @@ var DiscoverForm = function DiscoverForm(_ref2) {
     controlId: "sort_by",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 205
     },
     __self: this
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 206
     },
     __self: this
   }, "Sort By"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
@@ -782,7 +786,7 @@ var DiscoverForm = function DiscoverForm(_ref2) {
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 207
     },
     __self: this
   }, sortBy.map(function (_ref3) {
@@ -794,7 +798,7 @@ var DiscoverForm = function DiscoverForm(_ref2) {
       value: value,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 203
+        lineNumber: 214
       },
       __self: this
     }, name);
@@ -802,13 +806,13 @@ var DiscoverForm = function DiscoverForm(_ref2) {
     controlId: "genres",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 220
     },
     __self: this
   }, __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Label, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 210
+      lineNumber: 221
     },
     __self: this
   }, "Genres"), __jsx(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
@@ -819,13 +823,13 @@ var DiscoverForm = function DiscoverForm(_ref2) {
     onChange: handleChange,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211
+      lineNumber: 222
     },
     __self: this
   }, __jsx("option", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218
+      lineNumber: 229
     },
     __self: this
   }), genres.map(function (genre) {
@@ -835,7 +839,7 @@ var DiscoverForm = function DiscoverForm(_ref2) {
       className: !genre["for"] ? 'both' : 'tv',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 220
+        lineNumber: 231
       },
       __self: this
     }, genre.name);
@@ -844,7 +848,7 @@ var DiscoverForm = function DiscoverForm(_ref2) {
     onClick: handleReset,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231
+      lineNumber: 242
     },
     __self: this
   }, "x")));
@@ -882,7 +886,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var Styled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Pagination__Styled",
   componentId: "sc-1vc2buy-0"
-})(["ul{list-style:none;padding:0px;display:flex;justify-content:center;align-self:center;width:100%;li{margin-right:4px;border-radius:4px;font-family:sans-serif;background:var(--white-clr);font-size:1rem;font-weight:bold;min-width:20px;text-align:center;user-select:none;display:flex;justify-content:center;align-items:center;.link--item{display:block;padding:10px 15px;color:var(--second-clr);}.controls{font-size:0.9rem;}&:last-child{margin-right:0px;}&:not(.active):not(.disabled){cursor:pointer;}&:not(.active):not(.disabled):hover{background:var(--bg-gradient);.link--item{color:var(--white-clr);}}&:not(.active):not(.disabled):active{background:rgb(245,110,67);.link--item{color:var(--white-clr);}}&.active{background:rgb(245,110,67);.link--item{color:var(--white-clr);}}&.disabled{background:#fbeaff;pointer-events:none;}}}"]);
+})(["ul{list-style:none;padding:0px;display:flex;justify-content:center;align-self:center;width:100%;li{margin-right:4px;border-radius:4px;font-family:sans-serif;background:var(--white-clr);font-size:1rem;font-weight:bold;min-width:20px;text-align:center;user-select:none;display:flex;justify-content:center;align-items:center;.link--item{display:block;padding:5px 11px;color:var(--second-clr);}.controls{font-size:0.9rem;}&:last-child{margin-right:0px;}&:not(.active):not(.disabled){cursor:pointer;}&:not(.active):not(.disabled):hover{background:var(--bg-gradient);.link--item{color:var(--white-clr);}}&:not(.active):not(.disabled):active{background:rgb(245,110,67);.link--item{color:var(--white-clr);}}&.active{background:rgb(245,110,67);.link--item{color:var(--white-clr);}}&.disabled{background:#fbeaff;pointer-events:none;}}}"]);
 
 var Pagination = function Pagination(_ref) {
   var numberOfArticles = _ref.numberOfArticles,
@@ -1276,26 +1280,33 @@ var MediaSection = function MediaSection(_ref) {
       lineNumber: 201
     },
     __self: this
-  }))), __jsx(_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }))), __jsx("div", {
+    className: "main--content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 207
+    },
+    __self: this
+  }, __jsx(_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
     numberOfArticles: mediaFor.total_pages,
     typeFor: setLink(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 208
     },
     __self: this
   }), __jsx("div", {
     className: mediaFor.typeFor === 'person' ? 'person--grid' : 'content--container',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 211
+      lineNumber: 212
     },
     __self: this
   }, mediaFor.results.length === 0 ? __jsx("h3", {
     className: "text-dark vh-100",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219
+      lineNumber: 220
     },
     __self: this
   }, "Sorry Nothing Found") : mediaFor.results.map(function (item) {
@@ -1304,7 +1315,7 @@ var MediaSection = function MediaSection(_ref) {
       data: item,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 223
+        lineNumber: 224
       },
       __self: this
     }) : __jsx(_Cards_CardTwo__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1313,7 +1324,7 @@ var MediaSection = function MediaSection(_ref) {
       typeFor: mediaFor.typeFor,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 225
+        lineNumber: 226
       },
       __self: this
     });
@@ -1322,10 +1333,10 @@ var MediaSection = function MediaSection(_ref) {
     typeFor: setLink(),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 234
+      lineNumber: 235
     },
     __self: this
-  }))));
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MediaSection);

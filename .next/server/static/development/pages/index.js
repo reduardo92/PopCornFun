@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -199,6 +199,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const Layout = ({
+  className,
   children
 }) => {
   const {
@@ -206,6 +207,7 @@ const Layout = ({
     isModal
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
   return __jsx("main", {
+    className: className,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -3317,7 +3319,7 @@ IndexPage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 7:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

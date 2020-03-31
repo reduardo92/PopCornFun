@@ -105,13 +105,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var Layout = function Layout(_ref) {
-  var children = _ref.children;
+  var className = _ref.className,
+      children = _ref.children;
 
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]),
       clearData = _useContext.clearData,
       isModal = _useContext.isModal;
 
   return __jsx("main", {
+    className: className,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -23842,7 +23844,7 @@ IndexPage.getInitialProps = function _callee() {
 
 /***/ }),
 
-/***/ 5:
+/***/ 1:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Cindex.js ***!
   \*******************************************************************************************************************************************************/
@@ -23865,5 +23867,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

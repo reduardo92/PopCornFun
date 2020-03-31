@@ -66,7 +66,7 @@ const Styled = styled.div`
   /* /// */
   .meta {
     justify-content: space-between;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     align-items: stretch;
 
     &--tab {

@@ -3,11 +3,11 @@ import MovieContext from './context/MovieContext';
 import Modal from 'react-bootstrap/Modal';
 import { RESET_MODAL_MEDIA, IMG_URL } from './context/types';
 
-const Layout = ({ children }) => {
+const Layout = ({ className, children }) => {
   const { clearData, isModal } = useContext(MovieContext);
 
   return (
-    <main>
+    <main className={className}>
       {children}{' '}
       <Modal
         centered

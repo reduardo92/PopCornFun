@@ -13,6 +13,15 @@ const Styled = styled.div`
     /* justify-content: space-between; */
   }
 
+  .option--tab {
+    &:hover,
+    &:focus {
+      background-color: var(--primary-clr-rgba) !important;
+      color: var(--white-clr);
+      outline-color: var(--primary-clr);
+    }
+  }
+
   .clear--fields {
     background: var(--bg-gradient);
     font-size: 1.3rem;
@@ -183,11 +192,13 @@ const DiscoverForm = ({ typeFor }) => {
             value={year}
             onChange={handleChange}
           >
-            <option></option>
+            <option className='option--tab'></option>
             {getYears()
               .reverse()
               .map(year => (
-                <option key={year}>{year}</option>
+                <option key={year} className='option--tab'>
+                  {year}
+                </option>
               ))}
           </Form.Control>
         </Form.Group>

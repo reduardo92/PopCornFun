@@ -6,7 +6,7 @@ export default ({ href, children }) => {
   const router = useRouter();
 
   let className = children.props.className || '';
-  if (router.pathname === href) {
+  if (router.asPath === href) {
     className = `${className} selected`;
   }
 
