@@ -11,9 +11,23 @@ import {
 const Styled = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 200px;
   font-size: 1.6rem;
+
+  a {
+    margin-right: 1em;
+    transition: var(--ease-12s);
+
+    & svg:hover,
+    & svg:focus {
+      opacity: 0.8;
+      color: var(--primary-clr) !important;
+    }
+  }
+
+  & > a:last-child {
+    margin-right: 0;
+  }
 
   &:hover,
   &:focus {

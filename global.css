@@ -32,17 +32,6 @@
     #1a1616
   );
 
-  /* --bg-gradient: linear-gradient(
-    to top,
-    #240808,
-    #210707,
-    #1d0707,
-    #190606,
-    #140505
-  ); */
-  /* #b79940  */
-  /* #F15C2B  */
-
   /* Box Shadow */
   --shadow: 3px 2px 7px rgba(0, 0, 0, 1);
 
@@ -338,7 +327,6 @@ template {
   box-sizing: border-box;
   line-height: 1.6;
   text-decoration: none;
-  list-style: none;
 }
 
 body,

@@ -93,10 +93,10 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/Footer.js":
-/*!******************************!*\
-  !*** ./components/Footer.js ***!
-  \******************************/
+/***/ "./components/Footer.jsx":
+/*!*******************************!*\
+  !*** ./components/Footer.jsx ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -106,42 +106,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _ui_socials__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui/socials */ "./components/ui/socials.js");
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\Footer.js";
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Link */ "./components/Link.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\Footer.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+
 const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.footer.withConfig({
   displayName: "Footer__Styled",
-  componentId: "sc-15mmmq6-0"
-})(["margin-top:auto;display:grid;position:relative;text-align:center;background-image:url('/ticketBg.jpg');background-size:cover;background-repeat:no-repeat;object-fit:cover;background-position:center;z-index:1;&::before{content:'';position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,0.75);z-index:-1;}p{color:var(--white-clr);}.content{display:grid;grid-gap:1em;gap:1em;padding:2em 0;max-width:1400px;margin:0 auto;}.addresse{display:grid;grid-gap:0.5em;gap:0.5em;justify-content:center;}.logo{width:80px;margin:0 auto 1em;}.hours{display:grid;grid-gap:0.3em;gap:0.3em;justify-content:center;align-items:center;}.social{margin:0 auto;}.copyRight{padding:1em 0;align-self:end;}@media screen and (min-width:1024px){.content{grid-template-columns:repeat(3,1fr);padding:3em 0;}.social{order:-1;width:250px;.social--link{font-size:1.7rem;}}}"]);
+  componentId: "pyrmpm-0"
+})(["margin-top:auto;position:relative;text-align:center;background:url('/ticketBg.jpg') center;z-index:1;&::before{content:'';position:absolute;top:0;right:0;bottom:0;left:0;background-image:linear-gradient( to top,#1c0c07,#1e0d07,#200e08,#210e08,#230f08 );z-index:-1;opacity:0.97;}p{color:var(--white-clr);}.content{padding:2em 0;display:grid;justify-content:center;align-items:center;max-width:900px;margin:0 auto;}.logo{display:block;margin-bottom:2em;font-weight:bold;transition:var(--ease--in--out--02s);&:hover,&:focus{opacity:0.9;color:var(--primary-clr);}img{width:80px;margin:0 auto;}}.join--btn{background-color:var(--white-clr);color:var(--primary-clr-rgba);font-size:1.3em;font-weight:bold;display:block;word-wrap:break-word;white-space:normal;text-transform:uppercase;border-radius:5px;border:2px solid transparent;padding:8px 16px;transition:var(--ease--in--out--02s);&:hover,&:focus{opacity:0.9;border-color:var(--primary-clr);}}.footer--nav{display:flex;justify-content:space-between;margin-top:2em;&__link{color:var(--white-clr);font-weight:bold;border-bottom:2px solid transparent;transition:var(--ease--in--out--02s);&:hover{color:var(--white-clr);border-bottom-color:var(--primary-clr);}}.selected{border-bottom-color:var(--primary-clr) !important;color:var(--white-clr) !important;}}.copyRight{padding:1em 0;align-self:end;}@media screen and (min-width:1000px){.content{display:grid;grid-template-columns:repeat(3,1fr);}.logo{margin-bottom:0;}.join--btn{order:-1;justify-self:center;}}"]);
 
 const Footer = () => __jsx(Styled, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 87
+    lineNumber: 128
   },
   __self: undefined
 }, __jsx("div", {
   className: "content",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 88
+    lineNumber: 129
   },
   __self: undefined
-}, __jsx("div", {
-  className: "addresse",
+}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: "/",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 89
+    lineNumber: 130
   },
   __self: undefined
 }, __jsx("a", {
   className: "logo",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 90
+    lineNumber: 131
   },
   __self: undefined
 }, __jsx("img", {
@@ -149,26 +152,97 @@ const Footer = () => __jsx(Styled, {
   alt: "popcorn logo",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 91
+    lineNumber: 132
   },
   __self: undefined
-}), "PopCorn Fun")), __jsx(_ui_socials__WEBPACK_IMPORTED_MODULE_2__["default"], {
+}), "PopCorn Fun")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: "/login",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 95
+    lineNumber: 136
   },
   __self: undefined
-})), __jsx("div", {
+}, __jsx("a", {
+  className: "join--btn",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 137
+  },
+  __self: undefined
+}, "Join The Community")), __jsx("nav", {
+  className: "footer--nav",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 139
+  },
+  __self: undefined
+}, __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  href: "/discover?query=movie&page=1",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 140
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "footer--nav__link",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 141
+  },
+  __self: undefined
+}, "Discover")), __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  href: "/movie",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 143
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "footer--nav__link",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 144
+  },
+  __self: undefined
+}, "Movies")), __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  href: "/tv",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 146
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "footer--nav__link",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 147
+  },
+  __self: undefined
+}, "Tv")), __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  href: "/person",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 149
+  },
+  __self: undefined
+}, __jsx("a", {
+  className: "footer--nav__link",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 150
+  },
+  __self: undefined
+}, "Person")))), __jsx("div", {
   className: "copyRight",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 97
+    lineNumber: 154
   },
   __self: undefined
-}, __jsx("p", {
+}, __jsx("small", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 98
+    lineNumber: 155
   },
   __self: undefined
 }, "\xA9 PopCorn Fun 2020")));
@@ -1278,89 +1352,6 @@ const SearchFrom = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchFrom);
-
-/***/ }),
-
-/***/ "./components/ui/socials.js":
-/*!**********************************!*\
-  !*** ./components/ui/socials.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "react-icons/fa");
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\socials.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "socials__Styled",
-  componentId: "sc-1hkk64d-0"
-})(["display:flex;justify-content:space-evenly;align-items:center;width:150px;margin:0 auto;.social--link{color:var(--white-clr);transition:var(--ease--in--out--02s);font-size:1.3rem;&:hover,&:focus{color:var(--accent-clr);}}@media screen and (min-width:1024px){.social--link{font-size:1.5rem;}}"]);
-
-const Socials = () => __jsx(Styled, {
-  className: "social",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 30
-  },
-  __self: undefined
-}, __jsx("a", {
-  className: "social--link",
-  href: "#",
-  target: "_blank",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 31
-  },
-  __self: undefined
-}, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaInstagram"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 32
-  },
-  __self: undefined
-})), __jsx("a", {
-  className: "social--link",
-  href: "#",
-  target: "_blank",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 34
-  },
-  __self: undefined
-}, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaFacebookF"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 35
-  },
-  __self: undefined
-})), __jsx("a", {
-  className: "social--link",
-  href: "#",
-  target: "_blank",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 37
-  },
-  __self: undefined
-}, __jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__["FaTwitter"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 38
-  },
-  __self: undefined
-})));
-
-/* harmony default export */ __webpack_exports__["default"] = (Socials);
 
 /***/ }),
 
@@ -3119,7 +3110,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_context_MovieProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/context/MovieProvider */ "./components/context/MovieProvider.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.jsx");
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.jsx");
 /* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-circular-progressbar/dist/styles.css */ "./node_modules/react-circular-progressbar/dist/styles.css");
 /* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_5__);

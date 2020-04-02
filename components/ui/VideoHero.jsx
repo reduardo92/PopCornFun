@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './button';
+import ButtonLink from './ButtonLink';
 
 const Styled = styled.div`
   position: relative;
@@ -112,8 +112,8 @@ const VideoHero = () => (
         Discover your next popcorn fun to enjoy your night
       </p>
       <div className='btn--group'>
-        <Button title='movies' toLink='/movie' />
-        <Button title='tv' toLink='/tv' />
+        <ButtonLink title='movies' toLink='/movie' />
+        <ButtonLink title='tv' toLink='/tv' />
       </div>
       {/* <img className='title--img' src='/popcorn.png' alt='film strip' /> */}
     </div>

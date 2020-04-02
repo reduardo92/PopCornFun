@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import Button from '../button';
+// import Button from '../utton';
 import { IMG_URL_OR } from '../../context/types';
 import CirclePercentage from '../CirclePercentage';
 import TagGroup from '../TagGroup';
 import PlayButton from '../PlayButton';
 import MovieContext from '../../context/MovieContext';
+import ButtonLink from '../ButtonLink';
 
 const Styled = styled.section`
   position: relative;
@@ -110,7 +111,7 @@ const FeturedSection = ({ data, typeFor }) => {
               : data.overview}
           </p>
           <div className='btn--group'>
-            <Button
+            <ButtonLink
               toLink={`/${typeFor}/[id]`}
               asLink={`/${typeFor}/${data.id}`}
               title='view more'

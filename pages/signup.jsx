@@ -1,129 +1,10 @@
 import React from 'react';
 import Layout from '../components/layout';
-import FormStyle from '../components/ui/Forms/formstyle';
 import useForm from '../components/Hooks/useForm';
-import { Button } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import ButtonLink from '../components/ui/ButtonLink';
+import FormSectionStyles from '../components/ui/Forms/FormSectionStyles';
 import Link from 'next/link';
-import styled from 'styled-components';
-
-const Styled = styled.section`
-  margin: 8em 0 3em;
-  color: var(--second-clr);
-
-  .side--content,
-  .form--content {
-    overflow: hidden;
-    padding: 0 1em;
-    position: relative;
-  }
-
-  .video--bg {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    background-color: black;
-  }
-
-  .header {
-    font-size: 1.4rem;
-    font-weight: bold;
-  }
-
-  .login--from {
-    .btn {
-      background: var(--primary-clr);
-      border-color: var(--primary-clr);
-
-      &:hover,
-      &:focus {
-        transform: scale(0.9);
-        opacity: 0.8;
-        background: var(--primary-clr);
-        border-color: var(--primary-clr);
-      }
-    }
-  }
-
-  .cancel {
-    color: var(--primary-clr);
-    margin-left: 1em;
-    border-bottom: 1px solid transparent;
-    transition: var(--ease-12s);
-
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-      border-bottom-color: var(--primary-clr);
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 6.5em 0 0;
-    /* height: 90%; */
-
-    .side--content,
-    .form--content {
-      flex: 1;
-      padding: 6em 1em;
-      display: flex;
-    }
-
-    .side--content {
-      /* background: linear-gradient(
-          rgba(0, 0, 0, 0.74),
-          rgba(97, 44, 7, 0.52),
-          rgba(117, 44, 20, 0.83)
-        ),
-        url(/popcornBg.jpg) no-repeat center; */
-      /* background-color: black;
-      background-size: cover;
-      background-position: top;
-      object-fit: cover;
-      position: relative; */
-      color: var(--white-clr);
-    }
-
-    .video--bg {
-      display: block;
-    }
-
-    .inner {
-      flex: 1;
-      max-width: 600px;
-    }
-
-    .login--from {
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-    }
-  }
-
-  @media screen and (min-width: 1050px) {
-    .side--content,
-    .form--content {
-      align-items: center;
-    }
-
-    .inner {
-      margin: 0 auto 0 calc(100% - 90%);
-    }
-  }
-`;
-
-const LayoutStyled = styled(Layout)`
-  flex: 1 0 80%;
-  display: grid;
-`;
 
 const signup = () => {
   const submit = () => {
@@ -142,14 +23,21 @@ const signup = () => {
 
   const { username, email, password, password2 } = form;
   return (
-    <LayoutStyled>
-      <Styled className='sign--up'>
+    <Layout>
+      <FormSectionStyles className='sign--up'>
         <div className='side--content'>
-          <h2 className='header'>Sign up for an account</h2>
-          <p className='para text-dark'>
-            Signing up for an account is free and easy. Fill out the form below
-            to get started.
-          </p>
+          <div className='side--content__inner'>
+            <h2 className='title'>Join The Fun</h2>
+            <ul className='benefits'>
+              <li className='benefits__tab'>
+                Log the movies and TV shows you have watched
+              </li>
+              <li className='benefits__tab'>Build a personal watchlist</li>
+              <li className='benefits__tab'>Make your own favorite list</li>
+              <li className='benefits__tab'>Rate movies & Tv Shows</li>
+            </ul>
+            <ButtonLink toLink='/login' title='Log In' styleDisplay />
+          </div>
           <video autoPlay muted loop className='video--bg'>
             <source src='/theater.mp4' type='video/mp4' />
           </video>
@@ -161,7 +49,7 @@ const signup = () => {
               Signing up for an account is free and easy. Fill out the form
               below to get started.
             </p>
-            <form className='form login--from' onSubmit={handleSubmit}>
+            <form className='form signIn--form' onSubmit={handleSubmit}>
               <div className='form-group'>
                 <label htmlFor='username'>Username</label>
                 <input
@@ -224,8 +112,8 @@ const signup = () => {
             </form>
           </div>
         </div>
-      </Styled>
-    </LayoutStyled>
+      </FormSectionStyles>
+    </Layout>
   );
 };
 

@@ -7,7 +7,10 @@ const Styled = styled.div`
   background-color: var(--accent-clr);
   position: relative;
   z-index: 1;
-  * {
+  color: var(--second-clr);
+
+  a,
+  p {
     color: var(--second-clr);
   }
 
@@ -76,6 +79,18 @@ const PersonFacts = ({ data }) => {
             {data.birthday ? setDateFormat(data.birthday) : '-'}
           </span>
         </div>
+        {data.deathday && (
+          <div className='stat'>
+            <p className='stat--title'>Day of Death</p>
+            <span className='stat--subtext'>
+              {setDateFormat(data.deathday)} (
+              {parseInt(data.deathday.slice(0, 4)) -
+                parseInt(data.birthday.slice(0, 4)) -
+                1}{' '}
+              years old)
+            </span>
+          </div>
+        )}
         <div className='stat'>
           <p className='stat--title'>Place of Birth</p>
           <span className='stat--subtext'>{data.place_of_birth}</span>

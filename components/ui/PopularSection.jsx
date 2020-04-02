@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import CardOne from './Cards/CardOne';
 import CardTitle from './CardTitle';
 import ButtonSimple from './ButtonSimple';
-import Button from './button';
+import ButtonLink from './ButtonLink';
 
 const Styled = styled.section`
   background: var(--bg-dark-gradient);
@@ -16,6 +16,7 @@ const Styled = styled.section`
     grid-auto-rows: auto;
     justify-items: center;
     grid-row-gap: 2em;
+    grid-column-gap: 1em;
   }
 
   .btn--container {
@@ -66,6 +67,7 @@ const Styled = styled.section`
 
     .content--container {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-column-gap: 0;
     }
 
     .card--title {
@@ -97,7 +99,7 @@ const PopularSection = ({
       )}
     </div>
     <div className='btn--container'>
-      <Button toLink={toLink} title='view more' />
+      <ButtonLink toLink={toLink} title='view more' />
     </div>
   </Styled>
 );

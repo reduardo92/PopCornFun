@@ -5,6 +5,10 @@ const MediaMainStyle = styled.section`
   background: var(--bg-dark-gradient);
   margin-top: 90px;
 
+  ul {
+    list-style: none;
+  }
+
   .profile--backdrop {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url(${({ bgImg }) => `${IMG_URL_OR}${bgImg}`}) no-repeat center;
@@ -43,24 +47,6 @@ const MediaMainStyle = styled.section`
       display: flex;
       flex-wrap: wrap;
       z-index: 1;
-
-      /* &::before {
-        content: '';
-        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-          url('/theater_sets.jpg') no-repeat center;
-        background-color: black;
-        min-height: 800px;
-        position: absolute;
-        top: 800px;
-        left: 0;
-        right: calc(88rem - -24vw);
-        bottom: 0;
-        background-size: cover;
-        background-position: 0 85%;
-        background-attachment: fixed;
-        object-fit: cover;
-        z-index: -1;
-      } */
 
       .profile--content {
         flex: 100%;

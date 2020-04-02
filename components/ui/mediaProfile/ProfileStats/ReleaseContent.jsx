@@ -22,6 +22,7 @@ const ReleaseContent = ({ data }) => {
           className='network--logo'
           src={`${IMG_URL}${netWork.logo_path}`}
           alt={netWork.name}
+          style={{ height: 'auto' }}
         />
       </Link>
     ));
