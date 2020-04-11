@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../../components/layout';
-import UserProfileTabs from '../../components/ui/userProfile/userProfileTabs';
 import UserProfileHead from '../../components/ui/userProfile/UserProfileHead';
+// import UserProfileTabs from '../../components/ui/userProfile/userProfileTabs';
 import { SITE_URL } from '../../components/context/types';
 import axios from 'axios';
 import Router from 'next/router';
@@ -18,7 +18,7 @@ const userProfile = ({ watchlist, favorites, ratings }) => {
     <Layout>
       <Styled className='userProfile'>
         <UserProfileHead />
-        <UserProfileTabs />
+        {/* <UserProfileTabs /> */}
         <div className='userProfile--mainContet'>Hello</div>
       </Styled>
     </Layout>
