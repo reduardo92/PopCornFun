@@ -31,62 +31,8 @@ const UserProfileTabs = () => {
   const [active, setActive] = useState();
 
   const {
-    query: { userProfile, userPage },
+    query: { userProfile },
   } = useRouter();
-
-  //   const dropItems = [
-  //     {
-  //       name: 'favorites',
-  //       href: '/[userProfile]/[userPage]',
-  //       as: `/${userProfile}/favorites`,
-  //       dropItems: [
-  //         {
-  //           name: 'movies',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/favorites`,
-  //         },
-  //         {
-  //           name: 'tv',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/favorites?media=tv`,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: 'watchlist',
-  //       href: '/[userProfile]/[userPage]',
-  //       as: `/${userProfile}/watchlist`,
-  //       dropItems: [
-  //         {
-  //           name: 'movies',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/watchlist`,
-  //         },
-  //         {
-  //           name: 'tv',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/watchlist?media=tv`,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: 'ratings',
-  //       href: '/[userProfile]/[userPage]',
-  //       as: `/${userProfile}/ratings`,
-  //       dropItems: [
-  //         {
-  //           name: 'movies',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/ratings`,
-  //         },
-  //         {
-  //           name: 'tv',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/ratings?media=tv`,
-  //         },
-  //       ],
-  //     },
-  //   ];
 
   const dropItems = [
     {
@@ -154,7 +100,6 @@ const UserProfileTabs = () => {
             invert
             active={active}
             setActive={setActive}
-            userPage={userPage}
           />
         </Nav>
       </div>
@@ -163,3 +108,57 @@ const UserProfileTabs = () => {
 };
 
 export default UserProfileTabs;
+
+//   const dropItems = [
+//     {
+//       name: 'favorites',
+//       href: '/[userProfile]/[userPage]',
+//       as: `/${userProfile}/favorites`,
+//       dropItems: [
+//         {
+//           name: 'movies',
+//           href: '/[userProfile]/[userPage]',
+//           as: `/${userProfile}/favorites`,
+//         },
+//         {
+//           name: 'tv',
+//           href: '/[userProfile]/[userPage]',
+//           as: `/${userProfile}/favorites?media=tv`,
+//         },
+//       ],
+//     },
+//     {
+//       name: 'watchlist',
+//       href: '/[userProfile]/[userPage]',
+//       as: `/${userProfile}/watchlist`,
+//       dropItems: [
+//         {
+//           name: 'movies',
+//           href: '/[userProfile]/[userPage]',
+//           as: `/${userProfile}/watchlist`,
+//         },
+//         {
+//           name: 'tv',
+//           href: '/[userProfile]/[userPage]',
+//           as: `/${userProfile}/watchlist?media=tv`,
+//         },
+//       ],
+//     },
+//     {
+//       name: 'ratings',
+//       href: '/[userProfile]/[userPage]',
+//       as: `/${userProfile}/ratings`,
+//       dropItems: [
+//         {
+//           name: 'movies',
+//           href: '/[userProfile]/[userPage]',
+//           as: `/${userProfile}/ratings`,
+//         },
+//         {
+//           name: 'tv',
+//           href: '/[userProfile]/[userPage]',
+//           as: `/${userProfile}/ratings?media=tv`,
+//         },
+//       ],
+//     },
+//   ];
