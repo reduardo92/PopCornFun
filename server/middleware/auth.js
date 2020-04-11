@@ -1,6 +1,15 @@
 import { verify } from 'jsonwebtoken';
+import Cors from 'cors';
+import { runMiddleware } from './cors';
+
+// Initializing the cors middleware
+const cors = Cors({
+  methods: ['GET', 'HEAD'],
+});
 
 const auth = (fn) => async (req, res) => {
+  await runMiddleware(req, res, cors);
+
   const { cookies, method, url } = req;
   if (method === 'POST' && url === '/api/auth') {
     return await fn(req, res);

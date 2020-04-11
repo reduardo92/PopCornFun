@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -310,9 +310,19 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jsonwebtoken */ "jsonwebtoken");
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var cors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! cors */ "cors");
+/* harmony import */ var cors__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cors__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _cors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cors */ "./server/middleware/cors.js");
 
+
+ // Initializing the cors middleware
+
+const cors = cors__WEBPACK_IMPORTED_MODULE_1___default()({
+  methods: ['GET', 'HEAD']
+});
 
 const auth = fn => async (req, res) => {
+  await Object(_cors__WEBPACK_IMPORTED_MODULE_2__["runMiddleware"])(req, res, cors);
   const {
     cookies,
     method,
@@ -360,6 +370,32 @@ const auth = fn => async (req, res) => {
 
 /***/ }),
 
+/***/ "./server/middleware/cors.js":
+/*!***********************************!*\
+  !*** ./server/middleware/cors.js ***!
+  \***********************************/
+/*! exports provided: runMiddleware */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "runMiddleware", function() { return runMiddleware; });
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, result => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+
+      return resolve(result);
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./server/models/Favorite.js":
 /*!***********************************!*\
   !*** ./server/models/Favorite.js ***!
@@ -393,7 +429,7 @@ const Favorite = mongoose__WEBPACK_IMPORTED_MODULE_0___default.a.models.Favorite
 
 /***/ }),
 
-/***/ 9:
+/***/ 10:
 /*!**************************************!*\
   !*** multi ./pages/api/favorites.js ***!
   \**************************************/
@@ -413,6 +449,17 @@ module.exports = __webpack_require__(/*! C:\Users\Eduardo Rivas\Desktop\react_St
 /***/ (function(module, exports) {
 
 module.exports = require("@hapi/joi");
+
+/***/ }),
+
+/***/ "cors":
+/*!***********************!*\
+  !*** external "cors" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("cors");
 
 /***/ }),
 

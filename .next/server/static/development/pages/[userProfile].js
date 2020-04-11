@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -316,23 +316,29 @@ const Layout = ({
     isModal
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
   const {
+    isAuthentucated,
     loadUser
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_AuthContext__WEBPACK_IMPORTED_MODULE_5__["default"]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    loadUser();
+    if (isAuthentucated) {
+      loadUser();
+    } else {
+      return;
+    }
+
     console.log('loged');
   }, []);
   return __jsx("main", {
     className: className,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 22
     },
     __self: undefined
   }, __jsx(_ui_AlertMsg_AlertMsg__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 23
     },
     __self: undefined
   }), children, ' ', __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -342,7 +348,7 @@ const Layout = ({
     onHide: () => clearData(_context_types__WEBPACK_IMPORTED_MODULE_2__["RESET_MODAL_MEDIA"]),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: undefined
   }, isModal.for !== 'videos' ? __jsx("img", {
@@ -351,14 +357,14 @@ const Layout = ({
     alt: isModal.media,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 32
     },
     __self: undefined
   }) : __jsx("div", {
     className: "embed-responsive embed-responsive-16by9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx("iframe", {
@@ -367,7 +373,7 @@ const Layout = ({
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 39
     },
     __self: undefined
   }))));
@@ -482,105 +488,6 @@ const CirclePercentage = ({
 });
 
 /* harmony default export */ __webpack_exports__["default"] = (CirclePercentage);
-
-/***/ }),
-
-/***/ "./components/ui/DropDown.jsx":
-/*!************************************!*\
-  !*** ./components/ui/DropDown.jsx ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Link */ "./components/Link.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/io */ "react-icons/io");
-/* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_icons_io__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\DropDown.jsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
-  displayName: "DropDown__Styled",
-  componentId: "sc-1lvusex-0"
-})(["position:relative;display:flex;align-items:center;justify-content:center;padding:0.7em 0;.dropdown--button{color:", ";font-weight:600;border-bottom:2px solid transparent;transition:var(--ease--in--out--02s);text-transform:capitalize;font-size:0.9rem;cursor:pointer;&:focus + ul{visibility:visible;opacity:1;transform:translateY(0px);}&:hover,&:focus{outline:transparent;border-bottom-color:var(--grey-clr);}}.dropDown--ul{margin-top:1.8em;position:absolute;align-self:baseline;display:flex;justify-content:space-around;flex-direction:column;align-items:center;width:6em;height:6em;background:var(--white-clr);left:0px;list-style:none;border-radius:5px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all 0.4s ease;border:1px solid rgba(33,37,41,0.1);&:last-child{left:-50%;}}.dropDown--li{width:100%;height:100%;}.dropdown-item{color:black;font-weight:bold;text-decoration:none;height:100%;width:100%;display:flex;justify-content:center;align-items:center;&:first-child{border-bottom:1px solid rgba(33,37,41,0.15);}&:hover{background-color:var(--primary-clr);color:var(--white-clr);}}@media screen and (min-width:768px){.dropdown--button{font-size:1rem;}.dropDown--ul{&:last-child{left:0;}}}"], ({
-  invert
-}) => invert ? 'var(--second-clr)' : 'var(--white-clr)');
-
-const DropDown = ({
-  items,
-  invert,
-  setActive,
-  active
-}) => items.map(item => __jsx(Styled, {
-  className: "dropDown",
-  invert: invert,
-  key: item.name,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 101
-  },
-  __self: undefined
-}, __jsx("button", {
-  onClick: () => setActive(item.name),
-  className: `dropdown--button ${active === item.name && 'activeTab'}`,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 102
-  },
-  __self: undefined
-}, item.name, " ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_3__["IoIosArrowDown"], {
-  className: "nav--arrow",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 106
-  },
-  __self: undefined
-})), __jsx("ul", {
-  className: "dropDown--ul",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 108
-  },
-  __self: undefined
-}, item.dropItems.map(({
-  href,
-  as,
-  name
-}) => __jsx("li", {
-  className: "dropDown--li",
-  key: name,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 110
-  },
-  __self: undefined
-}, __jsx(_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
-  href: href,
-  as: as,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 111
-  },
-  __self: undefined
-}, __jsx("a", {
-  className: "dropdown-item",
-  role: "button",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 112
-  },
-  __self: undefined
-}, name)))))));
-
-/* harmony default export */ __webpack_exports__["default"] = (DropDown);
 
 /***/ }),
 
@@ -752,192 +659,6 @@ const UserProfileHead = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (UserProfileHead);
-
-/***/ }),
-
-/***/ "./components/ui/userProfile/userProfileTabs.jsx":
-/*!*******************************************************!*\
-  !*** ./components/ui/userProfile/userProfileTabs.jsx ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Nav */ "react-bootstrap/Nav");
-/* harmony import */ var react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _DropDown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../DropDown */ "./components/ui/DropDown.jsx");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\ui\\userProfile\\userProfileTabs.jsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
-const Styled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.section.withConfig({
-  displayName: "userProfileTabs__Styled",
-  componentId: "sc-61w02f-0"
-})(["border-bottom:1px solid rgba(0,0,0,0.2);.nav--tab{justify-content:space-evenly;align-items:center;max-width:500px;margin:auto;color:var(--second-clr);& > .nav-link{font-weight:600;font-size:0.9rem;padding:0;}}.activeTab{border-bottom-color:var(--primary-clr);}"]);
-
-const UserProfileTabs = () => {
-  const {
-    0: active,
-    1: setActive
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
-  const {
-    query: {
-      userProfile,
-      userPage
-    }
-  } = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])(); //   const dropItems = [
-  //     {
-  //       name: 'favorites',
-  //       href: '/[userProfile]/[userPage]',
-  //       as: `/${userProfile}/favorites`,
-  //       dropItems: [
-  //         {
-  //           name: 'movies',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/favorites`,
-  //         },
-  //         {
-  //           name: 'tv',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/favorites?media=tv`,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: 'watchlist',
-  //       href: '/[userProfile]/[userPage]',
-  //       as: `/${userProfile}/watchlist`,
-  //       dropItems: [
-  //         {
-  //           name: 'movies',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/watchlist`,
-  //         },
-  //         {
-  //           name: 'tv',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/watchlist?media=tv`,
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       name: 'ratings',
-  //       href: '/[userProfile]/[userPage]',
-  //       as: `/${userProfile}/ratings`,
-  //       dropItems: [
-  //         {
-  //           name: 'movies',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/ratings`,
-  //         },
-  //         {
-  //           name: 'tv',
-  //           href: '/[userProfile]/[userPage]',
-  //           as: `/${userProfile}/ratings?media=tv`,
-  //         },
-  //       ],
-  //     },
-  //   ];
-
-  const dropItems = [{
-    name: 'favorites',
-    dropItems: [{
-      name: 'movies',
-      href: '/[userProfile]',
-      as: `/${userProfile}?c=favorites&m=movie`
-    }, {
-      name: 'tv',
-      href: '/[userProfile]',
-      as: `/${userProfile}??c=favorites&m=tv`
-    }]
-  }, {
-    name: 'watchlist',
-    dropItems: [{
-      name: 'movies',
-      href: '/[userProfile]',
-      as: `/${userProfile}?c=watchlist&m=movie`
-    }, {
-      name: 'tv',
-      href: '/[userProfile]',
-      as: `/${userProfile}?c=watchlist&m=tv`
-    }]
-  }, {
-    name: 'ratings',
-    dropItems: [{
-      name: 'movies',
-      href: '/[userProfile]',
-      as: `/${userProfile}?c=ratings&m=movie`
-    }, {
-      name: 'tv',
-      href: '/[userProfile]',
-      as: `/${userProfile}?c=ratings&m=tv`
-    }]
-  }];
-  return __jsx(Styled, {
-    className: "userProfile--tabs",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 140
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "inner",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 141
-    },
-    __self: undefined
-  }, __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    className: "nav--tab",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 142
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    href: "/[userProfile]",
-    as: `/${userProfile}?c=overview`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 144
-    },
-    __self: undefined
-  }, __jsx("a", {
-    onClick: () => setActive('overview'),
-    className: `nav-link ${active === 'overview' && 'activeTab'}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 145
-    },
-    __self: undefined
-  }, "Overview")), __jsx(_DropDown__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    items: dropItems,
-    invert: true,
-    active: active,
-    setActive: setActive,
-    userPage: userPage,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 152
-    },
-    __self: undefined
-  }))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (UserProfileTabs);
 
 /***/ }),
 
@@ -2663,19 +2384,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
-/* harmony import */ var _components_ui_userProfile_userProfileTabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ui/userProfile/userProfileTabs */ "./components/ui/userProfile/userProfileTabs.jsx");
-/* harmony import */ var _components_ui_userProfile_UserProfileHead__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/ui/userProfile/UserProfileHead */ "./components/ui/userProfile/UserProfileHead.jsx");
-/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/context/types */ "./components/context/types.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_ui_userProfile_UserProfileHead__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ui/userProfile/UserProfileHead */ "./components/ui/userProfile/UserProfileHead.jsx");
+/* harmony import */ var _components_context_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/context/types */ "./components/context/types.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\[userProfile]\\index.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
+ // import UserProfileTabs from '../../components/ui/userProfile/userProfileTabs';
 
 
 
@@ -2704,16 +2424,10 @@ const userProfile = ({
       lineNumber: 19
     },
     __self: undefined
-  }, __jsx(_components_ui_userProfile_UserProfileHead__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_components_ui_userProfile_UserProfileHead__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
-    },
-    __self: undefined
-  }), __jsx(_components_ui_userProfile_userProfileTabs__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
     },
     __self: undefined
   }), __jsx("div", {
@@ -2732,20 +2446,20 @@ userProfile.getInitialProps = async ctx => {
   var _ctx$req;
 
   const cookie = (_ctx$req = ctx.req) === null || _ctx$req === void 0 ? void 0 : _ctx$req.headers.cookie;
-  const data = await axios__WEBPACK_IMPORTED_MODULE_6___default.a.all([await axios__WEBPACK_IMPORTED_MODULE_6___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_5__["SITE_URL"]}/api/watchlist`), await axios__WEBPACK_IMPORTED_MODULE_6___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_5__["SITE_URL"]}/api/favorites`), await axios__WEBPACK_IMPORTED_MODULE_6___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_5__["SITE_URL"]}/api/ratings`)], {
+  const data = await axios__WEBPACK_IMPORTED_MODULE_5___default.a.all([await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_4__["SITE_URL"]}/api/watchlist`), await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_4__["SITE_URL"]}/api/favorites`), await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(`${_components_context_types__WEBPACK_IMPORTED_MODULE_4__["SITE_URL"]}/api/ratings`)], {
     headers: {
       cookie
     }
   });
 
   if (data.status === 401 && !ctx.req) {
-    next_router__WEBPACK_IMPORTED_MODULE_7___default.a.replace('/login');
+    next_router__WEBPACK_IMPORTED_MODULE_6___default.a.replace('/login');
     return {};
   }
 
   if (data.status === 401 && ctx.req) {
     ctx.res.writeHead(302, {
-      Location: `${_components_context_types__WEBPACK_IMPORTED_MODULE_5__["SITE_URL"]}/login`
+      Location: `${_components_context_types__WEBPACK_IMPORTED_MODULE_4__["SITE_URL"]}/login`
     });
     ctx.res.end();
     return;
@@ -2760,7 +2474,7 @@ userProfile.getInitialProps = async ctx => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 8:
 /*!*********************************************!*\
   !*** multi ./pages/[userProfile]/index.jsx ***!
   \*********************************************/
@@ -2838,17 +2552,6 @@ module.exports = require("react-bootstrap/Modal");
 
 /***/ }),
 
-/***/ "react-bootstrap/Nav":
-/*!**************************************!*\
-  !*** external "react-bootstrap/Nav" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap/Nav");
-
-/***/ }),
-
 /***/ "react-circular-progressbar":
 /*!*********************************************!*\
   !*** external "react-circular-progressbar" ***!
@@ -2857,17 +2560,6 @@ module.exports = require("react-bootstrap/Nav");
 /***/ (function(module, exports) {
 
 module.exports = require("react-circular-progressbar");
-
-/***/ }),
-
-/***/ "react-icons/io":
-/*!*********************************!*\
-  !*** external "react-icons/io" ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-icons/io");
 
 /***/ }),
 

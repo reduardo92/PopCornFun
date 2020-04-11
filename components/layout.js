@@ -7,10 +7,14 @@ import AuthContext from './context/auth/AuthContext';
 
 const Layout = ({ className, children }) => {
   const { clearData, isModal } = useContext(MovieContext);
-  const { loadUser } = useContext(AuthContext);
+  const { isAuthentucated, loadUser } = useContext(AuthContext);
 
   useEffect(() => {
-    loadUser();
+    if (isAuthentucated) {
+      loadUser();
+    } else {
+      return;
+    }
     console.log('loged');
   }, []);
 

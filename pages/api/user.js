@@ -1,14 +1,21 @@
-// import nextConnect from 'next-connect';
-// import middleware from '../../server/middleware/database';
+import Cors from 'cors';
 import connectDB from '../../server/config/db';
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import { runMiddleware } from '../../server/middleware/cors';
+// import jwt from 'jsonwebtoken';
 // Joi validation
 import { registerValidation } from '../../server/Validation';
 // User Model
 import User from '../../server/models/User';
 
+// Initializing the cors middleware
+const cors = Cors({
+  methods: ['GET', 'HEAD'],
+});
+
 export default async (req, res) => {
+  // Run the middleware
+  await runMiddleware(req, res, cors);
   await connectDB();
   const { method } = req;
 

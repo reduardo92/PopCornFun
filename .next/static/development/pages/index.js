@@ -175,23 +175,29 @@ var Layout = function Layout(_ref) {
       isModal = _useContext.isModal;
 
   var _useContext2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_AuthContext__WEBPACK_IMPORTED_MODULE_5__["default"]),
+      isAuthentucated = _useContext2.isAuthentucated,
       loadUser = _useContext2.loadUser;
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    loadUser();
+    if (isAuthentucated) {
+      loadUser();
+    } else {
+      return;
+    }
+
     console.log('loged');
   }, []);
   return __jsx("main", {
     className: className,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 22
     },
     __self: this
   }, __jsx(_ui_AlertMsg_AlertMsg__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 23
     },
     __self: this
   }), children, ' ', __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -203,7 +209,7 @@ var Layout = function Layout(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: this
   }, isModal["for"] !== 'videos' ? __jsx("img", {
@@ -212,14 +218,14 @@ var Layout = function Layout(_ref) {
     alt: isModal.media,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 32
     },
     __self: this
   }) : __jsx("div", {
     className: "embed-responsive embed-responsive-16by9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 38
     },
     __self: this
   }, __jsx("iframe", {
@@ -228,7 +234,7 @@ var Layout = function Layout(_ref) {
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 39
     },
     __self: this
   }))));
@@ -23997,7 +24003,7 @@ IndexPage.getInitialProps = function _callee() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Cindex.jsx ***!
   \********************************************************************************************************************************************************/
@@ -24020,5 +24026,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

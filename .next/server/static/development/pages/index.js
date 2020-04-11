@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -269,23 +269,29 @@ const Layout = ({
     isModal
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
   const {
+    isAuthentucated,
     loadUser
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_AuthContext__WEBPACK_IMPORTED_MODULE_5__["default"]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    loadUser();
+    if (isAuthentucated) {
+      loadUser();
+    } else {
+      return;
+    }
+
     console.log('loged');
   }, []);
   return __jsx("main", {
     className: className,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 22
     },
     __self: undefined
   }, __jsx(_ui_AlertMsg_AlertMsg__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 23
     },
     __self: undefined
   }), children, ' ', __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -295,7 +301,7 @@ const Layout = ({
     onHide: () => clearData(_context_types__WEBPACK_IMPORTED_MODULE_2__["RESET_MODAL_MEDIA"]),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: undefined
   }, isModal.for !== 'videos' ? __jsx("img", {
@@ -304,14 +310,14 @@ const Layout = ({
     alt: isModal.media,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 32
     },
     __self: undefined
   }) : __jsx("div", {
     className: "embed-responsive embed-responsive-16by9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 38
     },
     __self: undefined
   }, __jsx("iframe", {
@@ -320,7 +326,7 @@ const Layout = ({
     allowFullScreen: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 39
     },
     __self: undefined
   }))));
@@ -3475,7 +3481,7 @@ IndexPage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 8:
+/***/ 5:
 /*!*******************************!*\
   !*** multi ./pages/index.jsx ***!
   \*******************************/
