@@ -15,8 +15,8 @@ movie.getInitialProps = async ({ query }) => {
       movies: {
         typeFor: 'movie',
         title: queryLeng === 0 ? 'popular' : query.query.split('_').join(' '),
-        ...movies
-      }
+        ...movies,
+      },
     };
   } catch (error) {
     console.log(error);

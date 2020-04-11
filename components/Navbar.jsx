@@ -7,6 +7,7 @@ import Link from './Link';
 import NextLink from 'next/link';
 import SearchFrom from './ui/Forms/SearchFrom';
 import { IoIosArrowDown } from 'react-icons/io';
+import AuthContext from './context/auth/AuthContext';
 
 const Styled = styled.header`
   position: fixed;
@@ -116,6 +117,7 @@ const Styled = styled.header`
 
 const NavCustom = () => {
   const { navScroll, navRef } = useContext(MovieContext);
+  const { isAuthentucated, logout } = useContext(AuthContext);
 
   return (
     <Styled className='header' ref={navRef} navScroll={navScroll}>
@@ -230,16 +232,35 @@ const NavCustom = () => {
             </Link>
           </Nav>
           <Nav>
-            <Link href='/login'>
-              <a className='nav-link' role='button'>
-                Log In
-              </a>
-            </Link>
-            <Link href='/signup'>
-              <a className='nav-link' role='button'>
-                Sign Up
-              </a>
-            </Link>
+            {isAuthentucated ? (
+              <>
+                <Link href='/[userProfile]' as='/reduardo92?c=overview'>
+                  <a className='nav-link' role='button'>
+                    User
+                  </a>
+                </Link>
+                <button
+                  onClick={() => logout()}
+                  className='nav-link'
+                  role='button'
+                >
+                  log out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href='/login'>
+                  <a className='nav-link' role='button'>
+                    Log In
+                  </a>
+                </Link>
+                <Link href='/signup'>
+                  <a className='nav-link' role='button'>
+                    Sign Up
+                  </a>
+                </Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

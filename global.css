@@ -47,6 +47,11 @@
   /* Transitions */
   --ease--in--out--02s: all 0.19s ease-in-out;
   --ease-12s: all 0.12s ease;
+
+  /* Media Screens */
+  --tablet-size: 43.12em;
+  --laptop-size: 62.3em;
+  --laptop-xl-size: 81.25em;
 }
 
 html {
@@ -466,6 +471,28 @@ header {
 .btn {
   transition: var(--ease-12s);
 }
+
+/* NavLink style */
+.nav-link {
+  color: inherit;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: var(--ease--in--out--02s);
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: inherit;
+  outline: transparent;
+  border-bottom-color: var(--grey-clr);
+}
+
+/* .nav-link.selected,
+.dropdown-item.selected {
+  border-bottom-color: var(--primary-clr) !important;
+  /* color: var(--white-clr) !important; */
+/* } */
+*/
 
 /* Facts Style */
 .stat {

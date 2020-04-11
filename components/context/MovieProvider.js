@@ -4,8 +4,8 @@ import useMovieReducer from './useMovieReducer';
 import { SET_MODAL_MEDIA, SET_SEARCH_DATA, SET_CURRENT_PAGE } from './types';
 import movieDB from '../utility/movieDB';
 import useForm from '../Hooks/useForm';
-
-const log = console.log;
+import configHeader from '../utility/configHeader';
+import axios from 'axios';
 
 const movieInitalState = {
   searchQuery: '',
@@ -14,15 +14,18 @@ const movieInitalState = {
   discForm: {
     year: '',
     sort_by: 'popularity.desc',
-    genre: ''
+    genre: '',
   },
   isModal: { media: null, toggle: false, for: null },
   currentPage: 1,
   itemPerPage: 20,
-  total_pages: null
+  total_pages: null,
+  watchlist: null,
+  favorites: null,
+  ratings: null,
 };
 
-const StateProvider = ({ children }) => {
+const MovieProvider = ({ children }) => {
   const [windowSize, setWindowSize] = useState(0);
   const [toggle, setToggle] = useState(false);
   const navRef = useRef();
@@ -50,9 +53,9 @@ const StateProvider = ({ children }) => {
   const setModal = (data, typeFor = 'videos') =>
     dispatch({ type: SET_MODAL_MEDIA, payload: data, typeFor });
 
-  const clearData = type => dispatch({ type });
+  const clearData = (type) => dispatch({ type });
 
-  const getSearchData = async search => {
+  const getSearchData = async (search) => {
     try {
       const { results } = await movieDB(
         'search/multi',
@@ -68,12 +71,32 @@ const StateProvider = ({ children }) => {
   const discoverForm = useForm({
     year: '',
     sort_by: 'popularity.desc',
-    genre: ''
+    genre: '',
   });
 
   // Change page
-  const paginate = pageNumber =>
+  const paginate = (pageNumber) =>
     dispatch({ type: SET_CURRENT_PAGE, payload: pageNumber });
+
+  // Add Media
+  const setMedia = async (media, typeFor) => {
+    const types = {
+      watchlist: '/api/watchlist',
+      favorites: '/api/favorites',
+      ratings: '/api/ratings',
+    };
+
+    console.log('from state', typeof media.media_id);
+    try {
+      const { data } = await axios.post(types[typeFor], media, configHeader);
+
+      console.log(data);
+      // dispatch({ type: SET_EXERCISE, typeFor, payload: data });
+    } catch (error) {
+      console.log(error);
+      // dispatch({ type: SET_ERROR, payload: error.response.data.msg });
+    }
+  };
 
   // console.log(state);
   return (
@@ -90,7 +113,8 @@ const StateProvider = ({ children }) => {
         getSearchData,
         discoverForm,
         paginate,
-        ...state
+        setMedia,
+        ...state,
       }}
     >
       {children}
@@ -98,4 +122,4 @@ const StateProvider = ({ children }) => {
   );
 };
 
-export default StateProvider;
+export default MovieProvider;

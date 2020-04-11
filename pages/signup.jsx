@@ -1,27 +1,70 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Layout from '../components/layout';
 import useForm from '../components/Hooks/useForm';
 import Button from 'react-bootstrap/Button';
 import ButtonLink from '../components/ui/ButtonLink';
 import FormSectionStyles from '../components/ui/Forms/FormSectionStyles';
 import Link from 'next/link';
+import AlertContext from '../components/context/alert/AlertContext';
+import AuthContext from '../components/context/auth/AuthContext';
+import Router from 'next/router';
 
 const signup = () => {
+  const { registerUser, isAuthentucated, error, msg, clearErros } = useContext(
+    AuthContext
+  );
+
+  const { setAlert } = useContext(AlertContext);
+
+  useEffect(() => {
+    // if (isAuthentucated) {
+    //   Router.push('/login');
+    //   setAlert(msg, 'success');
+    //   clearErros();
+    // }
+
+    if (error === 'User already exists') {
+      setAlert(error, 'danger');
+      clearErros();
+    }
+
+    // eslint-disable-next-line
+  }, [error, isAuthentucated, Router.push]);
+
   const submit = () => {
-    console.log(form);
+    if (userName === '' || email === '' || password === '') {
+      setAlert('Please Fill all fields', 'danger');
+    } else if (password !== password2) {
+      setAlert('Passwords dont macth', 'danger');
+    } else if (!error) {
+      registerUser({
+        userName,
+        email,
+        password,
+      });
+      setForm({
+        userName: '',
+        email: '',
+        password: '',
+        password2: '',
+      });
+      Router.push('/login');
+      setAlert(msg, 'success');
+      clearErros();
+    }
   };
 
   const { handleChange, handleSubmit, form, setForm } = useForm(
     {
-      username: '',
+      userName: '',
       email: '',
       password: '',
-      password2: ''
+      password2: '',
     },
     submit
   );
 
-  const { username, email, password, password2 } = form;
+  const { userName, email, password, password2 } = form;
   return (
     <Layout>
       <FormSectionStyles className='sign--up'>
@@ -51,16 +94,16 @@ const signup = () => {
             </p>
             <form className='form signIn--form' onSubmit={handleSubmit}>
               <div className='form-group'>
-                <label htmlFor='username'>Username</label>
+                <label htmlFor='userName'>Username</label>
                 <input
-                  id='username'
-                  name='username'
-                  value={username}
+                  id='userName'
+                  name='userName'
+                  value={userName}
                   onChange={handleChange}
                   type='text'
                   className='form-control'
-                  aria-describedby='username'
-                  placeholder='Enter username'
+                  aria-describedby='userName'
+                  placeholder='Enter userName'
                   // required
                 />
               </div>
@@ -75,7 +118,7 @@ const signup = () => {
                   className='form-control'
                   aria-describedby='emailHelp'
                   placeholder='Enter email'
-                  // required
+                  required
                 />
               </div>
               <div className='form-group'>

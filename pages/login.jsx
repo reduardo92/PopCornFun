@@ -1,21 +1,57 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Layout from '../components/layout';
 import useForm from '../components/Hooks/useForm';
-import styled from 'styled-components';
 import ButtonLink from '../components/ui/ButtonLink';
 import FormSectionStyles from '../components/ui/Forms/FormSectionStyles';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
+import AlertContext from '../components/context/alert/AlertContext';
+import AuthContext from '../components/context/auth/AuthContext';
+import Router from 'next/router';
 
 const login = () => {
+  const {
+    loginUser,
+    isAuthentucated,
+    error,
+    clearErros,
+    msg,
+    user,
+  } = useContext(AuthContext);
+  const { setAlert } = useContext(AlertContext);
+
+  useEffect(() => {
+    if (isAuthentucated) {
+      console.log(user);
+      Router.push('/');
+      setAlert(msg, 'success');
+      clearErros();
+    }
+
+    if (error) {
+      setAlert(error, 'danger');
+      clearErros();
+    }
+
+    // eslint-disable-next-line
+  }, [error, isAuthentucated, Router.push]);
+
   const submit = () => {
-    console.log(form);
+    if (email === '' || password === '') {
+      setAlert('Please Fill all fields', 'danger');
+    } else if (!error) {
+      loginUser({ email, password });
+      setForm({
+        email: '',
+        password: '',
+      });
+    }
   };
 
   const { handleChange, handleSubmit, form, setForm } = useForm(
     {
       email: '',
-      password: ''
+      password: '',
     },
     submit
   );

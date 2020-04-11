@@ -115,7 +115,6 @@ const FeturedSection = ({ data, typeFor }) => {
               toLink={`/${typeFor}/[id]`}
               asLink={`/${typeFor}/${data.id}`}
               title='view more'
-              bgclr
             />
             <TagGroup />
           </div>

@@ -5,6 +5,8 @@ import NavCustom from '../components/Navbar';
 import 'react-circular-progressbar/dist/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../global.css';
+import AlertState from '../components/context/alert/AlertState';
+import AuthState from '../components/context/auth/AuthState';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -27,11 +29,15 @@ const MyApp = ({ Component, pageProps }) => {
           key='viewport'
         />
       </Head>
-      <MovieProvider>
-        <NavCustom />
-        <Component {...pageProps} />
-        <Footer />
-      </MovieProvider>
+      <AuthState>
+        <MovieProvider>
+          <AlertState>
+            <NavCustom />
+            <Component {...pageProps} />
+            <Footer />
+          </AlertState>
+        </MovieProvider>
+      </AuthState>
     </>
   );
 };

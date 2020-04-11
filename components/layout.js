@@ -1,13 +1,22 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import MovieContext from './context/MovieContext';
-import Modal from 'react-bootstrap/Modal';
 import { RESET_MODAL_MEDIA, IMG_URL } from './context/types';
+import Modal from 'react-bootstrap/Modal';
+import AlertMsg from './ui/AlertMsg/AlertMsg';
+import AuthContext from './context/auth/AuthContext';
 
 const Layout = ({ className, children }) => {
   const { clearData, isModal } = useContext(MovieContext);
+  const { loadUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    loadUser();
+    console.log('loged');
+  }, []);
 
   return (
     <main className={className}>
+      <AlertMsg />
       {children}{' '}
       <Modal
         centered

@@ -258,10 +258,10 @@ const ProfileHeader = ({ data, bgImg }) => {
   const crew = (
     <>
       {data.created_by &&
-        data.created_by.map(item => <CrewTab key={item.id} crew={item} />)}
+        data.created_by.map((item) => <CrewTab key={item.id} crew={item} />)}
       {groupCredits(data.credits.crew)
         .slice(0, 6)
-        .map(item => (
+        .map((item) => (
           <CrewTab key={item[0].id} crew={item[0]} />
         ))}
     </>
@@ -289,7 +289,7 @@ const ProfileHeader = ({ data, bgImg }) => {
         </h2>
         <div className='rating'>
           <CirclePercentage value={data.vote_average * 10} />
-          <TagGroup />
+          <TagGroup media={data} />
         </div>
         <div className='meta'>
           <span className='release meta--tab'>

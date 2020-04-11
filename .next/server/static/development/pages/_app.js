@@ -327,20 +327,22 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /* harmony default export */ __webpack_exports__["default"] = (({
   href,
+  as,
   children
 }) => {
   const router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
   let className = children.props.className || '';
 
-  if (router.asPath === href) {
+  if (router.asPath === href || router.asPath === as) {
     className = `${className} selected`;
   }
 
   return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: href,
+    as: as,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: undefined
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(children, {
@@ -374,9 +376,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ui_Forms_SearchFrom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ui/Forms/SearchFrom */ "./components/ui/Forms/SearchFrom.jsx");
 /* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-icons/io */ "react-icons/io");
 /* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_icons_io__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _context_auth_AuthContext__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./context/auth/AuthContext */ "./components/context/auth/AuthContext.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\Navbar.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -396,13 +400,17 @@ const NavCustom = () => {
     navScroll,
     navRef
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  const {
+    isAuthentucated,
+    logout
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_AuthContext__WEBPACK_IMPORTED_MODULE_9__["default"]);
   return __jsx(Styled, {
     className: "header",
     ref: navRef,
     navScroll: navScroll,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 123
     },
     __self: undefined
   }, __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -410,21 +418,21 @@ const NavCustom = () => {
     expand: "lg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 124
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 125
     },
     __self: undefined
   }, __jsx("a", {
     className: "navbar-brand",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
+      lineNumber: 126
     },
     __self: undefined
   }, __jsx("img", {
@@ -432,35 +440,35 @@ const NavCustom = () => {
     alt: "popcorn logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 127
     },
     __self: undefined
   }), "PopCorn Fun")), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Toggle, {
     "aria-controls": "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 131
     },
     __self: undefined
   }), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Collapse, {
     id: "responsive-navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 132
     },
     __self: undefined
   }, __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
     className: "mr-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 133
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132
+      lineNumber: 134
     },
     __self: undefined
   }, __jsx("a", {
@@ -468,21 +476,21 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133
+      lineNumber: 135
     },
     __self: undefined
   }, "Home")), __jsx("div", {
     className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 139
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/discover?query=movie&page=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138
+      lineNumber: 140
     },
     __self: undefined
   }, __jsx("a", {
@@ -490,14 +498,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139
+      lineNumber: 141
     },
     __self: undefined
   }, "Discover ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140
+      lineNumber: 142
     },
     __self: undefined
   }))), __jsx("button", {
@@ -505,28 +513,28 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143
+      lineNumber: 145
     },
     __self: undefined
   }, "Discover ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 146
     },
     __self: undefined
   })), __jsx("div", {
     className: "dropdown-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 148
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/discover?query=movie&page=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 149
     },
     __self: undefined
   }, __jsx("a", {
@@ -534,14 +542,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 150
     },
     __self: undefined
   }, "Movies")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/discover?query=tv&page=1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152
+      lineNumber: 154
     },
     __self: undefined
   }, __jsx("a", {
@@ -549,21 +557,21 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153
+      lineNumber: 155
     },
     __self: undefined
   }, "Tv Shows")))), __jsx("div", {
     className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160
+      lineNumber: 162
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161
+      lineNumber: 163
     },
     __self: undefined
   }, __jsx("a", {
@@ -571,14 +579,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 164
     },
     __self: undefined
   }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163
+      lineNumber: 165
     },
     __self: undefined
   }))), __jsx("button", {
@@ -586,28 +594,28 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166
+      lineNumber: 168
     },
     __self: undefined
   }, "Movies ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167
+      lineNumber: 169
     },
     __self: undefined
   })), __jsx("div", {
     className: "dropdown-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169
+      lineNumber: 171
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 172
     },
     __self: undefined
   }, __jsx("a", {
@@ -615,14 +623,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 173
     },
     __self: undefined
   }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie?query=top_rated",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 175
+      lineNumber: 177
     },
     __self: undefined
   }, __jsx("a", {
@@ -630,14 +638,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 176
+      lineNumber: 178
     },
     __self: undefined
   }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie?query=upcoming",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 182
     },
     __self: undefined
   }, __jsx("a", {
@@ -645,14 +653,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 181
+      lineNumber: 183
     },
     __self: undefined
   }, "Upcoming")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/movie?query=now_playing",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 187
     },
     __self: undefined
   }, __jsx("a", {
@@ -660,21 +668,21 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 188
     },
     __self: undefined
   }, "Now Playing")))), __jsx("div", {
     className: "dropdown nav-item nav--dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 193
+      lineNumber: 195
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194
+      lineNumber: 196
     },
     __self: undefined
   }, __jsx("a", {
@@ -682,14 +690,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195
+      lineNumber: 197
     },
     __self: undefined
   }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 198
     },
     __self: undefined
   }))), __jsx("button", {
@@ -697,28 +705,28 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 199
+      lineNumber: 201
     },
     __self: undefined
   }, "Tv ", __jsx(react_icons_io__WEBPACK_IMPORTED_MODULE_8__["IoIosArrowDown"], {
     className: "nav--arrow",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 200
+      lineNumber: 202
     },
     __self: undefined
   })), __jsx("div", {
     className: "dropdown-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 202
+      lineNumber: 204
     },
     __self: undefined
   }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 203
+      lineNumber: 205
     },
     __self: undefined
   }, __jsx("a", {
@@ -726,14 +734,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 204
+      lineNumber: 206
     },
     __self: undefined
   }, "Popular")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv?query=top_rated",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 210
     },
     __self: undefined
   }, __jsx("a", {
@@ -741,14 +749,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 211
     },
     __self: undefined
   }, "Top Rated")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv?query=on_the_air",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 213
+      lineNumber: 215
     },
     __self: undefined
   }, __jsx("a", {
@@ -756,14 +764,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 214
+      lineNumber: 216
     },
     __self: undefined
   }, "On Tv")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/tv?query=airing_today",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218
+      lineNumber: 220
     },
     __self: undefined
   }, __jsx("a", {
@@ -771,14 +779,14 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 219
+      lineNumber: 221
     },
     __self: undefined
   }, "Airing Today")))), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/person",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 226
+      lineNumber: 228
     },
     __self: undefined
   }, __jsx("a", {
@@ -786,20 +794,21 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 227
+      lineNumber: 229
     },
     __self: undefined
   }, "People"))), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 232
+      lineNumber: 234
     },
     __self: undefined
-  }, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    href: "/login",
+  }, isAuthentucated ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/[userProfile]",
+    as: "/reduardo92?c=overview",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 233
+      lineNumber: 237
     },
     __self: undefined
   }, __jsx("a", {
@@ -807,14 +816,38 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 234
+      lineNumber: 238
+    },
+    __self: undefined
+  }, "User")), __jsx("button", {
+    onClick: () => logout(),
+    className: "nav-link",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 242
+    },
+    __self: undefined
+  }, "log out")) : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/login",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 252
+    },
+    __self: undefined
+  }, __jsx("a", {
+    className: "nav-link",
+    role: "button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 253
     },
     __self: undefined
   }, "Log In")), __jsx(_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
     href: "/signup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 238
+      lineNumber: 257
     },
     __self: undefined
   }, __jsx("a", {
@@ -822,13 +855,13 @@ const NavCustom = () => {
     role: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 239
+      lineNumber: 258
     },
     __self: undefined
-  }, "Sign Up"))))), __jsx(_ui_Forms_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, "Sign Up")))))), __jsx(_ui_Forms_SearchFrom__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 246
+      lineNumber: 267
     },
     __self: undefined
   }));
@@ -871,6 +904,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./types */ "./components/context/types.js");
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 /* harmony import */ var _Hooks_useForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Hooks/useForm */ "./components/Hooks/useForm.js");
+/* harmony import */ var _utility_configHeader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utility/configHeader */ "./components/utility/configHeader.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\context\\MovieProvider.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -887,7 +923,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-const log = console.log;
+
+
 const movieInitalState = {
   searchQuery: '',
   searchData: null,
@@ -904,10 +941,13 @@ const movieInitalState = {
   },
   currentPage: 1,
   itemPerPage: 20,
-  total_pages: null
+  total_pages: null,
+  watchlist: null,
+  favorites: null,
+  ratings: null
 };
 
-const StateProvider = ({
+const MovieProvider = ({
   children
 }) => {
   const {
@@ -979,7 +1019,26 @@ const StateProvider = ({
   const paginate = pageNumber => dispatch({
     type: _types__WEBPACK_IMPORTED_MODULE_3__["SET_CURRENT_PAGE"],
     payload: pageNumber
-  }); // console.log(state);
+  }); // Add Media
+
+
+  const setMedia = async (media, typeFor) => {
+    const types = {
+      watchlist: '/api/watchlist',
+      favorites: '/api/favorites',
+      ratings: '/api/ratings'
+    };
+    console.log('from state', typeof media.media_id);
+
+    try {
+      const {
+        data
+      } = await axios__WEBPACK_IMPORTED_MODULE_7___default.a.post(types[typeFor], media, _utility_configHeader__WEBPACK_IMPORTED_MODULE_6__["default"]);
+      console.log(data); // dispatch({ type: SET_EXERCISE, typeFor, payload: data });
+    } catch (error) {
+      console.log(error); // dispatch({ type: SET_ERROR, payload: error.response.data.msg });
+    }
+  }; // console.log(state);
 
 
   return __jsx(_MovieContext__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
@@ -994,17 +1053,342 @@ const StateProvider = ({
       navRef,
       getSearchData,
       discoverForm,
-      paginate
+      paginate,
+      setMedia
     }, state),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 103
     },
     __self: undefined
   }, children);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (StateProvider);
+/* harmony default export */ __webpack_exports__["default"] = (MovieProvider);
+
+/***/ }),
+
+/***/ "./components/context/alert/AlertContext.js":
+/*!**************************************************!*\
+  !*** ./components/context/alert/AlertContext.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const AlertContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+/* harmony default export */ __webpack_exports__["default"] = (AlertContext);
+
+/***/ }),
+
+/***/ "./components/context/alert/AlertState.js":
+/*!************************************************!*\
+  !*** ./components/context/alert/AlertState.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid */ "uuid");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _UseAlertReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UseAlertReducer */ "./components/context/alert/UseAlertReducer.js");
+/* harmony import */ var _AlertContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AlertContext */ "./components/context/alert/AlertContext.js");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../types */ "./components/context/types.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\context\\alert\\AlertState.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const initialAlertState = [];
+
+const AlertState = ({
+  children
+}) => {
+  const {
+    0: state,
+    1: dispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(_UseAlertReducer__WEBPACK_IMPORTED_MODULE_2__["default"], initialAlertState); // Set Alert
+
+  const setAlert = (msg, typeFor, timeout = 3000) => {
+    const id = uuid__WEBPACK_IMPORTED_MODULE_1___default.a.v4();
+    dispatch({
+      type: _types__WEBPACK_IMPORTED_MODULE_4__["SET_ALERT"],
+      payload: {
+        msg,
+        typeFor,
+        id
+      }
+    });
+    setTimeout(() => dispatch({
+      type: _types__WEBPACK_IMPORTED_MODULE_4__["REMOVE_ALERT"],
+      id
+    }), timeout);
+  };
+
+  return __jsx(_AlertContext__WEBPACK_IMPORTED_MODULE_3__["default"].Provider, {
+    value: {
+      alerts: state,
+      setAlert
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }, children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AlertState);
+
+/***/ }),
+
+/***/ "./components/context/alert/UseAlertReducer.js":
+/*!*****************************************************!*\
+  !*** ./components/context/alert/UseAlertReducer.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./components/context/types.js");
+// types
+
+/* harmony default export */ __webpack_exports__["default"] = ((state, action) => {
+  switch (action.type) {
+    case _types__WEBPACK_IMPORTED_MODULE_0__["SET_ALERT"]:
+      return [...state, action.payload];
+
+    case _types__WEBPACK_IMPORTED_MODULE_0__["REMOVE_ALERT"]:
+      return state.filter(alert => alert.id !== action.id);
+
+    default:
+      return state;
+  }
+});
+
+/***/ }),
+
+/***/ "./components/context/auth/AuthContext.js":
+/*!************************************************!*\
+  !*** ./components/context/auth/AuthContext.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const AuthContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+/* harmony default export */ __webpack_exports__["default"] = (AuthContext);
+
+/***/ }),
+
+/***/ "./components/context/auth/AuthState.js":
+/*!**********************************************!*\
+  !*** ./components/context/auth/AuthState.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _useAuthReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useAuthReducer */ "./components/context/auth/useAuthReducer.js");
+/* harmony import */ var _AuthContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AuthContext */ "./components/context/auth/AuthContext.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../types */ "./components/context/types.js");
+/* harmony import */ var _utility_configHeader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utility/configHeader */ "./components/utility/configHeader.js");
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\components\\context\\auth\\AuthState.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+const authInitialState = {
+  isAuthentucated: null,
+  loading: true,
+  user: null,
+  error: null,
+  msg: null
+};
+
+const AuthState = ({
+  children
+}) => {
+  const {
+    0: state,
+    1: dispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(_useAuthReducer__WEBPACK_IMPORTED_MODULE_1__["default"], authInitialState); // Load User
+
+  const loadUser = async () => {
+    try {
+      const res = await axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/api/auth');
+      dispatch({
+        type: _types__WEBPACK_IMPORTED_MODULE_4__["USER_LOADED"],
+        payload: res.data
+      });
+    } catch (error) {
+      dispatch({
+        type: _types__WEBPACK_IMPORTED_MODULE_4__["AUTH_ERROR"],
+        payload: error.response.data.msg
+      });
+    }
+  };
+
+  const registerUser = async formData => {
+    try {
+      const {
+        data
+      } = await axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(`/api/user`, formData, _utility_configHeader__WEBPACK_IMPORTED_MODULE_5__["default"]);
+      dispatch({
+        type: _types__WEBPACK_IMPORTED_MODULE_4__["REGISTER_SUCCESS"],
+        payload: data.msg
+      }); // Load User
+      // loadUser();
+    } catch (error) {
+      dispatch({
+        type: _types__WEBPACK_IMPORTED_MODULE_4__["REGISTER_FAIL"],
+        payload: error.response.data.msg
+      });
+    }
+  }; // Login User
+
+
+  const loginUser = async formData => {
+    try {
+      const {
+        data
+      } = await axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(`/api/auth`, formData, _utility_configHeader__WEBPACK_IMPORTED_MODULE_5__["default"]);
+      dispatch({
+        type: _types__WEBPACK_IMPORTED_MODULE_4__["LOGIN_SUCCESS"],
+        payload: data.msg
+      }); // Load User
+
+      loadUser();
+    } catch (error) {
+      dispatch({
+        type: _types__WEBPACK_IMPORTED_MODULE_4__["LOGIN_FAIL"],
+        payload: error.response.data.msg
+      });
+    }
+  }; // Logout
+
+
+  const logout = () => {
+    dispatch({
+      type: _types__WEBPACK_IMPORTED_MODULE_4__["LOGOUT"]
+    });
+  }; // Clear Erros
+
+
+  const clearErros = () => dispatch({
+    type: _types__WEBPACK_IMPORTED_MODULE_4__["CLEAR_ERRORS"]
+  });
+
+  console.log(state);
+  return __jsx(_AuthContext__WEBPACK_IMPORTED_MODULE_2__["default"].Provider, {
+    value: _objectSpread({}, state, {
+      loadUser,
+      registerUser,
+      loginUser,
+      logout,
+      clearErros
+    }),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: undefined
+  }, children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AuthState);
+
+/***/ }),
+
+/***/ "./components/context/auth/useAuthReducer.js":
+/*!***************************************************!*\
+  !*** ./components/context/auth/useAuthReducer.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./components/context/types.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// types
+
+/* harmony default export */ __webpack_exports__["default"] = ((state, action) => {
+  switch (action.type) {
+    case _types__WEBPACK_IMPORTED_MODULE_0__["USER_LOADED"]:
+      return _objectSpread({}, state, {
+        isAuthentucated: true,
+        loading: false,
+        user: action.payload
+      });
+
+    case _types__WEBPACK_IMPORTED_MODULE_0__["REGISTER_SUCCESS"]:
+      return _objectSpread({}, state, {
+        msg: action.payload
+      });
+
+    case _types__WEBPACK_IMPORTED_MODULE_0__["LOGIN_SUCCESS"]:
+      return _objectSpread({}, state, {
+        isAuthentucated: true,
+        loading: false,
+        msg: action.payload
+      });
+
+    case _types__WEBPACK_IMPORTED_MODULE_0__["REGISTER_FAIL"]:
+    case _types__WEBPACK_IMPORTED_MODULE_0__["AUTH_ERROR"]:
+    case _types__WEBPACK_IMPORTED_MODULE_0__["LOGIN_FAIL"]:
+    case _types__WEBPACK_IMPORTED_MODULE_0__["LOGOUT"]:
+      return _objectSpread({}, state, {
+        isAuthentucated: null,
+        loading: true,
+        user: null,
+        error: action.payload
+      });
+
+    case _types__WEBPACK_IMPORTED_MODULE_0__["CLEAR_ERRORS"]:
+      return _objectSpread({}, state, {
+        error: null,
+        msg: null
+      });
+
+    default:
+      return state;
+  }
+});
 
 /***/ }),
 
@@ -1012,12 +1396,13 @@ const StateProvider = ({
 /*!*************************************!*\
   !*** ./components/context/types.js ***!
   \*************************************/
-/*! exports provided: API_KEY, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_SEARCH_DATA, CLEAR_SEARCH_DATA, SET_CURRENT_PAGE, getMovie */
+/*! exports provided: API_KEY, SITE_URL, BASE_URL, IMG_URL, IMG_URL_OR, SET_MODAL_MEDIA, RESET_MODAL_MEDIA, SET_SEARCH_DATA, CLEAR_SEARCH_DATA, SET_CURRENT_PAGE, SET_ALERT, REMOVE_ALERT, REGISTER_SUCCESS, REGISTER_FAIL, USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, CLEAR_ERRORS, getMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SITE_URL", function() { return SITE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL_OR", function() { return IMG_URL_OR; });
@@ -1026,10 +1411,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_SEARCH_DATA", function() { return SET_SEARCH_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SEARCH_DATA", function() { return CLEAR_SEARCH_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_CURRENT_PAGE", function() { return SET_CURRENT_PAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_ALERT", function() { return SET_ALERT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_ALERT", function() { return REMOVE_ALERT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_SUCCESS", function() { return REGISTER_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER_FAIL", function() { return REGISTER_FAIL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "USER_LOADED", function() { return USER_LOADED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AUTH_ERROR", function() { return AUTH_ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGIN_SUCCESS", function() { return LOGIN_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGIN_FAIL", function() { return LOGIN_FAIL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT", function() { return LOGOUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_ERRORS", function() { return CLEAR_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
 const API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
+const SITE_URL = 'http://localhost:3000';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
@@ -1038,7 +1434,19 @@ const RESET_MODAL_MEDIA = ' RESET_MODAL_MEDIA'; // DATA
 
 const SET_SEARCH_DATA = 'SET_SEARCH_DATA';
 const CLEAR_SEARCH_DATA = 'CLEAR_SEARCH_DATA';
-const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'; // Movie DB
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'; // Alert Type
+
+const SET_ALERT = 'SET_ALERT';
+const REMOVE_ALERT = 'REMOVE_ALERT'; // Auth Types
+
+const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+const REGISTER_FAIL = 'REGISTER_FAIL';
+const USER_LOADED = 'USER_LOADED';
+const AUTH_ERROR = 'AUTH_ERROR';
+const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+const LOGIN_FAIL = 'LOGIN_FAIL';
+const LOGOUT = 'LOGOUT';
+const CLEAR_ERRORS = 'CLEAR_ERRORS'; // Movie DB
 
 function getMovie(id, param) {
   const movie = {
@@ -1352,6 +1760,24 @@ const SearchFrom = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchFrom);
+
+/***/ }),
+
+/***/ "./components/utility/configHeader.js":
+/*!********************************************!*\
+  !*** ./components/utility/configHeader.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const configHeader = {
+  headers: {
+    'Content-Type': 'application/json'
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (configHeader);
 
 /***/ }),
 
@@ -3118,11 +3544,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../global.css */ "./global.css");
 /* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_global_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_context_alert_AlertState__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/context/alert/AlertState */ "./components/context/alert/AlertState.js");
+/* harmony import */ var _components_context_auth_AuthState__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/context/auth/AuthState */ "./components/context/auth/AuthState.js");
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
 
 
 
@@ -3139,13 +3569,13 @@ const MyApp = ({
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 14
     },
     __self: undefined
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 15
     },
     __self: undefined
   }, "PopCorn Fun"), __jsx("link", {
@@ -3153,7 +3583,7 @@ const MyApp = ({
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 16
     },
     __self: undefined
   }), __jsx("link", {
@@ -3163,7 +3593,7 @@ const MyApp = ({
     crossOrigin: "anonymous",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: undefined
   }), __jsx("meta", {
@@ -3172,34 +3602,46 @@ const MyApp = ({
     key: "viewport",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 26
     },
     __self: undefined
-  })), __jsx(_components_context_MovieProvider__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }), __jsx(Component, _extends({}, pageProps, {
+  })), __jsx(_components_context_auth_AuthState__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: undefined
-  })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_components_context_MovieProvider__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
     },
     __self: undefined
-  })));
+  }, __jsx(_components_context_alert_AlertState__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }), __jsx(Component, _extends({}, pageProps, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MyApp);
@@ -3380,6 +3822,17 @@ module.exports = require("styled-components");
 /***/ (function(module, exports) {
 
 module.exports = require("url");
+
+/***/ }),
+
+/***/ "uuid":
+/*!***********************!*\
+  !*** external "uuid" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("uuid");
 
 /***/ })
 
