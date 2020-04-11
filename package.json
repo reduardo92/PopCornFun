@@ -26,7 +26,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
-    "next": "^9.3.0",
+    "next": "^9.3.2",
     "next-connect": "^0.6.1",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.16",
