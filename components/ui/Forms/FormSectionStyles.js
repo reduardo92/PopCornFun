@@ -74,17 +74,19 @@ const FormSectionStyles = styled.section`
     display: flex;
     grid-template-columns: repeat(2, 1fr);
     margin: 6.5em 0 0;
+    height: 100%;
+    padding-bottom: 4%;
 
     .side--content,
     .form--content {
       display: flex;
       flex: 1;
-      height: 80vh;
       align-items: center;
       padding: 2em 1em;
     }
 
     .form--content {
+      padding-bottom: 4em;
       .inner {
         flex: 1;
         max-width: 600px;

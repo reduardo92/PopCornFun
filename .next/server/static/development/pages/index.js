@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -177,7 +177,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
 const API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
-const SITE_URL = 'http://localhost:3000';
+const SITE_URL = process.env.SITE_URL;
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
@@ -3481,7 +3481,7 @@ IndexPage.getInitialProps = async () => {
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /*!*******************************!*\
   !*** multi ./pages/index.jsx ***!
   \*******************************/

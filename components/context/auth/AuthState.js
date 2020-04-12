@@ -66,7 +66,6 @@ const AuthState = ({ children }) => {
   // Clear Erros
   const clearErros = () => dispatch({ type: CLEAR_ERRORS });
 
-  console.log(state);
   return (
     <AuthContext.Provider
       value={{

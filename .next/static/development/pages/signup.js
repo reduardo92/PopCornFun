@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\login.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\signup.js"],{
 
 /***/ "./components/Hooks/useForm.js":
 /*!*************************************!*\
@@ -128,7 +128,7 @@ var AuthContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SITE_URL", function() { return SITE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
@@ -152,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
 var API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
-var SITE_URL = 'http://localhost:3000';
+var SITE_URL = process.env.SITE_URL;
 var BASE_URL = 'https://api.themoviedb.org/3/';
 var IMG_URL = 'https://image.tmdb.org/t/p/w500';
 var IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
@@ -205,6 +205,7 @@ function getMovie(id, param) {
   };
   return movie[param];
 }
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -451,7 +452,7 @@ __webpack_require__.r(__webpack_exports__);
 var FormSectionStyles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].section.withConfig({
   displayName: "FormSectionStyles",
   componentId: "sc-2u6pto-0"
-})(["margin:8em 0 3em;color:var(--second-clr);.side--content{display:none;}.side--content,.form--content{overflow:hidden;padding:0 1em;position:relative;z-index:1;}.video--bg{display:none;position:absolute;top:50%;left:50%;min-width:100%;height:100%;object-fit:cover;width:50%;transform:translate(-50%,-50%);z-index:-1;}.benefits{margin:3em 0em 3em 1em;&__tab{margin-bottom:1em;}}.header{font-size:1.4rem;font-weight:bold;}.signIn--form{.btn{background:var(--primary-clr);border-color:var(--primary-clr);&:hover,&:focus{transform:scale(0.9);opacity:0.8;background:var(--primary-clr);border-color:var(--primary-clr);}}}.cancel{color:var(--primary-clr);margin-left:1em;border-bottom:1px solid transparent;transition:var(--ease-12s);&:hover,&:focus{opacity:0.8;border-bottom-color:var(--primary-clr);}}@media screen and (min-width:768px){display:flex;grid-template-columns:repeat(2,1fr);margin:6.5em 0 0;.side--content,.form--content{display:flex;flex:1;height:80vh;align-items:center;padding:2em 1em;}.form--content{.inner{flex:1;max-width:600px;}}.side--content{justify-content:center;color:var(--white-clr);background-color:black;&__inner{padding-bottom:8em;", "}.video--bg{display:block;}}.signIn--form{.form-group{margin-bottom:1.5rem;}}}@media screen and (min-width:1050px){.inner{margin:0 auto 0 calc(100% - 90%);}}"], function (_ref) {
+})(["margin:8em 0 3em;color:var(--second-clr);.side--content{display:none;}.side--content,.form--content{overflow:hidden;padding:0 1em;position:relative;z-index:1;}.video--bg{display:none;position:absolute;top:50%;left:50%;min-width:100%;height:100%;object-fit:cover;width:50%;transform:translate(-50%,-50%);z-index:-1;}.benefits{margin:3em 0em 3em 1em;&__tab{margin-bottom:1em;}}.header{font-size:1.4rem;font-weight:bold;}.signIn--form{.btn{background:var(--primary-clr);border-color:var(--primary-clr);&:hover,&:focus{transform:scale(0.9);opacity:0.8;background:var(--primary-clr);border-color:var(--primary-clr);}}}.cancel{color:var(--primary-clr);margin-left:1em;border-bottom:1px solid transparent;transition:var(--ease-12s);&:hover,&:focus{opacity:0.8;border-bottom-color:var(--primary-clr);}}@media screen and (min-width:768px){display:flex;grid-template-columns:repeat(2,1fr);margin:6.5em 0 0;height:100%;padding-bottom:4%;.side--content,.form--content{display:flex;flex:1;align-items:center;padding:2em 1em;}.form--content{padding-bottom:4em;.inner{flex:1;max-width:600px;}}.side--content{justify-content:center;color:var(--white-clr);background-color:black;&__inner{padding-bottom:8em;", "}.video--bg{display:block;}}.signIn--form{.form-group{margin-bottom:1.5rem;}}}@media screen and (min-width:1050px){.inner{margin:0 auto 0 calc(100% - 90%);}}"], function (_ref) {
   var log = _ref.log;
   return log && 'padding: 2.2em 0 0';
 });
@@ -4589,21 +4590,21 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flogin&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Clogin.jsx!./":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flogin&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Clogin.jsx ***!
-  \*********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Csignup.jsx!./":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Csignup.jsx ***!
+  \***********************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/login", function() {
-      var mod = __webpack_require__(/*! ./pages/login.jsx */ "./pages/login.jsx")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/signup", function() {
+      var mod = __webpack_require__(/*! ./pages/signup.jsx */ "./pages/signup.jsx")
       if(true) {
-        module.hot.accept(/*! ./pages/login.jsx */ "./pages/login.jsx", function() {
-          if(!next.router.components["/login"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/login.jsx */ "./pages/login.jsx")
-          next.router.update("/login", updatedPage)
+        module.hot.accept(/*! ./pages/signup.jsx */ "./pages/signup.jsx", function() {
+          if(!next.router.components["/signup"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/signup.jsx */ "./pages/signup.jsx")
+          next.router.update("/signup", updatedPage)
         })
       }
       return mod
@@ -13174,10 +13175,10 @@ if ( true && typeof window !== 'undefined') {
 
 /***/ }),
 
-/***/ "./pages/login.jsx":
-/*!*************************!*\
-  !*** ./pages/login.jsx ***!
-  \*************************/
+/***/ "./pages/signup.jsx":
+/*!**************************!*\
+  !*** ./pages/signup.jsx ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -13187,16 +13188,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var _components_Hooks_useForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Hooks/useForm */ "./components/Hooks/useForm.js");
-/* harmony import */ var _components_ui_ButtonLink__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ui/ButtonLink */ "./components/ui/ButtonLink.jsx");
-/* harmony import */ var _components_ui_Forms_FormSectionStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ui/Forms/FormSectionStyles */ "./components/ui/Forms/FormSectionStyles.js");
-/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var _components_ui_ButtonLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ui/ButtonLink */ "./components/ui/ButtonLink.jsx");
+/* harmony import */ var _components_ui_Forms_FormSectionStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ui/Forms/FormSectionStyles */ "./components/ui/Forms/FormSectionStyles.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _components_context_alert_AlertContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/context/alert/AlertContext */ "./components/context/alert/AlertContext.js");
 /* harmony import */ var _components_context_auth_AuthContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/context/auth/AuthContext */ "./components/context/auth/AuthContext.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\login.jsx";
+var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\signup.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -13209,27 +13210,24 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-var login = function login() {
+var signup = function signup() {
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_components_context_auth_AuthContext__WEBPACK_IMPORTED_MODULE_8__["default"]),
-      loginUser = _useContext.loginUser,
+      registerUser = _useContext.registerUser,
       isAuthentucated = _useContext.isAuthentucated,
       error = _useContext.error,
-      clearErros = _useContext.clearErros,
       msg = _useContext.msg,
-      user = _useContext.user;
+      clearErros = _useContext.clearErros;
 
   var _useContext2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_components_context_alert_AlertContext__WEBPACK_IMPORTED_MODULE_7__["default"]),
       setAlert = _useContext2.setAlert;
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (isAuthentucated) {
-      console.log(user);
-      next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/');
-      setAlert(msg, 'success');
-      clearErros();
-    }
-
-    if (error) {
+    // if (isAuthentucated) {
+    //   Router.push('/login');
+    //   setAlert(msg, 'success');
+    //   clearErros();
+    // }
+    if (error === 'User already exists') {
       setAlert(error, 'danger');
       clearErros();
     } // eslint-disable-next-line
@@ -13237,108 +13235,119 @@ var login = function login() {
   }, [error, isAuthentucated, next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push]);
 
   var submit = function submit() {
-    if (email === '' || password === '') {
+    if (userName === '' || email === '' || password === '') {
       setAlert('Please Fill all fields', 'danger');
+    } else if (password !== password2) {
+      setAlert('Passwords dont macth', 'danger');
     } else if (!error) {
-      loginUser({
+      registerUser({
+        userName: userName,
         email: email,
         password: password
       });
       setForm({
+        userName: '',
         email: '',
-        password: ''
+        password: '',
+        password2: ''
       });
+      next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/login');
+      setAlert(msg, 'success');
+      clearErros();
     }
   };
 
   var _useForm = Object(_components_Hooks_useForm__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    userName: '',
     email: '',
-    password: ''
+    password: '',
+    password2: ''
   }, submit),
       handleChange = _useForm.handleChange,
       handleSubmit = _useForm.handleSubmit,
       form = _useForm.form,
       setForm = _useForm.setForm;
 
-  var email = form.email,
-      password = form.password;
+  var userName = form.userName,
+      email = form.email,
+      password = form.password,
+      password2 = form.password2;
   return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 69
     },
     __self: this
-  }, __jsx(_components_ui_Forms_FormSectionStyles__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: "log--in",
-    log: true,
+  }, __jsx(_components_ui_Forms_FormSectionStyles__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: "sign--up",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 70
     },
     __self: this
   }, __jsx("div", {
     className: "side--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 71
     },
     __self: this
   }, __jsx("div", {
     className: "side--content__inner",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 72
     },
     __self: this
   }, __jsx("h2", {
     className: "title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 73
     },
     __self: this
-  }, "Welcome Back To The Fun"), __jsx("ul", {
+  }, "Join The Fun"), __jsx("ul", {
     className: "benefits",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 74
     },
     __self: this
   }, __jsx("li", {
     className: "benefits__tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 75
     },
     __self: this
   }, "Log the movies and TV shows you have watched"), __jsx("li", {
     className: "benefits__tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 78
     },
     __self: this
   }, "Build a personal watchlist"), __jsx("li", {
     className: "benefits__tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 79
     },
     __self: this
   }, "Make your own favorite list"), __jsx("li", {
     className: "benefits__tab",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 80
     },
     __self: this
-  }, "Rate movies & Tv Shows")), __jsx(_components_ui_ButtonLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    toLink: "/signup",
-    title: "Sing Up",
+  }, "Rate movies & Tv Shows")), __jsx(_components_ui_ButtonLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    toLink: "/login",
+    title: "Log In",
     styleDisplay: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 82
     },
     __self: this
   })), __jsx("video", {
@@ -13348,7 +13357,7 @@ var login = function login() {
     className: "video--bg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 84
     },
     __self: this
   }, __jsx("source", {
@@ -13356,57 +13365,86 @@ var login = function login() {
     type: "video/mp4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 85
     },
     __self: this
   }))), __jsx("div", {
     className: "form--content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 88
     },
     __self: this
   }, __jsx("div", {
     className: "inner",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 89
     },
     __self: this
   }, __jsx("h2", {
     className: "header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 90
     },
     __self: this
-  }, "Login to your account"), __jsx("p", {
+  }, "Sign up for an account"), __jsx("p", {
     className: "para text-dark",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 91
     },
     __self: this
-  }, "welcome back, log in to access all your accont information."), __jsx("form", {
+  }, "Signing up for an account is free and easy. Fill out the form below to get started."), __jsx("form", {
     className: "form signIn--form",
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 95
     },
     __self: this
   }, __jsx("div", {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 96
+    },
+    __self: this
+  }, __jsx("label", {
+    htmlFor: "userName",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 97
+    },
+    __self: this
+  }, "Username"), __jsx("input", {
+    id: "userName",
+    name: "userName",
+    value: userName,
+    onChange: handleChange,
+    type: "text",
+    className: "form-control",
+    "aria-describedby": "userName",
+    placeholder: "Enter userName" // required
+    ,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98
+    },
+    __self: this
+  })), __jsx("div", {
+    className: "form-group",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110
     },
     __self: this
   }, __jsx("label", {
     htmlFor: "email",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 111
     },
     __self: this
   }, "Email address"), __jsx("input", {
@@ -13417,25 +13455,25 @@ var login = function login() {
     type: "email",
     className: "form-control",
     "aria-describedby": "emailHelp",
-    placeholder: "Enter email" // required
-    ,
+    placeholder: "Enter email",
+    required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 112
     },
     __self: this
   })), __jsx("div", {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 124
     },
     __self: this
   }, __jsx("label", {
     htmlFor: "password",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 125
     },
     __self: this
   }, "Password"), __jsx("input", {
@@ -13450,45 +13488,73 @@ var login = function login() {
     ,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 126
     },
     __self: this
-  })), __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  })), __jsx("div", {
+    className: "form-group",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 138
+    },
+    __self: this
+  }, __jsx("label", {
+    htmlFor: "password2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 139
+    },
+    __self: this
+  }, "Confirm password"), __jsx("input", {
+    id: "password2",
+    name: "password2",
+    value: password2,
+    onChange: handleChange,
+    type: "password",
+    className: "form-control",
+    placeholder: "Enter password again",
+    minLength: "6",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 140
+    },
+    __self: this
+  })), __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     type: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 151
     },
     __self: this
-  }, "Log In"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, "Sign Up"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 152
     },
     __self: this
   }, __jsx("a", {
     className: "cancel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 153
     },
     __self: this
   }, "Cancel")))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (login);
+/* harmony default export */ __webpack_exports__["default"] = (signup);
 
 /***/ }),
 
-/***/ 4:
-/*!*************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Clogin.jsx ***!
-  \*************************************************************************************************************************************************************/
+/***/ 6:
+/*!***************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Csignup.jsx ***!
+  \***************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Flogin&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Clogin.jsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Flogin&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Clogin.jsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Csignup.jsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CEduardo%20Rivas%5CDesktop%5Creact_Study%5CpopcornFun%5Cpages%5Csignup.jsx!./");
 
 
 /***/ }),
@@ -13504,5 +13570,5 @@ module.exports = dll_0fb095e325d7ebf261c3;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=login.js.map
+},[[6,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=signup.js.map

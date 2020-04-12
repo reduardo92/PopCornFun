@@ -60,7 +60,7 @@ var AuthContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_KEY", function() { return API_KEY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SITE_URL", function() { return SITE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BASE_URL", function() { return BASE_URL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IMG_URL", function() { return IMG_URL; });
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utility_movieDB__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utility/movieDB */ "./components/utility/movieDB.js");
 
 var API_KEY = "api_key=69a209b5d508b36379577751e571ebe9";
-var SITE_URL = 'http://localhost:3000';
+var SITE_URL = process.env.SITE_URL;
 var BASE_URL = 'https://api.themoviedb.org/3/';
 var IMG_URL = 'https://image.tmdb.org/t/p/w500';
 var IMG_URL_OR = 'https://image.tmdb.org/t/p/original';
@@ -137,6 +137,7 @@ function getMovie(id, param) {
   };
   return movie[param];
 }
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
