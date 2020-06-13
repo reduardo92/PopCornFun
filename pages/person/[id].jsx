@@ -132,14 +132,16 @@ const PersonProfile = ({ person }) => {
   );
 };
 
-PersonProfile.getInitialProps = async ctx => {
+export const getServerSideProps = async ({ query }) => {
   try {
     const person = await movieDB(
-      `person/${ctx.query.id || '85'}`,
+      `person/${query.id || '85'}`,
       'append_to_response=movie_credits,tv_credits,combined_credits,external_ids,images&include_image_language=en,null'
     );
     return {
-      person: { typeFor: 'person', ...person }
+      props: {
+        person: { typeFor: 'person', ...person },
+      },
     };
   } catch (error) {
     console.log(error);

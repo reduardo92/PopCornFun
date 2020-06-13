@@ -6,7 +6,7 @@ const discover = ({ discover }) => {
   return <MediaSection mediaFor={discover} forPage='disc' />;
 };
 
-discover.getInitialProps = async ({ query }) => {
+export const getServerSideProps = async ({ query }) => {
   const page = `&page=${query.page ? query.page : 1}`;
   const sort_by = `sort_by=${
     query.sort_by ? query.sort_by : 'popularity.desc'
@@ -18,18 +18,19 @@ discover.getInitialProps = async ({ query }) => {
     : '';
   const genres = query.genres ? `&with_genres=${query.genres}` : '';
 
-  console.log('from query', year, genres);
   try {
     const discover = await movieDB(
       `discover/${query.query}`,
       `${sort_by}${year}${genres}${page}`
     );
     return {
-      discover: {
-        typeFor: query.query,
-        title: query.query,
-        ...discover
-      }
+      props: {
+        discover: {
+          typeFor: query.query,
+          title: query.query,
+          ...discover,
+        },
+      },
     };
   } catch (error) {
     console.log(error);

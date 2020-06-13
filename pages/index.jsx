@@ -67,7 +67,7 @@ const IndexPage = ({
   );
 };
 
-IndexPage.getInitialProps = async () => {
+export const getServerSideProps = async () => {
   try {
     const tv = await movieDB('tv/on_the_air');
     const movie = await movieDB('movie/now_playing');
@@ -81,19 +81,23 @@ IndexPage.getInitialProps = async () => {
     const people = await movieDB('person/popular');
 
     return {
-      movieNowPlay: movie.results.slice(0, 12),
-      tvOnAir: tv.results.slice(0, 12),
-      movieAction: movieAction.results.slice(0, 10),
-      tvAnima: tvAnima.results.slice(0, 10),
-      feturedMovie,
-      feturedTv,
-      people: people.results.slice(0, 12),
+      props: {
+        movieNowPlay: movie.results.slice(0, 12),
+        tvOnAir: tv.results.slice(0, 12),
+        movieAction: movieAction.results.slice(0, 10),
+        tvAnima: tvAnima.results.slice(0, 10),
+        feturedMovie,
+        feturedTv,
+        people: people.results.slice(0, 12),
+      },
     };
   } catch (error) {
     console.log(error);
     return {
-      movieNowPlay: null,
-      tvOnAir: null,
+      props: {
+        movieNowPlay: null,
+        tvOnAir: null,
+      },
     };
   }
 };

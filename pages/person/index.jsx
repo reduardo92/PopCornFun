@@ -4,18 +4,20 @@ import MediaSection from '../../components/ui/mediaProfile/MediaSection';
 
 const person = ({ person }) => <MediaSection mediaFor={person} />;
 
-person.getInitialProps = async ({ query }) => {
+export const getServerSideProps = async ({ query }) => {
   try {
     const person = await movieDB(
       `person/popular`,
       `page=${query.page ? query.page : 1}`
     );
     return {
-      person: {
-        typeFor: 'person',
-        title: 'popular',
-        ...person
-      }
+      props: {
+        person: {
+          typeFor: 'person',
+          title: 'popular',
+          ...person,
+        },
+      },
     };
   } catch (error) {
     console.log(error);

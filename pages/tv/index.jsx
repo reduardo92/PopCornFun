@@ -4,7 +4,7 @@ import MediaSection from '../../components/ui/mediaProfile/MediaSection';
 
 const tv = ({ tv }) => <MediaSection mediaFor={tv} />;
 
-tv.getInitialProps = async ({ query }) => {
+export const getServerSideProps = async ({ query }) => {
   const queryLeng = Object.keys(query).length;
   try {
     const tv = await movieDB(
@@ -12,11 +12,13 @@ tv.getInitialProps = async ({ query }) => {
       `page=${query.page ? query.page : 1}`
     );
     return {
-      tv: {
-        typeFor: 'tv',
-        title: queryLeng === 0 ? 'popular' : query.query.split('_').join(' '),
-        ...tv
-      }
+      props: {
+        tv: {
+          typeFor: 'tv',
+          title: queryLeng === 0 ? 'popular' : query.query.split('_').join(' '),
+          ...tv,
+        },
+      },
     };
   } catch (error) {
     console.log(error);

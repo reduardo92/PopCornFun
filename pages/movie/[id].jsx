@@ -34,14 +34,16 @@ const MovieProfile = ({ movie }) => (
   </Layout>
 );
 
-MovieProfile.getInitialProps = async ctx => {
+export const getServerSideProps = async ({ query }) => {
   try {
     const movie = await movieDB(
-      `movie/${ctx.query.id || '454626'}`,
+      `movie/${query.id || '454626'}`,
       'append_to_response=account_states,external_ids,keywords,release_dates,videos,recommendations,reviews,credits,images&include_image_language=en,null'
     );
     return {
-      movie: { typeFor: 'movie', ...movie }
+      props: {
+        movie: { typeFor: 'movie', ...movie },
+      },
     };
   } catch (error) {
     console.log(error);
