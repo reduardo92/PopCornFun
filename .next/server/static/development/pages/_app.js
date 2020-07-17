@@ -3532,19 +3532,19 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_context_MovieProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/context/MovieProvider */ "./components/context/MovieProvider.js");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.jsx");
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.jsx");
-/* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-circular-progressbar/dist/styles.css */ "./node_modules/react-circular-progressbar/dist/styles.css");
-/* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../global.css */ "./global.css");
-/* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_global_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_context_alert_AlertState__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/context/alert/AlertState */ "./components/context/alert/AlertState.js");
-/* harmony import */ var _components_context_auth_AuthState__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/context/auth/AuthState */ "./components/context/auth/AuthState.js");
+/* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-circular-progressbar/dist/styles.css */ "./node_modules/react-circular-progressbar/dist/styles.css");
+/* harmony import */ var react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_circular_progressbar_dist_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_context_alert_AlertState__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/context/alert/AlertState */ "./components/context/alert/AlertState.js");
+/* harmony import */ var _components_context_auth_AuthState__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/context/auth/AuthState */ "./components/context/auth/AuthState.js");
+/* harmony import */ var _components_context_MovieProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/context/MovieProvider */ "./components/context/MovieProvider.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.jsx");
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.jsx");
+/* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../global.css */ "./global.css");
+/* harmony import */ var _global_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_global_css__WEBPACK_IMPORTED_MODULE_9__);
 var _jsxFileName = "C:\\Users\\Eduardo Rivas\\Desktop\\react_Study\\popcornFun\\pages\\_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -3604,40 +3604,49 @@ const MyApp = ({
       lineNumber: 26
     },
     __self: undefined
-  })), __jsx(_components_context_auth_AuthState__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), __jsx("link", {
+    rel: "icon",
+    type: "image/png",
+    href: "/popcorn_logo.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 31
     },
     __self: undefined
-  }, __jsx(_components_context_MovieProvider__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  })), __jsx(_components_context_auth_AuthState__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
     },
     __self: undefined
-  }, __jsx(_components_context_alert_AlertState__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, __jsx(_components_context_MovieProvider__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 34
     },
     __self: undefined
-  }, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(_components_context_alert_AlertState__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 35
     },
     __self: undefined
-  }), __jsx(Component, _extends({}, pageProps, {
+  }, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 36
     },
     __self: undefined
-  })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), __jsx(Component, _extends({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37
+    },
+    __self: undefined
+  })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
     },
     __self: undefined
   })))));

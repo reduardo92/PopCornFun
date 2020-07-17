@@ -1,12 +1,12 @@
-import MovieProvider from '../components/context/MovieProvider';
-import Head from 'next/head';
-import Footer from '../components/Footer';
-import NavCustom from '../components/Navbar';
-import 'react-circular-progressbar/dist/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../global.css';
+import Head from 'next/head';
+import 'react-circular-progressbar/dist/styles.css';
 import AlertState from '../components/context/alert/AlertState';
 import AuthState from '../components/context/auth/AuthState';
+import MovieProvider from '../components/context/MovieProvider';
+import Footer from '../components/Footer';
+import NavCustom from '../components/Navbar';
+import '../global.css';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -28,6 +28,7 @@ const MyApp = ({ Component, pageProps }) => {
           content='initial-scale=1.0, width=device-width'
           key='viewport'
         />
+        <link rel='icon' type='image/png' href='/popcorn_logo.png' />
       </Head>
       <AuthState>
         <MovieProvider>
