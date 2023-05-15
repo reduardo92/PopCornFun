@@ -16,10 +16,9 @@
   "license": "ISC",
   "engines": {
     "node": "16.16.0",
-    "npm": "6.13.4"
   },
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.10.56",
+    "@brainhubeu/react-carousel": "1.10.56",
     "@hapi/joi": "^17.1.1",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
