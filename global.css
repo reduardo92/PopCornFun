@@ -1,5 +1,5 @@
 :root {
-  /* Colors */
+
   --primary-clr: #f15c2b;
   --second-clr: #1a1616;
   --accent-clr: #e7e6e5;
@@ -7,7 +7,6 @@
   --grey-clr: #8b8b8b;
   --hover--clr: #5d5e5e;
   --primary-clr-rgba: rgba(241, 92, 43, 0.9);
-  /* Gradient  */
   --bg-gradient: linear-gradient(
     to top,
     #f15c2b,
@@ -32,36 +31,30 @@
     #1a1616
   );
 
-  /* Box Shadow */
   --shadow: 3px 2px 7px rgba(0, 0, 0, 1);
 
-  /* Fonts */
   --fn-source-sans: 'Source Sans Pro', sans-serif;
   --fn-roboto: 'Roboto', sans-serif;
-  /* font weight */
   --fw-bold: 900;
   --fw-medium: 600;
   --fw-regular: 400;
   --fs-italic: italic;
 
-  /* Transitions */
   --ease--in--out--02s: all 0.19s ease-in-out;
   --ease-12s: all 0.12s ease;
 
-  /* Media Screens */
   --tablet-size: 43.12em;
   --laptop-size: 62.3em;
   --laptop-xl-size: 81.25em;
 }
 
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15; 
+  -webkit-text-size-adjust: 100%; 
 }
 
 body {
   margin: 0;
-  /* height: 100vh; */
 }
 
 @media screen and (min-width: 1000px) {
@@ -97,8 +90,6 @@ h1 {
   margin: 0.67em 0;
 }
 
-/* Grouping content
-   ========================================================================== */
 
 hr {
   box-sizing: content-box; /* 1 */
@@ -238,10 +229,7 @@ textarea {
   overflow: auto;
 }
 
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
+
 
 [type='checkbox'],
 [type='radio'] {
@@ -249,76 +237,46 @@ textarea {
   padding: 0; /* 2 */
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
+
 
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
 
 [type='search'] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
 
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
+
 
 [type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
 
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
 
-/* Interactive
-   ========================================================================== */
 
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
 
 details {
   display: block;
 }
 
-/*
- * Add the correct display in all browsers.
- */
 
 summary {
   display: list-item;
 }
 
-/* Misc
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
 template {
   display: none;
 }
 
-/**
- * Add the correct display in IE 10.
- */
 
 [hidden] {
   display: none;
@@ -415,7 +373,6 @@ header {
   color: var(--primary-clr);
 }
 
-/* Card container global style */
 .card--container {
   margin-top: 4em;
   padding: 0 1em;
@@ -427,7 +384,6 @@ header {
   justify-items: center;
 }
 
-/* Start Rating */
 .rating--star {
   justify-self: end;
   display: flex;
@@ -441,7 +397,6 @@ header {
   filter: drop-shadow(0 0 0.1rem rgb(41, 41, 41, 0.5));
 }
 
-/* Tab Buttons */
 .tabs--container {
   display: flex;
   flex-wrap: wrap;
@@ -472,7 +427,6 @@ header {
   transition: var(--ease-12s);
 }
 
-/* NavLink style */
 .nav-link {
   color: inherit;
   font-weight: bold;
@@ -487,14 +441,8 @@ header {
   border-bottom-color: var(--grey-clr);
 }
 
-/* .nav-link.selected,
-.dropdown-item.selected {
-  border-bottom-color: var(--primary-clr) !important;
-  /* color: var(--white-clr) !important; */
-/* } */
-*/
 
-/* Facts Style */
+
 .stat {
   text-transform: capitalize;
   margin-bottom: 0.7em;
